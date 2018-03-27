@@ -22,7 +22,7 @@ public class TestUser {
 //    Testear que el usuario se crea con un rate de owner en zero y un rate de customer en zero
     public void createUserAndOwnerAndCustomerReputationIsEmptyZero(){
         User user = UserBuilder.with
-    
+
     }
 
 
