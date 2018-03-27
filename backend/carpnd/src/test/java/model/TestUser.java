@@ -1,17 +1,20 @@
 package model;
 
 import org.junit.Test;
+import utils.builders.UserBuilder;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TestUser {
 
+    @Test
+    public void userIsCreatedWithSpectedValues(){
 
-//Test a User
-    public void createUserAndCheckExpectedValues(){
         User user = UserBuilder.withName("Nazareno")
                 .withLastName("Castro")
                 .withCUIL("23232323")
-                .withEmail("ncastro@gmail.com");
+                .withEmail("ncastro@gmail.com")
+                .build();
 
         assertThat(user.name).isEqualTo("Nazareno");
         assertThat(user.lastName).isEqualTo("Castro");
@@ -19,13 +22,19 @@ public class TestUser {
         assertThat(user.email).isEqualTo("ncastro@gmail.com");
 
     }
-//    Testear que el usuario se crea con un rate de owner en zero y un rate de customer en zero
-    public void createUserAndOwnerAndCustomerReputationIsEmptyZero(){
-        User user = UserBuilder.with
 
+    @Test
+    public void userIsCreatedWithOwnerAndCustomerReputationIsEmptyZero(){
+        User user = UserBuilder.someUser();
+        assertThat(user.ownerRate()).isEqualTo(0);
+        assertThat(user.customerRate()).isEqualTo(0);
     }
 
+    @Test
+    public void userIsCreatedWithCreditZero(){
+        User user = UserBuilder.someUser();
+        assertThat(user.avaibleCredit()).isEqualTo(0);
+    }
 
-//    Testear que el usuario se crea con credito cero
 
 }
