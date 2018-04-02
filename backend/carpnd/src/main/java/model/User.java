@@ -19,19 +19,18 @@ public class User {
 
     /*
     Return user's owner rate on the system
-
      */
     public Long ownerRate() {
 //        TODO: Implementar
-        return rateManager.ownerRate();
+        return rateManager.ownerRate;
     }
 
     /*
     Return user's customer rate on the system
-
      */
     public Long customerRate() {
-        return rateManager.customerRate();
+//        TODO: Implementar
+        return rateManager.customerRate;
     }
 }
 

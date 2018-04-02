@@ -30,12 +30,5 @@ public class TestUser {
         assertThat(user.ownerRate()).isEqualTo(0);
         assertThat(user.customerRate()).isEqualTo(0);
     }
-//
-//    @Test
-//    public void userIsCreatedWithCreditZero(){
-//        User user = UserBuilder.someUser();
-//        assertThat(user.avaibleCredit()).isEqualTo(0);
-//    }
-
 
 }
