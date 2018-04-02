@@ -1,6 +1,7 @@
 package utils.builders;
 
 import model.AdressLocation;
+import model.Publication;
 import model.Reservation;
 import model.User;
 
@@ -13,6 +14,7 @@ public class ReservationBuilder {
     private AdressLocation acquireLocation;
     private LocalDateTime returnTime;
     private AdressLocation returnLocation;
+    private Publication publication;
 
     public static ReservationBuilder start() {
         return new ReservationBuilder();
@@ -24,7 +26,7 @@ public class ReservationBuilder {
     }
 
     public Reservation build() {
-        return new Reservation(owner, customer, acquireTime, acquireLocation, returnTime, returnLocation);
+        return new Reservation(owner, customer, acquireTime, acquireLocation, returnTime, returnLocation, publication);
     }
 
     public ReservationBuilder withCustomer(User customer) {
@@ -49,6 +51,11 @@ public class ReservationBuilder {
 
     public ReservationBuilder withReturnLocation(AdressLocation returnLocation) {
         this.returnLocation = returnLocation;
+        return this;
+    }
+
+    public ReservationBuilder withPublication(Publication publication) {
+        this.publication = publication;
         return this;
     }
 }
