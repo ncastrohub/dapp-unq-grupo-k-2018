@@ -1,6 +1,7 @@
 package utils.builders;
 
 import model.User;
+import model.Vehicle;
 
 public class UserBuilder {
 

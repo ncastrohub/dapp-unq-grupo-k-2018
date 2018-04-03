@@ -12,6 +12,11 @@ public class VehicleBuilder {
         this.capacity = capacity;
         return this;
     }
+
+    public static VehicleBuilder start() {
+        return new VehicleBuilder();
+    }
+
     public VehicleBuilder withType(String type) {
         this.type = type;
         return this;
@@ -26,10 +31,10 @@ public class VehicleBuilder {
         return this;
     }
     public Vehicle build() {
-        return new Vehicle(5, "familiar", "fiveDoors", "oneLink");  }
+        return new Vehicle(5, "familiar", "fiveDoors", "link");  }
 
-    public static Vehicle someUser() {
-        return new Vehicle(5, "familiar", "fiveDoors", "oneLink");
+    public static Vehicle someVehicle() {
+        return new Vehicle(5, "familiar", "fiveDoors", "link");
     }
 
 }
