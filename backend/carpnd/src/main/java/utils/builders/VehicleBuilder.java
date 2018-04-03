@@ -6,7 +6,7 @@ public class VehicleBuilder {
     private int capacity;
     private String type;
     private String description;
-    private String photo; // Agregar el lik a las fotos!
+    private String photo; // Agregar el link a las fotos!
 
     public VehicleBuilder withCapacity(int capacity) {
         this.capacity = capacity;
