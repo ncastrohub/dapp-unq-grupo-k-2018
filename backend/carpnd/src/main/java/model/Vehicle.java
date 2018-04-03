@@ -1,10 +1,10 @@
 package model;
 
 public class Vehicle {
-    int capacity;
-    String type;
-    String description;
-    String photo; // Agregar el lik a las fotos!
+    private int capacity;
+    private String type;
+    private String description;
+    private String photo; // Agregar el link a las fotos!
 
     public Vehicle(int capacity, String type, String description, String link){
         this.capacity=capacity;
