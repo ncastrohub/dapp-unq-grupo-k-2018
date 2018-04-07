@@ -5,7 +5,7 @@ import java.time.temporal.ChronoUnit;
 
 public class Reservation {
 
-    public Publication publication;
+    public ReservedPublication publication;
     public AdressLocation acquireLocation;
     public LocalDateTime acquireTime;
     public LocalDateTime returnTime;
@@ -17,7 +17,7 @@ public class Reservation {
             User customer,
             LocalDateTime acquireTime, AdressLocation acquireLocation,
             LocalDateTime returnTime, AdressLocation returnLocation,
-            Publication publication) {
+            ReservedPublication publication) {
         this.owner = owner;
         this.customer = customer;
         this.state = new WaitingForOwnerState();
