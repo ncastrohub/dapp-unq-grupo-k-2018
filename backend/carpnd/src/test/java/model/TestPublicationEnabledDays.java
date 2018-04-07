@@ -1,7 +1,9 @@
 package model;
 
 import model.Exceptions.DayAlreadyDisabledException;
+import model.Exceptions.DayAlreadyReservedException;
 import model.Exceptions.DayDisabledException;
+import model.Exceptions.DayNotReservedException;
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -9,8 +11,6 @@ import java.time.LocalDate;
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
 
 
 public class TestPublicationEnabledDays {
@@ -53,12 +53,60 @@ public class TestPublicationEnabledDays {
             enabledDays.reserveDay(dayFour);
         });
     }
-//
-//    @Test
-//    public void testReleaseDaysReservedShowsAsEnabled(){
-//
-//    }
 
+    @Test
+    public void testReserveSomeDaysAndThatsDaysCannotBeReservedAgain(){
+        PublicationsEnabledDays enabledDays = new PublicationsEnabledDays();
+        LocalDate dayOne = LocalDate.now().plusDays(3);
+        try {
+            enabledDays.reserveDay(dayOne);
+        } catch (DayAlreadyReservedException e) {
+            assertFalse(true);
+        } catch (DayDisabledException error){
+            assertFalse(true);
+        }
+
+        assertThrows(DayAlreadyReservedException.class, ()->{
+            enabledDays.reserveDay(dayOne);
+        });
+    }
+
+    @Test
+    public void testCheckIfSomeDayCanBeReserved(){
+        PublicationsEnabledDays enabledDays = new PublicationsEnabledDays();
+        LocalDate dayOne = LocalDate.now().plusDays(3);
+        assertThat(enabledDays.canReserve(dayOne)).isEqualTo(true);
+
+    }
+
+    @Test
+    public void testCheckIfSomeDayReservedCannotBeReserved(){
+        PublicationsEnabledDays enabledDays = new PublicationsEnabledDays();
+        LocalDate dayOne = LocalDate.now().plusDays(3);
+
+        try {
+            enabledDays.reserveDay(dayOne);
+        } catch (Exception e) {
+            assertFalse(true);
+        }
+
+        assertThat(enabledDays.canReserve(dayOne)).isEqualTo(false);
+    }
+
+    @Test
+    public void testReleasedDaysReservedShowsAsEnabled() throws DayNotReservedException {
+        PublicationsEnabledDays enabledDays = new PublicationsEnabledDays();
+        LocalDate dayOne = LocalDate.now().plusDays(3);
+
+        try {
+            enabledDays.reserveDay(dayOne);
+        } catch (Exception e) {
+            assertFalse(true);
+        }
+
+        enabledDays.releaseDay(LocalDate.of(dayOne.getYear(), dayOne.getMonth(), dayOne.getDayOfMonth()));
+
+    }
 
 
 }
