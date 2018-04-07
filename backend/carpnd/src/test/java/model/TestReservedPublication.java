@@ -3,7 +3,6 @@ package model;
 import org.junit.Test;
 
 import java.time.LocalDate;
-import java.util.Currency;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,7 +11,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class TestReservedPublication {
-
 
 
     @Test
