@@ -51,5 +51,11 @@ public class PublicationsEnabledDays {
             this.reservedDays.remove(date);
         }
     }
+
+    public void reserveDays(LinkedList<LocalDate> reservationDays) throws DayAlreadyReservedException, DayDisabledException {
+        for (LocalDate localDate : reservationDays) {
+            this.reserveDay(localDate);
+        }
+    }
 }
 

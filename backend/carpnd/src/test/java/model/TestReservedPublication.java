@@ -17,9 +17,10 @@ public class TestReservedPublication {
     public void testReservedPublicationIsCreatedWithFinalPriceAndDaysReserved(){
         Publication publication = mock(Publication.class);
         List<LocalDate> reservedDays = new LinkedList<>();
+        User customer = mock(User.class);
         reservedDays.add(LocalDate.now());
 
-        ReservedPublication reservedPublication = new ReservedPublication(publication, reservedDays );
+        ReservedPublication reservedPublication = new ReservedPublication(publication, reservedDays, customer);
 
         assertThat(reservedPublication.publication).isEqualTo(publication);
         assertThat(reservedPublication.reservedDays).isEqualTo(reservedDays);
@@ -30,12 +31,14 @@ public class TestReservedPublication {
     public void testReservedPublicationIsCreatedWithACopyOfFinalPriceButThatPricesNeverChange(){
         Publication publication = mock(Publication.class);
         List<LocalDate> reservedDays = new LinkedList<>();
+        User customer = mock(User.class);
+
         reservedDays.add(LocalDate.now());
         MoneyAndAmount costPerHour = new MoneyAndAmount(12.12, CustomCurrencies.ARS);
 
         when(publication.getCostPerHour()).thenReturn(costPerHour);
 
-        ReservedPublication reservedPublication = new ReservedPublication(publication, reservedDays);
+        ReservedPublication reservedPublication = new ReservedPublication(publication, reservedDays, customer);
 
         assertThat(reservedPublication.getCostPerHour()).isEqualTo(costPerHour);
         MoneyAndAmount newCostPerHour = new MoneyAndAmount(24.12, CustomCurrencies.ARS);
