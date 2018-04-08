@@ -1,6 +1,6 @@
 package model;
 
-import model.Exceptions.*;
+import model.exceptions.*;
 
 import java.time.LocalDate;
 import java.util.LinkedList;
@@ -9,11 +9,11 @@ import java.util.List;
 public class Publication {
 
 
-    private final User owner;
-    private final Vehicle vehicle;
-    private final AdressLocation acquireLocation;
-    private final LinkedList<AdressLocation> returnLocations;
-    private final PublicationsEnabledDays enabledDays;
+    private User owner;
+    private Vehicle vehicle;
+    private AdressLocation acquireLocation;
+    private LinkedList<AdressLocation> returnLocations;
+    private PublicationsEnabledDays enabledDays;
     private MoneyAndAmount costPerHour;
     private List<ReservedPublication> reservedPublicationList;
 

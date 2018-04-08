@@ -1,16 +1,16 @@
 package model;
 
-import model.Exceptions.DayAlreadyDisabledException;
-import model.Exceptions.DayAlreadyReservedException;
-import model.Exceptions.DayDisabledException;
-import model.Exceptions.DayNotReservedException;
+import model.exceptions.DayAlreadyDisabledException;
+import model.exceptions.DayAlreadyReservedException;
+import model.exceptions.DayDisabledException;
+import model.exceptions.DayNotReservedException;
 import org.junit.Test;
 
 import java.time.LocalDate;
 
-import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.mock;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 public class TestPublicationEnabledDays {
@@ -40,18 +40,10 @@ public class TestPublicationEnabledDays {
             assertFalse(true);
         }
 
-        assertThrows(DayDisabledException.class, ()->{
-            enabledDays.reserveDay(dayOne);
-        });
-        assertThrows(DayDisabledException.class, ()->{
-            enabledDays.reserveDay(dayTwo);
-        });
-        assertThrows(DayDisabledException.class, ()->{
-            enabledDays.reserveDay(dayThree);
-        });
-        assertThrows(DayDisabledException.class, ()->{
-            enabledDays.reserveDay(dayFour);
-        });
+        assertThrows(DayDisabledException.class, ()-> enabledDays.reserveDay(dayOne));
+        assertThrows(DayDisabledException.class, ()-> enabledDays.reserveDay(dayTwo));
+        assertThrows(DayDisabledException.class, ()-> enabledDays.reserveDay(dayThree));
+        assertThrows(DayDisabledException.class, ()-> enabledDays.reserveDay(dayFour));
     }
 
     @Test
@@ -60,15 +52,11 @@ public class TestPublicationEnabledDays {
         LocalDate dayOne = LocalDate.now().plusDays(3);
         try {
             enabledDays.reserveDay(dayOne);
-        } catch (DayAlreadyReservedException e) {
-            assertFalse(true);
-        } catch (DayDisabledException error){
+        } catch (DayAlreadyReservedException | DayDisabledException e) {
             assertFalse(true);
         }
 
-        assertThrows(DayAlreadyReservedException.class, ()->{
-            enabledDays.reserveDay(dayOne);
-        });
+        assertThrows(DayAlreadyReservedException.class, ()-> enabledDays.reserveDay(dayOne));
     }
 
     @Test

@@ -11,6 +11,9 @@ public class Reservation {
     public LocalDateTime returnTime;
     public ReservationState state;
     public AdressLocation returnLocation;
+    public User owner;
+    public User customer;
+
 
     public Reservation(
             User owner,
@@ -27,9 +30,6 @@ public class Reservation {
         this.returnLocation = returnLocation;
         this.publication = publication;
     }
-
-    public User owner;
-    public User customer;
 
     public MoneyAndAmount finalPrice() {
         MoneyAndAmount costPerHour = this.publication.getCostPerHour();

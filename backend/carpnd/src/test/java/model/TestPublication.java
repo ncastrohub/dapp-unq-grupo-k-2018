@@ -1,6 +1,6 @@
 package model;
 
-import model.Exceptions.*;
+import model.exceptions.*;
 import org.junit.Test;
 import utils.builders.PublicationBuilder;
 
@@ -15,15 +15,6 @@ import static org.mockito.Mockito.mock;
 
 
 public class TestPublication {
-
-
-    /*Que tengo que poder hacer con una publicacion
-    *
-    * yo como vendedor tengo que poder decidir que dias no habilito la publicacion
-    * yo como vendedor tengo que poder modificar el precio
-    * yo como vendedor solo puedo alquilar un auto por cinco dias
-    * yo como vendedor quiero poder cerrar una publicacion*/
-
 
     @Test
     public void testPublicationCreation(){
@@ -288,5 +279,8 @@ public class TestPublication {
 
         assertThrows(DayDisabledException.class, ()-> publication.makeReservation(customer, reservationDays));
     }
+
+    /**/
+
 
 }
