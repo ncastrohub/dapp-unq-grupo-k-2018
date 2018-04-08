@@ -1,9 +1,6 @@
 package model;
 
-import model.Exceptions.DayAlreadyDisabledException;
-import model.Exceptions.DayAlreadyReservedException;
-import model.Exceptions.DayDisabledException;
-import model.Exceptions.DayNotReservedException;
+import model.Exceptions.*;
 
 import java.time.LocalDate;
 import java.util.LinkedList;
@@ -52,9 +49,24 @@ public class PublicationsEnabledDays {
         }
     }
 
-    public void reserveDays(LinkedList<LocalDate> reservationDays) throws DayAlreadyReservedException, DayDisabledException {
+    public void reserveDays(LinkedList<LocalDate> reservationDays) throws DayAlreadyReservedException, DayDisabledException, InvalidAmountOfDaysToReserveException {
+        if (reservationDays.size() > 4) {
+            throw new InvalidAmountOfDaysToReserveException();
+        }
         for (LocalDate localDate : reservationDays) {
             this.reserveDay(localDate);
+        }
+    }
+
+    public void releaseDays(LinkedList<LocalDate> reservationDays) throws DayNotReservedException {
+        for (LocalDate localDate : reservationDays) {
+            this.releaseDay(localDate);
+        }
+    }
+
+    public void disableDays(LinkedList<LocalDate> reservationDays) throws DayAlreadyDisabledException {
+        for (LocalDate localDate : reservationDays) {
+            this.setDisabled(localDate);
         }
     }
 }
