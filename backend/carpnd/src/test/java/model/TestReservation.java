@@ -9,6 +9,7 @@ import static org.mockito.Mockito.*;
 
 public class TestReservation {
 
+
     @Test
     public void reservationCreatedCorrectly() {
         User owner = mock(User.class);
@@ -19,7 +20,7 @@ public class TestReservation {
 
         AdressLocation acquireLocation = mock(AdressLocation.class);
         AdressLocation returnLocation = mock(AdressLocation.class);
-        Publication publication = mock(Publication.class);
+        ReservedPublication reservedPublication = mock(ReservedPublication.class);
 
         Reservation reservation = ReservationBuilder.start()
             .withOwner(owner)
@@ -28,7 +29,7 @@ public class TestReservation {
             .withAcquireLocation(acquireLocation)
             .withReturnTime(returnTime)
             .withReturnLocation(returnLocation)
-            .withPublication(publication)
+            .withPublication(reservedPublication)
             .build();
 
         assertThat(reservation.owner).isEqualTo(owner);
@@ -41,7 +42,7 @@ public class TestReservation {
         assertThat(reservation.returnTime).isEqualTo(returnTime);
         assertThat(reservation.acquireLocation).isEqualTo(acquireLocation);
         assertThat(reservation.returnLocation).isEqualTo(returnLocation);
-        assertThat(reservation.publication).isEqualTo(publication);
+        assertThat(reservation.publication).isEqualTo(reservedPublication);
     }
 
     @Test
@@ -53,8 +54,8 @@ public class TestReservation {
         LocalDateTime returnTime = acquireTime.plusDays(7);
         AdressLocation acquireLocation = mock(AdressLocation.class);
         AdressLocation returnLocation = mock(AdressLocation.class);
-        Publication publication = mock(Publication.class);
-        when(publication.getCostPerHour()).thenReturn( new MoneyAndAmount(10.00, CustomCurrencies.ARS));
+        ReservedPublication reservationPublication = mock(ReservedPublication.class);
+        when(reservationPublication.getCostPerHour()).thenReturn( new MoneyAndAmount(10.00, CustomCurrencies.ARS));
 
         Reservation reservation = ReservationBuilder.start()
                 .withOwner(owner)
@@ -63,7 +64,7 @@ public class TestReservation {
                 .withAcquireLocation(acquireLocation)
                 .withReturnTime(returnTime)
                 .withReturnLocation(returnLocation)
-                .withPublication(publication)
+                .withPublication(reservationPublication)
                 .build();
 
         MoneyAndAmount priceExpected = new MoneyAndAmount((7 * 24) * 10.00, CustomCurrencies.ARS);

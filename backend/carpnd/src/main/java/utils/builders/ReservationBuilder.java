@@ -1,9 +1,6 @@
 package utils.builders;
 
-import model.AdressLocation;
-import model.Publication;
-import model.Reservation;
-import model.User;
+import model.*;
 
 import java.time.LocalDateTime;
 
@@ -14,7 +11,7 @@ public class ReservationBuilder {
     private AdressLocation acquireLocation;
     private LocalDateTime returnTime;
     private AdressLocation returnLocation;
-    private Publication publication;
+    private ReservedPublication publication;
 
     public static ReservationBuilder start() {
         return new ReservationBuilder();
@@ -54,7 +51,7 @@ public class ReservationBuilder {
         return this;
     }
 
-    public ReservationBuilder withPublication(Publication publication) {
+    public ReservationBuilder withPublication(ReservedPublication publication) {
         this.publication = publication;
         return this;
     }

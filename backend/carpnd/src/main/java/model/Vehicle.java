@@ -1,6 +1,7 @@
 package model;
 
 public class Vehicle {
+
     public int capacity;
     public String type;
     public String description;
