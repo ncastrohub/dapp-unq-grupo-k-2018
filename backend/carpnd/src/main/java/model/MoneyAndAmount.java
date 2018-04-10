@@ -22,4 +22,16 @@ public class MoneyAndAmount {
             return super.equals(model);
         }
     }
+
+    public MoneyAndAmount add(MoneyAndAmount moneyAndAmount) {
+        return new MoneyAndAmount(this.amount + moneyAndAmount.amount, CustomCurrencies.ARS);
+    }
+
+    public boolean isMayorTo(MoneyAndAmount moneyAndAmount) {
+        return this.amount > moneyAndAmount.amount;
+    }
+
+    public void subtract(MoneyAndAmount moneyAndAmount) {
+        this.amount = this.amount - moneyAndAmount.amount;
+    }
 }

@@ -10,7 +10,7 @@ package model;
         }
 
         void userAccepts(ReservationState context) {
-            // Nada que hacer, El usuario se acepta a sí mismo.
+            // Nada que hacer
         }
 
         void userRejects(ReservationState context) {

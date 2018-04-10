@@ -5,19 +5,22 @@ import java.time.temporal.ChronoUnit;
 
 public class Reservation {
 
-    public Publication publication;
+    public ReservedPublication publication;
     public AdressLocation acquireLocation;
     public LocalDateTime acquireTime;
     public LocalDateTime returnTime;
     public ReservationState state;
     public AdressLocation returnLocation;
+    public User owner;
+    public User customer;
+
 
     public Reservation(
             User owner,
             User customer,
             LocalDateTime acquireTime, AdressLocation acquireLocation,
             LocalDateTime returnTime, AdressLocation returnLocation,
-            Publication publication) {
+            ReservedPublication publication) {
         this.owner = owner;
         this.customer = customer;
         this.state = new WaitingForOwnerState();
@@ -27,9 +30,6 @@ public class Reservation {
         this.returnLocation = returnLocation;
         this.publication = publication;
     }
-
-    public User owner;
-    public User customer;
 
     public MoneyAndAmount finalPrice() {
         MoneyAndAmount costPerHour = this.publication.getCostPerHour();
