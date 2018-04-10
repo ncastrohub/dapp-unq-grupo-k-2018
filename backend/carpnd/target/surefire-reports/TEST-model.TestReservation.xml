@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="model.TestUser" time="0" tests="2" errors="0" skipped="0" failures="0">
+<testsuite name="model.TestReservation" time="0.13" tests="2" errors="1" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
@@ -61,6 +61,25 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="userIsCreatedWithSpectedValues" classname="model.TestUser" time="0"/>
-  <testcase name="userIsCreatedWithOwnerAndCustomerReputationIsEmptyZero" classname="model.TestUser" time="0"/>
+  <testcase name="reservationFinalPriceReturnThePriceCalculatedForTheTimeTranscurred" classname="model.TestReservation" time="0.083">
+    <error message="Expecting a stackmap frame at branch target 56&#10;Exception Details:&#10;  Location:&#10;    model/MoneyAndAmount.isMayorTo(Lmodel/MoneyAndAmount;)Z @37: ifle&#10;  Reason:&#10;    Expected stackmap frame at this location.&#10;  Bytecode:&#10;    0x0000000: 033d 11ff ff3e 120f 1100 1fb8 0015 2ab4&#10;    0x0000010: 001a b600 2a2b b400 1ab6 002a 9711 001f&#10;    0x0000020: 3d11 0000 3e9e 0013 120f 1c1d 04b8 0037&#10;    0x0000030: 11ff ff3e 04a7 0014 1d9b 000f 120f 1c1d&#10;    0x0000040: 03b8 0037 11ff ff3e 03ac               &#10;  Stackmap Table:&#10;    same_frame_extended(@72)&#10;    same_locals_1_stack_item_frame(@73,Integer)&#10;" type="java.lang.VerifyError">java.lang.VerifyError: Expecting a stackmap frame at branch target 56
+Exception Details:
+  Location:
+    model/MoneyAndAmount.isMayorTo(Lmodel/MoneyAndAmount;)Z @37: ifle
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0x0000000: 033d 11ff ff3e 120f 1100 1fb8 0015 2ab4
+    0x0000010: 001a b600 2a2b b400 1ab6 002a 9711 001f
+    0x0000020: 3d11 0000 3e9e 0013 120f 1c1d 04b8 0037
+    0x0000030: 11ff ff3e 04a7 0014 1d9b 000f 120f 1c1d
+    0x0000040: 03b8 0037 11ff ff3e 03ac               
+  Stackmap Table:
+    same_frame_extended(@72)
+    same_locals_1_stack_item_frame(@73,Integer)
+
+	at model.TestReservation.reservationFinalPriceReturnThePriceCalculatedForTheTimeTranscurred(TestReservation.java:58)
+</error>
+  </testcase>
+  <testcase name="reservationCreatedCorrectly" classname="model.TestReservation" time="0.047"/>
 </testsuite>

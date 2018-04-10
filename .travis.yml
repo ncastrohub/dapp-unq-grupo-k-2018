@@ -10,3 +10,6 @@ build:
 
 script: mvn clean verify
 
+after_success:
+  - mvn cobertura:cobertura
+  - mvn com.gavinmogan:codacy-maven-plugin:coverage -DcoverageReportFile=target/site/cobertura/coverage.xml -DprojectToken=4c81b40c91044a588fe938fcc719039a -DapiToken=I1VEEzFrE6KRTjTcVqvp

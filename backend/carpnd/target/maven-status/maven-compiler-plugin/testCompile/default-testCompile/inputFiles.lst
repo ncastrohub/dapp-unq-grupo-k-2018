@@ -1,2 +1,7 @@
+/home/nc/dev/dapp/dapp_carpnd/backend/carpnd/src/test/java/model/TestVehicle.java
+/home/nc/dev/dapp/dapp_carpnd/backend/carpnd/src/test/java/model/TestReservation.java
+/home/nc/dev/dapp/dapp_carpnd/backend/carpnd/src/test/java/model/TestPublicationEnabledDays.java
 /home/nc/dev/dapp/dapp_carpnd/backend/carpnd/src/test/java/model/TestUser.java
-/home/nc/dev/dapp/dapp_carpnd/backend/carpnd/src/test/java/model/TestFirstClass.java
+/home/nc/dev/dapp/dapp_carpnd/backend/carpnd/src/test/java/model/TestReservedPublication.java
+/home/nc/dev/dapp/dapp_carpnd/backend/carpnd/src/test/java/model/TestCreditAcount.java
+/home/nc/dev/dapp/dapp_carpnd/backend/carpnd/src/test/java/model/TestPublication.java

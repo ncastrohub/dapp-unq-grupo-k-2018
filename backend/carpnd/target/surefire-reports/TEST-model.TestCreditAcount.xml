@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="model.TestUser" time="0" tests="2" errors="0" skipped="0" failures="0">
+<testsuite name="model.TestCreditAcount" time="0.144" tests="4" errors="1" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
@@ -61,6 +61,37 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="userIsCreatedWithSpectedValues" classname="model.TestUser" time="0"/>
-  <testcase name="userIsCreatedWithOwnerAndCustomerReputationIsEmptyZero" classname="model.TestUser" time="0"/>
+  <testcase name="whenAPayIsConfirmedTheMoneyIsTransferedFromOneUserToOther" classname="model.TestCreditAcount" time="0"/>
+  <testcase name="canAddMoneyToTheAccount" classname="model.TestCreditAcount" time="0"/>
+  <testcase name="whenATransactionIsMadeMoneyIsReservedForThatReservationButIsNotDebited" classname="model.TestCreditAcount" time="0.144">
+    <error message="Expecting a stackmap frame at branch target 69&#10;Exception Details:&#10;  Location:&#10;    model/CreditAccount.reserveMoney(Lmodel/MoneyAndAmount;Lmodel/Reservation;)V @32: ifne&#10;  Reason:&#10;    Expected stackmap frame at this location.&#10;  Bytecode:&#10;    0x0000000: 033e 11ff ff36 0412 1011 0019 b800 162a&#10;    0x0000010: b400 2c2b b600 4911 0019 3e11 0000 3604&#10;    0x0000020: 9a00 2512 101d 1504 04b8 004d 11ff ff36&#10;    0x0000030: 042a b400 2c2b b600 5111 0019 3e11 0001&#10;    0x0000040: 3604 9900 621d 1100 19a0 001c 1504 1100&#10;    0x0000050: 01a0 0014 1210 1d15 0404 b800 4d11 ffff&#10;    0x0000060: 3604 a700 1615 049b 0011 1210 1d15 0403&#10;    0x0000070: b800 4d11 ffff 3604 1210 1100 1ab8 0016&#10;    0x0000080: 2ab4 002c 2bb6 0054 1210 1100 1bb8 0016&#10;    0x0000090: 2ab4 0031 bb00 5659 2b2c b700 58b6 005a&#10;    0x00000a0: 57a7 0026 1504 9b00 1112 101d 1504 03b8&#10;    0x00000b0: 004d 11ff ff36 0412 1011 001d b800 16bb&#10;    0x00000c0: 0045 59b7 005b bf12 1011 001f b800 16b1&#10;    0x00000d0:                                        &#10;  Stackmap Table:&#10;    same_frame_extended(@128)&#10;    same_frame(@191)&#10;    same_frame(@207)&#10;" type="java.lang.VerifyError">java.lang.VerifyError: Expecting a stackmap frame at branch target 69
+Exception Details:
+  Location:
+    model/CreditAccount.reserveMoney(Lmodel/MoneyAndAmount;Lmodel/Reservation;)V @32: ifne
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0x0000000: 033e 11ff ff36 0412 1011 0019 b800 162a
+    0x0000010: b400 2c2b b600 4911 0019 3e11 0000 3604
+    0x0000020: 9a00 2512 101d 1504 04b8 004d 11ff ff36
+    0x0000030: 042a b400 2c2b b600 5111 0019 3e11 0001
+    0x0000040: 3604 9900 621d 1100 19a0 001c 1504 1100
+    0x0000050: 01a0 0014 1210 1d15 0404 b800 4d11 ffff
+    0x0000060: 3604 a700 1615 049b 0011 1210 1d15 0403
+    0x0000070: b800 4d11 ffff 3604 1210 1100 1ab8 0016
+    0x0000080: 2ab4 002c 2bb6 0054 1210 1100 1bb8 0016
+    0x0000090: 2ab4 0031 bb00 5659 2b2c b700 58b6 005a
+    0x00000a0: 57a7 0026 1504 9b00 1112 101d 1504 03b8
+    0x00000b0: 004d 11ff ff36 0412 1011 001d b800 16bb
+    0x00000c0: 0045 59b7 005b bf12 1011 001f b800 16b1
+    0x00000d0:                                        
+  Stackmap Table:
+    same_frame_extended(@128)
+    same_frame(@191)
+    same_frame(@207)
+
+	at model.TestCreditAcount.whenATransactionIsMadeMoneyIsReservedForThatReservationButIsNotDebited(TestCreditAcount.java:23)
+</error>
+  </testcase>
+  <testcase name="whenAPaymentIsCanceledTheValueReturnToTheCreditAcountOwner" classname="model.TestCreditAcount" time="0"/>
 </testsuite>

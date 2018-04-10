@@ -1,0 +1,172 @@
+-------------------------------------------------------------------------------
+Test set: model.TestPublicationEnabledDays
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 0.098 sec <<< FAILURE! - in model.TestPublicationEnabledDays
+testReleasedDaysReservedShowsAsEnabled(model.TestPublicationEnabledDays)  Time elapsed: 0.013 sec  <<< ERROR!
+java.lang.VerifyError: Expecting a stackmap frame at branch target 77
+Exception Details:
+  Location:
+    model/PublicationsEnabledDays.reserveDay(Ljava/time/LocalDate;)V @32: ifeq
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0x0000000: 033d 11ff ff3e 120f 1100 18b8 0015 2ab4
+    0x0000010: 001c 2bb9 0031 0200 1100 183d 1100 003e
+    0x0000020: 9900 2d1c 1100 18a0 0016 1d11 0000 a000
+    0x0000030: 0f12 0f1c 1d04 b800 3511 ffff 3e12 0f11
+    0x0000040: 0019 b800 15bb 0029 59b7 0036 bf1d 9b00
+    0x0000050: 0f12 0f1c 1d03 b800 3511 ffff 3e12 0f11
+    0x0000060: 001b b800 152a b400 1e2b b900 3102 0011
+    0x0000070: 001b 3d11 0000 3e99 002d 1c11 001b a000
+    0x0000080: 161d 1100 00a0 000f 120f 1c1d 04b8 0035
+    0x0000090: 11ff ff3e 120f 1100 1cb8 0015 bb00 2b59
+    0x00000a0: b700 37bf 1d9b 000f 120f 1c1d 03b8 0035
+    0x00000b0: 11ff ff3e 120f 1100 1eb8 0015 2ab4 001e
+    0x00000c0: 2bb9 003a 0200 5712 0f11 001f b800 15b1
+    0x00000d0:                                        
+  Stackmap Table:
+    same_frame_extended(@101)
+    same_frame_extended(@188)
+
+	at model.TestPublicationEnabledDays.testReleasedDaysReservedShowsAsEnabled(TestPublicationEnabledDays.java:86)
+
+testSetSomeDaysDisabledAndThatDaysCannotBeReserved(model.TestPublicationEnabledDays)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.VerifyError: Expecting a stackmap frame at branch target 77
+Exception Details:
+  Location:
+    model/PublicationsEnabledDays.reserveDay(Ljava/time/LocalDate;)V @32: ifeq
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0x0000000: 033d 11ff ff3e 120f 1100 18b8 0015 2ab4
+    0x0000010: 001c 2bb9 0031 0200 1100 183d 1100 003e
+    0x0000020: 9900 2d1c 1100 18a0 0016 1d11 0000 a000
+    0x0000030: 0f12 0f1c 1d04 b800 3511 ffff 3e12 0f11
+    0x0000040: 0019 b800 15bb 0029 59b7 0036 bf1d 9b00
+    0x0000050: 0f12 0f1c 1d03 b800 3511 ffff 3e12 0f11
+    0x0000060: 001b b800 152a b400 1e2b b900 3102 0011
+    0x0000070: 001b 3d11 0000 3e99 002d 1c11 001b a000
+    0x0000080: 161d 1100 00a0 000f 120f 1c1d 04b8 0035
+    0x0000090: 11ff ff3e 120f 1100 1cb8 0015 bb00 2b59
+    0x00000a0: b700 37bf 1d9b 000f 120f 1c1d 03b8 0035
+    0x00000b0: 11ff ff3e 120f 1100 1eb8 0015 2ab4 001e
+    0x00000c0: 2bb9 003a 0200 5712 0f11 001f b800 15b1
+    0x00000d0:                                        
+  Stackmap Table:
+    same_frame_extended(@101)
+    same_frame_extended(@188)
+
+	at model.TestPublicationEnabledDays.testSetSomeDaysDisabledAndThatDaysCannotBeReserved(TestPublicationEnabledDays.java:28)
+
+testCheckIfSomeDayReservedCannotBeReserved(model.TestPublicationEnabledDays)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.VerifyError: Expecting a stackmap frame at branch target 77
+Exception Details:
+  Location:
+    model/PublicationsEnabledDays.reserveDay(Ljava/time/LocalDate;)V @32: ifeq
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0x0000000: 033d 11ff ff3e 120f 1100 18b8 0015 2ab4
+    0x0000010: 001c 2bb9 0031 0200 1100 183d 1100 003e
+    0x0000020: 9900 2d1c 1100 18a0 0016 1d11 0000 a000
+    0x0000030: 0f12 0f1c 1d04 b800 3511 ffff 3e12 0f11
+    0x0000040: 0019 b800 15bb 0029 59b7 0036 bf1d 9b00
+    0x0000050: 0f12 0f1c 1d03 b800 3511 ffff 3e12 0f11
+    0x0000060: 001b b800 152a b400 1e2b b900 3102 0011
+    0x0000070: 001b 3d11 0000 3e99 002d 1c11 001b a000
+    0x0000080: 161d 1100 00a0 000f 120f 1c1d 04b8 0035
+    0x0000090: 11ff ff3e 120f 1100 1cb8 0015 bb00 2b59
+    0x00000a0: b700 37bf 1d9b 000f 120f 1c1d 03b8 0035
+    0x00000b0: 11ff ff3e 120f 1100 1eb8 0015 2ab4 001e
+    0x00000c0: 2bb9 003a 0200 5712 0f11 001f b800 15b1
+    0x00000d0:                                        
+  Stackmap Table:
+    same_frame_extended(@101)
+    same_frame_extended(@188)
+
+	at model.TestPublicationEnabledDays.testCheckIfSomeDayReservedCannotBeReserved(TestPublicationEnabledDays.java:72)
+
+testReserveSomeDaysAndThatsDaysCannotBeReservedAgain(model.TestPublicationEnabledDays)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.VerifyError: Expecting a stackmap frame at branch target 77
+Exception Details:
+  Location:
+    model/PublicationsEnabledDays.reserveDay(Ljava/time/LocalDate;)V @32: ifeq
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0x0000000: 033d 11ff ff3e 120f 1100 18b8 0015 2ab4
+    0x0000010: 001c 2bb9 0031 0200 1100 183d 1100 003e
+    0x0000020: 9900 2d1c 1100 18a0 0016 1d11 0000 a000
+    0x0000030: 0f12 0f1c 1d04 b800 3511 ffff 3e12 0f11
+    0x0000040: 0019 b800 15bb 0029 59b7 0036 bf1d 9b00
+    0x0000050: 0f12 0f1c 1d03 b800 3511 ffff 3e12 0f11
+    0x0000060: 001b b800 152a b400 1e2b b900 3102 0011
+    0x0000070: 001b 3d11 0000 3e99 002d 1c11 001b a000
+    0x0000080: 161d 1100 00a0 000f 120f 1c1d 04b8 0035
+    0x0000090: 11ff ff3e 120f 1100 1cb8 0015 bb00 2b59
+    0x00000a0: b700 37bf 1d9b 000f 120f 1c1d 03b8 0035
+    0x00000b0: 11ff ff3e 120f 1100 1eb8 0015 2ab4 001e
+    0x00000c0: 2bb9 003a 0200 5712 0f11 001f b800 15b1
+    0x00000d0:                                        
+  Stackmap Table:
+    same_frame_extended(@101)
+    same_frame_extended(@188)
+
+	at model.TestPublicationEnabledDays.testReserveSomeDaysAndThatsDaysCannotBeReservedAgain(TestPublicationEnabledDays.java:51)
+
+testStartsWithAllDaysEnabled(model.TestPublicationEnabledDays)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.VerifyError: Expecting a stackmap frame at branch target 77
+Exception Details:
+  Location:
+    model/PublicationsEnabledDays.reserveDay(Ljava/time/LocalDate;)V @32: ifeq
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0x0000000: 033d 11ff ff3e 120f 1100 18b8 0015 2ab4
+    0x0000010: 001c 2bb9 0031 0200 1100 183d 1100 003e
+    0x0000020: 9900 2d1c 1100 18a0 0016 1d11 0000 a000
+    0x0000030: 0f12 0f1c 1d04 b800 3511 ffff 3e12 0f11
+    0x0000040: 0019 b800 15bb 0029 59b7 0036 bf1d 9b00
+    0x0000050: 0f12 0f1c 1d03 b800 3511 ffff 3e12 0f11
+    0x0000060: 001b b800 152a b400 1e2b b900 3102 0011
+    0x0000070: 001b 3d11 0000 3e99 002d 1c11 001b a000
+    0x0000080: 161d 1100 00a0 000f 120f 1c1d 04b8 0035
+    0x0000090: 11ff ff3e 120f 1100 1cb8 0015 bb00 2b59
+    0x00000a0: b700 37bf 1d9b 000f 120f 1c1d 03b8 0035
+    0x00000b0: 11ff ff3e 120f 1100 1eb8 0015 2ab4 001e
+    0x00000c0: 2bb9 003a 0200 5712 0f11 001f b800 15b1
+    0x00000d0:                                        
+  Stackmap Table:
+    same_frame_extended(@101)
+    same_frame_extended(@188)
+
+	at model.TestPublicationEnabledDays.testStartsWithAllDaysEnabled(TestPublicationEnabledDays.java:22)
+
+testCheckIfSomeDayCanBeReserved(model.TestPublicationEnabledDays)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.VerifyError: Expecting a stackmap frame at branch target 77
+Exception Details:
+  Location:
+    model/PublicationsEnabledDays.reserveDay(Ljava/time/LocalDate;)V @32: ifeq
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0x0000000: 033d 11ff ff3e 120f 1100 18b8 0015 2ab4
+    0x0000010: 001c 2bb9 0031 0200 1100 183d 1100 003e
+    0x0000020: 9900 2d1c 1100 18a0 0016 1d11 0000 a000
+    0x0000030: 0f12 0f1c 1d04 b800 3511 ffff 3e12 0f11
+    0x0000040: 0019 b800 15bb 0029 59b7 0036 bf1d 9b00
+    0x0000050: 0f12 0f1c 1d03 b800 3511 ffff 3e12 0f11
+    0x0000060: 001b b800 152a b400 1e2b b900 3102 0011
+    0x0000070: 001b 3d11 0000 3e99 002d 1c11 001b a000
+    0x0000080: 161d 1100 00a0 000f 120f 1c1d 04b8 0035
+    0x0000090: 11ff ff3e 120f 1100 1cb8 0015 bb00 2b59
+    0x00000a0: b700 37bf 1d9b 000f 120f 1c1d 03b8 0035
+    0x00000b0: 11ff ff3e 120f 1100 1eb8 0015 2ab4 001e
+    0x00000c0: 2bb9 003a 0200 5712 0f11 001f b800 15b1
+    0x00000d0:                                        
+  Stackmap Table:
+    same_frame_extended(@101)
+    same_frame_extended(@188)
+
+	at model.TestPublicationEnabledDays.testCheckIfSomeDayCanBeReserved(TestPublicationEnabledDays.java:64)
+
