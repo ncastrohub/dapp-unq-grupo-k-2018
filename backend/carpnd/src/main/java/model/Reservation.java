@@ -14,7 +14,6 @@ public class Reservation {
     public User owner;
     public User customer;
 
-
     public Reservation(
             User owner,
             User customer,

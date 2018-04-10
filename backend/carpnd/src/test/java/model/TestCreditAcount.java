@@ -10,7 +10,6 @@ public class TestCreditAcount {
 
 /*Que quiero que haga la cuenta
 *
-* Poder reservar dinero, cuando comienza una transaccion
 * poder confirmar un pago y asi enviar el dinero  a otro usuario
 * Poder cancelar un pago y devolverle el dinero al comprador
 * Poder cargar dinero

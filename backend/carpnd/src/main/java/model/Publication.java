@@ -10,6 +10,7 @@ public class Publication {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public MoneyAndAmount costPerHour;
     public User ouner;
     public AdressLocation acquireLocation;
@@ -26,6 +27,8 @@ public class Publication {
         this.availableSchedules=availableSchedules;
         this.telephone=telephone;
 =======
+=======
+>>>>>>> e6643514710e5e47ad2929b04bf60b44250b1eb4
     private User owner;
     private Vehicle vehicle;
     private AdressLocation acquireLocation;
@@ -46,7 +49,10 @@ public class Publication {
         this.enabledDays = enabledDays;
         this.reservedPublicationList = new LinkedList<>();
 
+<<<<<<< HEAD
 >>>>>>> 63375923e7b3e880706e034960b230841cf94c3f
+=======
+>>>>>>> e6643514710e5e47ad2929b04bf60b44250b1eb4
     }
 
     public MoneyAndAmount getCostPerHour() {

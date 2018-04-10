@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Geolocation</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+        <form style="height: 200px;">
+          <input type="text" id='longitud' class="form-control" aria-describedby="Longitud" placeholder="Enter longitud">
+          <input type="text" id='latitud' class="form-control" aria-describedby="Latitud" placeholder="Enter Latitud">
+          <button id='searchLocation' class="btn btn-success btn-block" > locate </button>
+          <button id='agregarMarcador' class="btn btn-default btn-block" > agregar marcador</button>
+          <button id='calcularDistanciaConUnq' class="btn btn-info btn-block" > Calcular Distancia Con Unq</button>
+        </form>
+
+      </div>
+    </div>
+     <div class="w-100"></div>
+    <div class="row" style="height: 500px">
+      <div class="col-12">
+        <div id="map">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<script>
+      // Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
+
+      let longitud = -34.397;
+      let latitud = 150.644;
+      let myMap;
+      
+      function initMap() {
+        myMap = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 6
+        });
+        var infoWindow = new google.maps.InfoWindow({map: myMap});
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            myMap.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, myMap.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, myMap.getCenter());
+        }
+      }
+
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+      }
+
+      $("#searchLocation").click(function(event){
+          event.preventDefault();
+          if ($('#longitud').val() && $('#latitud').val()){
+            myMap.setCenter({ lat: parseFloat($('#latitud').val()), lng: parseFloat($('#longitud').val()) });
+          }
+      })
+
+      $("#agregarMarcador").click(function(event){
+        event.preventDefault();
+        if ($('#longitud').val() && $('#latitud').val()){
+            myMap.setCenter({ lat: parseFloat($('#latitud').val()), lng: parseFloat($('#longitud').val()) });
+            new google.maps.Marker({
+              position: { lat: parseFloat($('#latitud').val()), lng: parseFloat($('#longitud').val()) },
+              map: myMap,
+              title:"Hello World!"
+              });
+          }
+        
+      })
+
+
+      $("#calcularDistanciaConUnq").click(function(event){
+        event.preventDefault();
+        let latitudUnq = -34.706896;
+        let longitudUnq = -58.277653;
+        let latIngresed = parseFloat($('#latitud').val());
+        let lonIngresed = parseFloat($('#longitud').val());
+
+        let distanceInMeters = (google.maps.geometry.spherical.computeDistanceBetween(
+          new google.maps.LatLng(-34.706896, -58.277653),
+          new google.maps.LatLng(latIngresed, lonIngresed)) / 1000).toFixed(2)
+        alert(distanceInMeters);
+      })
+
+    </script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApkqv2wRZywgM-wVDJmceHuBROKB1gvOQ&callback=initMap&libraries=geometry">
+</script>
+</body>
+</html>
+
