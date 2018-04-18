@@ -29,7 +29,7 @@ public class Publication {
         this.returnLocations = returnLocations;
         this.enabledDays = enabledDays;
         this.reservedPublicationList = new LinkedList<>();
-        
+
     }
 
     public MoneyAndAmount getCostPerHour() {

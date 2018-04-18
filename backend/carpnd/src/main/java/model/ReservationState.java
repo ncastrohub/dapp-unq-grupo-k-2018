@@ -1,10 +1,10 @@
 package model;
 
-class ReservationState {
+public class ReservationState {
 
-    private StateNode myState;
+    public StateNode myState;
 
-    ReservationState() {
+    public ReservationState() {
         setState(new WaitingForOwner());
     }
 
@@ -26,5 +26,9 @@ class ReservationState {
 
     void userRejects(Reservation aReserve) {
         myState.ownerRejects(this);
+    }
+
+    public StateNode getState() {
+        return myState;
     }
 }
