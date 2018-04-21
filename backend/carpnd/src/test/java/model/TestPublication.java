@@ -221,9 +221,9 @@ public class TestPublication {
         LocalDate dayOne = LocalDate.now().plusDays(1);
         LocalDate dayTwo = LocalDate.now().plusDays(2);
         LocalDate dayThree = LocalDate.now().plusDays(3);
-        LocalDate dayFour = LocalDate.now().plusDays(3);
-        LocalDate dayFive = LocalDate.now().plusDays(3);
-        LocalDate daySix = LocalDate.now().plusDays(3);
+        LocalDate dayFour = LocalDate.now().plusDays(4);
+        LocalDate dayFive = LocalDate.now().plusDays(5);
+        LocalDate daySix = LocalDate.now().plusDays(6);
 
         reservationDays.add(dayOne);
         reservationDays.add(dayTwo);
