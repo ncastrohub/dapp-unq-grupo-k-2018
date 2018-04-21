@@ -1,6 +1,6 @@
 package model;
 
-public class Rejected extends StateNode {
+public class Success extends StateNode {
     @Override
     void ownerAccepts(ReservationState context) {
         // Nada que hacer
