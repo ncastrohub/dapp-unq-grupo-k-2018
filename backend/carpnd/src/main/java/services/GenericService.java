@@ -13,7 +13,7 @@ public class GenericService<T> implements Serializable {
 
     private GenericRepository<T> repository;
 
-    public GenericRepository<T> getRepository() {
+    private GenericRepository<T> getRepository() {
         return this.repository;
     }
 
@@ -41,4 +41,5 @@ public class GenericService<T> implements Serializable {
         this.getRepository().update(object);
     }
 
+    public T getById(Long id) { return this.getRepository().findById(id);}
 }

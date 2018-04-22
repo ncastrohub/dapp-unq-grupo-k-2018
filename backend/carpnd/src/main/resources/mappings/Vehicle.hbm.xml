@@ -9,5 +9,12 @@
         </id>
 
         <property name="description" />
+        <property name="type">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">model.VehicleType</param>
+            </type>
+        </property>
+        <property name="capacity" type="integer"/>
+        <property name="photo" type="string"/>
     </class>
 </hibernate-mapping>

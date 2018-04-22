@@ -14,13 +14,13 @@ public class TestVehicle {
 
         Vehicle vehicle = VehicleBuilder.start()
                 .withCapacity(5)
-                .withType("familiar")
+                .withType(VehicleType.COUPE)
                 .withDescripion("fiveDoors")
                 .withPhoto("link")
                 .build();
 
         assertThat(vehicle.capacity).isEqualTo(5);
-        assertThat(vehicle.type).isEqualTo("familiar");
+        assertThat(vehicle.type).isEqualTo(VehicleType.COUPE);
         assertThat(vehicle.description).isEqualTo("fiveDoors");
         assertThat(vehicle.photo).isEqualTo("link");
 

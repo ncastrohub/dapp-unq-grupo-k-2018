@@ -3,13 +3,13 @@ package model;
 public class Vehicle extends IdModel {
 
     public int capacity;
-    public String type;
+    public VehicleType type;
     public String description;
     public String photo; // Agregar el link a las fotos!
 
     public Vehicle() {}
 
-    public Vehicle(int capacity, String type, String description, String link){
+    public Vehicle(int capacity, VehicleType type, String description, String link){
         this.capacity=capacity;
         this.type=type;
         this.description=description;
