@@ -4,6 +4,7 @@
 package api;
 
 import model.Vehicle;
+import services.PublicationServices;
 import services.VehicleService;
 
 import javax.ws.rs.GET;
@@ -18,10 +19,18 @@ import java.util.List;
 @Path("/vehicle")
 public class VehicleApi {
 
-    private VehicleService vehicleService;
+    PublicationServices publicationService;
 
-    public void setVehicleService(final VehicleService service) {
-        this.vehicleService = service;
+    public PublicationServices getPublicationService() {
+        return publicationService;
+    }
+
+    public void setPublicationService(PublicationServices publicationService) {
+        this.publicationService = publicationService;
+    }
+
+    public void setPublicationServices(final PublicationServices service) {
+        this.publicationService = service;
     }
 
     @GET
@@ -31,10 +40,15 @@ public class VehicleApi {
         Vehicle vehicle = new Vehicle();
         vehicle.setDescription("Nachito");
 
-        this.vehicleService.save(vehicle);
+        this.publicationService.getVehicleService().save(vehicle);
 
-        List<Vehicle> vehicles = vehicleService.retriveAll();
+        List<Vehicle> vehicles = publicationService.getVehicleService().retriveAll();
 
         return Response.ok(vehicles).build();
     }
+
+
+
+
+
 }

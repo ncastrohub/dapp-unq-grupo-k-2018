@@ -13,7 +13,7 @@ public class GenericService<T> implements Serializable {
 
     private GenericRepository<T> repository;
 
-    private GenericRepository<T> getRepository() {
+    protected GenericRepository<T> getRepository() {
         return this.repository;
     }
 

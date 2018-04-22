@@ -5,10 +5,10 @@
                    default-cascade="save-update">
     <class name="model.Vehicle">
         <id column="ID" name="id">
-            <generator class="native" />
+            <generator class="native"/>
         </id>
 
-        <property name="description" />
+        <property name="description" type="string"/>
         <property name="type">
             <type name="org.hibernate.type.EnumType">
                 <param name="enumClass">model.VehicleType</param>
@@ -16,5 +16,7 @@
         </property>
         <property name="capacity" type="integer"/>
         <property name="photo" type="string"/>
+        <many-to-one name="user" column="user"
+                     class="model.User" not-null="true"/>
     </class>
 </hibernate-mapping>

@@ -1,5 +1,6 @@
 package utils.builders;
 
+import model.User;
 import model.Vehicle;
 import model.VehicleType;
 
@@ -8,6 +9,7 @@ public class VehicleBuilder {
     private VehicleType type;
     private String description;
     private String photo; // Agregar el link a las fotos!
+    private User user;
 
     public VehicleBuilder withCapacity(int capacity) {
         this.capacity = capacity;
@@ -34,11 +36,16 @@ public class VehicleBuilder {
     }
 
     public Vehicle build() {
-        return new Vehicle(this.capacity, this.type, this.description, this.photo);
+        return new Vehicle(this.capacity, this.type, this.description, this.photo, this.user);
     }
 
     public static Vehicle someVehicle() {
-        return new Vehicle(5, VehicleType.COUPE, "fiveDoors", "link");
+
+        return new Vehicle(5, VehicleType.COUPE, "fiveDoors", "link", UserBuilder.someUser());
     }
 
+    public VehicleBuilder withUser(User user) {
+        this.user = user;
+        return this;
+    }
 }
