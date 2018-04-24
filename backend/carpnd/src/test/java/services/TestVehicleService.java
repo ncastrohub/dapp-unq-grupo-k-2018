@@ -43,4 +43,36 @@ public class TestVehicleService {
         assertThat(vehicle.photo).isEqualTo("https://autito.jpg");
         assertThat(vehicle.owner).isEqualTo(user);
     }
+
+
+    private
+
+    @Test
+    public void testGetVehiclesForUser() {
+
+        User user = UserBuilder.someUser();
+        this.userService.save(user);
+        Vehicle firstVehicle = VehicleBuilder.start()
+                .withCapacity(3)
+                .withDescription("Un lindo auto")
+                .withPhoto("https://autito.jpg")
+                .withType(VehicleType.SEDAN)
+                .withOwner(user)
+                .build();
+
+        Vehicle secondVehicle = VehicleBuilder.start()
+                .withCapacity(3)
+                .withDescription("Un lindo auto")
+                .withPhoto("https://autito.jpg")
+                .withType(VehicleType.SEDAN)
+                .withOwner(user)
+                .build();
+
+        this.vehicleService.save(vehicle);
+        assertThat(vehicle.capacity).isEqualTo(3);
+        assertThat(vehicle.type).isEqualTo(VehicleType.SEDAN);
+        assertThat(vehicle.description).isEqualTo("Un lindo auto");
+        assertThat(vehicle.photo).isEqualTo("https://autito.jpg");
+        assertThat(vehicle.owner).isEqualTo(user);
+    }
 }
