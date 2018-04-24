@@ -15,7 +15,8 @@
         <property name="repository" ref="persistence.vehiclerepository" />
     </bean>
 
-
-
+    <bean id="services.user" class="services.UserService">
+        <property name="repository" ref="persistence.userrepository" />
+    </bean>
 
 </beans>

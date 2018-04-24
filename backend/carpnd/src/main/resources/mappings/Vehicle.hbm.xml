@@ -4,10 +4,21 @@
 <hibernate-mapping default-access="field"
                    default-cascade="save-update">
     <class name="model.Vehicle">
-        <id column="ID" name="id">
+        <id column="id" name="id">
             <generator class="native" />
         </id>
 
-        <property name="description" />
+        <property name="description" type="string" />
+        <property name="capacity" type="integer" />
+        <property name="photo" type="string" />
+
+        <property name="type">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">model.VehicleType</param>
+            </type>
+        </property>
+
+        <many-to-one name="owner" class="model.User"
+                     column="user_id" not-null="true"/>
     </class>
 </hibernate-mapping>

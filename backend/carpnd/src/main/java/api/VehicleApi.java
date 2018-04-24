@@ -18,7 +18,10 @@ import java.util.List;
 @Path("/vehicle")
 public class VehicleApi {
 
+
     private VehicleService vehicleService;
+
+    private VehicleService userService;
 
     public void setVehicleService(final VehicleService service) {
         this.vehicleService = service;

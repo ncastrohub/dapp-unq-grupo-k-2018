@@ -1,11 +1,17 @@
 package services;
 
+import model.User;
 import model.Vehicle;
+import model.VehicleType;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import utils.builders.UserBuilder;
+import utils.builders.VehicleBuilder;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"/META-INF/spring-persistence-context.xml", "/META-INF/spring-services-context.xml"})
@@ -14,12 +20,27 @@ public class TestVehicleService {
     @Autowired
     private VehicleService vehicleService;
 
+    @Autowired
+    private UserService userService;
+
     @Test
     public void testSaveVehicleOnDB() {
 
-        Vehicle vehicle = new Vehicle();
-        vehicle.setDescription("Nachito");
+        User user = UserBuilder.someUser();
+        this.userService.save(user);
+        Vehicle vehicle = VehicleBuilder.start()
+                .withCapacity(3)
+                .withDescription("Un lindo auto")
+                .withPhoto("https://autito.jpg")
+                .withType(VehicleType.SEDAN)
+                .withOwner(user)
+                .build();
 
         this.vehicleService.save(vehicle);
+        assertThat(vehicle.capacity).isEqualTo(3);
+        assertThat(vehicle.type).isEqualTo(VehicleType.SEDAN);
+        assertThat(vehicle.description).isEqualTo("Un lindo auto");
+        assertThat(vehicle.photo).isEqualTo("https://autito.jpg");
+        assertThat(vehicle.owner).isEqualTo(user);
     }
 }
