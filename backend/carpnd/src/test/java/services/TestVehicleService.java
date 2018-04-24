@@ -37,42 +37,41 @@ public class TestVehicleService {
                 .build();
 
         this.vehicleService.save(vehicle);
-        assertThat(vehicle.capacity).isEqualTo(3);
-        assertThat(vehicle.type).isEqualTo(VehicleType.SEDAN);
-        assertThat(vehicle.description).isEqualTo("Un lindo auto");
-        assertThat(vehicle.photo).isEqualTo("https://autito.jpg");
-        assertThat(vehicle.owner).isEqualTo(user);
+        Vehicle retrievedVehicle =  this.vehicleService.findById(vehicle.getId());
+        assertThat(retrievedVehicle.capacity).isEqualTo(3);
+        assertThat(retrievedVehicle.type).isEqualTo(VehicleType.SEDAN);
+        assertThat(retrievedVehicle.description).isEqualTo("Un lindo auto");
+        assertThat(retrievedVehicle.photo).isEqualTo("https://autito.jpg");
+        assertThat(retrievedVehicle.owner.getId()).isEqualTo(user.getId());
     }
 
 
-    private
-
-    @Test
-    public void testGetVehiclesForUser() {
-
-        User user = UserBuilder.someUser();
-        this.userService.save(user);
-        Vehicle firstVehicle = VehicleBuilder.start()
-                .withCapacity(3)
-                .withDescription("Un lindo auto")
-                .withPhoto("https://autito.jpg")
-                .withType(VehicleType.SEDAN)
-                .withOwner(user)
-                .build();
-
-        Vehicle secondVehicle = VehicleBuilder.start()
-                .withCapacity(3)
-                .withDescription("Un lindo auto")
-                .withPhoto("https://autito.jpg")
-                .withType(VehicleType.SEDAN)
-                .withOwner(user)
-                .build();
-
-        this.vehicleService.save(vehicle);
-        assertThat(vehicle.capacity).isEqualTo(3);
-        assertThat(vehicle.type).isEqualTo(VehicleType.SEDAN);
-        assertThat(vehicle.description).isEqualTo("Un lindo auto");
-        assertThat(vehicle.photo).isEqualTo("https://autito.jpg");
-        assertThat(vehicle.owner).isEqualTo(user);
-    }
+//    @Test
+//    public void testGetVehiclesForUser() {
+//
+//        User user = UserBuilder.someUser();
+//        this.userService.save(user);
+//        Vehicle firstVehicle = VehicleBuilder.start()
+//                .withCapacity(3)
+//                .withDescription("Un lindo auto")
+//                .withPhoto("https://autito.jpg")
+//                .withType(VehicleType.SEDAN)
+//                .withOwner(user)
+//                .build();
+//
+//        Vehicle secondVehicle = VehicleBuilder.start()
+//                .withCapacity(3)
+//                .withDescription("Un lindo auto")
+//                .withPhoto("https://autito.jpg")
+//                .withType(VehicleType.SEDAN)
+//                .withOwner(user)
+//                .build();
+//
+//        this.vehicleService.save(vehicle);
+//        assertThat(vehicle.capacity).isEqualTo(3);
+//        assertThat(vehicle.type).isEqualTo(VehicleType.SEDAN);
+//        assertThat(vehicle.description).isEqualTo("Un lindo auto");
+//        assertThat(vehicle.photo).isEqualTo("https://autito.jpg");
+//        assertThat(vehicle.owner).isEqualTo(user);
+//    }
 }

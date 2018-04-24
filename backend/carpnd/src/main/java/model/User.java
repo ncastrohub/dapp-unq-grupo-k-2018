@@ -12,6 +12,8 @@ public class User extends IdModel {
     private SystemRateManager rateManager;
     private List vehicles;
 
+    public User(){}
+
     public User(String name, String lastName, String cuil, String email) {
         this.name = name;
         this.lastName = lastName;

@@ -7,9 +7,9 @@
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
     <!-- beans de spring -->
-    <bean id="services.general" class="services.GeneralService">
-        <property name="vehicleService" ref="services.vehicle" />
-    </bean>
+    <!--<bean id="services.general" class="services.GeneralService">-->
+        <!--<property name="vehicleService" ref="services.vehicle" />-->
+    <!--</bean>-->
 
     <bean id="services.vehicle" class="services.VehicleService">
         <property name="repository" ref="persistence.vehiclerepository" />
