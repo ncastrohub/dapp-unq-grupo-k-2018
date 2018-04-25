@@ -87,5 +87,9 @@ public class User extends IdModel {
     public void setVehicles(List vehicles) {
         this.vehicles = vehicles;
     }
+
+    public void addVehicle(Vehicle vehicle) {
+        this.vehicles.add(vehicle);
+    }
 }
 
