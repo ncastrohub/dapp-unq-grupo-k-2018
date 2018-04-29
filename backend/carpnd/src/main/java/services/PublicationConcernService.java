@@ -1,10 +1,13 @@
 package services;
 
-import model.Exceptions.CustomValidationError;
+import api.DETEOS.VehicleForm;
+import model.Exceptions.FormValidationError;
 import model.User;
 import model.Vehicle;
+import services.Validators.GenericValidator;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class PublicationConcernService {
 
@@ -27,22 +30,14 @@ public class PublicationConcernService {
         this.vehicleService = vehicleService;
     }
 
-
-    public void createVehicleForUser(Serializable userId, Vehicle vehicle) throws CustomValidationError {
-//        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-//        Validator validator = factory.getValidator();
-//        Set<ConstraintViolation<Vehicle>> constraintViolations =
-//                validator.validate( vehicle );
-
-//        if (constraintViolations.size() == 0){
-
-        User user = userService.findById(userId);
-        vehicle.owner = user;
-        vehicleService.save(vehicle);
-//        }else {
-//            throw new CustomValidationError(constraintViolations.);
-//        }
-
+    public void createVehicleForUser(Serializable userId, VehicleForm vehicle) throws FormValidationError {
+        GenericValidator.validate(vehicle);
+        Vehicle newVehicle = new Vehicle(
+                vehicle.capacity, vehicle.type, vehicle.description, vehicle.photo);
+        User user = userService.createVehicleForUser(userId, newVehicle);
     }
 
+    public List getVehiclesForUser(Long id) {
+        return this.userService.findById(id).getVehicles();
+    }
 }

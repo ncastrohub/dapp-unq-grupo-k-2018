@@ -4,14 +4,10 @@ import api.DETEOS.VehicleForm;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import model.Exceptions.CustomValidationError;
-import org.hibernate.exception.ConstraintViolationException;
+import model.Exceptions.FormValidationError;
 import services.PublicationConcernService;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 import java.util.LinkedList;
 
@@ -45,28 +41,28 @@ public class PublicationApi {
 
 
     @POST
-    @Path(value = "/vehicle/new")
+    @Path(value = "/{userid}/vehicle/new")
     @Consumes("application/json")
     @Produces("application/json")
-    public Response createVehicleForUser(VehicleForm vehicle) {
+    public Response createVehicleForUser(@PathParam("userid") String userId, VehicleForm vehicle) {
+
+
 
 
         ObjectMapper mapper = new ObjectMapper();
         ObjectNode objectNode1 = mapper.createObjectNode();
 
         try {
-            publicationService.createVehicleForUser(vehicle.getUser(), vehicle.getVehicle());
+            publicationService.createVehicleForUser(userId, vehicle);
             return Response.ok(vehicle).build();
-        } catch (ConstraintViolationException validationError){
+        } catch (FormValidationError formValidationError){
 
             ArrayNode errorsAsJson = mapper.valueToTree(new LinkedList<>());
             objectNode1.putArray("errors").add(errorsAsJson);
             return Response.status(Response.Status.BAD_REQUEST).entity(objectNode1.toString()).build();
 
-        } catch (CustomValidationError customValidationError) {
-            customValidationError.printStackTrace();
         }
-        return Response.ok(vehicle).build();
+//        return Response.ok(vehicle).build();
     }
 
 }

@@ -1,28 +1,29 @@
 package api.DETEOS;
 
-import model.Vehicle;
+import lombok.Data;
+import me.geso.tinyvalidator.constraints.HttpUrl;
+import me.geso.tinyvalidator.constraints.Min;
+import me.geso.tinyvalidator.constraints.NotNull;
+import me.geso.tinyvalidator.constraints.Size;
+import model.VehicleType;
 
+@Data
 public class VehicleForm {
 
-    VehicleForm() {}
+    public VehicleForm() {}
 
-    private Vehicle vehicle;
-    private Long user;
+    @NotNull
+    @Min(1)
+    public int capacity;
 
-    public Vehicle getVehicle() {
-        return vehicle;
-    }
+    @NotNull
+    public VehicleType type;
 
-    public void setVehicle(Vehicle vehicle) {
-        this.vehicle = vehicle;
-    }
+    @Size(min=10, max=30)
+    public String description;
 
-    public Long getUser() {
-        return user;
-    }
+    @HttpUrl
+    public String photo; // Agregar el link a las fotos!
 
-    public void setUser(Long user) {
-        this.user = user;
-    }
 }
 

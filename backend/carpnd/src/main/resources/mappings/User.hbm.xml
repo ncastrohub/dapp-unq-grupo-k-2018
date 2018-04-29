@@ -8,10 +8,9 @@
             <generator class="native" />
         </id>
 
-        <list name="vehicles" table="user_vehicles"
-             inverse="true" lazy="false" fetch="select">
+        <list name="vehicles" table="vehicles_user"  lazy="false" fetch="select">
             <key>
-                <column name="vehicle_id" not-null="false" />
+                <column name="vehicle_user" not-null="true" />
             </key>
             <list-index column="id"/>
             <one-to-many class="model.Vehicle" />

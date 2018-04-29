@@ -1,5 +1,6 @@
 package utils.builders;
 
+import api.DETEOS.VehicleForm;
 import model.User;
 import model.Vehicle;
 import model.VehicleType;
@@ -34,6 +35,15 @@ public class VehicleBuilder {
         return new Vehicle(this.capacity, this.type,
                 this.description, this.photo, this.owner
         );
+    }
+
+    public VehicleForm buildForm() {
+        VehicleForm vehicleForm = new VehicleForm();
+        vehicleForm.capacity = this.capacity;
+        vehicleForm.description = this.description;
+        vehicleForm.photo = this.photo;
+        vehicleForm.type = this.type;
+        return vehicleForm;
     }
 
     public VehicleBuilder withOwner(User owner) {

@@ -10,7 +10,7 @@ public class User extends IdModel {
     String cuil;
     String email;
     private SystemRateManager rateManager;
-    private List vehicles;
+    private List vehicles = new LinkedList();
 
     public User(){}
 
@@ -20,7 +20,6 @@ public class User extends IdModel {
         this.cuil = cuil;
         this.email = email;
         this.rateManager = new SystemRateManager();
-        this.vehicles = new LinkedList();
     }
 
     /*

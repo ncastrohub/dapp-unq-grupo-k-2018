@@ -1,6 +1,7 @@
 package services;
 
-import model.Exceptions.CustomValidationError;
+import api.DETEOS.VehicleForm;
+import model.Exceptions.FormValidationError;
 import model.User;
 import model.Vehicle;
 import model.VehicleType;
@@ -11,6 +12,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import utils.builders.UserBuilder;
 import utils.builders.VehicleBuilder;
+
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -29,29 +32,56 @@ public class TestVehicleService {
     private PublicationConcernService publicationService;
 
     @Test
-    public void testCreateVehicleForUser() throws CustomValidationError {
+    public void testCreateVehicleForUser() throws FormValidationError {
 
         User user = UserBuilder.someUser();
         this.userService.save(user);
 
-        Vehicle vehicle = VehicleBuilder.start()
+        VehicleForm vehicle = VehicleBuilder.start()
                 .withCapacity(3)
                 .withDescription("Un lindo auto")
                 .withPhoto("https://autito.jpg")
                 .withType(VehicleType.SEDAN)
-                .withOwner(user)
-                .build();
+                .buildForm();
 
         publicationService.createVehicleForUser(user.getId(), vehicle);
 
-        Vehicle retrievedVehicle =  this.vehicleService.findById(vehicle.getId());
-
+        List<Vehicle> vehicleList = this.publicationService.getVehiclesForUser(user.getId());
+        Vehicle retrievedVehicle = vehicleList.get(0);
         assertThat(retrievedVehicle.capacity).isEqualTo(3);
         assertThat(retrievedVehicle.type).isEqualTo(VehicleType.SEDAN);
         assertThat(retrievedVehicle.description).isEqualTo("Un lindo auto");
         assertThat(retrievedVehicle.photo).isEqualTo("https://autito.jpg");
         assertThat(retrievedVehicle.owner.getId()).isEqualTo(user.getId());
     }
+
+
+//    @Test
+//    public void testCreateVehicleForUserWithInvalidData() {
+//
+//        User user = UserBuilder.someUser();
+//        this.userService.save(user);
+//
+//        VehicleForm vehicle = VehicleBuilder.start()
+//                .withCapacity(3)
+//                .withDescription("Un l")
+//                .withPhoto("httito.jpg")
+//                .withType(VehicleType.SEDAN)
+//                .buildForm();
+//
+//
+//        try {
+//            publicationService.createVehicleForUser(user.getId(), vehicle);
+//
+//            List<Vehicle> vehicleList = this.publicationService.getVehiclesForUser(user.getId());
+//
+//        } catch (FormValidationError validationError) {
+//
+//
+//        }
+//
+//
+//    }
 
 
 //    @Test
