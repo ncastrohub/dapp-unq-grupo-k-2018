@@ -1,15 +1,13 @@
 package api.DETEOS;
 
-import lombok.Getter;
-import lombok.Setter;
 import model.Vehicle;
 
-public class CreateVehicleContainer {
+public class VehicleForm {
 
-    CreateVehicleContainer() {}
+    VehicleForm() {}
 
-    Vehicle vehicle;
-    String user;
+    private Vehicle vehicle;
+    private Long user;
 
     public Vehicle getVehicle() {
         return vehicle;
@@ -19,11 +17,11 @@ public class CreateVehicleContainer {
         this.vehicle = vehicle;
     }
 
-    public String getUser() {
+    public Long getUser() {
         return user;
     }
 
-    public void setUser(String user) {
+    public void setUser(Long user) {
         this.user = user;
     }
 }

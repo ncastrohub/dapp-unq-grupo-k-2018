@@ -1,46 +1,32 @@
 package api;
 
-import api.DETEOS.CreateVehicleContainer;
+import api.DETEOS.VehicleForm;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import model.Vehicle;
+import model.Exceptions.CustomValidationError;
 import org.hibernate.exception.ConstraintViolationException;
-import org.springframework.validation.FieldError;
-import org.springframework.validation.ValidationUtils;
 import services.PublicationConcernService;
-import services.VehicleService;
 
-import javax.ws.rs.*;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
-import java.util.List;
+import java.util.LinkedList;
 
 /**
  * @author nachelissssss
  */
 @Path("/publication")
-public class VehicleApi {
+public class PublicationApi {
 
 
     private PublicationConcernService publicationService;
 
 
-    public void setVehicleService(final VehicleService service) {
-        this.vehicleService = service;
-    }
-
-    @GET
-    @Path("/vehicle/list")
-    @Produces("application/json")
-    public Response getVehiclesForUser() {
-        Vehicle vehicle = new Vehicle();
-        vehicle.setDescription("Nachito");
-
-        this.vehicleService.save(vehicle);
-
-        List<Vehicle> vehicles = vehicleService.retriveAll();
-
-        return Response.ok(vehicles).build();
+    public void setPublicationService(final PublicationConcernService service) {
+        this.publicationService = service;
     }
 
 //    @GET
@@ -50,7 +36,7 @@ public class VehicleApi {
 //        Vehicle vehicle = new Vehicle();
 //        vehicle.setDescription("Nachito");
 //
-//        this.vehicleService.save(vehicle);
+//        this.publicationService.saveVehicle(vehicle);
 //
 //        List<Vehicle> vehicles = vehicleService.retriveAll();
 //
@@ -62,7 +48,7 @@ public class VehicleApi {
     @Path(value = "/vehicle/new")
     @Consumes("application/json")
     @Produces("application/json")
-    public Response createVehicleForBusiness(CreateVehicleContainer vehicle) {
+    public Response createVehicleForUser(VehicleForm vehicle) {
 
 
         ObjectMapper mapper = new ObjectMapper();
@@ -73,10 +59,14 @@ public class VehicleApi {
             return Response.ok(vehicle).build();
         } catch (ConstraintViolationException validationError){
 
-            ArrayNode errorsAsJson = mapper.valueToTree(errorList);
+            ArrayNode errorsAsJson = mapper.valueToTree(new LinkedList<>());
             objectNode1.putArray("errors").add(errorsAsJson);
             return Response.status(Response.Status.BAD_REQUEST).entity(objectNode1.toString()).build();
+
+        } catch (CustomValidationError customValidationError) {
+            customValidationError.printStackTrace();
         }
+        return Response.ok(vehicle).build();
     }
 
 }
