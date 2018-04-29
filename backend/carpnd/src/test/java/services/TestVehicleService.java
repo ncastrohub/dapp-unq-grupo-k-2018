@@ -1,5 +1,6 @@
 package services;
 
+import model.Exceptions.CustomValidationError;
 import model.User;
 import model.Vehicle;
 import model.VehicleType;
@@ -23,11 +24,16 @@ public class TestVehicleService {
     @Autowired
     private UserService userService;
 
+
+    @Autowired
+    private PublicationConcernService publicationService;
+
     @Test
-    public void testSaveVehicleOnDB() {
+    public void testCreateVehicleForUser() throws CustomValidationError {
 
         User user = UserBuilder.someUser();
         this.userService.save(user);
+
         Vehicle vehicle = VehicleBuilder.start()
                 .withCapacity(3)
                 .withDescription("Un lindo auto")
@@ -36,8 +42,10 @@ public class TestVehicleService {
                 .withOwner(user)
                 .build();
 
-        this.vehicleService.save(vehicle);
+        publicationService.createVehicleForUser(user.getId(), vehicle);
+
         Vehicle retrievedVehicle =  this.vehicleService.findById(vehicle.getId());
+
         assertThat(retrievedVehicle.capacity).isEqualTo(3);
         assertThat(retrievedVehicle.type).isEqualTo(VehicleType.SEDAN);
         assertThat(retrievedVehicle.description).isEqualTo("Un lindo auto");

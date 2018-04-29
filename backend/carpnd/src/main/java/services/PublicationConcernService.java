@@ -3,7 +3,6 @@ package services;
 import model.Exceptions.CustomValidationError;
 import model.User;
 import model.Vehicle;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
 
@@ -28,7 +27,7 @@ public class PublicationConcernService {
         this.vehicleService = vehicleService;
     }
 
-    @Transactional
+
     public void createVehicleForUser(Serializable userId, Vehicle vehicle) throws CustomValidationError {
 //        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
 //        Validator validator = factory.getValidator();
@@ -38,8 +37,8 @@ public class PublicationConcernService {
 //        if (constraintViolations.size() == 0){
 
         User user = userService.findById(userId);
-        user.addVehicle(vehicle);
-        userService.save(user);
+        vehicle.owner = user;
+        vehicleService.save(vehicle);
 //        }else {
 //            throw new CustomValidationError(constraintViolations.);
 //        }
