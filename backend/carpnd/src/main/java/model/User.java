@@ -59,7 +59,7 @@ public class User extends IdModel {
         return rateManager;
     }
 
-    public List getVehicles() {
+    public List<Vehicle> getVehicles() {
         return vehicles;
     }
 

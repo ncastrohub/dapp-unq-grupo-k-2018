@@ -37,7 +37,7 @@ public class PublicationConcernService {
         User user = userService.createVehicleForUser(userId, newVehicle);
     }
 
-    public List getVehiclesForUser(Long id) {
+    public List<Vehicle> getVehiclesForUser(Long id) {
         return this.userService.findById(id).getVehicles();
     }
 }
