@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class FormValidationError extends Exception {
 
-    Map<String, String> errors;
+    public Map<String, String> errors;
 
 
     public FormValidationError(Map<String, String> errorList) {

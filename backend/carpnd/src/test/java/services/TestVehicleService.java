@@ -14,6 +14,7 @@ import utils.builders.UserBuilder;
 import utils.builders.VehicleBuilder;
 
 import java.util.List;
+import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -56,32 +57,31 @@ public class TestVehicleService {
     }
 
 
-//    @Test
-//    public void testCreateVehicleForUserWithInvalidData() {
-//
-//        User user = UserBuilder.someUser();
-//        this.userService.save(user);
-//
-//        VehicleForm vehicle = VehicleBuilder.start()
-//                .withCapacity(3)
-//                .withDescription("Un l")
-//                .withPhoto("httito.jpg")
-//                .withType(VehicleType.SEDAN)
-//                .buildForm();
-//
-//
-//        try {
-//            publicationService.createVehicleForUser(user.getId(), vehicle);
-//
-//            List<Vehicle> vehicleList = this.publicationService.getVehiclesForUser(user.getId());
-//
-//        } catch (FormValidationError validationError) {
-//
-//
-//        }
-//
-//
-//    }
+    @Test
+    public void testCreateVehicleForUserWithInvalidData() {
+
+        User user = UserBuilder.someUser();
+        this.userService.save(user);
+
+        VehicleForm vehicle = VehicleBuilder.start()
+                .withCapacity(3)
+                .withDescription("Un l")
+                .withPhoto("httito.jpg")
+                .withType(VehicleType.SEDAN)
+                .buildForm();
+        try {
+            publicationService.createVehicleForUser(user.getId(), vehicle);
+
+            List vehicleList = this.publicationService.getVehiclesForUser(user.getId());
+
+        } catch (FormValidationError validationError) {
+
+            Map<String, String> errors = validationError.errors;
+            assertThat(errors.get("photo")).isEqualTo("must be valid HTTP URL");
+            assertThat(errors.get("description")).isEqualTo("size must be between 10 and 30");
+        }
+
+    }
 
 
 //    @Test
