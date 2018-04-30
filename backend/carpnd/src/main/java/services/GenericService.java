@@ -1,11 +1,10 @@
 package services;
 
+import org.springframework.transaction.annotation.Transactional;
+import repositories.GenericRepository;
+
 import java.io.Serializable;
 import java.util.List;
-
-import org.springframework.transaction.annotation.Transactional;
-
-import repositories.GenericRepository;
 
 public class GenericService<T> implements Serializable {
 
@@ -13,7 +12,7 @@ public class GenericService<T> implements Serializable {
 
     private GenericRepository<T> repository;
 
-    public GenericRepository<T> getRepository() {
+    GenericRepository<T> getRepository() {
         return this.repository;
     }
 
@@ -24,6 +23,12 @@ public class GenericService<T> implements Serializable {
     @Transactional
     public void delete(final T object) {
         this.getRepository().delete(object);
+    }
+
+    @Transactional
+    public void deleteById(Serializable id) {
+
+        this.getRepository().delete(this.getRepository().findById(id));
     }
 
     @Transactional(readOnly = true)

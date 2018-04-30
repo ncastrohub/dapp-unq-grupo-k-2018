@@ -10,7 +10,7 @@ public class User extends IdModel {
     String cuil;
     String email;
     private SystemRateManager rateManager;
-    private List vehicles = new LinkedList();
+    private List<Vehicle> vehicles = new LinkedList<Vehicle>();
 
     public User(){}
 
@@ -88,7 +88,11 @@ public class User extends IdModel {
     }
 
     public void addVehicle(Vehicle vehicle) {
-        this.vehicles.add(vehicle);
+        vehicles.add(vehicle);
+    }
+
+    public void removeVehicle(Vehicle vehicle){
+        this.vehicles.remove(vehicle);
     }
 }
 

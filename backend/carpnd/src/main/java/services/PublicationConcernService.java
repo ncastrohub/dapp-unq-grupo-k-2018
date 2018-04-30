@@ -4,6 +4,7 @@ import api.DETEOS.VehicleForm;
 import model.Exceptions.FormValidationError;
 import model.User;
 import model.Vehicle;
+import org.springframework.transaction.annotation.Transactional;
 import services.Validators.GenericValidator;
 
 import java.io.Serializable;
@@ -39,5 +40,11 @@ public class PublicationConcernService {
 
     public List<Vehicle> getVehiclesForUser(Long id) {
         return this.userService.findById(id).getVehicles();
+    }
+
+    @Transactional
+    public void deleteVehicle(Serializable userId, Serializable vehicleId) {
+        Vehicle vehicle = this.vehicleService.getRepository().findById(vehicleId);
+        this.userService.getRepository().findById(userId).getVehicles().remove(vehicle);
     }
 }

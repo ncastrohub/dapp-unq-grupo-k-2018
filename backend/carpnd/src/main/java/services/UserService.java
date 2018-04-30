@@ -18,4 +18,6 @@ public class UserService extends GenericService<User> {
         this.getRepository().save(user);
         return user;
     }
+
+
 }

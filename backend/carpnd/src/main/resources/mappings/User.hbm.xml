@@ -8,12 +8,12 @@
             <generator class="native" />
         </id>
 
-        <list name="vehicles" table="vehicles_user"  lazy="false" fetch="select">
+        <list inverse="true" name="vehicles" table="vehicles_user" cascade="all"  lazy="false">
             <key>
-                <column name="vehicle_user" not-null="true" />
+                <column index="id" name="vehicle_user" not-null="false" />
             </key>
-            <list-index column="id"/>
-            <one-to-many class="model.Vehicle" />
+            <list-index  column="name"/>
+            <one-to-many  class="model.Vehicle" />
         </list>
     </class>
 </hibernate-mapping>

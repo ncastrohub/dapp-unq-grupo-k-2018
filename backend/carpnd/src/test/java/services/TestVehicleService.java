@@ -8,7 +8,6 @@ import model.VehicleType;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import utils.builders.UserBuilder;
@@ -22,7 +21,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"/META-INF/spring-persistence-context.xml", "/META-INF/spring-services-context.xml"})
-@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
+//@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class TestVehicleService {
 
     @Autowired
@@ -33,7 +32,7 @@ public class TestVehicleService {
 
     @Autowired
     private PublicationConcernService publicationService;
-    
+
     @Test
     public void testGetVehiclesForUser() throws FormValidationError {
 
@@ -104,6 +103,26 @@ public class TestVehicleService {
 
     }
 
+    @Test
+    public void testDeleteVehicle() throws FormValidationError {
+
+        User user = UserBuilder.someUser();
+        this.userService.save(user);
+
+        for (VehicleForm each : createTwoVehicles()) publicationService.createVehicleForUser(user.getId(), each);
+
+        List<Vehicle> vehicleList = this.publicationService.getVehiclesForUser(user.getId());
+
+        this.publicationService.deleteVehicle(user.getId(), vehicleList.get(0).getId());
+
+        List<Vehicle> vehicleListAfterRemove = this.publicationService.getVehiclesForUser(user.getId());
+
+        assertThat(vehicleListAfterRemove.size()).isEqualTo(1);
+        assertThat(vehicleList.get(1)).isEqualTo(vehicleListAfterRemove.get(0));
+
+    }
+
+
 
     private List<VehicleForm> createTwoVehicles() {
         VehicleForm firstVehicleForm = VehicleBuilder.start()
@@ -124,7 +143,6 @@ public class TestVehicleService {
         resultList.add(secondVehicleForm);
         return resultList;
     }
-
 
 
 }
