@@ -1,6 +1,7 @@
 package services;
 
 import api.DETEOS.VehicleForm;
+import api.DETEOS.VehicleUpdateForm;
 import model.Exceptions.FormValidationError;
 import model.User;
 import model.Vehicle;
@@ -46,5 +47,15 @@ public class PublicationConcernService {
     public void deleteVehicle(Serializable userId, Serializable vehicleId) {
         Vehicle vehicle = this.vehicleService.getRepository().findById(vehicleId);
         this.userService.getRepository().findById(userId).getVehicles().remove(vehicle);
+    }
+
+    public void updateVehicle(Long userId, VehicleUpdateForm vehicle) throws FormValidationError {
+        GenericValidator.validate(vehicle);
+        Vehicle vehicleInDb = this.vehicleService.findById(vehicle.id);
+        vehicleInDb.description = vehicle.description;
+        vehicleInDb.type = vehicle.type;
+        vehicleInDb.capacity = vehicle.capacity;
+        vehicleInDb.photo = vehicle.photo;
+        this.vehicleService.update(vehicleInDb);
     }
 }
