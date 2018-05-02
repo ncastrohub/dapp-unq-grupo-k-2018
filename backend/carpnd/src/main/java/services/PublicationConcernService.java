@@ -58,4 +58,8 @@ public class PublicationConcernService {
         vehicleInDb.photo = vehicle.photo;
         this.vehicleService.update(vehicleInDb);
     }
+
+    public List<User> getUsers() {
+        return this.userService.retriveAll();
+    }
 }

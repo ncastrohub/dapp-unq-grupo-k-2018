@@ -1,5 +1,8 @@
 package model;
 
+
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -9,10 +12,15 @@ public class User extends IdModel {
     String lastName;
     String cuil;
     String email;
-    private SystemRateManager rateManager;
-    private List<Vehicle> vehicles = new LinkedList<Vehicle>();
 
-    public User(){}
+    @JsonIgnore
+    private SystemRateManager rateManager;
+
+    @JsonIgnore
+    private List<Vehicle> vehicles = new LinkedList<>();
+
+    public User() {
+    }
 
     public User(String name, String lastName, String cuil, String email) {
         this.name = name;
@@ -20,6 +28,7 @@ public class User extends IdModel {
         this.cuil = cuil;
         this.email = email;
         this.rateManager = new SystemRateManager();
+        this.vehicles = new LinkedList<>();
     }
 
     /*
@@ -55,10 +64,12 @@ public class User extends IdModel {
         return email;
     }
 
+    @JsonIgnore
     public SystemRateManager getRateManager() {
         return rateManager;
     }
 
+    @JsonIgnore
     public List<Vehicle> getVehicles() {
         return vehicles;
     }
@@ -91,7 +102,7 @@ public class User extends IdModel {
         vehicles.add(vehicle);
     }
 
-    public void removeVehicle(Vehicle vehicle){
+    public void removeVehicle(Vehicle vehicle) {
         this.vehicles.remove(vehicle);
     }
 }

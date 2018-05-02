@@ -1,5 +1,7 @@
 package model;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 public class Vehicle extends IdModel {
 
     public int capacity;
@@ -10,6 +12,7 @@ public class Vehicle extends IdModel {
 
     public String photo; // Agregar el link a las fotos!
 
+    @JsonIgnore
     public User owner;
 
     public Vehicle(int capacity, VehicleType type, String description, String photo) {
@@ -63,6 +66,7 @@ public class Vehicle extends IdModel {
         this.photo = photo;
     }
 
+    @JsonIgnore
     public User getOwner() {
         return owner;
     }

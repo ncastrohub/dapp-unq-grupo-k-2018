@@ -57,6 +57,12 @@ public class VehicleBuilder {
         );
     }
 
+    public static Vehicle onlyWithOwner(User owner) {
+        return new Vehicle(5, VehicleType.SEDAN,
+                "fiveDoors", "link", owner
+        );
+    }
+
 
     public VehicleBuilder withType(VehicleType vehicleType) {
         this.type = vehicleType;
