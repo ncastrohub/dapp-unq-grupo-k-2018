@@ -12,17 +12,19 @@ public class VehicleForm {
 
     public VehicleForm() {}
 
-    @NotNull
-    @Min(1)
+    @NotNull(message = "required")
+    @Min(value= 1)
     public int capacity;
 
-    @NotNull
+    @NotNull(message = "required")
     public VehicleType type;
 
     @Size(min=10, max=30)
+    @NotNull(message = "required")
     public String description;
 
     @HttpUrl
+    @NotNull(message = "required")
     public String photo; // Agregar el link a las fotos!
 
 }

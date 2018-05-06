@@ -32,11 +32,12 @@ public class PublicationConcernService {
         this.vehicleService = vehicleService;
     }
 
-    public void createVehicleForUser(Serializable userId, VehicleForm vehicle) throws FormValidationError {
+    public Vehicle createVehicleForUser(Serializable userId, VehicleForm vehicle) throws FormValidationError {
         GenericValidator.validate(vehicle);
         Vehicle newVehicle = new Vehicle(
                 vehicle.capacity, vehicle.type, vehicle.description, vehicle.photo);
         User user = userService.createVehicleForUser(userId, newVehicle);
+        return newVehicle;
     }
 
     public List<Vehicle> getVehiclesForUser(Long id) {

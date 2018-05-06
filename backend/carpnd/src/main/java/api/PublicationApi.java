@@ -1,7 +1,9 @@
 package api;
 
 import api.DETEOS.VehicleForm;
+import api.DETEOS.VehicleUpdateForm;
 import model.Exceptions.FormValidationError;
+import model.Vehicle;
 import services.PublicationConcernService;
 
 import javax.ws.rs.*;
@@ -33,23 +35,44 @@ public class PublicationApi {
     @GET
     @Path("/user/list")
     @Produces("application/json")
-    public Response getVehiclesForUser() {
-
-
+    public Response getUserList() {
         return Response.ok(publicationService.getUsers()).build();
     }
 
 
     @POST
-    @Path(value = "/{userid}/vehicle/new")
+    @Path(value = "/{userId}/vehicle/new")
     @Consumes("application/json")
     @Produces("application/json")
-    public Response createVehicleForUser(@PathParam("userid") String userId, VehicleForm vehicle) {
-
+    public Response createVehicleForUser(@PathParam("userId") Long userId, VehicleForm vehicle) {
         try {
-            publicationService.createVehicleForUser(userId, vehicle);
+            Vehicle newVehicle = publicationService.createVehicleForUser(userId, vehicle);
+            return Response.ok(newVehicle).build();
+        } catch (FormValidationError formValidationError) {
+            return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
+        }
+    }
+
+    @POST
+    @Path(value = "/{userId}/vehicle/delete")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response deleteVehicleForUser(@PathParam("userId") Long userId, VehicleUpdateForm vehicle) {
+        publicationService.deleteVehicle(userId, vehicle.id);
+        return Response.ok(vehicle).build();
+    }
+
+    @POST
+    @Path(value = "/{userId}/vehicle/update")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response updateVehicleForUser(
+            @PathParam("userId") Long userId,
+            VehicleUpdateForm vehicle) {
+        try {
+            publicationService.updateVehicle(userId, vehicle);
             return Response.ok(vehicle).build();
-        } catch (FormValidationError formValidationError){
+        } catch (FormValidationError formValidationError) {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
         }
     }
