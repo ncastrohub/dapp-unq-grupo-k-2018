@@ -100,4 +100,18 @@ public class PublicationApi {
     }
 
 
+    @POST
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response updateUserForUser(
+            UserUpdateForm userUF) {
+        try {
+            publicationService.updateUser(userUF);
+            return Response.ok(userUF).build();
+        } catch (FormValidationError formValidationError) {
+            return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
+        }
+    }
+
+
 }
