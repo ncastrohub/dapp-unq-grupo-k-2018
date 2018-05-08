@@ -1,20 +1,11 @@
 package model;
 
-import model.exceptions.NotEnoughCreditException;
+import model.Exceptions.NotEnoughCreditException;
 import org.junit.Test;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 
 public class TestCreditAcount {
-
-/*Que quiero que haga la cuenta
-*
-* poder confirmar un pago y asi enviar el dinero  a otro usuario
-* Poder cancelar un pago y devolverle el dinero al comprador
-* Poder cargar dinero
-*
- *  */
 
     @Test
     public void whenATransactionIsMadeMoneyIsReservedForThatReservationButIsNotDebited() throws NotEnoughCreditException {
@@ -30,7 +21,7 @@ public class TestCreditAcount {
 
     }
 
-    @Test
+   /* @Test
     public void whenAPayIsConfirmedTheMoneyIsTransferedFromOneUserToOther(){
 
     }
@@ -43,6 +34,6 @@ public class TestCreditAcount {
     @Test
     public void canAddMoneyToTheAccount(){
 
-    }
+    }*/
 
 }

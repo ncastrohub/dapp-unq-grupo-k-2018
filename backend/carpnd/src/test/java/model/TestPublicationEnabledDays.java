@@ -1,9 +1,9 @@
 package model;
 
-import model.exceptions.DayAlreadyDisabledException;
-import model.exceptions.DayAlreadyReservedException;
-import model.exceptions.DayDisabledException;
-import model.exceptions.DayNotReservedException;
+import model.Exceptions.DayAlreadyDisabledException;
+import model.Exceptions.DayAlreadyReservedException;
+import model.Exceptions.DayDisabledException;
+import model.Exceptions.DayNotReservedException;
 import org.junit.Test;
 
 import java.time.LocalDate;

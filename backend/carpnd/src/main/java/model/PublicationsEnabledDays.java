@@ -1,6 +1,6 @@
 package model;
 
-import model.exceptions.*;
+import model.Exceptions.*;
 
 import java.time.LocalDate;
 import java.util.LinkedList;

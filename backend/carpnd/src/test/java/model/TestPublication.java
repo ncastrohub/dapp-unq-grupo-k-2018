@@ -1,6 +1,6 @@
 package model;
 
-import model.exceptions.*;
+import model.Exceptions.*;
 import org.junit.Test;
 import utils.builders.PublicationBuilder;
 
@@ -31,7 +31,6 @@ public class TestPublication {
         returnLocations.add(mock(AdressLocation.class));
 
         PublicationsEnabledDays availableDays = mock(PublicationsEnabledDays.class);
-        Telephone telephone = mock(Telephone.class);
 
         Publication publication = PublicationBuilder.start()
                 .withOwner(owner)
@@ -40,7 +39,6 @@ public class TestPublication {
                 .withAcquireLocation(acquirePlace)
                 .withRestoreLocations(returnLocations)
                 .withAvaibleDays(availableDays)
-                .withContactPhone(telephone)
                 .build();
 
         assertThat(publication.getOwner()).isEqualTo(owner);
@@ -70,7 +68,6 @@ public class TestPublication {
         returnLocations.add(mock(AdressLocation.class));
 
         PublicationsEnabledDays availableDays = mock(PublicationsEnabledDays.class);
-        Telephone telephone = mock(Telephone.class);
 
         Publication publication = PublicationBuilder.start()
                 .withOwner(owner)
@@ -79,7 +76,6 @@ public class TestPublication {
                 .withAcquireLocation(acquirePlace)
                 .withRestoreLocations(returnLocations)
                 .withAvaibleDays(availableDays)
-                .withContactPhone(telephone)
                 .build();
 
         LinkedList<LocalDate> reservationDays = new LinkedList<>();
@@ -112,7 +108,6 @@ public class TestPublication {
         returnLocations.add(mock(AdressLocation.class));
 
         PublicationsEnabledDays availableDays = new PublicationsEnabledDays();
-        Telephone telephone = mock(Telephone.class);
 
         Publication publication = PublicationBuilder.start()
                 .withOwner(owner)
@@ -121,7 +116,6 @@ public class TestPublication {
                 .withAcquireLocation(acquirePlace)
                 .withRestoreLocations(returnLocations)
                 .withAvaibleDays(availableDays)
-                .withContactPhone(telephone)
                 .build();
 
         LinkedList<LocalDate> reservationDays = new LinkedList<>();
@@ -158,7 +152,6 @@ public class TestPublication {
         returnLocations.add(mock(AdressLocation.class));
 
         PublicationsEnabledDays availableDays = new PublicationsEnabledDays();
-        Telephone telephone = mock(Telephone.class);
 
         Publication publication = PublicationBuilder.start()
                 .withOwner(owner)
@@ -167,7 +160,6 @@ public class TestPublication {
                 .withAcquireLocation(acquirePlace)
                 .withRestoreLocations(returnLocations)
                 .withAvaibleDays(availableDays)
-                .withContactPhone(telephone)
                 .build();
 
         LinkedList<LocalDate> reservationDays = new LinkedList<>();
@@ -205,7 +197,6 @@ public class TestPublication {
         returnLocations.add(mock(AdressLocation.class));
 
         PublicationsEnabledDays availableDays = new PublicationsEnabledDays();
-        Telephone telephone = mock(Telephone.class);
 
         Publication publication = PublicationBuilder.start()
                 .withOwner(owner)
@@ -214,7 +205,6 @@ public class TestPublication {
                 .withAcquireLocation(acquirePlace)
                 .withRestoreLocations(returnLocations)
                 .withAvaibleDays(availableDays)
-                .withContactPhone(telephone)
                 .build();
 
         LinkedList<LocalDate> reservationDays = new LinkedList<>();
@@ -253,7 +243,6 @@ public class TestPublication {
         returnLocations.add(mock(AdressLocation.class));
 
         PublicationsEnabledDays availableDays = new PublicationsEnabledDays();
-        Telephone telephone = mock(Telephone.class);
 
         Publication publication = PublicationBuilder.start()
                 .withOwner(owner)
@@ -262,7 +251,6 @@ public class TestPublication {
                 .withAcquireLocation(acquirePlace)
                 .withRestoreLocations(returnLocations)
                 .withAvaibleDays(availableDays)
-                .withContactPhone(telephone)
                 .build();
 
         LinkedList<LocalDate> reservationDays = new LinkedList<>();

@@ -1,10 +1,10 @@
 package model;
 
-public class ReservationMoney {
-    private final MoneyAndAmount reservedMoney;
-    private final Reservation reservation;
+class ReservationMoney {
+    private MoneyAndAmount reservedMoney;
+    private Reservation reservation;
 
-    public ReservationMoney(MoneyAndAmount moneyAndAmount, Reservation reservation) {
+    ReservationMoney(MoneyAndAmount moneyAndAmount, Reservation reservation) {
         this.reservedMoney = moneyAndAmount;
         this.reservation = reservation;
     }

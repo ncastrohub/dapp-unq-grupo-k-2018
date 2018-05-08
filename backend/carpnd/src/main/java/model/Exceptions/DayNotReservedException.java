@@ -1,4 +1,4 @@
-package model.exceptions;
+package model.Exceptions;
 
 public class DayNotReservedException extends Exception {
 }

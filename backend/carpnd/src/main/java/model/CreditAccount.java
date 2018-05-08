@@ -1,16 +1,19 @@
 package model;
 
-import model.exceptions.NotEnoughCreditException;
+import model.Exceptions.NotEnoughCreditException;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class CreditAccount {
+    private User user;
     private MoneyAndAmount availableCredit;
-    private LinkedList<ReservationMoney> reservedMoney;
+    private List<ReservationMoney> reservedMoney;
 
-    public CreditAccount(User user) {
+    CreditAccount(User user) {
         this.availableCredit = new MoneyAndAmount(0.00, CustomCurrencies.ARS);
         this.reservedMoney = new LinkedList<>();
+        this.user = user;
     }
 
     public MoneyAndAmount avaibleCredit() {
