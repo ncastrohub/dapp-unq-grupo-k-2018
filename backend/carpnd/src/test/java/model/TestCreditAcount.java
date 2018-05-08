@@ -1,6 +1,6 @@
 package model;
 
-import model.Exceptions.NotEnoughCreditException;
+import model.exceptions.NotEnoughCreditException;
 import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;

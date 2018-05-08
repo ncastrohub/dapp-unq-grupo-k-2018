@@ -8,10 +8,10 @@ import java.util.List;
 
 public class User extends IdModel {
 
-    String name;
-    String lastName;
-    String cuil;
-    String email;
+    private String name;
+    private String lastName;
+    private String cuil;
+    private String email;
 
     @JsonIgnore
     private SystemRateManager rateManager;

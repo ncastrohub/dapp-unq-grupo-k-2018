@@ -1,6 +1,6 @@
 package model;
 
-import model.Exceptions.*;
+import model.exceptions.*;
 import org.junit.Test;
 import utils.builders.PublicationBuilder;
 

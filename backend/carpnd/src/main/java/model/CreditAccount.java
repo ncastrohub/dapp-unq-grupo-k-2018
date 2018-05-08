@@ -1,6 +1,6 @@
 package model;
 
-import model.Exceptions.NotEnoughCreditException;
+import model.exceptions.NotEnoughCreditException;
 
 import java.util.LinkedList;
 import java.util.List;
