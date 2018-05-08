@@ -78,7 +78,7 @@ public class PublicationApi {
     }
 
     @POST
-    @Path(value = "/{userId}/user/new")
+ //   @Path(value = "/{userId}/user/new") // userID??? eso me parece al pedo...
     @Consumes("application/json")
     @Produces("application/json")
     public Response createUser(UserForm userF) {
@@ -89,5 +89,15 @@ public class PublicationApi {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
         }
     }
+
+    @POST
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response deleteUser(UserUpdateForm userU) {
+        publicationService.deleteUser(userU);
+        return Response.ok(userU).build();
+        }
+    }
+
 
 }
