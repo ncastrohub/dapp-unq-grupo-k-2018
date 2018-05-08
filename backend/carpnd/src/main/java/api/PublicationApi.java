@@ -77,4 +77,17 @@ public class PublicationApi {
         }
     }
 
+    @POST
+    @Path(value = "/{userId}/user/new")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response createUser(UserForm userF) {
+        try {
+            User newUser publicationService.createUser (userF);
+            return Response.ok(newUser).build();
+        } catch (FormValidationError formValidationError) {
+            return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
+        }
+    }
+
 }
