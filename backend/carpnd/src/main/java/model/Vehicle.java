@@ -2,6 +2,7 @@ package model;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
 
+
 public class Vehicle extends IdModel {
 
     public int capacity;

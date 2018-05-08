@@ -1,10 +1,10 @@
 package api;
 
-import api.DETEOS.UserUpdateForm;
-import api.DETEOS.VehicleForm;
-import api.DETEOS.VehicleUpdateForm;
+
 import api.DETEOS.UserForm;
-import model.Exceptions.FormValidationError;
+import api.forms.VehicleForm;
+import api.forms.VehicleUpdateForm;
+import model.exceptions.FormValidationError;
 import model.Vehicle;
 import model.User;
 import services.PublicationConcernService;

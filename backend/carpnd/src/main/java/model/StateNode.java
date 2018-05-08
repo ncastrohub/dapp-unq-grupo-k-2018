@@ -1,9 +1,9 @@
 package model;
 
 public abstract class StateNode{
-        abstract void ownerAccepts(ReservationState context);
-        abstract void ownerRejects(ReservationState context);
-        abstract void userAccepts(ReservationState context);
-        abstract void userRejects(ReservationState context);
+        public abstract void ownerAccepts(ReservationState context);
+        public abstract void ownerRejects(ReservationState context);
+        public abstract void userAccepts(ReservationState context);
+        public abstract void userRejects(ReservationState context);
     }
 

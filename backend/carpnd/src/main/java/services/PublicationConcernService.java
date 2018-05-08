@@ -1,10 +1,11 @@
 package services;
 
-import api.DETEOS.VehicleForm;
+
 import api.DETEOS.UserForm;
-import api.DETEOS.VehicleUpdateForm;
 import api.DETEOS.UserUpdateForm;
-import model.Exceptions.FormValidationError;
+import api.forms.VehicleForm;
+import api.forms.VehicleUpdateForm;
+import model.exceptions.FormValidationError;
 import model.User;
 import model.Vehicle;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,9 +27,6 @@ public class PublicationConcernService {
         this.userService = userService;
     }
 
-    public VehicleService getVehicleService() {
-        return vehicleService;
-    }
 
     public void setVehicleService(VehicleService vehicleService) {
         this.vehicleService = vehicleService;
@@ -38,7 +36,7 @@ public class PublicationConcernService {
         GenericValidator.validate(vehicle);
         Vehicle newVehicle = new Vehicle(
                 vehicle.capacity, vehicle.type, vehicle.description, vehicle.photo);
-        User user = userService.createVehicleForUser(userId, newVehicle);
+        userService.createVehicleForUser(userId, newVehicle);
         return newVehicle;
     }
 
