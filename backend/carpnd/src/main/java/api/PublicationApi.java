@@ -1,9 +1,12 @@
 package api;
 
+import api.DETEOS.UserUpdateForm;
 import api.DETEOS.VehicleForm;
 import api.DETEOS.VehicleUpdateForm;
+import api.DETEOS.UserForm;
 import model.Exceptions.FormValidationError;
 import model.Vehicle;
+import model.User;
 import services.PublicationConcernService;
 
 import javax.ws.rs.*;
@@ -78,26 +81,25 @@ public class PublicationApi {
     }
 
     @POST
- //   @Path(value = "/{userId}/user/new") // userID??? eso me parece al pedo...
+    @Path(value = "/userF/createUser")
     @Consumes("application/json")
     @Produces("application/json")
     public Response createUser(UserForm userF) {
         try {
-            User newUser publicationService.createUser (userF);
+            User newUser = publicationService.createUser (userF);
             return Response.ok(newUser).build();
         } catch (FormValidationError formValidationError) {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
         }
     }
 
-    @POST
+/*    @POST
     @Consumes("application/json")
     @Produces("application/json")
-    public Response deleteUser(UserUpdateForm userU) {
+    public Response deleteUser(UserUpdateForm userU) throws FormValidationError {
         publicationService.deleteUser(userU);
         return Response.ok(userU).build();
         }
-    }
 
 
     @POST
@@ -111,7 +113,6 @@ public class PublicationApi {
         } catch (FormValidationError formValidationError) {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
         }
-    }
-
+    }*/
 
 }

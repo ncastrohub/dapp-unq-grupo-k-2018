@@ -1,7 +1,9 @@
 package services;
 
 import api.DETEOS.VehicleForm;
+import api.DETEOS.UserForm;
 import api.DETEOS.VehicleUpdateForm;
+import api.DETEOS.UserUpdateForm;
 import model.Exceptions.FormValidationError;
 import model.User;
 import model.Vehicle;
@@ -71,9 +73,8 @@ public class PublicationConcernService {
         return newUser;
     }
 
-    public void deleteUser(UserUpdateForm userU) throws FormValidationError {
-        GenericValidator.validate(userU);
-        this.userService.delete(userU.id);
+    public void deleteUser(Long userId) {
+        this.userService.deleteById(userId);
     }
 
     public void updateUser(UserUpdateForm userUF) throws FormValidationError {

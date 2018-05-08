@@ -22,7 +22,7 @@ public class UserForm {
     @NotNull(message = "required")
     public String cuil;
 
-    @Size(min=8 max=30)
+    @Size(min=8, max=30)
     @NotNull(message = "required")
     public String email;
 }

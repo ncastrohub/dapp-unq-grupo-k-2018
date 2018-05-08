@@ -162,8 +162,6 @@ public class TestVehicleService {
 
     }
 
-
-
     private List<VehicleForm> createTwoVehicles() {
         VehicleForm firstVehicleForm = VehicleBuilder.start()
                 .withCapacity(3)
