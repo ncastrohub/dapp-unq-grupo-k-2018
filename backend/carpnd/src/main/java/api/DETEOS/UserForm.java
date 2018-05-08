@@ -1,7 +1,9 @@
 package api.DETEOS;
 
+import lombok.Data;
 import me.geso.tinyvalidator.constraints.NotNull;
 import me.geso.tinyvalidator.constraints.Size;
+
 
 @Data
 public class UserForm {
