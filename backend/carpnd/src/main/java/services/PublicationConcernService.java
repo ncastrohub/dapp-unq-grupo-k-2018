@@ -63,4 +63,16 @@ public class PublicationConcernService {
     public List<User> getUsers() {
         return this.userService.retriveAll();
     }
+
+    public User createUser(UserForm userF) throws FormValidationError {
+        GenericValidator.validate(userF);
+        User newUser = new User(
+                userF.name, userF.lastName, userF.cuil, userF.email);
+        return newUser;
+    }
+
+
 }
+
+
+
