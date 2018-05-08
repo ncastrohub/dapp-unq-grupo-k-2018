@@ -24,7 +24,7 @@ public class TestVehicle {
                 .build();
 
         assertThat(vehicle.capacity).isEqualTo(5);
-        assertThat(vehicle.type).isEqualTo("familiar");
+        assertThat(vehicle.type).isEqualTo(VehicleType.VAN);
         assertThat(vehicle.description).isEqualTo("fiveDoors");
         assertThat(vehicle.photo).isEqualTo("link");
         assertThat(vehicle.owner).isEqualTo(user);
