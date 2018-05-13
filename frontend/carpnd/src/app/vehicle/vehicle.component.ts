@@ -23,13 +23,12 @@ export class VehicleComponent implements OnInit {
   //   this.values += event.target.value + ' | ';
   // }
 
-
   vehicle = new Vehicle();
   submitted = false;
 
-  onSubmit() { this.submitted = true; }
-
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.vehicle); }
+  onSubmit() { 
+    this.submitted = true; 
+    console.log("asdasdasd");
+  }
 
 }

@@ -1,6 +1,6 @@
 <div class="container">
     <h1>Vehicle Form</h1>
-    <form #vehicleForm="ngForm">
+    <form (ngSubmit)="onSubmit()" #vehicleForm="ngForm">
 
       <div class="form-group">
         <label for="capacity">Capacity</label>
@@ -20,7 +20,7 @@
 
       <div class="form-group">
         <label for="description">Description</label>
-        <textarea type="text" class="form-control" id="description"
+        <textarea minlength="10" maxlength="30" type="text" class="form-control" id="description"
          required
          [(ngModel)]="vehicle.description" name="description"> </textarea>
        </div>
@@ -28,12 +28,11 @@
       <div class="form-group">
         <label for="photo">Photo</label>
         <input type="text" class="form-control" id="photo"
-         required
+         required pattern="(https?:\/\/.*\.(?:png|jpg))"
          [(ngModel)]="vehicle.photo" name="photo"/>
        </div>
 
-
-      <button type="submit" class="btn btn-success">Submit</button>
+      <button type="submit" [disabled]="!vehicleForm.form.valid" class="btn btn-success">Submit</button>
  
     </form>
 </div>
