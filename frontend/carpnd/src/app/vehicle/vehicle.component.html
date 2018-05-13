@@ -1,23 +1,38 @@
-<p>
-  vehicle works!
-  
-</p>
-<input (keyup)="onKey($event)">
-  <p>{{values}}</p>
-
 <div class="container">
-    <h1>Hero Form</h1>
-    <form>
+    <h1>Vehicle Form</h1>
+    <form #vehicleForm="ngForm">
+
       <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" required>
+        <label for="capacity">Capacity</label>
+        <select class="form-control" id="capacity" required 
+          [(ngModel)]="vehicle.capacity" name="capacity" >
+          <option *ngFor="let cap of capacities" [value]="cap">{{cap}}</option>
+        </select>
       </div>
- 
+
       <div class="form-group">
-        <label for="alterEgo">Alter Ego</label>
-        <input type="text" class="form-control" id="alterEgo">
+        <label for="vehicleType">Model</label>
+        <select class="form-control" id="vehicleType" required 
+          [(ngModel)]="vehicle.type" name="vehicleType" >
+          <option *ngFor="let type of carTypes" [value]="type">{{type}}</option>
+        </select>
       </div>
- 
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea type="text" class="form-control" id="description"
+         required
+         [(ngModel)]="vehicle.description" name="description"> </textarea>
+       </div>
+
+      <div class="form-group">
+        <label for="photo">Photo</label>
+        <input type="text" class="form-control" id="photo"
+         required
+         [(ngModel)]="vehicle.photo" name="photo"/>
+       </div>
+
+
       <button type="submit" class="btn btn-success">Submit</button>
  
     </form>

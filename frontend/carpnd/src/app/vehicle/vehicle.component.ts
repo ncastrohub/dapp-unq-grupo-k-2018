@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Vehicle } from './vehicle';
-
+import {VehicleService} from './service/vehicle.service'
 
 @Component({
   selector: 'app-vehicle',
@@ -15,19 +15,21 @@ export class VehicleComponent implements OnInit {
   ngOnInit() {
   }
 
-  values = '';
+  capacities = [1, 2, 3, 4, 5, 6, 7];
 
-  onKey(event: any) { // without type info
-    this.values += event.target.value + ' | ';
-  }
+  carTypes = ['SEDAN', 'VAN'];
+
+  // onKey(event: any) { // without type info
+  //   this.values += event.target.value + ' | ';
+  // }
 
 
-  model = new Vehicle(3, 'SEDAN', "Un auto lindo", 'http://www.google.com.ar/image.jpg');
+  vehicle = new Vehicle();
   submitted = false;
 
   onSubmit() { this.submitted = true; }
 
   // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model); }
+  get diagnostic() { return JSON.stringify(this.vehicle); }
 
 }

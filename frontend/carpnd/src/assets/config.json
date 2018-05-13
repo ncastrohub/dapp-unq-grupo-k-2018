@@ -1,0 +1,4 @@
+{
+    "serveUrl": "localhost:8080",
+    // "createVehicle": "api/publication/${userId}/vehicle/new",
+}
