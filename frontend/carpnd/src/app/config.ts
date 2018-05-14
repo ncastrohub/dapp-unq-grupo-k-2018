@@ -1,3 +1,3 @@
 export class AppConfig {
-    serveUrl = "localhost:8080";
+    serveUrl = "http://localhost:8080/api/";
 }

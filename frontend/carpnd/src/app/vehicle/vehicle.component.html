@@ -1,5 +1,11 @@
 <div class="container">
     <h1>Vehicle Form</h1>
+
+    <div *ngFor="let error of errorList" class="alert alert-danger" role="alert">
+      {{error}}
+    </div>
+
+
     <form (ngSubmit)="onSubmit()" #vehicleForm="ngForm">
 
       <div class="form-group">

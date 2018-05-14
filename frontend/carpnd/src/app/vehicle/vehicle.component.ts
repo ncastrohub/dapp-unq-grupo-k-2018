@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Vehicle } from './vehicle';
-import {VehicleService} from './service/vehicle.service'
+import { VehicleService } from './service/vehicle.service'
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-vehicle',
@@ -10,7 +12,7 @@ import {VehicleService} from './service/vehicle.service'
 })
 export class VehicleComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: VehicleService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -25,10 +27,20 @@ export class VehicleComponent implements OnInit {
 
   vehicle = new Vehicle();
   submitted = false;
+  errorList = [];
+
 
   onSubmit() { 
-    this.submitted = true; 
-    console.log("asdasdasd");
+
+    this.service.createVehicle('1', this.vehicle).subscribe(
+      data => this.router.navigate(['/vehicle/list']),
+      error => this.errorList.push(error)
+    );
+    this.submitted = true;
+
+
+
+
   }
 
 }
