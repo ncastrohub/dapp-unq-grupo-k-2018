@@ -21,26 +21,15 @@ export class VehicleComponent implements OnInit {
 
   carTypes = ['SEDAN', 'VAN'];
 
-  // onKey(event: any) { // without type info
-  //   this.values += event.target.value + ' | ';
-  // }
-
   vehicle = new Vehicle();
   submitted = false;
   errorList = [];
 
-
   onSubmit() { 
-
     this.service.createVehicle('1', this.vehicle).subscribe(
       data => this.router.navigate(['/vehicle/list']),
       error => this.errorList.push(error)
     );
-    this.submitted = true;
-
-
-
-
   }
 
 }

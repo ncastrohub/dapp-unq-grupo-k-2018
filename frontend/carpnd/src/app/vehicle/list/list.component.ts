@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { VehicleService } from '../service/vehicle.service';
 import { Vehicle } from '../vehicle'
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-list',
@@ -23,5 +25,13 @@ export class ListComponent implements OnInit {
     );
 
   }
+
+  edit(vehicle:Vehicle){
+    this.service.editVehicle('1', vehicle).subscribe(
+      data => this.router.navigate(['/vehicle/list']),
+      error => this.errorList.push(error)
+    );
+  }
+
 
 }
