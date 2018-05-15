@@ -19,16 +19,26 @@ export class ListComponent implements OnInit {
   vehicleList: [Vehicle];
   
   ngOnInit() {
-  	this.service.getVehicleList('1').subscribe(
+  	this.getVehicleList();
+  }
+
+  getVehicleList(){
+    this.service.getVehicleList('1').subscribe(
       data => this.vehicleList = data,
       error => this.errorList.push(error)
     );
-
   }
 
   edit(vehicle:Vehicle){
     this.service.loadVehicleToEdit(vehicle);
     this.router.navigate(['/vehicles']);
+  }
+
+  delete(vehicle:Vehicle){
+    this.service.deleteVehicle('1', vehicle).subscribe(
+      data => this.getVehicleList(),
+      error => this.errorList.push(error)
+    )
   }
 
 

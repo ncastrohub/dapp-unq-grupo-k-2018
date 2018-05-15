@@ -24,6 +24,10 @@ export class VehicleService {
   updateVehicle(userId: string, vehicle: Vehicle): Observable<any> {
   	return this.http.post<any>( this.config.serveUrl + 'publication/'+ userId +'/vehicle/update', vehicle);
   }
+ 	
+ 	deleteVehicle(userId: string, vehicle: Vehicle): Observable<any> {
+  	return this.http.post<any>( this.config.serveUrl + 'publication/'+ userId +'/vehicle/delete', vehicle);
+  }
 
   loadVehicleToEdit(vehicle: Vehicle) {
     this.vehicleSource.next(vehicle);	

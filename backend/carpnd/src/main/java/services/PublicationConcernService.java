@@ -45,8 +45,8 @@ public class PublicationConcernService {
     }
 
     @Transactional
-    public void deleteVehicle(Serializable userId, Serializable vehicleId) {
-        Vehicle vehicle = this.vehicleService.getRepository().findById(vehicleId);
+    public void deleteVehicle(Serializable userId, String vehicleId) {
+        Vehicle vehicle = this.vehicleService.getRepository().findById(new Long(vehicleId));
         this.userService.getRepository().findById(userId).getVehicles().remove(vehicle);
     }
 
