@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 
 export class ListComponent implements OnInit {
 
-  constructor(private service: VehicleService) { }
+  constructor(private service: VehicleService, private router:Router) { }
 
   errorList = [];
   vehicleList: [Vehicle];
@@ -27,10 +27,8 @@ export class ListComponent implements OnInit {
   }
 
   edit(vehicle:Vehicle){
-    this.service.editVehicle('1', vehicle).subscribe(
-      data => this.router.navigate(['/vehicle/list']),
-      error => this.errorList.push(error)
-    );
+    this.service.loadVehicleToEdit(vehicle);
+    this.router.navigate(['/vehicles']);
   }
 
 

@@ -52,7 +52,7 @@ public class PublicationConcernService {
 
     public void updateVehicle(Long userId, VehicleUpdateForm vehicle) throws FormValidationError {
         GenericValidator.validate(vehicle);
-        Vehicle vehicleInDb = this.vehicleService.findById(vehicle.id);
+        Vehicle vehicleInDb = this.vehicleService.findById(new Long(vehicle.id));
         vehicleInDb.description = vehicle.description;
         vehicleInDb.type = vehicle.type;
         vehicleInDb.capacity = vehicle.capacity;
