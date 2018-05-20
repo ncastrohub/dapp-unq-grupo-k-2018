@@ -1,10 +1,10 @@
 package services;
 
-import api.DETEOS.VehicleForm;
 import api.DETEOS.UserForm;
-import api.DETEOS.VehicleUpdateForm;
 import api.DETEOS.UserUpdateForm;
-import model.Exceptions.FormValidationError;
+import api.forms.VehicleForm;
+import api.forms.VehicleUpdateForm;
+import model.exceptions.FormValidationError;
 import model.User;
 import model.Vehicle;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,7 +38,7 @@ public class PublicationConcernService {
         GenericValidator.validate(vehicle);
         Vehicle newVehicle = new Vehicle(
                 vehicle.capacity, vehicle.type, vehicle.description, vehicle.photo);
-        User user = userService.createVehicleForUser(userId, newVehicle);
+        userService.createVehicleForUser(userId, newVehicle);
         return newVehicle;
     }
 
@@ -66,24 +66,29 @@ public class PublicationConcernService {
         return this.userService.retriveAll();
     }
 
-    public User createUser(UserForm userF) throws FormValidationError {
+    public User createUser(Serializable userId, UserForm userF) throws FormValidationError {
         GenericValidator.validate(userF);
         User newUser = new User(
                 userF.name, userF.lastName, userF.cuil, userF.email);
+        userService.createUser(userId);
+        // PARA QUE ESTO NO CHILLE DICE QUE NECESITO UN METODO createUser en
+        // UnserService o
+        //PublicConscernService,
+        // eso es lo que no entiendo. Yo lo hice en UserService... CHEQUEAR ESTOOOOO!!!!!!
+
         return newUser;
     }
 
-    public void deleteUser(Long userId) {
-        this.userService.deleteById(userId);
+    public void deleteUser(Long userId) { this.userService.deleteById(userId);
     }
 
-    public void updateUser(UserUpdateForm userUF) throws FormValidationError {
-        GenericValidator.validate(userUF);
-        User userInDb = this.userService.findById(userUF.id);
-        userInDb.name = userUF.name;
-        userInDb.lastName = userUF.lastName;
-        userInDb.cuil = userUF.cuil;
-        userInDb.email = userUF.email;
+    public void updateUser(UserUpdateForm userUP) throws FormValidationError {
+        GenericValidator.validate(userUP);
+        User userInDb = this.userService.findById(userUP.id);
+        userInDb.name = userUP.name;
+        userInDb.lastName = userUP.lastName;
+        userInDb.cuil = userUP.cuil;
+        userInDb.email = userUP.email;
         this.userService.update(userInDb);
     }
 

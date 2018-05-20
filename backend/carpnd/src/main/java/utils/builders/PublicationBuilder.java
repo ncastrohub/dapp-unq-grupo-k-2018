@@ -1,7 +1,6 @@
 package utils.builders;
 
 import model.*;
-
 import java.util.LinkedList;
 
 public class PublicationBuilder {
@@ -16,8 +15,6 @@ public class PublicationBuilder {
     public Publication build() {
         return new Publication(this.owner, this.pricePerHour, this.vehicle, this.acquireLocation, this.returnLocations, this.enabledDays);
     }
-
-    private Telephone telephone;
 
     public static PublicationBuilder start() {
         return new PublicationBuilder();
@@ -53,8 +50,4 @@ public class PublicationBuilder {
         return this;
     }
 
-    public PublicationBuilder withContactPhone(Telephone telephone) {
-        this.telephone = telephone;
-        return this;
-    }
 }

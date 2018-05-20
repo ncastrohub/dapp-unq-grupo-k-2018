@@ -18,6 +18,11 @@ public class UserService extends GenericService<User> {
         this.getRepository().save(user);
         return user;
     }
+    @Transactional
+    public User createUser(Serializable userId) {
+        User user = this.getRepository().findById(userId);
+        this.getRepository().save(user);
+        return user;
 
-
+}
 }

@@ -1,4 +1,4 @@
-package api.DETEOS;
+package api.forms;
 
 import lombok.Data;
 import me.geso.tinyvalidator.constraints.HttpUrl;
@@ -9,8 +9,6 @@ import model.VehicleType;
 
 @Data
 public class VehicleForm {
-
-    public VehicleForm() {}
 
     @NotNull(message = "required")
     @Min(value= 1)

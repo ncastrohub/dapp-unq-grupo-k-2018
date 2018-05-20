@@ -1,4 +1,4 @@
-package model.Exceptions;
+package model.exceptions;
 
 import javax.validation.ConstraintViolation;
 import java.util.Set;

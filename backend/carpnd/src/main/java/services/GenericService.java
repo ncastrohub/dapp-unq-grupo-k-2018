@@ -1,5 +1,6 @@
 package services;
 
+import model.User;
 import org.springframework.transaction.annotation.Transactional;
 import repositories.GenericRepository;
 
@@ -50,4 +51,6 @@ public class GenericService<T> implements Serializable {
     public T findById(Serializable id) {
         return this.repository.findById(id);
     }
+
+
 }

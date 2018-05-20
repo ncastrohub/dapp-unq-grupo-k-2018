@@ -1,8 +1,8 @@
 package services;
 
-import api.DETEOS.VehicleForm;
-import api.DETEOS.VehicleUpdateForm;
-import model.Exceptions.FormValidationError;
+import api.forms.VehicleForm;
+import api.forms.VehicleUpdateForm;
+import model.exceptions.FormValidationError;
 import model.User;
 import model.Vehicle;
 import model.VehicleType;
@@ -25,9 +25,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 @ContextConfiguration({"/META-INF/spring-persistence-context.xml", "/META-INF/spring-services-context.xml"})
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class TestVehicleService {
-
-    @Autowired
-    private VehicleService vehicleService;
 
     @Autowired
     private UserService userService;

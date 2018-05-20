@@ -1,10 +1,9 @@
 package api;
-
-import api.DETEOS.UserUpdateForm;
-import api.DETEOS.VehicleForm;
-import api.DETEOS.VehicleUpdateForm;
 import api.DETEOS.UserForm;
-import model.Exceptions.FormValidationError;
+import api.DETEOS.UserUpdateForm;
+import api.forms.VehicleForm;
+import api.forms.VehicleUpdateForm;
+import model.exceptions.FormValidationError;
 import model.Vehicle;
 import model.User;
 import services.PublicationConcernService;
@@ -81,38 +80,39 @@ public class PublicationApi {
     }
 
     @POST
-    @Path(value = "/userF/createUser")
+    @Path(value = "/{userId}/userF/createUse/new")
     @Consumes("application/json")
     @Produces("application/json")
-    public Response createUser(UserForm userF) {
+    public Response createUser(@PathParam("userId") Long userId, UserForm userF) {
         try {
-            User newUser = publicationService.createUser (userF);
+            User newUser = publicationService.createUser (userId, userF);
             return Response.ok(newUser).build();
         } catch (FormValidationError formValidationError) {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
         }
     }
 
-/*    @POST
+    @POST
+    @Path(value = "/{userId}/userU")
     @Consumes("application/json")
     @Produces("application/json")
-    public Response deleteUser(UserUpdateForm userU) throws FormValidationError {
-        publicationService.deleteUser(userU);
-        return Response.ok(userU).build();
+    public Response deleteUser(Long userId) {
+        publicationService.deleteUser(userId);
+        return Response.ok(userId).build();
         }
 
 
     @POST
+    @Path(value = "/user")
     @Consumes("application/json")
     @Produces("application/json")
     public Response updateUserForUser(
-            UserUpdateForm userUF) {
+             UserUpdateForm user){
         try {
-            publicationService.updateUser(userUF);
-            return Response.ok(userUF).build();
+            publicationService.updateUser(user);
+            return Response.ok(user).build();
         } catch (FormValidationError formValidationError) {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
-        }
-    }*/
-
+      }
+    }
 }

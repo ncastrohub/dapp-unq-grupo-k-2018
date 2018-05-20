@@ -1,6 +1,6 @@
 package utils.builders;
 
-import api.DETEOS.VehicleForm;
+import api.forms.VehicleForm;
 import model.User;
 import model.Vehicle;
 import model.VehicleType;

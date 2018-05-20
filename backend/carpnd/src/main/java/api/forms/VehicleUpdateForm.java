@@ -1,4 +1,4 @@
-package api.DETEOS;
+package api.forms;
 
 import me.geso.tinyvalidator.constraints.NotNull;
 

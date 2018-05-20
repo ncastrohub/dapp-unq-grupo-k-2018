@@ -2,7 +2,7 @@ package services.Validators;
 
 import me.geso.tinyvalidator.ConstraintViolation;
 import me.geso.tinyvalidator.Validator;
-import model.Exceptions.FormValidationError;
+import model.exceptions.FormValidationError;
 
 import java.util.List;
 import java.util.Map;
