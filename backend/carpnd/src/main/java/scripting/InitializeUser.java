@@ -5,7 +5,6 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import services.PublicationConcernService;
 import utils.builders.UserBuilder;
-import utils.builders.VehicleBuilder;
 
 public class InitializeUser implements BeanPostProcessor {
 
@@ -30,12 +29,7 @@ public class InitializeUser implements BeanPostProcessor {
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         User user = UserBuilder.someUser();
-        user.addVehicle(VehicleBuilder.onlyWithOwner(user));
-        user.addVehicle(VehicleBuilder.onlyWithOwner(user));
-        user.addVehicle(VehicleBuilder.onlyWithOwner(user));
-        user.addVehicle(VehicleBuilder.onlyWithOwner(user));
-        user.addVehicle(VehicleBuilder.onlyWithOwner(user));
-        user.addVehicle(VehicleBuilder.onlyWithOwner(user));
+
         publicationService.getUserService().save(user);
 
 

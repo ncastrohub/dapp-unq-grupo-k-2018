@@ -45,9 +45,11 @@ public class PublicationConcernService {
     }
 
     @Transactional
-    public void deleteVehicle(Serializable userId, String vehicleId) {
-        Vehicle vehicle = this.vehicleService.getRepository().findById(new Long(vehicleId));
-        this.userService.getRepository().findById(userId).getVehicles().remove(vehicle);
+    public void deleteVehicle(Serializable userId, Long vehicleId) {
+        Vehicle vehicle = this.vehicleService.getRepository().findById(vehicleId);
+        User userToEdit = this.userService.getRepository().findById(userId);
+        userToEdit.getVehicles().remove(vehicle);
+        this.userService.getRepository().update(userToEdit);
     }
 
     public void updateVehicle(Long userId, VehicleUpdateForm vehicle) throws FormValidationError {

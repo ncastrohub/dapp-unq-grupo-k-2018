@@ -5,5 +5,5 @@ import me.geso.tinyvalidator.constraints.NotNull;
 public class VehicleUpdateForm extends VehicleForm {
 
     @NotNull
-    public String id;
+    public Long id;
 }

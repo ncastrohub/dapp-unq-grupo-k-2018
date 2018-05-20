@@ -1,6 +1,6 @@
 export class Vehicle {
 
-    id: string;
+    id: number;
     capacity: number;
     type: string;
     description: string;
