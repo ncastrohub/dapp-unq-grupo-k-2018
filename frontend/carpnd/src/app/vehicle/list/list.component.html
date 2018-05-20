@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Capacity</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Photo</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Eliminar</th>
+    </tr>
+  </thead>
+  
+
+  <tbody>
+    <tr *ngFor="let vehicle of vehicleList" >
+      <th scope="row">1</th>
+      <td>{{vehicle.capacity}}</td>
+      <td>{{vehicle.description}}</td>
+      <td>{{vehicle.type}}</td>
+      <td>{{vehicle.photo}}</td>
+      <td>  <button type='button' (click)="edit(vehicle)" ><span class="oi oi-pencil"></span></button> </td>
+      <td>  <button type='button' (click)="delete(vehicle)" ><span class="oi oi-trash"></span></button> </td>
+    </tr>
+  </tbody>
+</table>

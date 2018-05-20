@@ -1,18 +1,14 @@
 package services;
 
-import api.DETEOS.UserForm;
-import model.Exceptions.FormValidationError;
 import model.User;
-import model.VehicleType;
+import model.exceptions.FormValidationError;
 import org.junit.Test;
-import utils.builders.UserBuilder;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
+import utils.builders.UserBuilder;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"/META-INF/spring-persistence-context.xml", "/META-INF/spring-services-context.xml"})
@@ -32,7 +28,6 @@ public class TestUserService {
 
         User user = UserBuilder.someUser();
         this.userService.save(user);
-
 
     }
 }

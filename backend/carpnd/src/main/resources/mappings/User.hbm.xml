@@ -10,7 +10,7 @@
 
         <list inverse="true" name="vehicles" table="vehicles_user" cascade="all"  lazy="false">
             <key>
-                <column index="id" name="vehicle_user" not-null="false" />
+                <column index="name" name="vehicle_user" not-null="false" />
             </key>
             <list-index  column="name"/>
             <one-to-many  class="model.Vehicle" />

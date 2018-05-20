@@ -45,14 +45,16 @@ public class PublicationConcernService {
     }
 
     @Transactional
-    public void deleteVehicle(Serializable userId, Serializable vehicleId) {
+    public void deleteVehicle(Serializable userId, Long vehicleId) {
         Vehicle vehicle = this.vehicleService.getRepository().findById(vehicleId);
-        this.userService.getRepository().findById(userId).getVehicles().remove(vehicle);
+        User userToEdit = this.userService.getRepository().findById(userId);
+        userToEdit.getVehicles().remove(vehicle);
+        this.userService.getRepository().update(userToEdit);
     }
 
     public void updateVehicle(Long userId, VehicleUpdateForm vehicle) throws FormValidationError {
         GenericValidator.validate(vehicle);
-        Vehicle vehicleInDb = this.vehicleService.findById(vehicle.id);
+        Vehicle vehicleInDb = this.vehicleService.findById(new Long(vehicle.id));
         vehicleInDb.description = vehicle.description;
         vehicleInDb.type = vehicle.type;
         vehicleInDb.capacity = vehicle.capacity;

@@ -4,21 +4,27 @@ package api;
 import api.DETEOS.UserForm;
 import api.forms.VehicleForm;
 import api.forms.VehicleUpdateForm;
-import model.exceptions.FormValidationError;
 import model.Vehicle;
 import model.User;
+import model.exceptions.FormValidationError;
+import org.apache.cxf.rs.security.cors.CrossOriginResourceSharing;
 import services.PublicationConcernService;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
 /**
  * @author nachelissssss
  */
+
 @Path("/publication")
 public class PublicationApi {
 
+    @Context
+    private HttpHeaders headers;
 
     private PublicationConcernService publicationService;
 
@@ -29,6 +35,10 @@ public class PublicationApi {
     @GET
     @Path("/{userId}/vehicle/list")
     @Produces("application/json")
+    @CrossOriginResourceSharing(
+            allowAllOrigins = true,
+            allowCredentials = true
+    )
     public Response getVehiclesForUser(@PathParam("userId") String userId) {
 
         List vehicleList = publicationService.getVehiclesForUser(new Long(userId));
