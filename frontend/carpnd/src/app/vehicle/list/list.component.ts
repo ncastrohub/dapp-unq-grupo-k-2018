@@ -31,7 +31,7 @@ export class ListComponent implements OnInit {
 
   edit(vehicle:Vehicle){
     this.service.loadVehicleToEdit(vehicle);
-    this.router.navigate(['/vehicles']);
+    this.router.navigate(['/vehicle/edit']);
   }
 
   delete(vehicle:Vehicle){

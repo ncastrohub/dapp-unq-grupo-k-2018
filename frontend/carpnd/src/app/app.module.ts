@@ -5,17 +5,19 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule }     from './app-routing.module';
-import { VehicleComponent } from './vehicle/vehicle.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListComponent } from './vehicle/list/list.component';
 import { VehicleService } from './vehicle/service/vehicle.service';
 import { AppConfig } from './config';
+import { EditVehicleComponent } from './vehicle/edit/edit.component';
+import { CreateVehicleComponent } from './vehicle/create/create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VehicleComponent,
     ListComponent,
+    EditVehicleComponent,
+    CreateVehicleComponent,
   ],
   imports: [
     BrowserModule,
