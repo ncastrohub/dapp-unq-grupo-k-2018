@@ -1,4 +1,5 @@
-package api.DETEOS;
+package api.forms;
+import api.forms.UserForm;
 import me.geso.tinyvalidator.constraints.NotNull;
 
 import java.io.Serializable;

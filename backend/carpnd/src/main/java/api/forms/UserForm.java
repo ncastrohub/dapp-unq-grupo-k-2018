@@ -1,4 +1,4 @@
-package api.DETEOS;
+package api.forms;
 
 import lombok.Data;
 import me.geso.tinyvalidator.constraints.NotNull;

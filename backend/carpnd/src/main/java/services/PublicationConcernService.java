@@ -1,8 +1,8 @@
 package services;
 
 
-import api.DETEOS.UserForm;
-import api.DETEOS.UserUpdateForm;
+import api.forms.UserForm;
+import api.forms.UserUpdateForm;
 import api.forms.VehicleForm;
 import api.forms.VehicleUpdateForm;
 import model.exceptions.FormValidationError;
@@ -70,6 +70,7 @@ public class PublicationConcernService {
         GenericValidator.validate(userF);
         User newUser = new User(
                 userF.name, userF.lastName, userF.cuil, userF.email);
+        this.userService.save(newUser);
         return newUser;
     }
 
@@ -87,6 +88,9 @@ public class PublicationConcernService {
         this.userService.update(userInDb);
     }
 
+    public User retriveUser(Long id) {
+        return this.userService.findById(id);
+    }
 }
 
 

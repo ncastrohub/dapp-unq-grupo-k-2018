@@ -1,7 +1,7 @@
 package utils.builders;
 
+import api.forms.UserForm;
 import model.User;
-import model.Vehicle;
 
 public class UserBuilder {
 
@@ -32,6 +32,16 @@ public class UserBuilder {
     public UserBuilder withEmail(String aEmail) {
         this.email = aEmail;
         return this;
+    }
+
+
+    public UserForm buildForm() {
+        UserForm userForm = new UserForm();
+        userForm.name = this.name;
+        userForm.lastName = this.lastName;
+        userForm.cuil = this.cuil;
+        userForm.email = this.email;
+        return userForm;
     }
 
     public User build() {
