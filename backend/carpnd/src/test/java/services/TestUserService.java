@@ -11,10 +11,12 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import utils.builders.UserBuilder;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration({"/META-INF/spring-persistence-context.xml", "/META-INF/spring-services-context.xml"})
+@ContextConfiguration({"/META-INF/spring-persistence-context.xml", "/META-INF/spring-services-test.xml"})
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class TestUserService {
 
@@ -36,6 +38,21 @@ public class TestUserService {
         assertThat(createdUser.lastName).isEqualTo(userOnDb.lastName);
         assertThat(createdUser.cuil).isEqualTo(userOnDb.cuil);
         assertThat(createdUser.email).isEqualTo(userOnDb.email);
+
+    }
+
+    @Test
+    public void testDeleteUser() throws FormValidationError {
+
+        UserForm user = UserBuilder.start().withName("Nazareno").withLastName("Castro")
+                .withEmail("nazarenomartincastro@gmail.com")
+                .withCUIL("1212312337")
+                .buildForm();
+        User createdUser = this.publicationService.createUser(user);
+        this.publicationService.deleteUser(createdUser.getId());
+
+        List<User> userListAfterRemove = this.publicationService.getUsers();
+        assertThat(userListAfterRemove.size()).isEqualTo(0);
 
     }
 }

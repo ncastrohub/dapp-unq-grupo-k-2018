@@ -91,38 +91,40 @@ public class PublicationApi {
     }
 
     @POST
-    @Path(value = "/userF/createUser")
+    @Path(value = "/user/new")
     @Consumes("application/json")
     @Produces("application/json")
     public Response createUser(UserForm userF) {
         try {
-            User newUser = publicationService.createUser (userF);
+            User newUser = publicationService.createUser(userF);
             return Response.ok(newUser).build();
         } catch (FormValidationError formValidationError) {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
         }
     }
 
-/*    @POST
-    @Consumes("application/json")
-    @Produces("application/json")
-    public Response deleteUser(UserUpdateForm userU) throws FormValidationError {
-        publicationService.deleteUser(userU);
-        return Response.ok(userU).build();
-        }
-
-
     @POST
     @Consumes("application/json")
     @Produces("application/json")
-    public Response updateUserForUser(
-            UserUpdateForm userUF) {
-        try {
-            publicationService.updateUser(userUF);
-            return Response.ok(userUF).build();
-        } catch (FormValidationError formValidationError) {
-            return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
-        }
-    }*/
+    @Path(value = "/{userId}/delete/")
+    public Response deleteUser(@PathParam("userId") Long userId) {
+        publicationService.deleteUser(userId);
+        return Response.ok().build();
+    }
+
+    //
+//
+//    @POST
+//    @Consumes("application/json")
+//    @Produces("application/json")
+//    public Response updateUserForUser(
+//            UserUpdateForm userUF) {
+//        try {
+//            publicationService.updateUser(userUF);
+//            return Response.ok(userUF).build();
+//        } catch (FormValidationError formValidationError) {
+//            return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
+//        }
+//    }
 
 }
