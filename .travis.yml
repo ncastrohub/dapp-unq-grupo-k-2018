@@ -1,15 +1,21 @@
-language: java
-jdk:
- - oraclejdk8
 
-before_script: 
-  - cd backend/carpnd
-
-build:  
-  - mvn install -Dmaven.javadoc.skip=true -B -V
-
-script: mvn clean verify
-
-after_success:
-  - mvn cobertura:cobertura
-  - mvn com.gavinmogan:codacy-maven-plugin:coverage -DcoverageReportFile=target/site/cobertura/coverage.xml -DprojectToken=4c81b40c91044a588fe938fcc719039a -DapiToken=I1VEEzFrE6KRTjTcVqvp
+jobs:
+  include:
+    - stage: test
+      language: java
+      before_script: cd backend/carpnd
+      build: mvn install -Dmaven.javadoc.skip=true -B -V
+      script: mvn clean verify
+      only: develop
+      after_success:
+        - mvn cobertura:cobertura
+        - mvn com.gavinmogan:codacy-maven-plugin:coverage -DcoverageReportFile=target/site/cobertura/coverage.xml -DprojectToken=4c81b40c91044a588fe938fcc719039a -DapiToken=I1VEEzFrE6KRTjTcVqvp
+    - stage: deploy
+      script: skip     # usually you do not want to rerun any tests
+      before_deploy: cd backend/carpnd
+      deploy: &heroku
+        provider: heroku
+        url: https://carpn-api.herokuapp.com/
+        app: carpn-api
+        api_key: b2edf305-d8fc-4410-9dbc-ec128b3001ac
+        on: develop

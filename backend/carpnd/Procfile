@@ -1,0 +1,2 @@
+heroku ps:scale web=1
+heroku config:set WEBAPP_RUNNER_OPTS="-Dspring.profiles.active=test" --app myapp-ws
