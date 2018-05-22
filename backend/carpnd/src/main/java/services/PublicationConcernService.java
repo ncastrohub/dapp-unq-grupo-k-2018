@@ -78,14 +78,15 @@ public class PublicationConcernService {
         this.userService.deleteById(userId);
     }
 
-    public void updateUser(UserUpdateForm userUF) throws FormValidationError {
-        GenericValidator.validate(userUF);
-        User userInDb = this.userService.findById(userUF.id);
-        userInDb.name = userUF.name;
-        userInDb.lastName = userUF.lastName;
-        userInDb.cuil = userUF.cuil;
-        userInDb.email = userUF.email;
+    public void updateUser(UserUpdateForm userForm) throws FormValidationError {
+        GenericValidator.validate(userForm);
+        User userInDb = this.userService.findById(userForm.id);
+        userInDb.name = userForm.name;
+        userInDb.lastName = userForm.lastName;
+        userInDb.cuil = userForm.cuil;
+        userInDb.email = userForm.email;
         this.userService.update(userInDb);
+
     }
 
     public User retriveUser(Long id) {

@@ -46,7 +46,6 @@ public class TestVehicleService {
 
         assertThat(vehicleList.get(0).type).isEqualTo(VehicleType.SEDAN);
         assertThat(vehicleList.get(1).type).isEqualTo(VehicleType.COUPE);
-
     }
 
 
