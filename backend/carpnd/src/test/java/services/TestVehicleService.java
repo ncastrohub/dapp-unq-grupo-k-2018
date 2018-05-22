@@ -39,7 +39,6 @@ public class TestVehicleService {
         this.userService.save(user);
 
         for (VehicleForm each : createTwoVehicles())
-
         publicationService.createVehicleForUser(user.getId(), each);
 
         List<Vehicle> vehicleList = this.publicationService.getVehiclesForUser(user.getId());
