@@ -22,7 +22,7 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration({"/META-INF/spring-persistence-context.xml", "/META-INF/spring-services-context.xml"})
+@ContextConfiguration({"/META-INF/spring-persistence-context.xml", "/META-INF/spring-services-test.xml"})
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class TestVehicleService {
 
@@ -46,7 +46,6 @@ public class TestVehicleService {
 
         assertThat(vehicleList.get(0).type).isEqualTo(VehicleType.SEDAN);
         assertThat(vehicleList.get(1).type).isEqualTo(VehicleType.COUPE);
-
     }
 
 
@@ -157,8 +156,6 @@ public class TestVehicleService {
         assertThat(vehicleList.get(1)).isEqualTo(vehicleListAfterRemove.get(0));
 
     }
-
-
 
     private List<VehicleForm> createTwoVehicles() {
         VehicleForm firstVehicleForm = VehicleBuilder.start()

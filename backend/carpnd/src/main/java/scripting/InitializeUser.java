@@ -1,10 +1,8 @@
 package scripting;
 
-import model.User;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import services.PublicationConcernService;
-import utils.builders.UserBuilder;
 
 public class InitializeUser implements BeanPostProcessor {
 
@@ -28,9 +26,9 @@ public class InitializeUser implements BeanPostProcessor {
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        User user = UserBuilder.someUser();
+//        User user = UserBuilder.someUser();
 
-        publicationService.getUserService().save(user);
+//        publicationService.getUserService().save(user);
 
 
         return bean;

@@ -8,6 +8,11 @@
             <generator class="native" />
         </id>
 
+        <property name="name" type="string"/>
+        <property name="lastName" type="string"/>
+        <property name="cuil" type="string"/>
+        <property name="email" type="string"/>
+
         <list name="vehicles" cascade="all"  lazy="false">
             <key column="user_id" />
             <list-index  column="user_vehicle_index"/>

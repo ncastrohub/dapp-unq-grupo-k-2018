@@ -1,7 +1,11 @@
 package api;
 
+
+import api.forms.UserForm;
+import api.forms.UserUpdateForm;
 import api.forms.VehicleForm;
 import api.forms.VehicleUpdateForm;
+import model.User;
 import model.Vehicle;
 import model.exceptions.FormValidationError;
 import org.apache.cxf.rs.security.cors.CrossOriginResourceSharing;
@@ -82,6 +86,43 @@ public class PublicationApi {
         try {
             publicationService.updateVehicle(userId, vehicle);
             return Response.ok(vehicle).build();
+        } catch (FormValidationError formValidationError) {
+            return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
+        }
+    }
+
+    @POST
+    @Path(value = "/user/new")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response createUser(UserForm userF) {
+        try {
+            User newUser = publicationService.createUser(userF);
+            return Response.ok(newUser).build();
+        } catch (FormValidationError formValidationError) {
+            return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
+        }
+    }
+
+    @POST
+    @Consumes("application/json")
+    @Produces("application/json")
+    @Path(value = "/{userId}/delete/")
+    public Response deleteUser(@PathParam("userId") Long userId) {
+        publicationService.deleteUser(userId);
+        return Response.ok().build();
+    }
+
+
+
+    @POST
+    @Consumes("application/json")
+    @Produces("application/json")
+    @Path(value = "/user/edit/")
+    public Response updateUser(UserUpdateForm userForm) {
+        try {
+            publicationService.updateUser(userForm);
+            return Response.ok(userForm).build();
         } catch (FormValidationError formValidationError) {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
         }

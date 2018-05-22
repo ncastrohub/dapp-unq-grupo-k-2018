@@ -1,5 +1,8 @@
 package services;
 
+
+import api.forms.UserForm;
+import api.forms.UserUpdateForm;
 import api.forms.VehicleForm;
 import api.forms.VehicleUpdateForm;
 import model.exceptions.FormValidationError;
@@ -24,9 +27,6 @@ public class PublicationConcernService {
         this.userService = userService;
     }
 
-    public VehicleService getVehicleService() {
-        return vehicleService;
-    }
 
     public void setVehicleService(VehicleService vehicleService) {
         this.vehicleService = vehicleService;
@@ -65,4 +65,34 @@ public class PublicationConcernService {
     public List<User> getUsers() {
         return this.userService.retriveAll();
     }
+
+    public User createUser(UserForm userF) throws FormValidationError {
+        GenericValidator.validate(userF);
+        User newUser = new User(
+                userF.name, userF.lastName, userF.cuil, userF.email);
+        this.userService.save(newUser);
+        return newUser;
+    }
+
+    public void deleteUser(Long userId) {
+        this.userService.deleteById(userId);
+    }
+
+    public void updateUser(UserUpdateForm userForm) throws FormValidationError {
+        GenericValidator.validate(userForm);
+        User userInDb = this.userService.findById(userForm.id);
+        userInDb.name = userForm.name;
+        userInDb.lastName = userForm.lastName;
+        userInDb.cuil = userForm.cuil;
+        userInDb.email = userForm.email;
+        this.userService.update(userInDb);
+
+    }
+
+    public User retriveUser(Long id) {
+        return this.userService.findById(id);
+    }
 }
+
+
+
