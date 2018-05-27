@@ -10,12 +10,21 @@ jobs:
       after_success:
         - mvn cobertura:cobertura
         - mvn com.gavinmogan:codacy-maven-plugin:coverage -DcoverageReportFile=target/site/cobertura/coverage.xml -DprojectToken=4c81b40c91044a588fe938fcc719039a -DapiToken=I1VEEzFrE6KRTjTcVqvp
-    - stage: deploy
+    - stage: deploy-api
       script: skip     # usually you do not want to rerun any tests
       before_deploy: cd backend/carpnd
       deploy: &heroku
         provider: heroku
         url: https://carpn-api.herokuapp.com/
         app: carpn-api
+        api_key: b2edf305-d8fc-4410-9dbc-ec128b3001ac
+        on: develop
+    - stage: deploy-client
+      script: skip     # usually you do not want to rerun any tests
+      before_deploy: cd frontend/carpnd
+      deploy: &heroku
+        provider: heroku
+        url: https://carpn-client.herokuapp.com/
+        app: carpn-client
         api_key: b2edf305-d8fc-4410-9dbc-ec128b3001ac
         on: develop
