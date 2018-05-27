@@ -35,10 +35,10 @@ export class UserListComponent implements OnInit {
   }
 
   delete(user:User){
-    // this.service.deleteVehicle('1', vehicle).subscribe(
-      // data => this.getVehicleList(),
-      // error => this.errorList.push(error)
-    // )
+    this.service.deleteUser(user).subscribe(
+      data => this.getUserList(),
+      error => this.errorList.push(error)
+    )
   }
 
 }

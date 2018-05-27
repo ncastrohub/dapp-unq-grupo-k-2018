@@ -20,4 +20,8 @@ export class UserServiceService {
   	return this.http.post<any>( this.config.serveUrl + 'publication/user/new', user);
   }
 
+  deleteUser(user: User): Observable<any> {
+  	return this.http.post<any>(this.config.serveUrl + 'publication/user/delete', user);
+  }
+
 }
