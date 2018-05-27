@@ -8,10 +8,9 @@ import java.util.List;
 
 public class Publication {
 
-
-
     private User owner;
     private Vehicle vehicle;
+
     private AdressLocation acquireLocation;
     private LinkedList<AdressLocation> returnLocations;
     private PublicationsEnabledDays enabledDays;

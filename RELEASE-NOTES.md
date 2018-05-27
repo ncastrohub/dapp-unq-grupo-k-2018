@@ -40,3 +40,22 @@ y que el dinero se agregue a la cuenta del duenio del vehiculo
 * En caso de interrumpirse antes de tiempo la reserva, es necesario liberar los dias
 que queden restantes que estan reservados
 * NO HAY FUNCIONALIDAD DE FRONTEND
+
+
+1.0.1
+
+NEW FEATURES:
+
+* AMB Usuarios
+* AMB Vehiculos
+* Deploy automatico del backend
+* Reporte de Covertura de test automatica
+* I18N funcionando
+
+CHANGES
+
+* No
+
+KNOWN ISSUES:
+
+* Deploy automatico del frontend no esta funcionando
