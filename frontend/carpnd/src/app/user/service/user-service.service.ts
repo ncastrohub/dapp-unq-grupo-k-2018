@@ -12,7 +12,7 @@ export class UserServiceService {
 
   constructor(private http: HttpClient, private config: AppConfig) { }
 
-  getUserList(userId: string): Observable<[User]> {
+  getUserList(): Observable<[User]> {
   	return this.http.get<[User]>( this.config.serveUrl + 'publication/user/list');
   }
 
