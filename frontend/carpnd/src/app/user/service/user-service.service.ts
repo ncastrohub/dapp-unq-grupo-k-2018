@@ -16,8 +16,8 @@ export class UserServiceService {
   	return this.http.get<[User]>( this.config.serveUrl + 'publication/user/list');
   }
 
-  // createVehicle(userId: string, vehicle: Vehicle): Observable<any> {
-  // 	return this.http.post<any>( this.config.serveUrl + 'publication/'+ userId +'/vehicle/new', vehicle);
-  // }
+  createUser(user:User): Observable<any> {
+  	return this.http.post<any>( this.config.serveUrl + 'publication/user/new', user);
+  }
 
 }

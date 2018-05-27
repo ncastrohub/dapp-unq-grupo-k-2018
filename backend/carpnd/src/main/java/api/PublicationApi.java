@@ -92,7 +92,7 @@ public class PublicationApi {
     }
 
     @POST
-    @Path(value = "/user/new")
+        @Path(value = "/user/new")
     @Consumes("application/json")
     @Produces("application/json")
     public Response createUser(UserForm userF) {

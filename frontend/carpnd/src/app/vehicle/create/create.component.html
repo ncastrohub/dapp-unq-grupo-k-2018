@@ -5,7 +5,6 @@
       {{error}}
     </div>
 
-
     <form (ngSubmit)="onSubmit()" #vehicleForm="ngForm">
 
       <div class="form-group">
@@ -38,7 +37,7 @@
          [(ngModel)]="vehicle.photo" name="photo"/>
        </div>
 
-      <button type="submit" [disabled]="!vehicleForm.form.valid" class="btn btn-success">Submit</button>
+      <button type="submit" [disabled]="!vehicleForm.form.valid" class="btn btn-success">Create</button>
  
     </form>
 </div>
