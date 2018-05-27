@@ -110,9 +110,9 @@
     <bean id="persistence.vehiclerepository" class="repositories.VehicleRepository" >
         <property name="sessionFactory" ref="persistence.sessionFactory" />
     </bean>
-    <!--<bean id="persistence.carrepository" class="ar.edu.unq.repositories.CarRepository" >-->
-    <!--<property name="sessionFactory" ref="persistence.sessionFactory" />-->
-    <!--</bean>-->
 
+    <bean id="persistence.userrepository" class="repositories.UserRepository" >
+        <property name="sessionFactory" ref="persistence.sessionFactory" />
+    </bean>
 
 </beans>

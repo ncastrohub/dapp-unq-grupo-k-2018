@@ -1,0 +1,16 @@
+2018-05-06 19:28:44,110 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-05-06 19:28:44,112 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-05-06 19:33:09,398 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-05-06 19:33:09,400 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-05-06 19:34:09,475 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-05-06 19:34:09,477 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-05-06 19:36:23,759 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-05-06 19:36:23,761 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-05-06 19:39:35,404 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-05-06 19:39:35,407 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-05-06 19:40:37,980 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-05-06 19:40:37,983 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-05-06 19:45:37,395 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-05-06 19:45:37,397 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-05-06 19:50:35,560 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-05-06 19:50:35,562 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE

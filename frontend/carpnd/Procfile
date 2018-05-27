@@ -1,0 +1,1 @@
+web: ng serve --aot --i18nFile=src/messages.xlf --i18nFormat=xlf --locale=en

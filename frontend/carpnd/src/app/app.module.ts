@@ -1,29 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import {  LOCALE_ID, NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
 import { FormsModule } from '@angular/forms';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component'; // <-- NgModel lives here
-import { HeroService } from './hero.service';
-import { MessagesComponent } from './messages/messages.component';
-import { MessageService } from './message.service'; // <-- Hero Service
 
 import { AppRoutingModule }     from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { ListComponent } from './vehicle/list/list.component';
+import { VehicleService } from './vehicle/service/vehicle.service';
+import { AppConfig } from './config';
+import { EditVehicleComponent } from './vehicle/edit/edit.component';
+import { CreateVehicleComponent } from './vehicle/create/create.component';
+import { CreateuserComponent } from './user/createuser/createuser.component';
+import { UserListComponent } from './user/user-list/user-list.component';
+import { UserServiceService } from './user/service/user-service.service';
+import { UsereditComponent } from './user/useredit/useredit.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesComponent,
-    HeroDetailComponent,
-    MessagesComponent,
+    ListComponent,
+    EditVehicleComponent,
+    CreateVehicleComponent,
+    CreateuserComponent,
+    UserListComponent,
+    UsereditComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [HeroService, MessageService,],
+  providers: [VehicleService, UserServiceService, AppConfig, { provide: LOCALE_ID, useValue: 'en' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -17,7 +17,6 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
-
     <servlet>
         <servlet-name>CXFServlet</servlet-name>
         <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
@@ -29,10 +28,10 @@
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
 
-
     <session-config>
         <session-timeout>7200</session-timeout>
     </session-config>
+
 
 
 </web-app>
