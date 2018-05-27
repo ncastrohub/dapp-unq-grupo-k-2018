@@ -14,6 +14,7 @@ import { CreateVehicleComponent } from './vehicle/create/create.component';
 import { CreateuserComponent } from './user/createuser/createuser.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserServiceService } from './user/service/user-service.service';
+import { UsereditComponent } from './user/useredit/useredit.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { UserServiceService } from './user/service/user-service.service';
     CreateVehicleComponent,
     CreateuserComponent,
     UserListComponent,
+    UsereditComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import { EditVehicleComponent } from './vehicle/edit/edit.component';
 import { CreateVehicleComponent } from './vehicle/create/create.component';
 import { UserListComponent } from './user/user-list/user-list.component'
 import { CreateuserComponent } from './user/createuser/createuser.component'
+import { UsereditComponent } from './user/useredit/useredit.component'
  
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'vehicle/edit', component: EditVehicleComponent},
   { path: 'vehicle/list', component: ListComponent },
   { path: 'user/list', component: UserListComponent },
+  { path: 'user/edit', component: UsereditComponent },
   { path: 'user/create', component: CreateuserComponent }
 ];
 

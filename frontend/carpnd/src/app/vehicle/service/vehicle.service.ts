@@ -33,10 +33,4 @@ export class VehicleService {
     this.vehicleSource.next(vehicle);	
   }
 
-  cleanVehicle(){
-  	this.vehicleSource.next(new Vehicle);
-  }
-
-
-
 }

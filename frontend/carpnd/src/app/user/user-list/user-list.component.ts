@@ -30,8 +30,8 @@ export class UserListComponent implements OnInit {
   }
 
   edit(user:User){
-    // this.service.loadVehicleToEdit(vehicle);
-    // this.router.navigate(['/vehicle/edit']);
+    this.service.loadUserToEdit(user);
+    this.router.navigate(['/user/edit']);
   }
 
   delete(user:User){
