@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Vehicle } from '../vehicle'
 import { VehicleService } from '../service/vehicle.service';
 import { Router } from '@angular/router';
@@ -28,7 +28,6 @@ export class CreateVehicleComponent {
 	  this.service.createVehicle('1', this.vehicle).subscribe(
 	    data => {
 	      this.router.navigate(['/vehicle/list']);
-	      this.service.vehicleObservable
 	    },
 	    error => this.errorList.push(error)
 	  );

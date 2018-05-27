@@ -92,7 +92,7 @@ public class PublicationApi {
     }
 
     @POST
-    @Path(value = "/user/new")
+        @Path(value = "/user/new")
     @Consumes("application/json")
     @Produces("application/json")
     public Response createUser(UserForm userF) {
@@ -107,9 +107,9 @@ public class PublicationApi {
     @POST
     @Consumes("application/json")
     @Produces("application/json")
-    @Path(value = "/{userId}/delete/")
-    public Response deleteUser(@PathParam("userId") Long userId) {
-        publicationService.deleteUser(userId);
+    @Path(value = "/user/delete/")
+    public Response deleteUser(UserUpdateForm userForm) {
+        publicationService.deleteUser(userForm.id);
         return Response.ok().build();
     }
 

@@ -11,6 +11,10 @@ import { VehicleService } from './vehicle/service/vehicle.service';
 import { AppConfig } from './config';
 import { EditVehicleComponent } from './vehicle/edit/edit.component';
 import { CreateVehicleComponent } from './vehicle/create/create.component';
+import { CreateuserComponent } from './user/createuser/createuser.component';
+import { UserListComponent } from './user/user-list/user-list.component';
+import { UserServiceService } from './user/service/user-service.service';
+import { UsereditComponent } from './user/useredit/useredit.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +22,9 @@ import { CreateVehicleComponent } from './vehicle/create/create.component';
     ListComponent,
     EditVehicleComponent,
     CreateVehicleComponent,
+    CreateuserComponent,
+    UserListComponent,
+    UsereditComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +32,7 @@ import { CreateVehicleComponent } from './vehicle/create/create.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [VehicleService, AppConfig, { provide: LOCALE_ID, useValue: 'en' }],
+  providers: [VehicleService, UserServiceService, AppConfig, { provide: LOCALE_ID, useValue: 'en' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
