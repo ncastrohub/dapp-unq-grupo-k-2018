@@ -22,7 +22,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class TestUserService {
 
     @Autowired
-    private PublicationConcernService publicationService;
+    private PublishService publicationService;
 
     @Test
     public void testCreateUser() throws FormValidationError {

@@ -42,7 +42,7 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
     </jaxrs:server>
 
 
-    <bean id="publicationApi" class="api.PublicationApi">
+    <bean id="publicationApi" class="api.PublishApi">
         <property name="publicationService" ref="services.publication" />
     </bean>
 

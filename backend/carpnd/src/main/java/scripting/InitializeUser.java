@@ -2,19 +2,19 @@ package scripting;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
-import services.PublicationConcernService;
+import services.PublishService;
 import utils.builders.UserBuilder;
 
 public class InitializeUser implements BeanPostProcessor {
 
 
-    private PublicationConcernService publicationService;
+    private PublishService publicationService;
 
-    public PublicationConcernService getPublicationService() {
+    public PublishService getPublicationService() {
         return publicationService;
     }
 
-    public void setPublicationService(PublicationConcernService publicationService) {
+    public void setPublicationService(PublishService publicationService) {
         this.publicationService = publicationService;
     }
 

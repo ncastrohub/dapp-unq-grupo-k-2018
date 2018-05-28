@@ -1,21 +1,25 @@
 package model;
 
 import model.exceptions.*;
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Publication {
+public class Publication extends IdModel {
 
     private User owner;
     private Vehicle vehicle;
 
     private AdressLocation acquireLocation;
     private LinkedList<AdressLocation> returnLocations;
+
     private PublicationsEnabledDays enabledDays;
     private MoneyAndAmount costPerHour;
     private List<ReservedPublication> reservedPublicationList;
+
+    public Publication(){}
 
     public Publication(User owner, MoneyAndAmount costPerHour,
                        Vehicle vehicle, AdressLocation acquireLocation,
@@ -31,6 +35,14 @@ public class Publication {
 
     }
 
+    public Publication(User publicationUser, Vehicle vehicle, AdressLocation acquireLocation) {
+        this.owner = publicationUser;
+        this.vehicle = vehicle;
+        this.acquireLocation  = acquireLocation;
+        this.reservedPublicationList = new LinkedList<>();
+    }
+
+    @JsonIgnore
     public MoneyAndAmount getCostPerHour() {
         return this.costPerHour;
     }
@@ -47,10 +59,12 @@ public class Publication {
         return acquireLocation;
     }
 
+    @JsonIgnore
     public LinkedList<AdressLocation> getReturnLocations() {
         return returnLocations;
     }
 
+    @JsonIgnore
     public PublicationsEnabledDays getAvaiblesDays() {
         return this.enabledDays;
     }
@@ -61,6 +75,7 @@ public class Publication {
         this.reservedPublicationList.add(newReservedPublication);
     }
 
+    @JsonIgnore
     public List<ReservedPublication> getReservedPublicationList() {
         return reservedPublicationList;
     }

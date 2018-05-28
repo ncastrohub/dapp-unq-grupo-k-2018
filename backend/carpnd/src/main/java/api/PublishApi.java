@@ -9,7 +9,7 @@ import model.User;
 import model.Vehicle;
 import model.exceptions.FormValidationError;
 import org.apache.cxf.rs.security.cors.CrossOriginResourceSharing;
-import services.PublicationConcernService;
+import services.PublishService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
@@ -22,15 +22,15 @@ import java.util.List;
  */
 
 @Path("/publication")
-public class PublicationApi {
+public class PublishApi {
 
     @Context
     private HttpHeaders headers;
 
-    private PublicationConcernService publicationService;
+    private PublishService publishService;
 
-    public void setPublicationService(final PublicationConcernService service) {
-        this.publicationService = service;
+    public void setPublishService(final PublishService service) {
+        this.publishService = service;
     }
 
     @GET
@@ -42,7 +42,7 @@ public class PublicationApi {
     )
     public Response getVehiclesForUser(@PathParam("userId") String userId) {
 
-        List vehicleList = publicationService.getVehiclesForUser(new Long(userId));
+        List vehicleList = publishService.getVehiclesForUser(new Long(userId));
         return Response.ok(vehicleList).build();
     }
 
@@ -50,7 +50,7 @@ public class PublicationApi {
     @Path("/user/list")
     @Produces("application/json")
     public Response getUserList() {
-        return Response.ok(publicationService.getUsers()).build();
+        return Response.ok(publishService.getUsers()).build();
     }
 
 
@@ -60,7 +60,7 @@ public class PublicationApi {
     @Produces("application/json")
     public Response createVehicleForUser(@PathParam("userId") Long userId, VehicleForm vehicle) {
         try {
-            Vehicle newVehicle = publicationService.createVehicleForUser(userId, vehicle);
+            Vehicle newVehicle = publishService.createVehicleForUser(userId, vehicle);
             return Response.ok(newVehicle).build();
         } catch (FormValidationError formValidationError) {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
@@ -72,7 +72,7 @@ public class PublicationApi {
     @Consumes("application/json")
     @Produces("application/json")
     public Response deleteVehicleForUser(@PathParam("userId") Long userId, VehicleUpdateForm vehicle) {
-        publicationService.deleteVehicle(userId, vehicle.id);
+        publishService.deleteVehicle(userId, vehicle.id);
         return Response.ok(vehicle).build();
     }
 
@@ -84,7 +84,7 @@ public class PublicationApi {
             @PathParam("userId") Long userId,
             VehicleUpdateForm vehicle) {
         try {
-            publicationService.updateVehicle(userId, vehicle);
+            publishService.updateVehicle(userId, vehicle);
             return Response.ok(vehicle).build();
         } catch (FormValidationError formValidationError) {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
@@ -97,7 +97,7 @@ public class PublicationApi {
     @Produces("application/json")
     public Response createUser(UserForm userF) {
         try {
-            User newUser = publicationService.createUser(userF);
+            User newUser = publishService.createUser(userF);
             return Response.ok(newUser).build();
         } catch (FormValidationError formValidationError) {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
@@ -109,7 +109,7 @@ public class PublicationApi {
     @Produces("application/json")
     @Path(value = "/user/delete/")
     public Response deleteUser(UserUpdateForm userForm) {
-        publicationService.deleteUser(userForm.id);
+        publishService.deleteUser(userForm.id);
         return Response.ok().build();
     }
 
@@ -121,7 +121,7 @@ public class PublicationApi {
     @Path(value = "/user/edit/")
     public Response updateUser(UserUpdateForm userForm) {
         try {
-            publicationService.updateUser(userForm);
+            this.publishService.updateUser(userForm);
             return Response.ok(userForm).build();
         } catch (FormValidationError formValidationError) {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();

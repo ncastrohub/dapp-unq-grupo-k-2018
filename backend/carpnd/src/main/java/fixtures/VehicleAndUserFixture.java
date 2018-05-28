@@ -1,20 +1,20 @@
 package fixtures;
 
 import model.User;
-import services.PublicationConcernService;
+import services.PublishService;
 import utils.builders.UserBuilder;
 import utils.builders.VehicleBuilder;
 
 public class VehicleAndUserFixture {
 
 
-    PublicationConcernService publicationService;
+    PublishService publicationService;
 
-    public PublicationConcernService getPublicationService() {
+    public PublishService getPublicationService() {
         return publicationService;
     }
 
-    public void setPublicationService(PublicationConcernService publicationService) {
+    public void setPublicationService(PublishService publicationService) {
         this.publicationService = publicationService;
     }
 

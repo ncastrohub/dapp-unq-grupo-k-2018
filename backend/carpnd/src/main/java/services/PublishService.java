@@ -1,10 +1,8 @@
 package services;
 
 
-import api.forms.UserForm;
-import api.forms.UserUpdateForm;
-import api.forms.VehicleForm;
-import api.forms.VehicleUpdateForm;
+import api.forms.*;
+import model.Publication;
 import model.exceptions.FormValidationError;
 import model.User;
 import model.Vehicle;
@@ -14,10 +12,22 @@ import services.Validators.GenericValidator;
 import java.io.Serializable;
 import java.util.List;
 
-public class PublicationConcernService {
+public class PublishService {
 
     private UserService userService;
     private VehicleService vehicleService;
+
+    public PublicationService getPublicationService() {
+        return publicationService;
+    }
+
+    public void setPublicationService(PublicationService publicationService) {
+        this.publicationService = publicationService;
+    }
+
+    private PublicationService publicationService;
+
+
 
     public UserService getUserService() {
         return userService;
@@ -54,7 +64,7 @@ public class PublicationConcernService {
 
     public void updateVehicle(Long userId, VehicleUpdateForm vehicle) throws FormValidationError {
         GenericValidator.validate(vehicle);
-        Vehicle vehicleInDb = this.vehicleService.findById(new Long(vehicle.id));
+        Vehicle vehicleInDb = this.vehicleService.findById(vehicle.id);
         vehicleInDb.description = vehicle.description;
         vehicleInDb.type = vehicle.type;
         vehicleInDb.capacity = vehicle.capacity;
@@ -91,6 +101,26 @@ public class PublicationConcernService {
 
     public User retriveUser(Long id) {
         return this.userService.findById(id);
+    }
+
+
+    public Publication createPublicationForUser(Long userId, PublicationForm publication) throws FormValidationError {
+        GenericValidator.validate(publication);
+
+        User publicationUser = this.userService.findById(userId);
+
+        Publication newPublication = new Publication(
+                publicationUser,
+                publication.getVehicleInstance(),
+                publication.getAcquireLocationInstance());
+
+        this.publicationService.save(newPublication);
+        return newPublication;
+    }
+
+
+    public Publication retrievePublication(Long publicationId) {
+        return this.publicationService.findById(publicationId);
     }
 }
 
