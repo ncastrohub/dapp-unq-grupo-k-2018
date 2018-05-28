@@ -47,6 +47,7 @@ public class TestPublicationService {
                 isEqualTo(PublicationOnDb.getAcquireLocation().getId());
         assertThat(createdPublication.getDisabledDays()).isEqualTo(PublicationOnDb.getDisabledDays());
         assertThat(createdPublication.getReservedDays()).isEqualTo(PublicationOnDb.getReservedDays());
+        assertThat(createdPublication.getReservedDays()).isEqualTo(PublicationOnDb.getReservedDays());
 
     }
 

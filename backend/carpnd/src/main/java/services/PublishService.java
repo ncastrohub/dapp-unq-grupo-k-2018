@@ -114,6 +114,7 @@ public class PublishService {
                 publication.getVehicleInstance(),
                 publication.getAcquireLocationInstance(),
                 publication.getReturnLocationsList(),
+                publication.getEnabledDaysInstance(),
                 publication.getEnabledDaysInstance()
         );
 

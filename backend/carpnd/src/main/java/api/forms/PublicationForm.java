@@ -44,8 +44,9 @@ public class PublicationForm {
     public PublicationsEnabledDays getEnabledDaysInstance() {
         return enabledDays.getModelInstance();
     }
-//
-//    @NotNull
-//    private MoneyAndAmount costPerHour;
+
+
+    @NotNull
+    private MoneyAndAmountForm costPerHour;
 
 }
