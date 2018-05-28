@@ -1,9 +1,15 @@
 package api.forms;
 
+import lombok.Data;
 import me.geso.tinyvalidator.constraints.NotNull;
+import me.geso.tinyvalidator.constraints.Size;
 import model.AdressLocation;
+import model.PublicationsEnabledDays;
 import model.Vehicle;
 
+import java.util.LinkedList;
+
+@Data
 public class PublicationForm {
 
     @NotNull
@@ -11,6 +17,10 @@ public class PublicationForm {
 
     @NotNull
     public AdressLocationForm acquireLocation;
+
+    @NotNull
+    @Size(min = 1)
+    public LinkedList<AdressLocationForm> returnLocations;
 
     public Vehicle getVehicleInstance() {
         return this.vehicle.getVehicleInstance();
@@ -20,11 +30,20 @@ public class PublicationForm {
         return this.acquireLocation.getAcquireLocationInstance();
     }
 
-//    @NotNull
-//    private LinkedList<AdressLocation> returnLocations;
-//
-//    @NotNull
-//    private PublicationsEnabledDays enabledDays;
+    public LinkedList<AdressLocation> getReturnLocationsList(){
+        LinkedList<AdressLocation> locationList = new LinkedList<>();
+        for (AdressLocationForm location: this.returnLocations) {
+            locationList.add(location.getAcquireLocationInstance());
+        }
+        return locationList;
+    }
+
+    @NotNull
+    public PublicationsEnabledDaysForm enabledDays;
+
+    public PublicationsEnabledDays getEnabledDaysInstance() {
+        return enabledDays.getModelInstance();
+    }
 //
 //    @NotNull
 //    private MoneyAndAmount costPerHour;

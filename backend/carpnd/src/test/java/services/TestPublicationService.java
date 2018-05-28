@@ -42,8 +42,11 @@ public class TestPublicationService {
         Publication PublicationOnDb = this.publicationService.retrievePublication(createdPublication.getId());
 
         assertThat(createdPublication.getVehicle()).isEqualTo(PublicationOnDb.getVehicle());
+        assertThat(createdPublication.getReturnLocations().size()).isEqualTo(PublicationOnDb.getReturnLocations().size());
         assertThat(createdPublication.getAcquireLocation().getId()).
                 isEqualTo(PublicationOnDb.getAcquireLocation().getId());
+        assertThat(createdPublication.getDisabledDays()).isEqualTo(PublicationOnDb.getDisabledDays());
+        assertThat(createdPublication.getReservedDays()).isEqualTo(PublicationOnDb.getReservedDays());
 
     }
 

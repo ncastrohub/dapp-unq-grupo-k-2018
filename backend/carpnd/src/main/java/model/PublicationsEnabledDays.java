@@ -6,7 +6,8 @@ import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 
-public class PublicationsEnabledDays {
+public class PublicationsEnabledDays extends IdModel {
+
     private List<LocalDate> disabledDays;
     private List<LocalDate> reservedDays;
 
@@ -14,6 +15,11 @@ public class PublicationsEnabledDays {
     public PublicationsEnabledDays(){
         this.disabledDays = new LinkedList<>();
         this.reservedDays = new LinkedList<>();
+    }
+
+    public PublicationsEnabledDays(List<LocalDate> reservedDays, List<LocalDate> disabledDays) {
+        this.disabledDays = disabledDays;
+        this.reservedDays = reservedDays;
     }
 
     public List<LocalDate> getDisabledDays() {
@@ -49,7 +55,7 @@ public class PublicationsEnabledDays {
         }
     }
 
-    public void reserveDays(LinkedList<LocalDate> reservationDays) throws DayAlreadyReservedException, DayDisabledException, InvalidAmountOfDaysToReserveException {
+    public void reserveDays(List<LocalDate> reservationDays) throws DayAlreadyReservedException, DayDisabledException, InvalidAmountOfDaysToReserveException {
         if (reservationDays.size() > 4) {
             throw new InvalidAmountOfDaysToReserveException();
         }
@@ -64,13 +70,15 @@ public class PublicationsEnabledDays {
         }
     }
 
-    public void disableDays(LinkedList<LocalDate> reservationDays) throws DayAlreadyDisabledException {
+    public void disableDays(List<LocalDate> reservationDays) throws DayAlreadyDisabledException {
         for (LocalDate localDate : reservationDays) {
             this.setDisabled(localDate);
         }
     }
 
 
-
+    public List<LocalDate> getReservedDays() {
+        return reservedDays;
+    }
 }
 

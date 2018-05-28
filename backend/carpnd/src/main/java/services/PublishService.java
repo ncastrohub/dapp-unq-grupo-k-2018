@@ -112,7 +112,10 @@ public class PublishService {
         Publication newPublication = new Publication(
                 publicationUser,
                 publication.getVehicleInstance(),
-                publication.getAcquireLocationInstance());
+                publication.getAcquireLocationInstance(),
+                publication.getReturnLocationsList(),
+                publication.getEnabledDaysInstance()
+        );
 
         this.publicationService.save(newPublication);
         return newPublication;

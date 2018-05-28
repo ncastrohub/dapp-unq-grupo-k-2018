@@ -13,9 +13,11 @@ public class Publication extends IdModel {
     private Vehicle vehicle;
 
     private AdressLocation acquireLocation;
-    private LinkedList<AdressLocation> returnLocations;
+
+    private List<AdressLocation> returnLocations;
 
     private PublicationsEnabledDays enabledDays;
+
     private MoneyAndAmount costPerHour;
     private List<ReservedPublication> reservedPublicationList;
 
@@ -35,11 +37,15 @@ public class Publication extends IdModel {
 
     }
 
-    public Publication(User publicationUser, Vehicle vehicle, AdressLocation acquireLocation) {
+    public Publication(User publicationUser, Vehicle vehicle,
+                       AdressLocation acquireLocation, LinkedList<AdressLocation> returnLocations,
+    PublicationsEnabledDays publicationDays) {
         this.owner = publicationUser;
         this.vehicle = vehicle;
         this.acquireLocation  = acquireLocation;
-        this.reservedPublicationList = new LinkedList<>();
+//        this.reservedPublicationList = new LinkedList<>();
+        this.returnLocations = returnLocations;
+        this.enabledDays = publicationDays;
     }
 
     @JsonIgnore
@@ -60,7 +66,7 @@ public class Publication extends IdModel {
     }
 
     @JsonIgnore
-    public LinkedList<AdressLocation> getReturnLocations() {
+    public List<AdressLocation> getReturnLocations() {
         return returnLocations;
     }
 
@@ -91,5 +97,17 @@ public class Publication extends IdModel {
 
     public void disabledDays(LinkedList<LocalDate> reservationDays) throws DayAlreadyDisabledException {
         this.enabledDays.disableDays(reservationDays);
+    }
+
+    public List<LocalDate> getDisabledDays(){
+        return this.enabledDays.getDisabledDays();
+    }
+
+    public List<LocalDate> getReservedDays() {
+        return  this.enabledDays.getReservedDays();
+    }
+
+    public void setReturnLocations(LinkedList<AdressLocation> returnLocations) {
+        this.returnLocations = returnLocations;
     }
 }

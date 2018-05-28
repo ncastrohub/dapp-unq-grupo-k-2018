@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-access="field"
+                   default-cascade="save-update">
+    <class name="model.PublicationsEnabledDays">
+        <id column="id" name="id">
+            <generator class="native" />
+        </id>
+
+        <list name="disabledDays" cascade="all"  lazy="false">
+            <key column="enabled_days_id" />
+            <list-index  column="disabled_days"/>
+            <element type="java.time.LocalDate"/>
+        </list>
+
+
+        <list name="reservedDays" cascade="all"  lazy="false">
+            <key column="enabled_days_id" />
+            <list-index  column="reserved_days"/>
+            <element type="java.time.LocalDate"/>
+        </list>
+        
+    </class>
+</hibernate-mapping>
+
+
+
+
