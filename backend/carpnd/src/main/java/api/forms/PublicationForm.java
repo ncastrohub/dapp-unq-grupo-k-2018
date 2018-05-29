@@ -4,6 +4,7 @@ import lombok.Data;
 import me.geso.tinyvalidator.constraints.NotNull;
 import me.geso.tinyvalidator.constraints.Size;
 import model.AdressLocation;
+import model.MoneyAndAmount;
 import model.PublicationsEnabledDays;
 import model.Vehicle;
 
@@ -47,6 +48,9 @@ public class PublicationForm {
 
 
     @NotNull
-    private MoneyAndAmountForm costPerHour;
+    public MoneyAndAmountForm costPerHour;
 
+    public MoneyAndAmount getCostPerDayInstance() {
+        return costPerHour.getModelInstance();
+    }
 }

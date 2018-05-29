@@ -48,6 +48,8 @@ public class TestPublicationService {
         assertThat(createdPublication.getDisabledDays()).isEqualTo(PublicationOnDb.getDisabledDays());
         assertThat(createdPublication.getReservedDays()).isEqualTo(PublicationOnDb.getReservedDays());
         assertThat(createdPublication.getReservedDays()).isEqualTo(PublicationOnDb.getReservedDays());
+        assertThat(createdPublication.getCostPerHour().amount).isEqualTo(PublicationOnDb.getCostPerHour().amount);
+        assertThat(createdPublication.getCostPerHour().currency).isEqualTo(PublicationOnDb.getCostPerHour().currency);
 
     }
 

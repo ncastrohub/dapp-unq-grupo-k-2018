@@ -110,13 +110,13 @@ public class PublishService {
         User publicationUser = this.userService.findById(userId);
 
         Publication newPublication = new Publication(
-                publicationUser,
+                        publicationUser,
+                publication.getCostPerDayInstance(),
                 publication.getVehicleInstance(),
                 publication.getAcquireLocationInstance(),
                 publication.getReturnLocationsList(),
-                publication.getEnabledDaysInstance(),
                 publication.getEnabledDaysInstance()
-        );
+                );
 
         this.publicationService.save(newPublication);
         return newPublication;

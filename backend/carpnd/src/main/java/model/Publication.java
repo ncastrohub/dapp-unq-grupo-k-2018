@@ -37,16 +37,16 @@ public class Publication extends IdModel {
 
     }
 
-    public Publication(User publicationUser, Vehicle vehicle,
-                       AdressLocation acquireLocation, LinkedList<AdressLocation> returnLocations,
-    PublicationsEnabledDays publicationDays) {
-        this.owner = publicationUser;
-        this.vehicle = vehicle;
-        this.acquireLocation  = acquireLocation;
-//        this.reservedPublicationList = new LinkedList<>();
-        this.returnLocations = returnLocations;
-        this.enabledDays = publicationDays;
-    }
+//    public Publication(User publicationUser, Vehicle vehicle,
+//                       AdressLocation acquireLocation, LinkedList<AdressLocation> returnLocations,
+//    PublicationsEnabledDays publicationDays) {
+//        this.owner = publicationUser;
+//        this.vehicle = vehicle;
+//        this.acquireLocation  = acquireLocation;
+////        this.reservedPublicationList = new LinkedList<>();
+//        this.returnLocations = returnLocations;
+//        this.enabledDays = publicationDays;
+//    }
 
     @JsonIgnore
     public MoneyAndAmount getCostPerHour() {

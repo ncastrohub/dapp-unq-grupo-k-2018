@@ -1,8 +1,11 @@
 package model;
 
-public class MoneyAndAmount {
+public class MoneyAndAmount extends IdModel {
     public CustomCurrencies currency;
     public Double amount;
+
+
+    public MoneyAndAmount(){}
 
     public MoneyAndAmount(Double amount, CustomCurrencies aCurrency) {
         this.amount = amount;

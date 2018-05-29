@@ -14,6 +14,7 @@ public class PublicationFormBuilder {
         pForm.returnLocations.add(AdressLocationFormBuilder.some());
         pForm.returnLocations.add(AdressLocationFormBuilder.some());
         pForm.enabledDays = PublicationsEnabledDaysFormBuilder.some();
+        pForm.costPerHour = MoneyAndAmountFormBuilder.some();
         return pForm;
     }
 
