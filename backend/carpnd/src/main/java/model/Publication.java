@@ -19,6 +19,7 @@ public class Publication extends IdModel {
     private PublicationsEnabledDays enabledDays;
 
     private MoneyAndAmount costPerHour;
+
     private List<ReservedPublication> reservedPublicationList;
 
     public Publication(){}

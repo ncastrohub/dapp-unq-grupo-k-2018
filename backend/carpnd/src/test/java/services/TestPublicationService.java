@@ -3,8 +3,10 @@ package services;
 
 import api.forms.PublicationForm;
 import model.Publication;
+import model.Reservation;
 import model.User;
 import model.exceptions.FormValidationError;
+import net.sf.cglib.core.Local;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,10 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import utils.builders.PublicationFormBuilder;
 import utils.builders.UserBuilder;
+
+import java.time.LocalDate;
+import java.util.LinkedList;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -50,6 +56,55 @@ public class TestPublicationService {
         assertThat(createdPublication.getReservedDays()).isEqualTo(PublicationOnDb.getReservedDays());
         assertThat(createdPublication.getCostPerHour().amount).isEqualTo(PublicationOnDb.getCostPerHour().amount);
         assertThat(createdPublication.getCostPerHour().currency).isEqualTo(PublicationOnDb.getCostPerHour().currency);
+
+    }
+
+
+    @Test
+    public void testMakeReservationOfAPublication() throws FormValidationError {
+
+        User owner = UserBuilder.someUser();
+        User customer = UserBuilder.someUser();
+
+        List<LocalDate> daysToReserve = new LinkedList<>();
+        daysToReserve.add(LocalDate.now().plusDays(6));
+        daysToReserve.add(LocalDate.now().plusDays(7));
+        daysToReserve.add(LocalDate.now().plusDays(8));
+
+
+        this.userService.save(owner);
+        PublicationForm publicationForm = PublicationFormBuilder.some();
+        Publication createdPublication = this.publicationService.createPublicationForUser(owner.getId(), publicationForm);
+
+
+        for (LocalDate eachDay: daysToReserve){
+            assertThat(createdPublication.canReserve(eachDay)).isTrue();
+        }
+
+        Reservation cratedReservation = this.publicationService.makeReservation(createdPublication.getId(), daysToReserve, customer.getId());
+
+        for (LocalDate eachDay: daysToReserve){
+            assertThat(createdPublication.canReserve(eachDay)).isFalse();
+        }
+
+        assertThat(createdPublication.getReservedDays()).containsAll(daysToReserve);
+        assertThat(cratedReservation.publication.publication.getId()).isEqualsTo(createdPublication.getId());
+        assertThat(cratedReservation.getOwner().getId()).isEqualsTo(owner.getId());
+        assertThat(cratedReservation.getCustomer().getId()).isEqualsTo(customer.getId());
+        assertThat(createdPublication.getReturnLocations()).contains(cratedReservation.returnLocation);
+        assertThat(createdPublication.acquireLocation.getId()).contains(cratedReservation.acquireLocation.getId());
+
+
+        /*
+        * public ReservedPublication publication;
+    public AdressLocation acquireLocation;
+    public LocalDateTime acquireTime;
+    public LocalDateTime returnTime;
+    public ReservationState state;
+    public AdressLocation returnLocation;
+    public User owner;
+    public User customer;
+        * */
 
     }
 
