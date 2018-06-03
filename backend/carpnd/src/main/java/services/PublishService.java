@@ -16,6 +16,15 @@ public class PublishService {
     private UserService userService;
     private VehicleService vehicleService;
     private PublicationService publicationService;
+
+    public void setReservationService(ReservationService reservationService) {
+        this.reservationService = reservationService;
+    }
+
+    public ReservationService getReservationService() {
+        return reservationService;
+    }
+
     private ReservationService reservationService;
 
 

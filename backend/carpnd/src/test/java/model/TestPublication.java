@@ -62,7 +62,9 @@ public class TestPublication {
         AdressLocation acquirePlace = mock(AdressLocation.class);
 
         LinkedList<AdressLocation> returnLocations = new LinkedList<>();
-        returnLocations.add(mock(AdressLocation.class));
+        AdressLocation returnLocation = mock(AdressLocation.class);
+
+        returnLocations.add(returnLocation);
         returnLocations.add(mock(AdressLocation.class));
         returnLocations.add(mock(AdressLocation.class));
         returnLocations.add(mock(AdressLocation.class));
@@ -86,10 +88,8 @@ public class TestPublication {
         reservationDays.add(dayTwo);
         reservationDays.add(dayThree);
 
-        publication.makeReservation(customer, reservationDays, returnLocation);
-        ReservedPublication reservedPublication = publication.getReservedPublicationList().get(0);
-        assertThat(reservedPublication.getCustomer()).isEqualTo(customer);
-        assertThat(reservedPublication.getReservedDays()).isEqualTo(reservationDays);
+        Reservation reservation = publication.makeReservation(customer, reservationDays, returnLocation);
+        assertThat(reservation.getPublicationSnapshot().publication.getId()).isEqualTo(publication.getId());
     }
 
     @Test
@@ -102,7 +102,9 @@ public class TestPublication {
         AdressLocation acquirePlace = mock(AdressLocation.class);
 
         LinkedList<AdressLocation> returnLocations = new LinkedList<>();
-        returnLocations.add(mock(AdressLocation.class));
+        AdressLocation returnLocation = mock(AdressLocation.class);
+
+        returnLocations.add(returnLocation);
         returnLocations.add(mock(AdressLocation.class));
         returnLocations.add(mock(AdressLocation.class));
         returnLocations.add(mock(AdressLocation.class));
@@ -126,7 +128,7 @@ public class TestPublication {
         reservationDays.add(dayTwo);
         reservationDays.add(dayThree);
 
-        publication.makeReservation(customer, reservationDays, returnLocation);
+        Reservation reservation = publication.makeReservation(customer, reservationDays, returnLocation);
 
         assertThat(publication.canReserve(dayOne)).isFalse();
         assertThat(publication.canReserve(dayTwo)).isFalse();
@@ -146,7 +148,9 @@ public class TestPublication {
         AdressLocation acquirePlace = mock(AdressLocation.class);
 
         LinkedList<AdressLocation> returnLocations = new LinkedList<>();
-        returnLocations.add(mock(AdressLocation.class));
+        AdressLocation returnLocation = mock(AdressLocation.class);
+
+        returnLocations.add(returnLocation);
         returnLocations.add(mock(AdressLocation.class));
         returnLocations.add(mock(AdressLocation.class));
         returnLocations.add(mock(AdressLocation.class));
@@ -170,7 +174,7 @@ public class TestPublication {
         reservationDays.add(dayTwo);
         reservationDays.add(dayThree);
 
-        publication.makeReservation(customer, reservationDays, returnLocation);
+        Reservation reservation = publication.makeReservation(customer, reservationDays, returnLocation);
 
         publication.releaseDays(reservationDays);
 
@@ -191,7 +195,9 @@ public class TestPublication {
         AdressLocation acquirePlace = mock(AdressLocation.class);
 
         LinkedList<AdressLocation> returnLocations = new LinkedList<>();
-        returnLocations.add(mock(AdressLocation.class));
+        AdressLocation returnLocation = mock(AdressLocation.class);
+
+        returnLocations.add(returnLocation);
         returnLocations.add(mock(AdressLocation.class));
         returnLocations.add(mock(AdressLocation.class));
         returnLocations.add(mock(AdressLocation.class));
@@ -237,7 +243,9 @@ public class TestPublication {
         AdressLocation acquirePlace = mock(AdressLocation.class);
 
         LinkedList<AdressLocation> returnLocations = new LinkedList<>();
-        returnLocations.add(mock(AdressLocation.class));
+        AdressLocation returnLocation = mock(AdressLocation.class);
+
+        returnLocations.add(returnLocation);
         returnLocations.add(mock(AdressLocation.class));
         returnLocations.add(mock(AdressLocation.class));
         returnLocations.add(mock(AdressLocation.class));

@@ -20,7 +20,7 @@ public class TestReservedPublication {
         User customer = mock(User.class);
         reservedDays.add(LocalDate.now());
 
-        ReservedPublication reservedPublication = new ReservedPublication(publication, reservedDays, customer, returnLocation);
+        ReservedPublication reservedPublication = new ReservedPublication(publication, reservedDays, customer, mock(AdressLocation.class));
 
         assertThat(reservedPublication.publication).isEqualTo(publication);
         assertThat(reservedPublication.reservedDays).isEqualTo(reservedDays);
@@ -38,7 +38,7 @@ public class TestReservedPublication {
 
         when(publication.getCostPerHour()).thenReturn(costPerHour);
 
-        ReservedPublication reservedPublication = new ReservedPublication(publication, reservedDays, customer, returnLocation);
+        ReservedPublication reservedPublication = new ReservedPublication(publication, reservedDays, customer, mock(AdressLocation.class));
 
         assertThat(reservedPublication.getCostPerHour()).isEqualTo(costPerHour);
         MoneyAndAmount newCostPerHour = new MoneyAndAmount(24.12, CustomCurrencies.ARS);

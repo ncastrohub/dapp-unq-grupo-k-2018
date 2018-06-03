@@ -27,6 +27,12 @@
         <property name="userService" ref="services.user" />
         <property name="vehicleService" ref="services.vehicle" />
         <property name="publicationService" ref="services.publication" />
+        <property name="reservationService" ref="services.reservation" />
+    </bean>
+
+
+    <bean id="services.reservation" class="services.ReservationService">
+        <property name="repository" ref="persistence.reservationrepository" />
     </bean>
 
     <!--<bean depends-on="services.publication" id="fixture.vehicle" class="fixtures.VehicleAndUserFixture">-->

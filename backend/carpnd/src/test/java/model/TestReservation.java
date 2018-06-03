@@ -1,11 +1,16 @@
 package model;
+
 import org.junit.Test;
 import utils.builders.ReservationBuilder;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.LinkedList;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class TestReservation {
 
@@ -20,29 +25,27 @@ public class TestReservation {
 
         AdressLocation acquireLocation = mock(AdressLocation.class);
         AdressLocation returnLocation = mock(AdressLocation.class);
-        ReservedPublication reservedPublication = mock(ReservedPublication.class);
+        Publication publication = mock(Publication.class);
+
+        List<LocalDate> reservedDays = new LinkedList<>();
+        reservedDays.add(LocalDate.now().plusDays(3));
+        reservedDays.add(LocalDate.now().plusDays(4));
+        reservedDays.add(LocalDate.now().plusDays(5));
+        reservedDays.add(LocalDate.now().plusDays(6));
+
 
         Reservation reservation = ReservationBuilder.start()
-            .withOwner(owner)
             .withCustomer(customer)
-            .withAcquireTime(acquireTime)
-            .withAcquireLocation(acquireLocation)
-            .withReturnTime(returnTime)
             .withReturnLocation(returnLocation)
-            .withPublication(reservedPublication)
+            .withPublication(publication)
+            .withReservedDays(reservedDays)
             .build();
 
-        assertThat(reservation.owner).isEqualTo(owner);
         assertThat(reservation.customer).isEqualTo(customer);
-        assertThat(reservation.owner).isNotEqualTo(customer);
         assertThat(reservation.customer).isNotEqualTo(owner);
         assertThat(reservation.state).isInstanceOf(WaitingForOwnerState.class);
 
-        assertThat(reservation.acquireTime).isEqualTo(acquireTime);
-        assertThat(reservation.returnTime).isEqualTo(returnTime);
-        assertThat(reservation.acquireLocation).isEqualTo(acquireLocation);
-        assertThat(reservation.returnLocation).isEqualTo(returnLocation);
-        assertThat(reservation.publication).isEqualTo(reservedPublication);
+        assertThat(reservation.publication).isEqualTo(publication);
     }
 
     @Test
@@ -54,17 +57,23 @@ public class TestReservation {
         LocalDateTime returnTime = acquireTime.plusDays(7);
         AdressLocation acquireLocation = mock(AdressLocation.class);
         AdressLocation returnLocation = mock(AdressLocation.class);
-        ReservedPublication reservationPublication = mock(ReservedPublication.class);
-        when(reservationPublication.getCostPerHour()).thenReturn( new MoneyAndAmount(10.00, CustomCurrencies.ARS));
+
+        List<LocalDate> reservedDays = new LinkedList<>();
+        reservedDays.add(LocalDate.now().plusDays(3));
+        reservedDays.add(LocalDate.now().plusDays(4));
+        reservedDays.add(LocalDate.now().plusDays(5));
+        reservedDays.add(LocalDate.now().plusDays(6));
+
+
+        Publication publication = mock(Publication.class);
+
+        when(publication.getCostPerHour()).thenReturn( new MoneyAndAmount(10.00, CustomCurrencies.ARS));
 
         Reservation reservation = ReservationBuilder.start()
-                .withOwner(owner)
                 .withCustomer(customer)
-                .withAcquireTime(acquireTime)
-                .withAcquireLocation(acquireLocation)
-                .withReturnTime(returnTime)
                 .withReturnLocation(returnLocation)
-                .withPublication(reservationPublication)
+                .withPublication(publication)
+                .withReservedDays(reservedDays)
                 .build();
 
         MoneyAndAmount priceExpected = new MoneyAndAmount((7 * 24) * 10.00, CustomCurrencies.ARS);

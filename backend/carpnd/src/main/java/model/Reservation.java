@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
-public class Reservation {
+public class Reservation extends IdModel {
 
     private ReservedPublication publicationSnapshot;
 
@@ -16,7 +16,7 @@ public class Reservation {
                        User customer, AdressLocation returnLocation) {
         this.publication = publication;
         this.customer = customer;
-        this.state.ownerAccepts(this);
+        this.state = new WaitingForOwnerState();
         this.publicationSnapshot = new ReservedPublication(
                 publication,
                 reservationDays,

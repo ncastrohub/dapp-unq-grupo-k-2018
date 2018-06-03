@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-access="field"
+                   default-cascade="save-update">
+    <class name="model.ReservedPublication">
+        <id column="id" name="id">
+            <generator class="native" />
+        </id>
+
+        <many-to-one name="publication" class="model.Publication" lazy="false"
+                     not-null="false" />
+
+        <list name="reservedDays" cascade="all"  lazy="false">
+            <key column="reserved_publication_id" />
+            <list-index  column="user_vehicle_index"/>
+            <element type="java.time.LocalDate"/>
+        </list>
+
+        <one-to-one name="acquireLocation" class="model.AdressLocation"/>
+        <one-to-one name="returnLocation" class="model.AdressLocation"/>
+        <!--<one-to-one name="returnTime" class="java.time.LocalDateTime"/>-->
+
+        <many-to-one name="customer" class="model.User" lazy="false"
+                     not-null="false" />
+
+    </class>
+</hibernate-mapping>
