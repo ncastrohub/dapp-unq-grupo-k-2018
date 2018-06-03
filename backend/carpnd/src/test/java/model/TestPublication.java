@@ -86,7 +86,7 @@ public class TestPublication {
         reservationDays.add(dayTwo);
         reservationDays.add(dayThree);
 
-        publication.makeReservation(customer, reservationDays);
+        publication.makeReservation(customer, reservationDays, returnLocation);
         ReservedPublication reservedPublication = publication.getReservedPublicationList().get(0);
         assertThat(reservedPublication.getCustomer()).isEqualTo(customer);
         assertThat(reservedPublication.getReservedDays()).isEqualTo(reservationDays);
@@ -126,7 +126,7 @@ public class TestPublication {
         reservationDays.add(dayTwo);
         reservationDays.add(dayThree);
 
-        publication.makeReservation(customer, reservationDays);
+        publication.makeReservation(customer, reservationDays, returnLocation);
 
         assertThat(publication.canReserve(dayOne)).isFalse();
         assertThat(publication.canReserve(dayTwo)).isFalse();
@@ -170,7 +170,7 @@ public class TestPublication {
         reservationDays.add(dayTwo);
         reservationDays.add(dayThree);
 
-        publication.makeReservation(customer, reservationDays);
+        publication.makeReservation(customer, reservationDays, returnLocation);
 
         publication.releaseDays(reservationDays);
 
@@ -223,7 +223,7 @@ public class TestPublication {
         reservationDays.add(daySix);
 
 
-        assertThrows(InvalidAmountOfDaysToReserveException.class, ()-> publication.makeReservation(customer, reservationDays));
+        assertThrows(InvalidAmountOfDaysToReserveException.class, ()-> publication.makeReservation(customer, reservationDays, returnLocation));
 
     }
 
@@ -265,7 +265,7 @@ public class TestPublication {
 
         publication.disabledDays(reservationDays);
 
-        assertThrows(DayDisabledException.class, ()-> publication.makeReservation(customer, reservationDays));
+        assertThrows(DayDisabledException.class, ()-> publication.makeReservation(customer, reservationDays, returnLocation));
     }
 
     /**/

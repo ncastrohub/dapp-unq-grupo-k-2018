@@ -5,8 +5,10 @@ import api.forms.PublicationForm;
 import model.Publication;
 import model.Reservation;
 import model.User;
+import model.exceptions.DayAlreadyReservedException;
+import model.exceptions.DayDisabledException;
 import model.exceptions.FormValidationError;
-import net.sf.cglib.core.Local;
+import model.exceptions.InvalidAmountOfDaysToReserveException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,7 +63,7 @@ public class TestPublicationService {
 
 
     @Test
-    public void testMakeReservationOfAPublication() throws FormValidationError {
+    public void testMakeReservationOfAPublication() throws FormValidationError, DayDisabledException, DayAlreadyReservedException, InvalidAmountOfDaysToReserveException {
 
         User owner = UserBuilder.someUser();
         User customer = UserBuilder.someUser();
@@ -71,28 +73,31 @@ public class TestPublicationService {
         daysToReserve.add(LocalDate.now().plusDays(7));
         daysToReserve.add(LocalDate.now().plusDays(8));
 
-
         this.userService.save(owner);
         PublicationForm publicationForm = PublicationFormBuilder.some();
         Publication createdPublication = this.publicationService.createPublicationForUser(owner.getId(), publicationForm);
-
 
         for (LocalDate eachDay: daysToReserve){
             assertThat(createdPublication.canReserve(eachDay)).isTrue();
         }
 
-        Reservation cratedReservation = this.publicationService.makeReservation(createdPublication.getId(), daysToReserve, customer.getId());
+        Reservation cratedReservation = this.publicationService.makeReservation(
+                createdPublication.getId(),
+                daysToReserve,
+                customer.getId(),
+                createdPublication.getReturnLocations().get(0).getId()
+        );
 
         for (LocalDate eachDay: daysToReserve){
             assertThat(createdPublication.canReserve(eachDay)).isFalse();
         }
 
         assertThat(createdPublication.getReservedDays()).containsAll(daysToReserve);
-        assertThat(cratedReservation.publication.publication.getId()).isEqualsTo(createdPublication.getId());
-        assertThat(cratedReservation.getOwner().getId()).isEqualsTo(owner.getId());
-        assertThat(cratedReservation.getCustomer().getId()).isEqualsTo(customer.getId());
+        assertThat(cratedReservation.publication.publication.getId()).isEqualTo(createdPublication.getId());
+        assertThat(cratedReservation.getOwner().getId()).isEqualTo(owner.getId());
+        assertThat(cratedReservation.getCustomer().getId()).isEqualTo(customer.getId());
         assertThat(createdPublication.getReturnLocations()).contains(cratedReservation.returnLocation);
-        assertThat(createdPublication.acquireLocation.getId()).contains(cratedReservation.acquireLocation.getId());
+        assertThat(createdPublication.getAcquireLocation().getId()).isEqualTo(cratedReservation.acquireLocation.getId());
 
 
         /*

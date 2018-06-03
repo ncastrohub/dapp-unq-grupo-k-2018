@@ -37,4 +37,8 @@ public class MoneyAndAmount extends IdModel {
     public void subtract(MoneyAndAmount moneyAndAmount) {
         this.amount = this.amount - moneyAndAmount.amount;
     }
+
+    public MoneyAndAmount createNew() {
+        return new MoneyAndAmount(this.amount, this.currency);
+    }
 }

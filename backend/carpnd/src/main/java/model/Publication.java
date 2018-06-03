@@ -6,24 +6,18 @@ import org.codehaus.jackson.annotate.JsonIgnore;
 import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 
 public class Publication extends IdModel {
 
     private User owner;
     private Vehicle vehicle;
-
     private AdressLocation acquireLocation;
-
     private List<AdressLocation> returnLocations;
-
     private PublicationsEnabledDays enabledDays;
-
     private MoneyAndAmount costPerHour;
 
-    private List<ReservedPublication> reservedPublicationList;
-
     public Publication(){}
-
     public Publication(User owner, MoneyAndAmount costPerHour,
                        Vehicle vehicle, AdressLocation acquireLocation,
                        LinkedList<AdressLocation> returnLocations,
@@ -34,20 +28,8 @@ public class Publication extends IdModel {
         this.acquireLocation = acquireLocation;
         this.returnLocations = returnLocations;
         this.enabledDays = enabledDays;
-        this.reservedPublicationList = new LinkedList<>();
 
     }
-
-//    public Publication(User publicationUser, Vehicle vehicle,
-//                       AdressLocation acquireLocation, LinkedList<AdressLocation> returnLocations,
-//    PublicationsEnabledDays publicationDays) {
-//        this.owner = publicationUser;
-//        this.vehicle = vehicle;
-//        this.acquireLocation  = acquireLocation;
-////        this.reservedPublicationList = new LinkedList<>();
-//        this.returnLocations = returnLocations;
-//        this.enabledDays = publicationDays;
-//    }
 
     @JsonIgnore
     public MoneyAndAmount getCostPerHour() {
@@ -76,16 +58,11 @@ public class Publication extends IdModel {
         return this.enabledDays;
     }
 
-    public void makeReservation(User customer, LinkedList<LocalDate> reservationDays) throws DayAlreadyReservedException, DayDisabledException, InvalidAmountOfDaysToReserveException {
+    public Reservation makeReservation(User customer, List<LocalDate> reservationDays, AdressLocation returnLocation) throws DayAlreadyReservedException, DayDisabledException, InvalidAmountOfDaysToReserveException {
         this.enabledDays.reserveDays(reservationDays);
-        ReservedPublication newReservedPublication = new ReservedPublication(this, reservationDays, customer);
-        this.reservedPublicationList.add(newReservedPublication);
+        return new Reservation(this, reservationDays, customer, returnLocation);
     }
 
-    @JsonIgnore
-    public List<ReservedPublication> getReservedPublicationList() {
-        return reservedPublicationList;
-    }
 
     public boolean canReserve(LocalDate dayOne) {
 
@@ -110,5 +87,14 @@ public class Publication extends IdModel {
 
     public void setReturnLocations(LinkedList<AdressLocation> returnLocations) {
         this.returnLocations = returnLocations;
+    }
+
+    public AdressLocation getReturnLocationsById(Long locationId) throws NoReturnLocationInPublicationException {
+        Optional<AdressLocation> matchLocation = this.returnLocations.stream().filter(location -> location.getId().equals(locationId)).findFirst();
+        if (matchLocation.isPresent()){
+            return matchLocation.get();
+        }else {
+            throw new NoReturnLocationInPublicationException();
+        }
     }
 }

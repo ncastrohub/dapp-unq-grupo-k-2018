@@ -2,20 +2,23 @@ package services;
 
 
 import api.forms.*;
-import model.Publication;
-import model.exceptions.FormValidationError;
-import model.User;
-import model.Vehicle;
+import model.*;
+import model.exceptions.*;
 import org.springframework.transaction.annotation.Transactional;
 import services.Validators.GenericValidator;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.List;
 
 public class PublishService {
 
     private UserService userService;
     private VehicleService vehicleService;
+    private PublicationService publicationService;
+    private ReservationService reservationService;
+
+
 
     public PublicationService getPublicationService() {
         return publicationService;
@@ -24,8 +27,6 @@ public class PublishService {
     public void setPublicationService(PublicationService publicationService) {
         this.publicationService = publicationService;
     }
-
-    private PublicationService publicationService;
 
 
 
@@ -125,6 +126,18 @@ public class PublishService {
 
     public Publication retrievePublication(Long publicationId) {
         return this.publicationService.findById(publicationId);
+    }
+
+    public Reservation makeReservation(Long customerId, List<LocalDate> daysToReserve, Long publicationId,
+                                       Long returnLocationId) throws DayDisabledException, DayAlreadyReservedException, InvalidAmountOfDaysToReserveException, NoReturnLocationInPublicationException {
+
+        Publication publication = this.publicationService.findById(publicationId);
+        User customer = this.userService.findById(customerId);
+        AdressLocation returnLocation = publication.getReturnLocationsById(returnLocationId);
+        Reservation reservation = publication.makeReservation(customer, daysToReserve, returnLocation);
+        this.publicationService.update(publication);
+        this.reservationService.save(reservation);
+        return reservation;
     }
 }
 

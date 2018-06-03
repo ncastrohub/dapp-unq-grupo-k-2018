@@ -1,39 +1,47 @@
 package model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.List;
 
 public class Reservation {
 
-    public ReservedPublication publication;
-    public AdressLocation acquireLocation;
-    public LocalDateTime acquireTime;
-    public LocalDateTime returnTime;
+    private ReservedPublication publicationSnapshot;
+
+    public Publication publication;
     public ReservationState state;
-    public AdressLocation returnLocation;
-    public User owner;
     public User customer;
 
-    public Reservation(
-            User owner,
-            User customer,
-            LocalDateTime acquireTime, AdressLocation acquireLocation,
-            LocalDateTime returnTime, AdressLocation returnLocation,
-            ReservedPublication publication) {
-        this.owner = owner;
-        this.customer = customer;
-        this.state = new WaitingForOwnerState();
-        this.acquireTime = acquireTime;
-        this.acquireLocation = acquireLocation;
-        this.returnTime = returnTime;
-        this.returnLocation = returnLocation;
+    public Reservation(Publication publication, List<LocalDate> reservationDays,
+                       User customer, AdressLocation returnLocation) {
         this.publication = publication;
+        this.customer = customer;
+        this.state.ownerAccepts(this);
+        this.publicationSnapshot = new ReservedPublication(
+                publication,
+                reservationDays,
+                customer,
+                returnLocation
+        );
     }
 
+    public ReservedPublication getPublicationSnapshot() {
+        return publicationSnapshot;
+    }
+
+
     public MoneyAndAmount finalPrice() {
-        MoneyAndAmount costPerHour = this.publication.getCostPerHour();
-        Long hours = acquireTime.until( returnTime, ChronoUnit.HOURS);
+        MoneyAndAmount costPerHour = this.publicationSnapshot.getCostPerHour();
+        Long hours = this.publicationSnapshot.getAcquireTime().until( this.publicationSnapshot.returnTime, ChronoUnit.HOURS);
         Double roundedValue = hours.doubleValue();
         return costPerHour.plusBy(roundedValue);
+    }
+
+    public User getOwner() {
+        return publication.getOwner();
+    }
+
+    public User getCustomer() {
+        return customer;
     }
 }
