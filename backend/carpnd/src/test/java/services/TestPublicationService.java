@@ -5,6 +5,7 @@ import api.forms.PublicationForm;
 import model.Publication;
 import model.Reservation;
 import model.User;
+import model.VehicleType;
 import model.exceptions.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import utils.PaginationPage;
 import utils.builders.PublicationFormBuilder;
 import utils.builders.UserBuilder;
 
@@ -100,20 +102,31 @@ public class TestPublicationService {
         assertThat(cratedReservation.getCustomer().getId()).isEqualTo(customer.getId());
         assertThat(publicationOnDb.getReturnLocationsById(cratedReservation.getPublicationSnapshot().returnLocation.getId())).isNotNull();
         assertThat(publicationOnDb.getAcquireLocation().getId()).isNotEqualTo(cratedReservation.getPublicationSnapshot().acquireLocation.getId());
+    }
+
+    @Test
+    public void testSearchPublicationOnPagination() throws FormValidationError {
+
+        User owner = UserBuilder.someUser();
+        this.userService.save(owner);
+        this.publicationService.createPublicationForUser(owner.getId(), PublicationFormBuilder.some());
+        this.publicationService.createPublicationForUser(owner.getId(), PublicationFormBuilder.some());
+        this.publicationService.createPublicationForUser(owner.getId(), PublicationFormBuilder.some());
+        this.publicationService.createPublicationForUser(owner.getId(), PublicationFormBuilder.some());
+
+        PublicationForm secondPublicationForm = PublicationFormBuilder.some();
+        secondPublicationForm.vehicle.type = VehicleType.SEDAN;
+        this.publicationService.createPublicationForUser(owner.getId(), secondPublicationForm);
+
+        PublicationForm thirdPublicationForm = PublicationFormBuilder.some();
+        thirdPublicationForm.vehicle.type = VehicleType.VAN;
+        this.publicationService.createPublicationForUser(owner.getId(), thirdPublicationForm);
 
 
-        /*
-        * public ReservedPublication publication;
-    public AdressLocation acquireLocation;
-    public LocalDateTime acquireTime;
-    public LocalDateTime returnTime;
-    public ReservationState state;
-    public AdressLocation returnLocation;
-    public User owner;
-    public User customer;
-        * */
+        PaginationPage<Publication> page = this.publicationService.getPublicationPage(0);
 
     }
+
 
 
 }

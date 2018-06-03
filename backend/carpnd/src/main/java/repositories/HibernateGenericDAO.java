@@ -1,9 +1,9 @@
 package repositories;
 
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
+
 import java.io.Serializable;
 import java.util.List;
-
-import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 /**
  * Generic hibernate DAO
@@ -68,5 +68,8 @@ public abstract class HibernateGenericDAO<T> extends HibernateDaoSupport impleme
     public void update(final T entity) {
         this.getHibernateTemplate().update(entity);
     }
+
+
+//    public void getPage(Integer pageNumber, )
 
 }

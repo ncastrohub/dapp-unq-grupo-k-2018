@@ -6,6 +6,7 @@ import model.*;
 import model.exceptions.*;
 import org.springframework.transaction.annotation.Transactional;
 import services.Validators.GenericValidator;
+import utils.PaginationPage;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -132,13 +133,13 @@ public class PublishService {
         return newPublication;
     }
 
-
     public Publication retrievePublication(Long publicationId) {
         return this.publicationService.findById(publicationId);
     }
 
     public Reservation makeReservation(Long customerId, List<LocalDate> daysToReserve, Long publicationId,
-                                       Long returnLocationId) throws DayDisabledException, DayAlreadyReservedException, InvalidAmountOfDaysToReserveException, NoReturnLocationInPublicationException {
+           Long returnLocationId) throws DayDisabledException, DayAlreadyReservedException,
+            InvalidAmountOfDaysToReserveException, NoReturnLocationInPublicationException {
 
         Publication publication = this.publicationService.findById(publicationId);
         User customer = this.userService.findById(customerId);
@@ -148,6 +149,11 @@ public class PublishService {
         this.reservationService.save(reservation);
         return reservation;
     }
+
+    public PaginationPage<Publication> getPublicationPage(int pageNumber) {
+        return null;
+    }
+
 }
 
 
