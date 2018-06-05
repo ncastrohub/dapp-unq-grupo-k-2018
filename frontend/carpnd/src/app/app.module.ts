@@ -4,6 +4,8 @@ import {  LOCALE_ID, NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 
+import { AgmCoreModule } from '@agm/core';
+
 import { AppRoutingModule }     from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ListComponent } from './vehicle/list/list.component';
@@ -15,6 +17,8 @@ import { CreateuserComponent } from './user/createuser/createuser.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserServiceService } from './user/service/user-service.service';
 import { UsereditComponent } from './user/useredit/useredit.component';
+
+
 
 @NgModule({
   declarations: [
@@ -30,7 +34,10 @@ import { UsereditComponent } from './user/useredit/useredit.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyApkqv2wRZywgM-wVDJmceHuBROKB1gvOQ'
+    })
   ],
   providers: [VehicleService, UserServiceService, AppConfig, { provide: LOCALE_ID, useValue: 'en' }],
   bootstrap: [AppComponent]
