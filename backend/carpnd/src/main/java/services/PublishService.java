@@ -29,7 +29,6 @@ public class PublishService {
     private ReservationService reservationService;
 
 
-
     public PublicationService getPublicationService() {
         return publicationService;
     }
@@ -37,7 +36,6 @@ public class PublishService {
     public void setPublicationService(PublicationService publicationService) {
         this.publicationService = publicationService;
     }
-
 
 
     public UserService getUserService() {
@@ -153,6 +151,7 @@ public class PublishService {
     public PaginationPage<Publication> getPublicationPage(int pageNumber) {
         return null;
     }
+
 
 }
 

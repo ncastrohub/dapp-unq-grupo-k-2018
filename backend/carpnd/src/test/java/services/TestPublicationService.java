@@ -123,7 +123,11 @@ public class TestPublicationService {
         this.publicationService.createPublicationForUser(owner.getId(), thirdPublicationForm);
 
 
-        PaginationPage<Publication> page = this.publicationService.getPublicationPage(0);
+        PaginationPage<Publication> page = this.publicationService.getPublicationService().getPaginationPage();
+
+        assertThat(page.beforeUrl).isNull();
+        assertThat(page.elementList).size().isEqualTo(4);
+        assertThat(page.nextUrl).isEqualTo("/publication/list/1");
 
     }
 
