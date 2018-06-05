@@ -17,8 +17,9 @@ import { CreateuserComponent } from './user/createuser/createuser.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserServiceService } from './user/service/user-service.service';
 import { UsereditComponent } from './user/useredit/useredit.component';
-
-
+import { GooglemapsComponent } from './maps/googlemaps/googlemaps.component';
+import { PublicationListComponent } from './publication/publication-list/publication-list.component';
+import { PublicationService } from './publication/publication.service';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,8 @@ import { UsereditComponent } from './user/useredit/useredit.component';
     CreateuserComponent,
     UserListComponent,
     UsereditComponent,
+    GooglemapsComponent,
+    PublicationListComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,11 @@ import { UsereditComponent } from './user/useredit/useredit.component';
       apiKey: 'AIzaSyApkqv2wRZywgM-wVDJmceHuBROKB1gvOQ'
     })
   ],
-  providers: [VehicleService, UserServiceService, AppConfig, { provide: LOCALE_ID, useValue: 'en' }],
+  providers: [VehicleService,
+    UserServiceService,
+    AppConfig,
+    PublicationService,
+    { provide: LOCALE_ID, useValue: 'en' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

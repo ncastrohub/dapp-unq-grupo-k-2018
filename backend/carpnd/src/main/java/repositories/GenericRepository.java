@@ -1,6 +1,6 @@
 package repositories;
 
-import utils.PaginationPage;
+import utils.OwnPaginationPage;
 
 import java.io.Serializable;
 import java.util.List;
@@ -30,8 +30,8 @@ public interface GenericRepository<T> {
 
     List<T> getAllByPage(final int pageSize, final int pageNumber);
 
-    PaginationPage<T> getPaginationPage(Integer pageNumber);
+    OwnPaginationPage<T> getPaginationPage(Integer pageNumber);
 
-    PaginationPage<T> getPaginationPage();
+    OwnPaginationPage<T> getPaginationPage();
 }
 

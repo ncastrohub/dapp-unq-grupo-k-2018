@@ -5,11 +5,13 @@ import api.forms.UserForm;
 import api.forms.UserUpdateForm;
 import api.forms.VehicleForm;
 import api.forms.VehicleUpdateForm;
+import model.Publication;
 import model.User;
 import model.Vehicle;
 import model.exceptions.FormValidationError;
 import org.apache.cxf.rs.security.cors.CrossOriginResourceSharing;
 import services.PublishService;
+import utils.OwnPaginationPage;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
@@ -26,6 +28,10 @@ public class PublishApi {
 
     @Context
     private HttpHeaders headers;
+
+    public PublishService getPublishService() {
+        return publishService;
+    }
 
     private PublishService publishService;
 
@@ -126,6 +132,16 @@ public class PublishApi {
         } catch (FormValidationError formValidationError) {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
         }
+    }
+
+    @GET
+    @Consumes("application/json")
+    @Produces("application/json")
+    @Path(value = "/publication/list/")
+    public Response publicationList() {
+        OwnPaginationPage<Publication> page = this.publishService.getPublicationService().getPaginationPage();
+        Response response = Response.ok(page).build();
+        return response;
     }
 
 }

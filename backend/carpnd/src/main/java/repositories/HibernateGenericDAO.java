@@ -4,7 +4,7 @@ import org.hibernate.Query;
 import org.springframework.orm.hibernate4.HibernateCallback;
 import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
-import utils.PaginationPage;
+import utils.OwnPaginationPage;
 
 import java.io.Serializable;
 import java.util.List;
@@ -73,10 +73,10 @@ public abstract class HibernateGenericDAO<T> extends HibernateDaoSupport impleme
     }
 
     /*Esto deberia ir en el service, pero no puedo obtener el domainClass`*/
-    public PaginationPage<T> getPaginationPage(Integer pageNumber){
+    public OwnPaginationPage<T> getPaginationPage(Integer pageNumber){
         List<T> elementList = this.getAllByPage(4, pageNumber);
-        PaginationPage<T> page = new PaginationPage<>();
-        page.elementList = elementList;
+        OwnPaginationPage<T> page = new OwnPaginationPage<>();
+        page.setElementList(elementList);
         if (pageNumber > 0) {
             page.beforeUrl = "/" + this.getDomainClass().getSimpleName().toLowerCase() + "/list/" + (pageNumber - 1);
         }
@@ -88,7 +88,7 @@ public abstract class HibernateGenericDAO<T> extends HibernateDaoSupport impleme
         return page;
     }
 
-    public PaginationPage<T> getPaginationPage(){
+    public OwnPaginationPage<T> getPaginationPage(){
         return this.getPaginationPage(0);
     }
 

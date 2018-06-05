@@ -1,14 +1,23 @@
 package fixtures;
 
+import api.forms.PublicationForm;
 import model.User;
+import model.VehicleType;
+import model.exceptions.FormValidationError;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 import services.PublishService;
+import utils.builders.PublicationFormBuilder;
 import utils.builders.UserBuilder;
-import utils.builders.VehicleBuilder;
-
-public class VehicleAndUserFixture {
 
 
-    PublishService publicationService;
+
+/*
+*
+public class InitializeUser implements BeanPostProcessor {
+
+
+    private PublishService publicationService;
 
     public PublishService getPublicationService() {
         return publicationService;
@@ -18,16 +27,69 @@ public class VehicleAndUserFixture {
         this.publicationService = publicationService;
     }
 
-    public VehicleAndUserFixture() {
-        User user = UserBuilder.someUser();
-        user.addVehicle(VehicleBuilder.onlyWithOwner(user));
-        user.addVehicle(VehicleBuilder.onlyWithOwner(user));
-        user.addVehicle(VehicleBuilder.onlyWithOwner(user));
-        user.addVehicle(VehicleBuilder.onlyWithOwner(user));
-        user.addVehicle(VehicleBuilder.onlyWithOwner(user));
-        user.addVehicle(VehicleBuilder.onlyWithOwner(user));
-        publicationService.getUserService().save(user);
+
+
+    @Override
+    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+        return bean;
     }
 
+    @Override
+    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+        publicationService.getUserService().save(UserBuilder.someUser());
+        return bean;
+    }
+}
+*
+* */
 
+
+public class VehicleAndUserFixture implements BeanPostProcessor {
+
+
+    private PublishService publishService;
+
+    public PublishService getPublishService() {
+        return publishService;
+    }
+
+    public void setPublishService(PublishService publishService) {
+        this.publishService = publishService;
+    }
+
+    @Override
+    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+        return bean;
+    }
+
+    @Override
+    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+        User owner = UserBuilder.someUser();
+        this.publishService.getUserService().save(owner);
+        try {
+            this.publishService.createPublicationForUser(owner.getId(), PublicationFormBuilder.some());
+            this.publishService.createPublicationForUser(owner.getId(), PublicationFormBuilder.some());
+            this.publishService.createPublicationForUser(owner.getId(), PublicationFormBuilder.some());
+            this.publishService.createPublicationForUser(owner.getId(), PublicationFormBuilder.some());
+        } catch (FormValidationError formValidationError) {
+            formValidationError.printStackTrace();
+        }
+
+        PublicationForm secondPublicationForm = PublicationFormBuilder.some();
+        secondPublicationForm.vehicle.type = VehicleType.SEDAN;
+        try {
+            this.publishService.createPublicationForUser(owner.getId(), secondPublicationForm);
+        } catch (FormValidationError formValidationError) {
+            formValidationError.printStackTrace();
+        }
+
+        PublicationForm thirdPublicationForm = PublicationFormBuilder.some();
+        thirdPublicationForm.vehicle.type = VehicleType.VAN;
+        try {
+            this.publishService.createPublicationForUser(owner.getId(), thirdPublicationForm);
+        } catch (FormValidationError formValidationError) {
+            formValidationError.printStackTrace();
+        }
+        return bean;
+    }
 }

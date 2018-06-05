@@ -12,10 +12,43 @@ public class Publication extends IdModel {
 
     private User owner;
     private Vehicle vehicle;
+    
     private AdressLocation acquireLocation;
+
     private List<AdressLocation> returnLocations;
+
+    @JsonIgnore
     private PublicationsEnabledDays enabledDays;
+
     private MoneyAndAmount costPerHour;
+
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
+    public void setAcquireLocation(AdressLocation acquireLocation) {
+        this.acquireLocation = acquireLocation;
+    }
+
+    public void setReturnLocations(List<AdressLocation> returnLocations) {
+        this.returnLocations = returnLocations;
+    }
+
+    public PublicationsEnabledDays getEnabledDays() {
+        return enabledDays;
+    }
+
+    public void setEnabledDays(PublicationsEnabledDays enabledDays) {
+        this.enabledDays = enabledDays;
+    }
+
+    public void setCostPerHour(MoneyAndAmount costPerHour) {
+        this.costPerHour = costPerHour;
+    }
 
     public Publication(){}
     public Publication(User owner, MoneyAndAmount costPerHour,
@@ -77,10 +110,11 @@ public class Publication extends IdModel {
         this.enabledDays.disableDays(reservationDays);
     }
 
+    @JsonIgnore
     public List<LocalDate> getDisabledDays(){
         return this.enabledDays.getDisabledDays();
     }
-
+    @JsonIgnore
     public List<LocalDate> getReservedDays() {
         return  this.enabledDays.getReservedDays();
     }

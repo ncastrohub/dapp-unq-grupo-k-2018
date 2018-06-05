@@ -2,7 +2,7 @@ package services;
 
 import org.springframework.transaction.annotation.Transactional;
 import repositories.GenericRepository;
-import utils.PaginationPage;
+import utils.OwnPaginationPage;
 
 import java.io.Serializable;
 import java.util.List;
@@ -56,9 +56,9 @@ public class GenericService<T> implements Serializable {
     public List<T> getAllByPage(final int pageSize, final int pageNumber) {return this.repository.getAllByPage(pageSize, pageNumber);}
 
     @Transactional(readOnly = true)
-    public PaginationPage<T> getPaginationPage(Integer pageNumber){return this.repository.getPaginationPage(pageNumber);}
+    public OwnPaginationPage<T> getPaginationPage(Integer pageNumber){return this.repository.getPaginationPage(pageNumber);}
 
     @Transactional(readOnly = true)
-    public PaginationPage<T> getPaginationPage(){return this.repository.getPaginationPage();}
+    public OwnPaginationPage<T> getPaginationPage(){return this.repository.getPaginationPage();}
 
 }

@@ -6,7 +6,7 @@ import model.*;
 import model.exceptions.*;
 import org.springframework.transaction.annotation.Transactional;
 import services.Validators.GenericValidator;
-import utils.PaginationPage;
+import utils.OwnPaginationPage;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -17,6 +17,8 @@ public class PublishService {
     private UserService userService;
     private VehicleService vehicleService;
     private PublicationService publicationService;
+    private ReservationService reservationService;
+
 
     public void setReservationService(ReservationService reservationService) {
         this.reservationService = reservationService;
@@ -25,8 +27,6 @@ public class PublishService {
     public ReservationService getReservationService() {
         return reservationService;
     }
-
-    private ReservationService reservationService;
 
 
     public PublicationService getPublicationService() {
@@ -148,7 +148,7 @@ public class PublishService {
         return reservation;
     }
 
-    public PaginationPage<Publication> getPublicationPage(int pageNumber) {
+    public OwnPaginationPage<Publication> getPublicationPage(int pageNumber) {
         return null;
     }
 

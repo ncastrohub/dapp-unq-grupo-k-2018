@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import utils.PaginationPage;
+import utils.OwnPaginationPage;
 import utils.builders.PublicationFormBuilder;
 import utils.builders.UserBuilder;
 
@@ -123,7 +123,7 @@ public class TestPublicationService {
         this.publicationService.createPublicationForUser(owner.getId(), thirdPublicationForm);
 
 
-        PaginationPage<Publication> page = this.publicationService.getPublicationService().getPaginationPage();
+        OwnPaginationPage<Publication> page = this.publicationService.getPublicationService().getPaginationPage();
 
         assertThat(page.beforeUrl).isNull();
         assertThat(page.elementList).size().isEqualTo(4);
