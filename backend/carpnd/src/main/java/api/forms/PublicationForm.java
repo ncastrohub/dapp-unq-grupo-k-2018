@@ -23,6 +23,12 @@ public class PublicationForm {
     @Size(min = 1)
     public LinkedList<AdressLocationForm> returnLocations;
 
+    @NotNull
+    public PublicationsEnabledDaysForm enabledDays;
+
+    @NotNull
+    public MoneyAndAmountForm costPerHour;
+
     public Vehicle getVehicleInstance() {
         return this.vehicle.getVehicleInstance();
     }
@@ -39,16 +45,9 @@ public class PublicationForm {
         return locationList;
     }
 
-    @NotNull
-    public PublicationsEnabledDaysForm enabledDays;
-
     public PublicationsEnabledDays getEnabledDaysInstance() {
         return enabledDays.getModelInstance();
     }
-
-
-    @NotNull
-    public MoneyAndAmountForm costPerHour;
 
     public MoneyAndAmount getCostPerDayInstance() {
         return costPerHour.getModelInstance();

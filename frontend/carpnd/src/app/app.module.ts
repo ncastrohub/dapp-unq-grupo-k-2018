@@ -20,6 +20,7 @@ import { UsereditComponent } from './user/useredit/useredit.component';
 import { GooglemapsComponent } from './maps/googlemaps/googlemaps.component';
 import { PublicationListComponent } from './publication/publication-list/publication-list.component';
 import { PublicationService } from './publication/publication.service';
+import { PublicationCreateComponent } from './publication/publication-create/publication-create.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { PublicationService } from './publication/publication.service';
     UsereditComponent,
     GooglemapsComponent,
     PublicationListComponent,
+    PublicationCreateComponent,
   ],
   imports: [
     BrowserModule,

@@ -40,6 +40,21 @@ export class Publication {
 	enabledDays: Days;
 }
 
+export class MoneyAndAmount {
+	currency: string;
+	amount: number;
+}
+
+export class CreatePublication {
+	id: number;
+	vehicle: Vehicle;
+	acquireLocation: Location;
+	returnLocations: Location[];
+	enabledDays: Days;
+	costPerHour: MoneyAndAmount;
+}
+
+
 export class Page<T> {
 	beforeUrl: string;
 	nextUrl: string;

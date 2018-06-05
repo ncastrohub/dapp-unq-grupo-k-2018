@@ -12,7 +12,7 @@ public class Publication extends IdModel {
 
     private User owner;
     private Vehicle vehicle;
-    
+
     private AdressLocation acquireLocation;
 
     private List<AdressLocation> returnLocations;
@@ -64,7 +64,6 @@ public class Publication extends IdModel {
 
     }
 
-    @JsonIgnore
     public MoneyAndAmount getCostPerHour() {
         return this.costPerHour;
     }

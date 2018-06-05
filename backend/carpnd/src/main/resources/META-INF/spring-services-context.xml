@@ -38,6 +38,8 @@
         <property name="publishService" ref="services.publish" />
     </bean>
 
+    <!--<bean class="scripting.DeserializationIntent" name="deserialization.dates"/>-->
+
     <!--<bean class="scripting.InitializeUser">-->
         <!--<property name="publishService" ref="services.publication" />-->
     <!--</bean>-->

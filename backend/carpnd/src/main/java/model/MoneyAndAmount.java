@@ -4,6 +4,21 @@ public class MoneyAndAmount extends IdModel {
     public CustomCurrencies currency;
     public Double amount;
 
+    public CustomCurrencies getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(CustomCurrencies currency) {
+        this.currency = currency;
+    }
+
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
 
     public MoneyAndAmount(){}
 

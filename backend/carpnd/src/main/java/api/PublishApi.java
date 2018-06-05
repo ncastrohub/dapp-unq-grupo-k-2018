@@ -1,10 +1,7 @@
 package api;
 
 
-import api.forms.UserForm;
-import api.forms.UserUpdateForm;
-import api.forms.VehicleForm;
-import api.forms.VehicleUpdateForm;
+import api.forms.*;
 import model.Publication;
 import model.User;
 import model.Vehicle;
@@ -142,6 +139,19 @@ public class PublishApi {
         OwnPaginationPage<Publication> page = this.publishService.getPublicationService().getPaginationPage();
         Response response = Response.ok(page).build();
         return response;
+    }
+
+    @GET
+    @Consumes("application/json")
+    @Produces("application/json")
+    @Path(value = "/{userId}/publication/create/")
+    public Response publicationCreate(@PathParam("userId") Long userId, PublicationForm publicationForm) {
+        try {
+            this.publishService.createPublicationForUser(userId, publicationForm);
+            return Response.ok(publicationForm).build();
+        } catch (FormValidationError formValidationError) {
+            return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
+        }
     }
 
 }
