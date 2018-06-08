@@ -25,22 +25,53 @@
 
        </div>
      </li>
-     
+
     </ul>
     <!-- <a routerLink="/logout" class="btn btn-outline-danger my-2 my-sm-0"> LogOut </a> -->
   </div>
+
+  <!-- FORM https://auth0.com/authenticate/angularjs/google/ -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Auth0 - AngularJS</a>
+
+        <button
+          class="btn btn-primary btn-margin"
+          ui-sref="home">
+          Home
+        </button>
+
+        <button
+          class="btn btn-primary btn-margin"
+          ng-if="!vm.auth.isAuthenticated()"
+          ng-click="vm.auth.login()">
+          Log In
+        </button>
+
+        <button
+          class="btn btn-primary btn-margin"
+          ng-if="vm.auth.isAuthenticated()"
+          ng-click="vm.auth.logout()">
+          Log Out
+        </button>
+
+      </div>
+    </div>
+  </nav>
+  <!-- FIN -->
 </nav>
 <br>
 <div class="container-fluid">
 	<div class="row justify-content-md-center">
 		<div class="col col-lg-1"></div>
-		
+
 		<div class='col col-lg-10'>
-			
+
 			<router-outlet></router-outlet>
-			
+
 		</div>
-		
+
 		<div class="col col-lg-1"></div>
 	</div>
 
