@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { AppConfig } from '../config';
 import { Observable } from 'rxjs/Observable';
 import { Publication } from './publication';
-import { Page } from './publication';
+import { Page, CreatePublication } from './publication';
 
 
 @Injectable()

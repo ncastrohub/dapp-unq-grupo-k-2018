@@ -1,9 +1,7 @@
 package model;
 
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import model.exceptions.*;
-import org.codehaus.jackson.annotate.JsonIgnore;
 import org.joda.time.LocalDate;
 
 import java.util.LinkedList;
@@ -11,26 +9,24 @@ import java.util.List;
 
 public class PublicationsEnabledDays extends IdModel {
 
-    @JsonIgnore
-    public List<LocalDate> disabledDays;
+//    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", timezone="GMT")
+//    @JsonFormat(shape = JsonFormat.Shape.OBJECT, pattern = "yyyy-MM-dd HH:mm a z")
+//    @JsonSerialize(contentUsing = JodaSerializers)
+
+    private List<LocalDate> disabledDays;
+
+//    @JsonSerialize(contentUsing = JodaSerializers)
+//    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", timezone="GMT")
+    private List<LocalDate> reservedDays;
 
 //    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", timezone="GMT")
-//    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-//    @JsonSerialize(using = LocalDateSerializer.class)
-//    @JsonDeserialize(using = LocalDateDeserializer.class)
-    public LocalDate hoy;
+//    public LocalDate getHoy() {
+//        return hoy;
+//    }
 
-    @JsonIgnore
-    public List<LocalDate> reservedDays;
-
-    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", timezone="GMT")
-    public LocalDate getHoy() {
-        return hoy;
-    }
-
-    public void setHoy(LocalDate hoy) {
-        this.hoy = hoy;
-    }
+//    public void setHoy(LocalDate hoy) {
+//        this.hoy = hoy;
+//    }
 
     public void setDisabledDays(List<LocalDate> disabledDays) {
         this.disabledDays = disabledDays;
@@ -40,27 +36,25 @@ public class PublicationsEnabledDays extends IdModel {
         this.reservedDays = reservedDays;
     }
 
-    @JsonIgnore
     public List<LocalDate> getReservedDays() {
         return reservedDays;
     }
 
-    @JsonIgnore
     public List<LocalDate> getDisabledDays() {
         return this.disabledDays;
     }
 
-    public PublicationsEnabledDays(){
+    PublicationsEnabledDays(){
 
         this.disabledDays = new LinkedList<>();
         this.reservedDays = new LinkedList<>();
-        this.hoy = LocalDate.now();
+//        this.hoy = LocalDate.now();
     }
 
     public PublicationsEnabledDays(List<LocalDate> reservedDays, List<LocalDate> disabledDays) {
         this.disabledDays = disabledDays;
         this.reservedDays = reservedDays;
-        this.hoy = LocalDate.now();
+//        this.hoy = LocalDate.now();
     }
 
     public void reserveDay(LocalDate dayOne) throws DayDisabledException, DayAlreadyReservedException {

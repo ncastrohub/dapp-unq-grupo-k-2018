@@ -1,14 +1,12 @@
 package utils;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
-
-import java.util.ArrayList;
 import java.util.List;
 
 
 public class OwnPaginationPage<T> {
     
-    public ArrayList<T> elementList;
+    public List<T> elementList;
 
     public String beforeUrl;
     public String nextUrl;
@@ -21,7 +19,7 @@ public class OwnPaginationPage<T> {
     }
 
     public void setElementList(List<T> elementList) {
-        this.elementList = (ArrayList<T>) elementList;
+        this.elementList = elementList;
     }
 
     public String getBeforeUrl() {

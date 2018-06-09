@@ -15,7 +15,6 @@ import static org.mockito.Mockito.when;
 
 public class TestReservation {
 
-
     @Test
     public void reservationCreatedCorrectly() {
         User owner = mock(User.class);
@@ -34,7 +33,6 @@ public class TestReservation {
         reservedDays.add(LocalDate.now().plusDays(5));
         reservedDays.add(LocalDate.now().plusDays(6));
 
-
         Reservation reservation = ReservationBuilder.start()
             .withCustomer(customer)
             .withReturnLocation(returnLocation)
@@ -45,7 +43,6 @@ public class TestReservation {
         assertThat(reservation.customer).isEqualTo(customer);
         assertThat(reservation.customer).isNotEqualTo(owner);
         assertThat(reservation.state).isInstanceOf(WaitingForOwnerState.class);
-
         assertThat(reservation.publication).isEqualTo(publication);
     }
 

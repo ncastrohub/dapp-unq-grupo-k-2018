@@ -6,17 +6,6 @@ export class ChronologyInfo {
 	id: string
 }
 
-export class LocalDate {
-	chronology: ChronologyInfo;
-	era: string;
-	dayOfYear: number;
-	dayOfWeek: string;
-	leapYear: boolean;
-	month:  string;
-	dayOfMonth: number;
-	year: number;
-	monthValue: number;
-}
 
 export class Location {
 	id: number;
@@ -27,8 +16,8 @@ export class Location {
 }
 
 export class Days {
-	disabledDays: LocalDate[];
-	reservedDays: LocalDate[];
+	disabledDays: number[][];
+	reservedDays: number[][];
 	id: number;
 }
 
@@ -53,7 +42,6 @@ export class CreatePublication {
 	enabledDays: Days;
 	costPerHour: MoneyAndAmount;
 }
-
 
 export class Page<T> {
 	beforeUrl: string;

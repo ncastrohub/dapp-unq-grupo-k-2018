@@ -8,7 +8,7 @@ import { UserListComponent } from './user/user-list/user-list.component'
 import { CreateuserComponent } from './user/createuser/createuser.component'
 import { UsereditComponent } from './user/useredit/useredit.component'
 import { PublicationListComponent } from './publication/publication-list/publication-list.component'
- 
+import { PublicationCreateComponent } from './publication/publication-create/publication-create.component';
 
 const routes: Routes = [
   { path: 'vehicle/create', component: CreateVehicleComponent },
@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'user/edit', component: UsereditComponent },
   { path: 'user/create', component: CreateuserComponent },
   { path: 'publication/list', component: CreateuserComponent },
+  { path: 'publication/create', component: PublicationCreateComponent },
 
 ];
 
