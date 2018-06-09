@@ -137,6 +137,7 @@ public class PublishApi {
     @Path(value = "/publication/list/")
     public Response publicationList() {
         OwnPaginationPage<Publication> page = this.publishService.getPublicationService().getPaginationPage();
+//        LocalDate date = LocalDate.now();
         Response response = Response.ok(page).build();
         return response;
     }

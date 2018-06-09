@@ -1,7 +1,7 @@
 package model;
 
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
+import org.joda.time.LocalDate;
+
 import java.util.List;
 
 public class Reservation extends IdModel {
@@ -31,10 +31,12 @@ public class Reservation extends IdModel {
 
 
     public MoneyAndAmount finalPrice() {
-        MoneyAndAmount costPerHour = this.publicationSnapshot.getCostPerHour();
-        Long hours = this.publicationSnapshot.getAcquireTime().until( this.publicationSnapshot.returnTime, ChronoUnit.HOURS);
-        Double roundedValue = hours.doubleValue();
-        return costPerHour.plusBy(roundedValue);
+        MoneyAndAmount costPerHour = this.getPublicationSnapshot().getCostPerHour();
+//        Long hours = Duration.between(this.publicationSnapshot.getAcquireTime(), this.publicationSnapshot.returnTime).toHours();
+        Integer hours2 = this.publicationSnapshot.getHoursBetween();
+
+//        Double roundedValue = hours.doubleValue();
+        return costPerHour.plusBy(new Double(hours2));
     }
 
     public User getOwner() {

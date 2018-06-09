@@ -1,24 +1,29 @@
 package model;
 
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import model.exceptions.*;
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.joda.time.LocalDate;
 
-import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 
 public class PublicationsEnabledDays extends IdModel {
 
+    @JsonIgnore
     public List<LocalDate> disabledDays;
 
-    @JsonSerialize(using = LocalDateSerializer.class)
+//    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", timezone="GMT")
+//    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+//    @JsonSerialize(using = LocalDateSerializer.class)
+//    @JsonDeserialize(using = LocalDateDeserializer.class)
     public LocalDate hoy;
 
+    @JsonIgnore
     public List<LocalDate> reservedDays;
 
-
+    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", timezone="GMT")
     public LocalDate getHoy() {
         return hoy;
     }
@@ -35,10 +40,12 @@ public class PublicationsEnabledDays extends IdModel {
         this.reservedDays = reservedDays;
     }
 
+    @JsonIgnore
     public List<LocalDate> getReservedDays() {
         return reservedDays;
     }
 
+    @JsonIgnore
     public List<LocalDate> getDisabledDays() {
         return this.disabledDays;
     }

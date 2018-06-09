@@ -3,7 +3,7 @@ package model;
 import model.exceptions.*;
 import org.codehaus.jackson.annotate.JsonIgnore;
 
-import java.time.LocalDate;
+import org.joda.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -17,7 +17,6 @@ public class Publication extends IdModel {
 
     private List<AdressLocation> returnLocations;
 
-    @JsonIgnore
     private PublicationsEnabledDays enabledDays;
 
     private MoneyAndAmount costPerHour;
@@ -109,11 +108,11 @@ public class Publication extends IdModel {
         this.enabledDays.disableDays(reservationDays);
     }
 
-    @JsonIgnore
+
     public List<LocalDate> getDisabledDays(){
         return this.enabledDays.getDisabledDays();
     }
-    @JsonIgnore
+
     public List<LocalDate> getReservedDays() {
         return  this.enabledDays.getReservedDays();
     }

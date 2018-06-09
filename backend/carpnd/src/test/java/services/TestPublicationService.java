@@ -17,7 +17,7 @@ import utils.OwnPaginationPage;
 import utils.builders.PublicationFormBuilder;
 import utils.builders.UserBuilder;
 
-import java.time.LocalDate;
+import org.joda.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 

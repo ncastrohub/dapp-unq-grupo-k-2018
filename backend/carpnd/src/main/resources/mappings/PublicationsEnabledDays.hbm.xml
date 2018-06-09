@@ -11,13 +11,13 @@
         <list name="disabledDays" cascade="all"  lazy="false">
             <key column="enabled_days_id" />
             <list-index  column="disabled_days"/>
-            <element type="java.time.LocalDate"/>
+            <element type="org.joda.time.LocalDate"/>
         </list>
 
         <list name="reservedDays" cascade="all"  lazy="false">
             <key column="enabled_days_id" />
             <list-index  column="reserved_days"/>
-            <element type="java.time.LocalDate"/>
+            <element type="org.joda.time.LocalDate"/>
         </list>
 
     </class>

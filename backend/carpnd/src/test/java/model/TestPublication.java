@@ -4,7 +4,7 @@ import model.exceptions.*;
 import org.junit.Test;
 import utils.builders.PublicationBuilder;
 
-import java.time.LocalDate;
+import org.joda.time.LocalDate;
 import java.util.LinkedList;
 
 import static org.assertj.core.api.Assertions.assertThat;

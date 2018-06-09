@@ -3,13 +3,14 @@ package model;
 import org.junit.Test;
 import utils.builders.ReservationBuilder;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import org.joda.time.LocalDate;
+import org.joda.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
 
 public class TestReservation {
@@ -68,17 +69,30 @@ public class TestReservation {
         Publication publication = mock(Publication.class);
 
         when(publication.getCostPerHour()).thenReturn( new MoneyAndAmount(10.00, CustomCurrencies.ARS));
+        when(publication.getAcquireLocation()).thenReturn(acquireLocation);
+        when(acquireLocation.createNew()).thenReturn(acquireLocation);
 
-        Reservation reservation = ReservationBuilder.start()
+        Reservation reservation = spy(ReservationBuilder.start()
                 .withCustomer(customer)
                 .withReturnLocation(returnLocation)
                 .withPublication(publication)
                 .withReservedDays(reservedDays)
-                .build();
+                .build());
+
+        ReservedPublication publicationSnapshot = mock(ReservedPublication.class);
+        when(publicationSnapshot.getHoursBetween()).thenReturn(7 * 24);
+        assertThat(publicationSnapshot.getHoursBetween()).isEqualTo(7 * 24);
+
+        when(publicationSnapshot.getAcquireTime()).thenReturn(acquireTime);
+        when(publicationSnapshot.getReturnTime()).thenReturn(acquireTime);
+        when(publicationSnapshot.getCostPerHour()).thenReturn(new MoneyAndAmount(10.00, CustomCurrencies.ARS));
+
+        when(reservation.getPublicationSnapshot()).thenReturn(publicationSnapshot);
+//        Hours.hoursBetween(this.publicationSnapshot.getAcquireTime(), this.publicationSnapshot.returnTime).getHours();
 
         MoneyAndAmount priceExpected = new MoneyAndAmount((7 * 24) * 10.00, CustomCurrencies.ARS);
 
-        assertThat(reservation.finalPrice()).isEqualTo(priceExpected);
+        assertThat(reservation.finalPrice().amount).isEqualTo(priceExpected.amount);
     }
 
 }

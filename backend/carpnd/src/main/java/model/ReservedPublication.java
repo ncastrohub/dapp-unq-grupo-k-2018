@@ -1,9 +1,11 @@
 package model;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
+import org.joda.time.Hours;
+import org.joda.time.LocalDate;
+import org.joda.time.LocalDateTime;
+import org.joda.time.LocalTime;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.List;
 
@@ -16,7 +18,7 @@ public class ReservedPublication extends IdModel {
     public List<LocalDate> reservedDays;
     public AdressLocation acquireLocation;
     public AdressLocation returnLocation;
-    public LocalDateTime returnTime;
+    private LocalDateTime returnTime;
 
     @JsonIgnore
     private User customer;
@@ -43,6 +45,17 @@ public class ReservedPublication extends IdModel {
     }
 
     public LocalDateTime getAcquireTime() {
-        return this.reservedDays.stream().min(Comparator.comparing(LocalDate::getDayOfYear)).get().atStartOfDay();
+        return this.reservedDays.stream().min(Comparator.comparing(LocalDate::getDayOfYear)).get().toLocalDateTime(LocalTime.now());
+    }
+
+    public LocalDateTime getReturnTime() {
+        return returnTime;
+    }
+
+    public Integer getHoursBetween() {
+        return Hours.hoursBetween(
+                this.getAcquireTime(),
+                this.getReturnTime()
+        ).getHours();
     }
 }
