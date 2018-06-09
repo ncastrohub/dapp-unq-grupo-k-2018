@@ -30,36 +30,35 @@
     <!-- <a routerLink="/logout" class="btn btn-outline-danger my-2 my-sm-0"> LogOut </a> -->
   </div>
 
-  <!-- FORM https://auth0.com/authenticate/angularjs/google/ -->
+<!-- FROM https://auth0.com/authenticate/angular2/google-apps/ -->
+<!--
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">Auth0 - AngularJS</a>
+        <a class="navbar-brand" href="#">Auth0 - Angular</a>
 
         <button
           class="btn btn-primary btn-margin"
-          ui-sref="home">
+          routerLink="/">
           Home
         </button>
+-->
+          <button
+            class="btn btn-primary btn-margin"
+            *ngIf="!authService.isLoggedIn"
+            (click)="authService.login()">
+            Log In
+          </button>
 
-        <button
-          class="btn btn-primary btn-margin"
-          ng-if="!vm.auth.isAuthenticated()"
-          ng-click="vm.auth.login()">
-          Log In
-        </button>
+          <button
+            class="btn btn-primary btn-margin"
+            *ngIf="authService.isLoggedIn"
+            (click)="authService.logout()">
+              Log Out
+          </button>
 
-        <button
-          class="btn btn-primary btn-margin"
-          ng-if="vm.auth.isAuthenticated()"
-          ng-click="vm.auth.logout()">
-          Log Out
-        </button>
+    <!-- END FROM -->
 
-      </div>
-    </div>
-  </nav>
-  <!-- FIN -->
 </nav>
 <br>
 <div class="container-fluid">

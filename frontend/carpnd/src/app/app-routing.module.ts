@@ -7,7 +7,10 @@ import { CreateVehicleComponent } from './vehicle/create/create.component';
 import { UserListComponent } from './user/user-list/user-list.component'
 import { CreateuserComponent } from './user/createuser/createuser.component'
 import { UsereditComponent } from './user/useredit/useredit.component'
- 
+
+import { CallbackComponent } from './callback.component';
+import { AuthGuard } from './auth/auth.guard';
+
 
 const routes: Routes = [
   { path: 'vehicle/create', component: CreateVehicleComponent },
@@ -15,12 +18,16 @@ const routes: Routes = [
   { path: 'vehicle/list', component: ListComponent },
   { path: 'user/list', component: UserListComponent },
   { path: 'user/edit', component: UsereditComponent },
-  { path: 'user/create', component: CreateuserComponent }
+  { path: 'user/create', component: CreateuserComponent
+//    ,  canActivate: [AuthGuard]
+  },
+  { path: 'callback', component: CallbackComponent }
 ];
 
 @NgModule({
   exports: [ RouterModule ],
-  imports: [ RouterModule.forRoot(routes) ]
+  imports: [ RouterModule.forRoot(routes) ],
+  providers: [AuthGuard]
 })
 
 export class AppRoutingModule {}

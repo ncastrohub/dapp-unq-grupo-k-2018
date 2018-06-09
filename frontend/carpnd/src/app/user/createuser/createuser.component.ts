@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserServiceService } from '../service/user-service.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-createuser',
@@ -10,10 +11,10 @@ import { Router } from '@angular/router';
 })
 export class CreateuserComponent {
 
- constructor(private service: UserServiceService, private router: Router) {
+ constructor(private service: UserServiceService, private router: Router, public authService: AuthService) {
     this.user = new User();
   }
-  
+
   user:User;
 
   submitted = false;

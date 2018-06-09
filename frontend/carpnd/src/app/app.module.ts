@@ -15,6 +15,8 @@ import { CreateuserComponent } from './user/createuser/createuser.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserServiceService } from './user/service/user-service.service';
 import { UsereditComponent } from './user/useredit/useredit.component';
+import {AuthService} from "./auth/auth.service";
+import { CallbackComponent } from './callback.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { UsereditComponent } from './user/useredit/useredit.component';
     CreateuserComponent,
     UserListComponent,
     UsereditComponent,
+    CallbackComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,7 @@ import { UsereditComponent } from './user/useredit/useredit.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [VehicleService, UserServiceService, AppConfig, { provide: LOCALE_ID, useValue: 'en' }],
+  providers: [VehicleService, UserServiceService, AppConfig, AuthService, { provide: LOCALE_ID, useValue: 'en' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
