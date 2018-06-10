@@ -21,6 +21,7 @@ import { GooglemapsComponent } from './maps/googlemaps/googlemaps.component';
 import { PublicationListComponent } from './publication/publication-list/publication-list.component';
 import { PublicationService } from './publication/publication.service';
 import { PublicationCreateComponent } from './publication/publication-create/publication-create.component';
+import { LocationSelectorComponent } from './maps/location-selector/location-selector.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { PublicationCreateComponent } from './publication/publication-create/pub
     GooglemapsComponent,
     PublicationListComponent,
     PublicationCreateComponent,
+    LocationSelectorComponent,
   ],
   imports: [
     BrowserModule,

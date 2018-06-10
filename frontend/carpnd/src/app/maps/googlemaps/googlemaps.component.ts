@@ -1,8 +1,10 @@
-import { Component, OnInit, ElementRef, NgZone } from '@angular/core';
+import { Component, OnInit, ElementRef, NgZone, Output, EventEmitter } from '@angular/core';
 import { ViewChild } from '@angular/core';
 // import {  } from '@types/googlemaps';
-import { FormControl} from "@angular/forms";
+import { FormControl } from "@angular/forms";
 import { MapsAPILoader } from '@agm/core';
+import { Location } from '../../publication/publication';
+
 
 @Component({
   selector: 'app-googlemaps',
@@ -16,7 +18,10 @@ export class GooglemapsComponent implements OnInit {
   public longitude: number;
   public searchControl: FormControl;
   public zoom: number;
-  
+  private selectedLocation: Location;
+
+  @Output() public onComplete: EventEmitter<any> = new EventEmitter();
+
   @ViewChild("search")
   public searchElementRef: ElementRef;
   
@@ -26,17 +31,38 @@ export class GooglemapsComponent implements OnInit {
   ) {}
   
   ngOnInit() {
+
+    this.selectedLocation = new Location();
+
     //set google maps defaults
     this.zoom = 4;
     this.latitude = 39.8282;
     this.longitude = -98.5795;
-    
+        
+  
     //create search FormControl
     this.searchControl = new FormControl();
     
-    //set current position
-    this.setCurrentPosition();
-    
+    this.mapsAPILoader.load().then(() => {
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          this.selectedLocation.geoLatitude = position.coords.latitude;
+          this.selectedLocation.geoLongitude = position.coords.longitude;
+          this.zoom = 12;
+          let geocoder = new google.maps.Geocoder;
+          let infowindow = new google.maps.InfoWindow;
+          
+          let latlng = {lat: position.coords.latitude, 
+            lng: position.coords.longitude};
+          
+          geocoder.geocode({'location': latlng}, (results, status)=> {
+            this.selectedLocation.adressName = results[0].formatted_address;
+          });
+        });
+      }
+
+    })
+
     //load Places Autocomplete
     this.mapsAPILoader.load().then(() => {
       let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
@@ -56,22 +82,19 @@ export class GooglemapsComponent implements OnInit {
           this.latitude = place.geometry.location.lat();
           this.longitude = place.geometry.location.lng();
           this.zoom = 12;
+          this.selectedLocation.adressName = place.formatted_address;
+          this.selectedLocation.geoLatitude = this.latitude;
+          this.selectedLocation.geoLongitude = this.longitude;
+
         });
       });
     });
 
   }
+  
+   onSubmit() {
 
-  private setCurrentPosition() {
-      if ("geolocation" in navigator) {
-        navigator.geolocation.getCurrentPosition((position) => {
-          this.latitude = position.coords.latitude;
-          this.longitude = position.coords.longitude;
-          this.zoom = 12;
-        });
-      }
+    this.onComplete.emit({ event:event, location: this.selectedLocation });
   }
-
-
 
 }

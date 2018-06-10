@@ -4,6 +4,7 @@ import {PublicationService} from '../publication.service';
 import {Vehicle} from '../../vehicle/vehicle';
 import { Router } from '@angular/router';
 import { CreateVehicleComponent } from '../../vehicle/create/create.component'
+import { GooglemapsComponent } from '../../maps/googlemaps/googlemaps.component';
 
 @Component({
   selector: 'app-publication-create',
@@ -42,8 +43,8 @@ export class PublicationCreateComponent {
   }
 
   addReturnLocation(location: Location) {
- 	this.publication.returnLocations.push(location);
- 	this.newReturnLocation = new Location();
+ 	  this.publication.returnLocations.push(location);
+ 	  this.newReturnLocation = new Location();
   }
 
   // addReservedDay(day:string, month:string, year:string) {
@@ -53,6 +54,10 @@ export class PublicationCreateComponent {
 
   saveVehicle($event) {
   	this.publication.vehicle = $event.vehicle;
+  }
+
+  saveAcquireLocation($event) {
+    this.publication.acquireLocation = $event.location;
   }
 
 

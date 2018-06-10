@@ -10,7 +10,6 @@ export class ChronologyInfo {
 export class Location {
 	id: number;
 	adressName: string;
-	adressNumber: string;
 	geoLatitude: number;
 	geoLongitude: number;
 }

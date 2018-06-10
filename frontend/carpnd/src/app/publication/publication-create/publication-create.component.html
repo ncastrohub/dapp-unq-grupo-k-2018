@@ -2,7 +2,7 @@
     <h1>Publication Form</h1>
 
 	<app-create-vehicle (onComplete)='saveVehicle($event)'> </app-create-vehicle>    
-
+  <app-googlemaps (onComplete)='saveAcquireLocation($event)'> </app-googlemaps>
 
 
 
@@ -56,42 +56,7 @@
       {{error}}
     </div>
 
-    <form (ngSubmit)="onSubmit()" #publicationForm="ngForm">
-
-    <div class="form-group">
-	<label for="capacity">Vehicle</label>
-      <div class="form-group">
-        <label for="capacity">Capacity</label>
-        <select class="form-control" id="capacity" required 
-          [(ngModel)]="publication.vehicle.capacity" name="capacity" >
-          <option *ngFor="let cap of capacities" [value]="cap">{{cap}}</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="vehicleType">Model</label>
-        <select class="form-control" id="vehicleType" required 
-          [(ngModel)]="publication.vehicle.type" name="vehicleType" >
-          <option *ngFor="let type of carTypes" [value]="type">{{type}}</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="description">Description</label>
-        <textarea minlength="10" maxlength="30" type="text" class="form-control" id="description"
-         required
-         [(ngModel)]="publication.vehicle.description" name="description"> </textarea>
-       </div>
-
-      <div class="form-group">
-        <label for="photo">Photo</label>
-        <input type="text" class="form-control" id="photo"
-         required pattern="(https?:\/\/.*\.(?:png|jpg))"
-         [(ngModel)]="publication.vehicle.photo" name="photo"/>
-       </div>
-
-    </div>
-
+   
 
 
 

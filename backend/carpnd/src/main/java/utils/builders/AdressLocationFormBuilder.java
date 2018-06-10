@@ -8,7 +8,6 @@ public class AdressLocationFormBuilder {
         AdressLocationForm aLocationForm = new AdressLocationForm();
         aLocationForm.geoLongitude = "123123123";
         aLocationForm.geoLatitude = "78979789";
-        aLocationForm.adressNumber = "098123";
         aLocationForm.adressName = "Estanislao del Campo";
         return aLocationForm;
     }
