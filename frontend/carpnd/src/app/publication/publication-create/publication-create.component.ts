@@ -19,6 +19,7 @@ export class PublicationCreateComponent {
     this.publication.returnLocations = [];
     this.publication.enabledDays = new Days();
     this.publication.costPerHour = new MoneyAndAmount();
+    this.newReturnLocation = new Location();
   }
   
   publication:CreatePublication;
@@ -30,11 +31,18 @@ export class PublicationCreateComponent {
   currencies = ['ARS']
 
   submitted = false;
+
   errorList = [];
 
+  newReturnLocation : Location;
 
   addDisableDay(day:number, month:number, year:number) {
  	this.publication.enabledDays.disabledDays.push([year,month,day])
+  }
+
+  addReturnLocation(location: Location) {
+ 	this.publication.returnLocations.push(location);
+ 	this.newReturnLocation = new Location();
   }
 
   // addReservedDay(day:string, month:string, year:string) {

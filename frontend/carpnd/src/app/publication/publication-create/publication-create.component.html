@@ -41,44 +41,70 @@
 
     </div>
 
-<!--     export class Location {
-	id: number;
-	adressName: string;
-	adressNumber: string;
-	geoLatitude: number;
-	geoLongitude: number;
-}
- -->
+
 
 
     <div class="form-group">
 	<label for="capacity">Acquire Location</label>
       
        <div class="form-group">
+        <label for="acquireAdressName">adressName</label>
+        <input type="text" class="form-control" id="acquireAdressName" required
+         [(ngModel)]="publication.acquireLocation.adressName" name="acquireAdressName"/>
+       </div>
+
+        <div class="form-group">
+        <label for="acquireAdressNumber">adressNumber</label>
+        <input type="text" class="form-control" id="acquireAdressNumber" required
+         [(ngModel)]="publication.acquireLocation.adressNumber" name="acquireAdressNumber"/>
+       </div>
+
+        <div class="form-group">
+        <label for="acquireGeoLongitude">geoLongitude</label>
+        <input type="text" class="form-control" id="acquireGeoLongitude" required
+         [(ngModel)]="publication.acquireLocation.geoLongitude" name="acquireGeoLongitude"/>
+       </div>
+
+      <div class="form-group">
+        <label for="acquireGeoLatitude">geoLatitude</label>
+        <input type="text" class="form-control" id="acquireGeoLatitude" required
+         [(ngModel)]="publication.acquireLocation.geoLatitude" name="acquireGeoLatitude"/>
+       </div>
+
+    </div>
+
+
+    <div class="form-group">
+	<label for="capacity">Return Location</label>
+      
+       <div class="form-group">
         <label for="adressName">adressName</label>
         <input type="text" class="form-control" id="adressName" required
-         [(ngModel)]="publication.acquireLocation.adressName" name="adressName"/>
+         [(ngModel)]="newReturnLocation.adressName" name="adressName" #adressName="ngModel"/>
        </div>
 
         <div class="form-group">
         <label for="adressNumber">adressNumber</label>
         <input type="text" class="form-control" id="adressNumber" required
-         [(ngModel)]="publication.acquireLocation.adressNumber" name="adressNumber"/>
+         [(ngModel)]="newReturnLocation.adressNumber" name="adressNumber" #adressNumber="ngModel" />
        </div>
 
         <div class="form-group">
         <label for="geoLongitude">geoLongitude</label>
-        <input type="text" class="form-control" id="geoLongitude" required
-         [(ngModel)]="publication.acquireLocation.geoLongitude" name="geoLongitude"/>
+        <input  type="text" class="form-control" id="geoLongitude" required
+         [(ngModel)]="newReturnLocation.geoLongitude" name="geoLongitude" #geoLongitude="ngModel"/>
        </div>
 
       <div class="form-group">
-        <label for="geoLatitude">geoLatitude</label>
+        <label for="geoLatitude"> geoLatitude </label>
         <input type="text" class="form-control" id="geoLatitude" required
-         [(ngModel)]="publication.acquireLocation.geoLatitude" name="geoLatitude"/>
+         [(ngModel)]="newReturnLocation.geoLatitude" name="geoLatitude" #geoLatitude="ngModel"/>
        </div>
 
+        <button type="button" (click)="addReturnLocation(newReturnLocation)" [disabled]="adressName.invalid || adressNumber.invalid || geoLongitude.invalid || geoLatitude.invalid" class="btn btn-success">Add return Location</button>
+
     </div>
+
 
 
     <div class="form-group">

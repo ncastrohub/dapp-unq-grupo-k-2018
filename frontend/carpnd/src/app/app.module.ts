@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {  LOCALE_ID, NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 import { AgmCoreModule } from '@agm/core';
 
@@ -38,11 +38,14 @@ import { PublicationCreateComponent } from './publication/publication-create/pub
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
+      libraries: ["places"],
       apiKey: 'AIzaSyApkqv2wRZywgM-wVDJmceHuBROKB1gvOQ'
-    })
+    }),
+    
   ],
   providers: [VehicleService,
     UserServiceService,
