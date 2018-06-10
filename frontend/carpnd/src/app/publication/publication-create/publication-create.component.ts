@@ -3,6 +3,7 @@ import {CreatePublication, Location, Days, MoneyAndAmount} from '../publication'
 import {PublicationService} from '../publication.service';
 import {Vehicle} from '../../vehicle/vehicle';
 import { Router } from '@angular/router';
+import { CreateVehicleComponent } from '../../vehicle/create/create.component'
 
 @Component({
   selector: 'app-publication-create',
@@ -50,14 +51,18 @@ export class PublicationCreateComponent {
   // }
 
 
-
-  onSubmit() {
-	  this.service.createPublication('1', this.publication).subscribe(
-	    data => {
-	      this.router.navigate(['/publication/list']);
-	    },
-	    error => this.errorList.push(error)
-	  );
+  saveVehicle($event) {
+  	this.publication.vehicle = $event.vehicle;
   }
+
+
+  // onSubmit() {
+	 //  this.service.createPublication('1', this.publication).subscribe(
+	 //    data => {
+	 //      this.router.navigate(['/publication/list']);
+	 //    },
+	 //    error => this.errorList.push(error)
+	 //  );
+  // }
 
 }

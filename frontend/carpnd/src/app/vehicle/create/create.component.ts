@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Vehicle } from '../vehicle'
 import { VehicleService } from '../service/vehicle.service';
 import { Router } from '@angular/router';
@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 
 export class CreateVehicleComponent {
+
+  @Output() public onComplete: EventEmitter<any> = new EventEmitter();
 
   constructor(private service: VehicleService, private router: Router) {
     this.vehicle = new Vehicle();
@@ -25,12 +27,15 @@ export class CreateVehicleComponent {
   errorList = [];
 
   onSubmit() {
-	  this.service.createVehicle('1', this.vehicle).subscribe(
-	    data => {
-	      this.router.navigate(['/vehicle/list']);
-	    },
-	    error => this.errorList.push(error)
-	  );
+
+    this.onComplete.emit({ event:event, vehicle: this.vehicle });
+
+	  // this.service.createVehicle('1', this.vehicle).subscribe(
+	  //   data => {
+	  //     this.router.navigate(['/vehicle/list']);
+	  //   },
+	  //   error => this.errorList.push(error)
+	  // );
   }
 
 }

@@ -12,7 +12,7 @@ import { MapsAPILoader } from '@agm/core';
 
 export class GooglemapsComponent implements OnInit {
 
-public latitude: number;
+  public latitude: number;
   public longitude: number;
   public searchControl: FormControl;
   public zoom: number;
@@ -61,7 +61,7 @@ public latitude: number;
     });
 
   }
-  
+
   private setCurrentPosition() {
       if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition((position) => {
