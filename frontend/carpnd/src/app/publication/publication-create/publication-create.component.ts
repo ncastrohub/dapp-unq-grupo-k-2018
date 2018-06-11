@@ -16,6 +16,7 @@ import { DateSelectorComponent } from '../date-selector/date-selector.component'
 
 export class PublicationCreateComponent {
 
+  moment = "vehicle";  
   constructor(private service: PublicationService, private router: Router) {
     this.publication = new CreatePublication();
     this.publication.vehicle = new Vehicle();
@@ -23,9 +24,8 @@ export class PublicationCreateComponent {
     this.publication.returnLocations = [];
     this.publication.enabledDays = new Days();
     this.publication.costPerHour = new MoneyAndAmount();
-    this.newReturnLocation = new Location();
   }
-  
+
   publication:CreatePublication;
 
   capacities = [1, 2, 3, 4, 5, 6, 7];
@@ -38,28 +38,27 @@ export class PublicationCreateComponent {
 
   errorList = [];
 
-  newReturnLocation : Location;
-
   addDisableDay(day:number, month:number, year:number) {
  	this.publication.enabledDays.disabledDays.push([year,month,day])
   }
 
-  addReturnLocation(location: Location) {
- 	  this.publication.returnLocations.push(location);
- 	  this.newReturnLocation = new Location();
+  addReturnLocation($event) {
+ 	  this.publication.returnLocations.push($event.location);
+    this.moment = 'cost';
   }
 
   // addReservedDay(day:string, month:string, year:string) {
  	// this.publication.enabledDays.disabledDays.add([year,month,day])
   // }
 
-
   saveVehicle($event) {
   	this.publication.vehicle = $event.vehicle;
+    this.moment = "acquire";  
   }
 
   saveAcquireLocation($event) {
     this.publication.acquireLocation = $event.location;
+    this.moment = "return";  
   }
 
 

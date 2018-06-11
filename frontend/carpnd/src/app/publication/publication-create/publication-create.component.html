@@ -1,151 +1,57 @@
-<div class="container">
-    <h1>Publication Form</h1>
+<div>
+  
+  <h1>Create a new Publication</h1>
 
-	<app-create-vehicle (onComplete)='saveVehicle($event)'> </app-create-vehicle>    
-  <app-googlemaps (onComplete)='saveAcquireLocation($event)'> </app-googlemaps>
+  <div class='row'>
+	
+    <div class="col-3" >
+      <div class=".panel-default">
+        
+        {{ publication | json }}
+      </div>
 
-
-  <ngbd-datepicker-config> </ngbd-datepicker-config>
-
-
-
-
-
-
-
+    </div>
 
 
+    <div *ngIf="moment == 'vehicle'" class="col-6" >
+
+      <app-create-vehicle (onComplete)='saveVehicle($event)'> </app-create-vehicle>    
+      
+    </div>
+
+    <div class="col-6" *ngIf="moment == 'acquire'" >
+
+      <app-googlemaps (onComplete)='saveAcquireLocation($event)'> </app-googlemaps>
+    
+    </div>
 
 
+    <div class="col-6" *ngIf="moment == 'return'">
+      <div>
+        <label>Return Locations</label>
 
+        <app-googlemaps (onComplete)='addReturnLocation($event)'> </app-googlemaps>
+        <button (click)='finishReturnLocation()' [disabled]='!returnLocations'> Save Locations </button>
 
+      </div>
+    </div>
 
+    <div class="col-6" *ngIf="moment == 'cost'">
+      <div>
+        <label>implementar el seteo del costo</label>
+          asdasd
+      </div>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  </div>
 
 
 
 
 <!-- 
+  <ngbd-datepicker-config> </ngbd-datepicker-config>
+-->
 
 
-    <div *ngFor="let error of errorList" class="alert alert-danger" role="alert">
-      {{error}}
-    </div>
-
-   
-
-
-
-    <div class="form-group">
-	<label for="capacity">Acquire Location</label>
-      
-       <div class="form-group">
-        <label for="acquireAdressName">adressName</label>
-        <input type="text" class="form-control" id="acquireAdressName" required
-         [(ngModel)]="publication.acquireLocation.adressName" name="acquireAdressName"/>
-       </div>
-
-        <div class="form-group">
-        <label for="acquireAdressNumber">adressNumber</label>
-        <input type="text" class="form-control" id="acquireAdressNumber" required
-         [(ngModel)]="publication.acquireLocation.adressNumber" name="acquireAdressNumber"/>
-       </div>
-
-        <div class="form-group">
-        <label for="acquireGeoLongitude">geoLongitude</label>
-        <input type="text" class="form-control" id="acquireGeoLongitude" required
-         [(ngModel)]="publication.acquireLocation.geoLongitude" name="acquireGeoLongitude"/>
-       </div>
-
-      <div class="form-group">
-        <label for="acquireGeoLatitude">geoLatitude</label>
-        <input type="text" class="form-control" id="acquireGeoLatitude" required
-         [(ngModel)]="publication.acquireLocation.geoLatitude" name="acquireGeoLatitude"/>
-       </div>
-
-    </div>
-
-
-    <div class="form-group">
-	<label for="capacity">Return Location</label>
-      
-       <div class="form-group">
-        <label for="adressName">adressName</label>
-        <input type="text" class="form-control" id="adressName" required
-         [(ngModel)]="newReturnLocation.adressName" name="adressName" #adressName="ngModel"/>
-       </div>
-
-        <div class="form-group">
-        <label for="adressNumber">adressNumber</label>
-        <input type="text" class="form-control" id="adressNumber" required
-         [(ngModel)]="newReturnLocation.adressNumber" name="adressNumber" #adressNumber="ngModel" />
-       </div>
-
-        <div class="form-group">
-        <label for="geoLongitude">geoLongitude</label>
-        <input  type="text" class="form-control" id="geoLongitude" required
-         [(ngModel)]="newReturnLocation.geoLongitude" name="geoLongitude" #geoLongitude="ngModel"/>
-       </div>
-
-      <div class="form-group">
-        <label for="geoLatitude"> geoLatitude </label>
-        <input type="text" class="form-control" id="geoLatitude" required
-         [(ngModel)]="newReturnLocation.geoLatitude" name="geoLatitude" #geoLatitude="ngModel"/>
-       </div>
-
-        <button type="button" (click)="addReturnLocation(newReturnLocation)" [disabled]="adressName.invalid || adressNumber.invalid || geoLongitude.invalid || geoLatitude.invalid" class="btn btn-success">Add return Location</button>
-
-    </div>
-
-
-
-    <div class="form-group">
-	<label for="capacity">Price</label>
-      
-		<div class="form-group">
-		  <label for="currency">currency</label>
-		  <select class="form-control" id="currency" required 
-		    [(ngModel)]="publication.costPerHour.currency" name="currency" >
-		    <option *ngFor="let currency of currencies" [value]="currency">{{currency}}</option>
-		  </select>
-		</div>
-
-        <div class="form-group">
-        <label for="amount">amount</label>
-        <input type="text" class="form-control" id="amount" required
-         [(ngModel)]="publication.costPerHour.amount" name="amount"/>
-       </div>
-
-    </div>
-
-
-
-      <button type="submit" [disabled]="!publicationForm.form.valid" class="btn btn-success">Create</button>
- 	
-    </form> -->
 </div>
 

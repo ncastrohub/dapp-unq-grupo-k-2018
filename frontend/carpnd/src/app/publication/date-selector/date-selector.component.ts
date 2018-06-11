@@ -7,11 +7,13 @@ import {NgbDatepickerConfig, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
   providers: [NgbDatepickerConfig] // add NgbDatepickerConfig to the component providers
 })
 
-
 export class DateSelectorComponent {
-
+  dateList = []; 
+  
   model;
+
   @Output() public onComplete: EventEmitter<any> = new EventEmitter();
+  
   constructor(config: NgbDatepickerConfig) {
     // customize default values of datepickers used by this component tree
     config.minDate = {year: 1900, month: 1, day: 1};
@@ -25,6 +27,13 @@ export class DateSelectorComponent {
       const d = new Date(date.year, date.month - 1, date.day);
       return d.getDay() === 0 || d.getDay() === 6;
     };
+  }
+
+  addDay(){
+    let year  = this.model.year;
+    let month = this.model.month;
+    let day = this.model.day;
+    this.dateList.push([year, month, day]);
   }
 
   onSubmit() {

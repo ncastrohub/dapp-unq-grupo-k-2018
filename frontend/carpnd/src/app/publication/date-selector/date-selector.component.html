@@ -1,6 +1,7 @@
-<p>This datepicker uses customized default values.</p>
-
 <ngb-datepicker [(ngModel)]="model"></ngb-datepicker>
 
-<button type="submit" [disabled]="!vehicleForm.form.valid" class="btn btn-success">Create</button>
- 
+<button (click)="addDay()" class="btn btn-success">Add to reserve</button>
+
+<button type="submit" [disabled]="!dateList" class="btn btn-success">Finish</button>
+
+{{ dateList | json }}
