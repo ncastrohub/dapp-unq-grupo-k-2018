@@ -22,6 +22,8 @@ import { PublicationListComponent } from './publication/publication-list/publica
 import { PublicationService } from './publication/publication.service';
 import { PublicationCreateComponent } from './publication/publication-create/publication-create.component';
 import { LocationSelectorComponent } from './maps/location-selector/location-selector.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import { LocationSelectorComponent } from './maps/location-selector/location-sel
       libraries: ["places"],
       apiKey: 'AIzaSyApkqv2wRZywgM-wVDJmceHuBROKB1gvOQ'
     }),
+    NgbModule.forRoot()
     
   ],
   providers: [VehicleService,

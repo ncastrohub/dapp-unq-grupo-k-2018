@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AppConfig } from '../config';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Publication } from './publication';
 import { Page, CreatePublication } from './publication';
 
