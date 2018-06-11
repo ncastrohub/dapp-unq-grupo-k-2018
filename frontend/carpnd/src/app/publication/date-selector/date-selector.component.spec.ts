@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LocationSelectorComponent } from './location-selector.component';
+import { DateSelectorComponent } from './date-selector.component';
 
-describe('LocationSelectorComponent', () => {
-  let component: LocationSelectorComponent;
-  let fixture: ComponentFixture<LocationSelectorComponent>;
+describe('DateSelectorComponent', () => {
+  let component: DateSelectorComponent;
+  let fixture: ComponentFixture<DateSelectorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LocationSelectorComponent ]
+      declarations: [ DateSelectorComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LocationSelectorComponent);
+    fixture = TestBed.createComponent(DateSelectorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

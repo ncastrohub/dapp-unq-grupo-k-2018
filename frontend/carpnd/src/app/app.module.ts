@@ -21,9 +21,9 @@ import { GooglemapsComponent } from './maps/googlemaps/googlemaps.component';
 import { PublicationListComponent } from './publication/publication-list/publication-list.component';
 import { PublicationService } from './publication/publication.service';
 import { PublicationCreateComponent } from './publication/publication-create/publication-create.component';
-import { LocationSelectorComponent } from './maps/location-selector/location-selector.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { DateSelectorComponent } from './publication/date-selector/date-selector.component';
+import {MomentModule} from 'angular2-moment/moment.module';
 
 @NgModule({
   declarations: [
@@ -37,9 +37,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     GooglemapsComponent,
     PublicationListComponent,
     PublicationCreateComponent,
-    LocationSelectorComponent,
+    DateSelectorComponent,
   ],
   imports: [
+    MomentModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,

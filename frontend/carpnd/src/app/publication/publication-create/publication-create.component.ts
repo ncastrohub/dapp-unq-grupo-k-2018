@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {CreatePublication, Location, Days, MoneyAndAmount} from '../publication';
-import {PublicationService} from '../publication.service';
-import {Vehicle} from '../../vehicle/vehicle';
+import { CreatePublication, Location, Days, MoneyAndAmount} from '../publication';
+import { PublicationService } from '../publication.service';
+import { Vehicle } from '../../vehicle/vehicle';
 import { Router } from '@angular/router';
-import { CreateVehicleComponent } from '../../vehicle/create/create.component'
+import { CreateVehicleComponent } from '../../vehicle/create/create.component';
 import { GooglemapsComponent } from '../../maps/googlemaps/googlemaps.component';
+import { DateSelectorComponent } from '../date-selector/date-selector.component';
+
 
 @Component({
   selector: 'app-publication-create',
