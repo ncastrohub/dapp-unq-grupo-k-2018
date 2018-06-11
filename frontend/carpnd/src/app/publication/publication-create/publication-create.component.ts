@@ -22,7 +22,7 @@ export class PublicationCreateComponent {
     this.publication.vehicle = new Vehicle();
     this.publication.acquireLocation = new Location();
     this.publication.returnLocations = [];
-    this.publication.enabledDays = new Days();
+    // this.publication.enabledDays = new Days();
     this.publication.costPerHour = new MoneyAndAmount();
   }
 

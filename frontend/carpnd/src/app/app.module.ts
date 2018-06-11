@@ -24,6 +24,7 @@ import { PublicationCreateComponent } from './publication/publication-create/pub
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DateSelectorComponent } from './publication/date-selector/date-selector.component';
 import {MomentModule} from 'angular2-moment/moment.module';
+import { CostDefinerComponent } from './publication/cost-definer/cost-definer.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import {MomentModule} from 'angular2-moment/moment.module';
     PublicationListComponent,
     PublicationCreateComponent,
     DateSelectorComponent,
+    CostDefinerComponent,
   ],
   imports: [
     MomentModule,

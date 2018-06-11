@@ -6,7 +6,6 @@ export class ChronologyInfo {
 	id: string
 }
 
-
 export class Location {
 	id: number;
 	adressName: string;
@@ -25,6 +24,7 @@ export class Publication {
 	owner: User;
 	vehicle: Vehicle;
 	acquireLocation: Location;
+	returnLocations: Location[];
 	enabledDays: Days;
 }
 
