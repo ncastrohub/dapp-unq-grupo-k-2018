@@ -25,22 +25,40 @@
 
        </div>
      </li>
-     
+
     </ul>
     <!-- <a routerLink="/logout" class="btn btn-outline-danger my-2 my-sm-0"> LogOut </a> -->
   </div>
+
+<!-- AGREGADO PARA AUTENTICACION -->
+<!-- FROM https://auth0.com/authenticate/angular2/google-apps/ -->
+          <button
+            class="btn btn-primary btn-margin"
+            *ngIf="!authService.isLoggedIn"
+            (click)="authService.login()">
+            Log In
+          </button>
+
+          <button
+            class="btn btn-primary btn-margin"
+            *ngIf="authService.isLoggedIn"
+            (click)="authService.logout()">
+              Log Out
+          </button>
+<!-- FIN AGREGADO -->
+
 </nav>
 <br>
 <div class="container-fluid">
 	<div class="row justify-content-md-center">
 		<div class="col col-lg-1"></div>
-		
+
 		<div class='col col-lg-10'>
-			
+
 			<router-outlet></router-outlet>
-			
+
 		</div>
-		
+
 		<div class="col col-lg-1"></div>
 	</div>
 

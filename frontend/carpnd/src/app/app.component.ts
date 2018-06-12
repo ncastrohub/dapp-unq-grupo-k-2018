@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 
+// AGREGADO PARA AUTENTICACION
+import { AuthService } from './auth/auth.service';
+// FIN AGREGADO
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,4 +13,9 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'Carpnd';
+  constructor(
+// AGREGADO PARA AUTENTICACION
+    public authService: AuthService
+// FIN AGREGADO
+  ) {}
 }
