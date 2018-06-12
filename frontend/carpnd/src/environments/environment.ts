@@ -5,6 +5,7 @@
 
 export const environment = {
   production: false,
+// AGREGADO PARA AUTENTICACION
   auth: {
     domain:       'tpi-desapp.auth0.com',
     clientID:     'nfJ_xFgdMli9OPzLsnZcfPYLWca-iCBn', // e.g., you.auth0.com
@@ -12,4 +13,5 @@ export const environment = {
     redirect: 'http://localhost:4200/callback',
     scope: 'openid profile email'
   }
+// FIN AGREGADO
 };

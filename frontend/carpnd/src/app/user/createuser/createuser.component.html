@@ -6,38 +6,36 @@
     </div>
     <form (ngSubmit)="onSubmit()" #userForm="ngForm">
 
+<!-- AGREGADO PARA AUTENTICACION -->
       <div class="form-group" *ngIf="!authService.isLoggedIn">
+        <p>&nbsp;</p>
         <h2>Log in to create a user</h2>
       </div>
+<!-- FIN AGREGADO -->
 
 
-		<div class="form-group" *ngIf="authService.isLoggedIn">
-        	<label for="name">Name</label>
+		<div class="form-group" *ngIf="authService.isLoggedIn"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
+        	<label for="name">Full Name</label>
        		<input type="text" class="form-control" id="name"
          	required [(ngModel)]="user.name" name="name"/>
        	</div>
 
-       	<div class="form-group" *ngIf="authService.isLoggedIn">
-        	<label for="lastName">Last Name</label>
-       		<input type="text" class="form-control" id="lastName"
-         	required [(ngModel)]="user.lastName" name="lastName"/>
-       	</div>
-
-       	<div class="form-group" *ngIf="authService.isLoggedIn">
+       	<div class="form-group" *ngIf="authService.isLoggedIn"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
         	<label for="cuil">Cuil</label>
        		<input type="text" class="form-control" id="cuil" minlength="10" maxlength="11"
          	required [(ngModel)]="user.cuil" name="cuil"/>
        	</div>
 
 
-      <div class="form-group" *ngIf="authService.isLoggedIn">
-        <label for="email">Photo</label>
+      <div class="form-group" *ngIf="authService.isLoggedIn"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
+        <label for="email">E-mail</label>
         <input type="email" class="form-control" id="email"
          required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
          [(ngModel)]="user.email" name="email"/>
        </div>
 
       <button type="submit" *ngIf="authService.isLoggedIn" [disabled]="!userForm.form.valid" class="btn btn-success">Create</button>
+      <!-- AGREGADO *ngIf PARA AUTENTICACION -->
 
     </form>
 </div>

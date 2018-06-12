@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
+// AGREGADO PARA AUTENTICACION
 import { AuthService } from './auth/auth.service';
+// FIN AGREGADO
 
 @Component({
   selector: 'app-callback',
@@ -12,7 +15,9 @@ import { AuthService } from './auth/auth.service';
 })
 export class CallbackComponent implements OnInit {
 
+// MODIFICADO PARA AUTENTICACION
   constructor(private authService: AuthService) { }
+// FIN MODIFICADO
 
   ngOnInit() {
     this.authService.handleLoginCallback();

@@ -8,9 +8,10 @@ import { UserListComponent } from './user/user-list/user-list.component'
 import { CreateuserComponent } from './user/createuser/createuser.component'
 import { UsereditComponent } from './user/useredit/useredit.component'
 
-import { CallbackComponent } from './callback.component';
+// AGREGADO PARA AUTENTICACION
 import { AuthGuard } from './auth/auth.guard';
-
+import { CallbackComponent } from './callback.component';
+// FIN AGREGADO
 
 const routes: Routes = [
   { path: 'vehicle/create', component: CreateVehicleComponent },
@@ -19,15 +20,22 @@ const routes: Routes = [
   { path: 'user/list', component: UserListComponent },
   { path: 'user/edit', component: UsereditComponent },
   { path: 'user/create', component: CreateuserComponent
+// AGREGADO PARA AUTENTICACION
+// DESCOMENTAR PARA GUARDAR UNA RUTA
 //    ,  canActivate: [AuthGuard]
-  },
-  { path: 'callback', component: CallbackComponent }
+// FIN AGREGADO
+  }
+// AGREGADO PARA AUTENTICACION
+  , { path: 'callback', component: CallbackComponent }
+// FIN AGREGADO
 ];
 
 @NgModule({
   exports: [ RouterModule ],
-  imports: [ RouterModule.forRoot(routes) ],
-  providers: [AuthGuard]
+  imports: [ RouterModule.forRoot(routes) ]
+// AGREGADO PARA AUTENTICACION
+  , providers: [AuthGuard]
+// FIN AGREGADO
 })
 
 export class AppRoutingModule {}

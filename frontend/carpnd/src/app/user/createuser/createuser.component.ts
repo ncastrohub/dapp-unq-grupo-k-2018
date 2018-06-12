@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserServiceService } from '../service/user-service.service';
 import { Router } from '@angular/router';
+
+// AGREGADO PARA AUTENTICACION
 import { AuthService } from '../../auth/auth.service';
+// FIN AGREGADO
 
 @Component({
   selector: 'app-createuser',
@@ -11,8 +14,13 @@ import { AuthService } from '../../auth/auth.service';
 })
 export class CreateuserComponent {
 
+// MODIFICADO PARA AUTENTICACION
  constructor(private service: UserServiceService, private router: Router, public authService: AuthService) {
-    this.user = new User();
+// FIN MODIFICADO
+
+    this.user = new User()
+    this.user.name = authService.userProfile.name;
+    this.user.email = authService.userProfile.email;
   }
 
   user:User;
