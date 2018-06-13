@@ -1,0 +1,11 @@
+<form (ngSubmit)="onSubmit()">
+
+	<div class="form-group">
+	  <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+	</div>
+	<agm-map [latitude]="selectedLocation.geoLatitude" [longitude]="selectedLocation.geoLongitude" [scrollwheel]="false" [zoom]="zoom">
+	  <agm-marker [latitude]="selectedLocation.geoLatitude" [longitude]="selectedLocation.geoLongitude"></agm-marker>
+	</agm-map>
+
+	<button type="submit" class="btn btn-success">Add</button>
+</form>

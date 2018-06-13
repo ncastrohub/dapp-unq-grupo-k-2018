@@ -51,7 +51,7 @@ public class VehicleBuilder {
         return this;
     }
 
-    public static Vehicle someVehicle() {
+    public static Vehicle some() {
         return new Vehicle(5, VehicleType.SEDAN,
                 "fiveDoors", "link", UserBuilder.someUser()
         );

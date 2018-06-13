@@ -24,6 +24,11 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
     <!-- =========Servicios  ========= -->
     <!-- =========================== -->
 
+    <bean id="publicationApi" class="api.PublishApi">
+        <property name="publishService" ref="services.publish" />
+    </bean>
+
+
     <jaxrs:server id="carpn" address="/"  >
         <jaxrs:serviceBeans>
             <ref bean="publicationApi" />
@@ -41,10 +46,6 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
         </jaxrs:features>
     </jaxrs:server>
 
-
-    <bean id="publicationApi" class="api.PublicationApi">
-        <property name="publicationService" ref="services.publication" />
-    </bean>
 
 
 </beans>

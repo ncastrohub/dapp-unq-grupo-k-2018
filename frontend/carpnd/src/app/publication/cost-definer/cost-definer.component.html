@@ -1,0 +1,25 @@
+ <div *ngFor="let error of errorList" class="alert alert-danger" role="alert">
+      {{error}}
+    </div>
+
+    <form (ngSubmit)="onSubmit()" #costForm="ngForm">
+
+      <div class="form-group">
+        <label for="currency">Currency</label>
+        <select class="form-control" id="currency" required 
+          [(ngModel)]="cost.currency" name="currency" >
+          <option *ngFor="let currency of currencies" [value]="currency">{{currency}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="number" min="0" class="form-control" id="amount"
+         required
+         [(ngModel)]="cost.amount" name="amount"/>
+       </div>
+
+      <button type="submit" [disabled]="!costForm.form.valid" class="btn btn-success">Add</button>
+ 
+    </form>
+

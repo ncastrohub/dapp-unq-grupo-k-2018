@@ -689,7 +689,7 @@ Caused by: java.lang.NullPointerException
 2018-05-01 22:04:25,944 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
 2018-05-01 22:04:25,947 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
 2018-05-01 22:04:26,422 WARN  org.springframework.context.support.AbstractApplicationContext (AbstractApplicationContext.java:487) - Exception encountered during context initialization - cancelling refresh attempt
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'carpn': Cannot resolve reference to bean 'vehiclefixture' while setting bean property 'serviceBeans' with key [1]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'vehiclefixture' defined in ServletContext resource [/WEB-INF/application-context.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'publicationService' of bean class [fixtures.VehicleAndUserFixture]: Bean property 'publicationService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'carpn': Cannot resolve reference to bean 'vehiclefixture' while setting bean property 'serviceBeans' with key [1]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'vehiclefixture' defined in ServletContext resource [/WEB-INF/application-context.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'publishService' of bean class [fixtures.VehicleAndUserFixture]: Bean property 'publishService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:382)
@@ -761,7 +761,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
 	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
 	at org.codehaus.classworlds.Launcher.main(Launcher.java:47)
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'vehiclefixture' defined in ServletContext resource [/WEB-INF/application-context.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'publicationService' of bean class [fixtures.VehicleAndUserFixture]: Bean property 'publicationService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'vehiclefixture' defined in ServletContext resource [/WEB-INF/application-context.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'publishService' of bean class [fixtures.VehicleAndUserFixture]: Bean property 'publishService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1506)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
@@ -772,7 +772,7 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
 	... 70 more
-Caused by: org.springframework.beans.NotWritablePropertyException: Invalid property 'publicationService' of bean class [fixtures.VehicleAndUserFixture]: Bean property 'publicationService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+Caused by: org.springframework.beans.NotWritablePropertyException: Invalid property 'publishService' of bean class [fixtures.VehicleAndUserFixture]: Bean property 'publishService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
 	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:1067)
 	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:926)
 	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:95)
@@ -780,7 +780,7 @@ Caused by: org.springframework.beans.NotWritablePropertyException: Invalid prope
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1502)
 	... 78 more
 2018-05-01 22:04:26,428 ERROR org.springframework.web.context.ContextLoader (ContextLoader.java:331) - Context initialization failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'carpn': Cannot resolve reference to bean 'vehiclefixture' while setting bean property 'serviceBeans' with key [1]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'vehiclefixture' defined in ServletContext resource [/WEB-INF/application-context.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'publicationService' of bean class [fixtures.VehicleAndUserFixture]: Bean property 'publicationService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'carpn': Cannot resolve reference to bean 'vehiclefixture' while setting bean property 'serviceBeans' with key [1]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'vehiclefixture' defined in ServletContext resource [/WEB-INF/application-context.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'publishService' of bean class [fixtures.VehicleAndUserFixture]: Bean property 'publishService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:382)
@@ -852,7 +852,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
 	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
 	at org.codehaus.classworlds.Launcher.main(Launcher.java:47)
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'vehiclefixture' defined in ServletContext resource [/WEB-INF/application-context.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'publicationService' of bean class [fixtures.VehicleAndUserFixture]: Bean property 'publicationService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'vehiclefixture' defined in ServletContext resource [/WEB-INF/application-context.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'publishService' of bean class [fixtures.VehicleAndUserFixture]: Bean property 'publishService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1506)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
@@ -863,7 +863,7 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
 	... 70 more
-Caused by: org.springframework.beans.NotWritablePropertyException: Invalid property 'publicationService' of bean class [fixtures.VehicleAndUserFixture]: Bean property 'publicationService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+Caused by: org.springframework.beans.NotWritablePropertyException: Invalid property 'publishService' of bean class [fixtures.VehicleAndUserFixture]: Bean property 'publishService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
 	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:1067)
 	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:926)
 	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:95)
@@ -1405,7 +1405,7 @@ Caused by: java.lang.NullPointerException
 2018-05-01 22:14:05,884 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
 2018-05-01 22:14:05,887 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
 2018-05-01 22:14:06,338 WARN  org.springframework.context.support.AbstractApplicationContext (AbstractApplicationContext.java:487) - Exception encountered during context initialization - cancelling refresh attempt
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'carpn': Cannot resolve reference to bean 'publicationApi' while setting bean property 'serviceBeans' with key [0]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'publicationApi' defined in ServletContext resource [/WEB-INF/application-context.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'vehicleFixture' of bean class [api.PublicationApi]: Bean property 'vehicleFixture' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'carpn': Cannot resolve reference to bean 'publicationApi' while setting bean property 'serviceBeans' with key [0]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'publicationApi' defined in ServletContext resource [/WEB-INF/application-context.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'vehicleFixture' of bean class [api.PublishApi]: Bean property 'vehicleFixture' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:382)
@@ -1477,7 +1477,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
 	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
 	at org.codehaus.classworlds.Launcher.main(Launcher.java:47)
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'publicationApi' defined in ServletContext resource [/WEB-INF/application-context.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'vehicleFixture' of bean class [api.PublicationApi]: Bean property 'vehicleFixture' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'publicationApi' defined in ServletContext resource [/WEB-INF/application-context.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'vehicleFixture' of bean class [api.PublishApi]: Bean property 'vehicleFixture' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1506)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
@@ -1488,7 +1488,7 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
 	... 70 more
-Caused by: org.springframework.beans.NotWritablePropertyException: Invalid property 'vehicleFixture' of bean class [api.PublicationApi]: Bean property 'vehicleFixture' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+Caused by: org.springframework.beans.NotWritablePropertyException: Invalid property 'vehicleFixture' of bean class [api.PublishApi]: Bean property 'vehicleFixture' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
 	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:1067)
 	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:926)
 	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:95)
@@ -1496,7 +1496,7 @@ Caused by: org.springframework.beans.NotWritablePropertyException: Invalid prope
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1502)
 	... 78 more
 2018-05-01 22:14:06,344 ERROR org.springframework.web.context.ContextLoader (ContextLoader.java:331) - Context initialization failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'carpn': Cannot resolve reference to bean 'publicationApi' while setting bean property 'serviceBeans' with key [0]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'publicationApi' defined in ServletContext resource [/WEB-INF/application-context.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'vehicleFixture' of bean class [api.PublicationApi]: Bean property 'vehicleFixture' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'carpn': Cannot resolve reference to bean 'publicationApi' while setting bean property 'serviceBeans' with key [0]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'publicationApi' defined in ServletContext resource [/WEB-INF/application-context.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'vehicleFixture' of bean class [api.PublishApi]: Bean property 'vehicleFixture' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359)
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:382)
@@ -1568,7 +1568,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
 	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
 	at org.codehaus.classworlds.Launcher.main(Launcher.java:47)
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'publicationApi' defined in ServletContext resource [/WEB-INF/application-context.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'vehicleFixture' of bean class [api.PublicationApi]: Bean property 'vehicleFixture' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'publicationApi' defined in ServletContext resource [/WEB-INF/application-context.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'vehicleFixture' of bean class [api.PublishApi]: Bean property 'vehicleFixture' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1506)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
@@ -1579,7 +1579,7 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
 	... 70 more
-Caused by: org.springframework.beans.NotWritablePropertyException: Invalid property 'vehicleFixture' of bean class [api.PublicationApi]: Bean property 'vehicleFixture' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+Caused by: org.springframework.beans.NotWritablePropertyException: Invalid property 'vehicleFixture' of bean class [api.PublishApi]: Bean property 'vehicleFixture' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
 	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:1067)
 	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:926)
 	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:95)
@@ -2117,7 +2117,7 @@ Caused by: java.lang.NullPointerException
 2018-05-01 22:35:54,963 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
 2018-05-01 22:35:54,965 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
 2018-05-01 22:35:55,226 WARN  org.springframework.context.support.AbstractApplicationContext (AbstractApplicationContext.java:487) - Exception encountered during context initialization - cancelling refresh attempt
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'services.publication' defined in URL [file:/home/nc/dev/dapp/dapp_carpnd/backend/carpnd/target/classes/META-INF/spring-services-context.xml]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [services.PublicationConcernService]: Constructor threw exception; nested exception is java.lang.NullPointerException
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'services.publication' defined in URL [file:/home/nc/dev/dapp/dapp_carpnd/backend/carpnd/target/classes/META-INF/spring-services-context.xml]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [services.PublishService]: Constructor threw exception; nested exception is java.lang.NullPointerException
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1093)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1038)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
@@ -2185,13 +2185,13 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
 	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
 	at org.codehaus.classworlds.Launcher.main(Launcher.java:47)
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [services.PublicationConcernService]: Constructor threw exception; nested exception is java.lang.NullPointerException
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [services.PublishService]: Constructor threw exception; nested exception is java.lang.NullPointerException
 	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:163)
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:89)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1086)
 	... 66 more
 Caused by: java.lang.NullPointerException
-	at services.PublicationConcernService.<init>(PublicationConcernService.java:22)
+	at services.PublishService.<init>(PublicationConcernService.java:22)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -2199,7 +2199,7 @@ Caused by: java.lang.NullPointerException
 	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:147)
 	... 68 more
 2018-05-01 22:35:55,231 ERROR org.springframework.web.context.ContextLoader (ContextLoader.java:331) - Context initialization failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'services.publication' defined in URL [file:/home/nc/dev/dapp/dapp_carpnd/backend/carpnd/target/classes/META-INF/spring-services-context.xml]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [services.PublicationConcernService]: Constructor threw exception; nested exception is java.lang.NullPointerException
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'services.publication' defined in URL [file:/home/nc/dev/dapp/dapp_carpnd/backend/carpnd/target/classes/META-INF/spring-services-context.xml]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [services.PublishService]: Constructor threw exception; nested exception is java.lang.NullPointerException
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1093)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1038)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
@@ -2267,13 +2267,13 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
 	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
 	at org.codehaus.classworlds.Launcher.main(Launcher.java:47)
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [services.PublicationConcernService]: Constructor threw exception; nested exception is java.lang.NullPointerException
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [services.PublishService]: Constructor threw exception; nested exception is java.lang.NullPointerException
 	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:163)
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:89)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1086)
 	... 66 more
 Caused by: java.lang.NullPointerException
-	at services.PublicationConcernService.<init>(PublicationConcernService.java:22)
+	at services.PublishService.<init>(PublicationConcernService.java:22)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)

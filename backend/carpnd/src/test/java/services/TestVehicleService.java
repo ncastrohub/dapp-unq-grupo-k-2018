@@ -30,7 +30,7 @@ public class TestVehicleService {
     private UserService userService;
 
     @Autowired
-    private PublicationConcernService publicationService;
+    private PublishService publicationService;
 
     @Test
     public void testGetVehiclesForUser() throws FormValidationError {

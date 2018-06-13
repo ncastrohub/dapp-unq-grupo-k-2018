@@ -1,0 +1,7 @@
+<ngb-datepicker [(ngModel)]="model"></ngb-datepicker>
+
+<button (click)="addDay()" class="btn btn-success">Add to reserve</button>
+
+<button type="submit" [disabled]="!dateList" class="btn btn-success">Finish</button>
+
+{{ dateList | json }}

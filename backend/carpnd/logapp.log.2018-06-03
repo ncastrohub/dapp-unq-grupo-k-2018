@@ -1,0 +1,566 @@
+2018-06-03 02:48:10,646 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-03 02:48:10,649 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.ADRESSLOCATION
+2018-06-03 02:48:10,650 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-03 02:48:10,651 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATION
+2018-06-03 02:48:10,651 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-03 02:48:10,652 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-03 02:48:10,652 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-03 02:48:10,655 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-03 02:48:10,656 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-03 02:48:10,657 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 02:48:10,658 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-03 02:48:10,658 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 02:48:10,659 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-03 02:48:10,661 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-03 02:48:10,661 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-03 02:48:10,661 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 02:48:10,663 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-03 02:48:10,663 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 02:49:41,830 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-03 02:49:41,832 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.ADRESSLOCATION
+2018-06-03 02:49:41,833 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-03 02:49:41,833 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATION
+2018-06-03 02:49:41,834 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-03 02:49:41,834 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-03 02:49:41,834 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-03 02:49:41,835 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-03 02:49:41,835 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-03 02:49:41,835 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 02:49:41,836 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-03 02:49:41,836 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 02:49:41,836 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-03 02:49:41,837 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-03 02:49:41,837 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-03 02:49:41,837 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 02:49:41,839 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-03 02:49:41,840 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:26:07,094 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-03 12:26:07,098 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.ADRESSLOCATION
+2018-06-03 12:26:07,099 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-03 12:26:07,100 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATION
+2018-06-03 12:26:07,101 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-03 12:26:07,101 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-03 12:26:07,102 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-03 12:26:07,103 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-03 12:26:07,103 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-03 12:26:07,104 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:26:07,106 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-03 12:26:07,106 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:26:07,107 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-03 12:26:07,107 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-03 12:26:07,108 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-03 12:26:07,109 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:26:07,112 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-03 12:26:07,112 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:29:43,555 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-03 12:29:43,559 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.ADRESSLOCATION
+2018-06-03 12:29:43,560 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-03 12:29:43,560 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATION
+2018-06-03 12:29:43,560 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-03 12:29:43,561 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-03 12:29:43,561 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-03 12:29:43,561 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-03 12:29:43,562 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-03 12:29:43,562 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:29:43,563 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-03 12:29:43,563 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:29:43,563 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-03 12:29:43,564 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-03 12:29:43,564 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-03 12:29:43,564 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:29:43,567 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-03 12:29:43,567 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:31:08,728 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-03 12:31:08,732 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.ADRESSLOCATION
+2018-06-03 12:31:08,733 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-03 12:31:08,733 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATION
+2018-06-03 12:31:08,734 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-03 12:31:08,734 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-03 12:31:08,735 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-03 12:31:08,735 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-03 12:31:08,735 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-03 12:31:08,736 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:31:08,736 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-03 12:31:08,737 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:31:08,738 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-03 12:31:08,738 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-03 12:31:08,739 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-03 12:31:08,739 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:31:08,742 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-03 12:31:08,743 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:31:52,700 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-03 12:31:52,703 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.ADRESSLOCATION
+2018-06-03 12:31:52,704 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-03 12:31:52,704 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATION
+2018-06-03 12:31:52,705 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-03 12:31:52,705 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-03 12:31:52,706 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-03 12:31:52,706 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-03 12:31:52,707 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-03 12:31:52,707 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:31:52,708 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-03 12:31:52,708 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:31:52,708 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-03 12:31:52,709 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-03 12:31:52,709 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-03 12:31:52,709 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:31:52,712 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-03 12:31:52,712 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:32:51,464 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-03 12:32:51,468 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.ADRESSLOCATION
+2018-06-03 12:32:51,469 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-03 12:32:51,469 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATION
+2018-06-03 12:32:51,470 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-03 12:32:51,470 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-03 12:32:51,471 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-03 12:32:51,471 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-03 12:32:51,472 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-03 12:32:51,472 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:32:51,472 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-03 12:32:51,473 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:32:51,473 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-03 12:32:51,473 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-03 12:32:51,474 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-03 12:32:51,474 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:32:51,477 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-03 12:32:51,477 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:34:26,716 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-03 12:34:26,721 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.ADRESSLOCATION
+2018-06-03 12:34:26,722 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-03 12:34:26,722 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATION
+2018-06-03 12:34:26,722 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-03 12:34:26,723 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-03 12:34:26,723 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-03 12:34:26,723 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-03 12:34:26,724 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-03 12:34:26,724 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:34:26,725 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-03 12:34:26,725 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:34:26,725 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-03 12:34:26,726 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-03 12:34:26,726 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-03 12:34:26,726 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:34:26,728 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-03 12:34:26,729 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:37:48,427 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-03 12:37:48,432 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.ADRESSLOCATION
+2018-06-03 12:37:48,433 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-03 12:37:48,434 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATION
+2018-06-03 12:37:48,435 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-03 12:37:48,435 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-03 12:37:48,436 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-03 12:37:48,437 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-03 12:37:48,437 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-03 12:37:48,438 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:37:48,439 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-03 12:37:48,439 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:37:48,440 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-03 12:37:48,440 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-03 12:37:48,441 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-03 12:37:48,441 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:37:48,446 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-03 12:37:48,447 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:39:47,576 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-03 12:39:47,582 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.ADRESSLOCATION
+2018-06-03 12:39:47,583 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-03 12:39:47,584 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATION
+2018-06-03 12:39:47,584 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-03 12:39:47,585 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-03 12:39:47,586 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-03 12:39:47,586 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-03 12:39:47,587 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-03 12:39:47,587 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:39:47,588 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-03 12:39:47,589 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:39:47,589 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-03 12:39:47,589 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-03 12:39:47,590 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-03 12:39:47,591 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:39:47,595 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-03 12:39:47,596 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:46:56,755 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-03 12:46:56,759 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.ADRESSLOCATION
+2018-06-03 12:46:56,759 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-03 12:46:56,760 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATION
+2018-06-03 12:46:56,760 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-03 12:46:56,760 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-03 12:46:56,761 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-03 12:46:56,761 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-03 12:46:56,762 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-03 12:46:56,762 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:46:56,762 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-03 12:46:56,763 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:46:56,763 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-03 12:46:56,763 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-03 12:46:56,764 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-03 12:46:56,764 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:46:56,766 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-03 12:46:56,766 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:47:12,482 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-03 12:47:12,485 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.ADRESSLOCATION
+2018-06-03 12:47:12,486 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-03 12:47:12,486 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATION
+2018-06-03 12:47:12,487 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-03 12:47:12,487 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-03 12:47:12,488 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-03 12:47:12,488 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-03 12:47:12,488 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-03 12:47:12,489 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:47:12,489 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-03 12:47:12,489 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:47:12,490 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-03 12:47:12,490 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-03 12:47:12,494 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-03 12:47:12,494 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:47:12,497 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-03 12:47:12,497 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:55:54,803 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-03 12:55:54,807 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.ADRESSLOCATION
+2018-06-03 12:55:54,807 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-03 12:55:54,808 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATION
+2018-06-03 12:55:54,808 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-03 12:55:54,808 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-03 12:55:54,809 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-03 12:55:54,809 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-03 12:55:54,809 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-03 12:55:54,810 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:55:54,810 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-03 12:55:54,811 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:55:54,811 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-03 12:55:54,811 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-03 12:55:54,812 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-03 12:55:54,812 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:55:54,814 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-03 12:55:54,814 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:55:55,238 WARN  org.springframework.context.support.AbstractApplicationContext (AbstractApplicationContext.java:487) - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'services.publish' defined in class path resource [META-INF/spring-services-test.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'reservationService' of bean class [services.PublishService]: Bean property 'reservationService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1506)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:252)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:254)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:217)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:68)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.NotWritablePropertyException: Invalid property 'reservationService' of bean class [services.PublishService]: Bean property 'reservationService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:1067)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:926)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:95)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:75)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1502)
+	... 40 more
+2018-06-03 12:55:55,250 ERROR org.springframework.test.context.TestContextManager (TestContextManager.java:215) - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@444548a0] to prepare test instance [services.TestPublicationService@3766c667]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:94)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:252)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:254)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:217)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:68)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'services.publish' defined in class path resource [META-INF/spring-services-test.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'reservationService' of bean class [services.PublishService]: Bean property 'reservationService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1506)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86)
+	... 24 more
+Caused by: org.springframework.beans.NotWritablePropertyException: Invalid property 'reservationService' of bean class [services.PublishService]: Bean property 'reservationService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:1067)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:926)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:95)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:75)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1502)
+	... 40 more
+2018-06-03 12:56:40,341 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-03 12:56:40,345 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.ADRESSLOCATION
+2018-06-03 12:56:40,346 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-03 12:56:40,347 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATION
+2018-06-03 12:56:40,347 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-03 12:56:40,348 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-03 12:56:40,348 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-03 12:56:40,349 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-03 12:56:40,349 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-03 12:56:40,350 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:56:40,350 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-03 12:56:40,350 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:56:40,351 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-03 12:56:40,351 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-03 12:56:40,351 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-03 12:56:40,352 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:56:40,354 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-03 12:56:40,355 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:56:40,736 WARN  org.springframework.context.support.AbstractApplicationContext (AbstractApplicationContext.java:487) - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'services.publish' defined in class path resource [META-INF/spring-services-test.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'reservationService' of bean class [services.PublishService]: Bean property 'reservationService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1506)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:252)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:254)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:217)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:68)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.NotWritablePropertyException: Invalid property 'reservationService' of bean class [services.PublishService]: Bean property 'reservationService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:1067)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:926)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:95)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:75)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1502)
+	... 40 more
+2018-06-03 12:56:40,746 ERROR org.springframework.test.context.TestContextManager (TestContextManager.java:215) - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@444548a0] to prepare test instance [services.TestPublicationService@3766c667]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:94)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:252)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:254)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:217)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:68)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'services.publish' defined in class path resource [META-INF/spring-services-test.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'reservationService' of bean class [services.PublishService]: Bean property 'reservationService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1506)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86)
+	... 24 more
+Caused by: org.springframework.beans.NotWritablePropertyException: Invalid property 'reservationService' of bean class [services.PublishService]: Bean property 'reservationService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:1067)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:926)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:95)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:75)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1502)
+	... 40 more
+2018-06-03 12:57:15,831 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-03 12:57:15,835 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.ADRESSLOCATION
+2018-06-03 12:57:15,836 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-03 12:57:15,836 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATION
+2018-06-03 12:57:15,836 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-03 12:57:15,837 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-03 12:57:15,837 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-03 12:57:15,837 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-03 12:57:15,838 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-03 12:57:15,838 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:57:15,838 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-03 12:57:15,838 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:57:15,839 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-03 12:57:15,839 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-03 12:57:15,840 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-03 12:57:15,840 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:57:15,841 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-03 12:57:15,842 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:58:34,042 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-03 12:58:34,047 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.ADRESSLOCATION
+2018-06-03 12:58:34,048 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-03 12:58:34,048 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATION
+2018-06-03 12:58:34,049 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-03 12:58:34,050 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-03 12:58:34,051 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-03 12:58:34,053 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-03 12:58:34,053 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-03 12:58:34,054 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:58:34,054 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-03 12:58:34,055 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 12:58:34,055 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-03 12:58:34,055 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-03 12:58:34,056 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-03 12:58:34,056 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 12:58:34,058 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-03 12:58:34,059 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 13:03:08,533 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-03 13:03:08,536 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.ADRESSLOCATION
+2018-06-03 13:03:08,537 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-03 13:03:08,537 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATION
+2018-06-03 13:03:08,537 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-03 13:03:08,538 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-03 13:03:08,538 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-03 13:03:08,538 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-03 13:03:08,539 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-03 13:03:08,539 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 13:03:08,540 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-03 13:03:08,540 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 13:03:08,540 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-03 13:03:08,540 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-03 13:03:08,541 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-03 13:03:08,541 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 13:03:08,543 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-03 13:03:08,544 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 13:03:37,051 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-03 13:03:37,054 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.ADRESSLOCATION
+2018-06-03 13:03:37,054 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-03 13:03:37,055 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATION
+2018-06-03 13:03:37,055 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-03 13:03:37,055 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-03 13:03:37,055 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-03 13:03:37,056 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-03 13:03:37,056 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-03 13:03:37,056 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 13:03:37,056 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-03 13:03:37,057 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 13:03:37,057 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-03 13:03:37,057 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-03 13:03:37,057 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-03 13:03:37,058 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 13:03:37,059 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-03 13:03:37,060 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 17:42:54,661 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-03 17:42:54,665 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.ADRESSLOCATION
+2018-06-03 17:42:54,666 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-03 17:42:54,666 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATION
+2018-06-03 17:42:54,667 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-03 17:42:54,667 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-03 17:42:54,668 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-03 17:42:54,668 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-03 17:42:54,669 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-03 17:42:54,669 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 17:42:54,670 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-03 17:42:54,670 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 17:42:54,670 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-03 17:42:54,671 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-03 17:42:54,671 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-03 17:42:54,672 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 17:42:54,674 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-03 17:42:54,674 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 17:43:28,114 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-03 17:43:28,117 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.ADRESSLOCATION
+2018-06-03 17:43:28,117 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-03 17:43:28,118 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATION
+2018-06-03 17:43:28,118 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-03 17:43:28,118 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-03 17:43:28,118 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-03 17:43:28,119 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-03 17:43:28,119 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-03 17:43:28,119 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 17:43:28,119 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-03 17:43:28,120 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION
+2018-06-03 17:43:28,120 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-03 17:43:28,120 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-03 17:43:28,120 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-03 17:43:28,121 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE
+2018-06-03 17:43:28,122 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-03 17:43:28,123 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - user lacks privilege or object not found: PUBLIC.VEHICLE

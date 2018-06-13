@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-access="field"
+                   default-cascade="save-update">
+    <class name="model.MoneyAndAmount">
+        <id column="id" name="id">
+            <generator class="native" />
+        </id>
+
+        <property name="amount" type="double"/>
+        <property name="currency">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">model.CustomCurrencies</param>
+            </type>
+        </property>
+
+        <!--<property name="adressNumber" type="string"/>-->
+        <!--<property name="geoLatitude" type="string"/>-->
+        <!--<property name="geoLongitude" type="string"/>-->
+
+    </class>
+</hibernate-mapping>

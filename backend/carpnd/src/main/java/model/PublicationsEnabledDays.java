@@ -1,23 +1,60 @@
 package model;
 
-import model.exceptions.*;
 
-import java.time.LocalDate;
+import model.exceptions.*;
+import org.joda.time.LocalDate;
+
 import java.util.LinkedList;
 import java.util.List;
 
-public class PublicationsEnabledDays {
+public class PublicationsEnabledDays extends IdModel {
+
+//    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", timezone="GMT")
+//    @JsonFormat(shape = JsonFormat.Shape.OBJECT, pattern = "yyyy-MM-dd HH:mm a z")
+//    @JsonSerialize(contentUsing = JodaSerializers)
+
     private List<LocalDate> disabledDays;
+
+//    @JsonSerialize(contentUsing = JodaSerializers)
+//    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", timezone="GMT")
     private List<LocalDate> reservedDays;
 
+//    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", timezone="GMT")
+//    public LocalDate getHoy() {
+//        return hoy;
+//    }
 
-    public PublicationsEnabledDays(){
-        this.disabledDays = new LinkedList<>();
-        this.reservedDays = new LinkedList<>();
+//    public void setHoy(LocalDate hoy) {
+//        this.hoy = hoy;
+//    }
+
+    public void setDisabledDays(List<LocalDate> disabledDays) {
+        this.disabledDays = disabledDays;
+    }
+
+    public void setReservedDays(List<LocalDate> reservedDays) {
+        this.reservedDays = reservedDays;
+    }
+
+    public List<LocalDate> getReservedDays() {
+        return reservedDays;
     }
 
     public List<LocalDate> getDisabledDays() {
-        return disabledDays;
+        return this.disabledDays;
+    }
+
+    PublicationsEnabledDays(){
+
+        this.disabledDays = new LinkedList<>();
+        this.reservedDays = new LinkedList<>();
+//        this.hoy = LocalDate.now();
+    }
+
+    public PublicationsEnabledDays(List<LocalDate> reservedDays, List<LocalDate> disabledDays) {
+        this.disabledDays = disabledDays;
+        this.reservedDays = reservedDays;
+//        this.hoy = LocalDate.now();
     }
 
     public void reserveDay(LocalDate dayOne) throws DayDisabledException, DayAlreadyReservedException {
@@ -49,7 +86,7 @@ public class PublicationsEnabledDays {
         }
     }
 
-    public void reserveDays(LinkedList<LocalDate> reservationDays) throws DayAlreadyReservedException, DayDisabledException, InvalidAmountOfDaysToReserveException {
+    public void reserveDays(List<LocalDate> reservationDays) throws DayAlreadyReservedException, DayDisabledException, InvalidAmountOfDaysToReserveException {
         if (reservationDays.size() > 4) {
             throw new InvalidAmountOfDaysToReserveException();
         }
@@ -64,10 +101,11 @@ public class PublicationsEnabledDays {
         }
     }
 
-    public void disableDays(LinkedList<LocalDate> reservationDays) throws DayAlreadyDisabledException {
+    public void disableDays(List<LocalDate> reservationDays) throws DayAlreadyDisabledException {
         for (LocalDate localDate : reservationDays) {
             this.setDisabled(localDate);
         }
     }
+
 }
 

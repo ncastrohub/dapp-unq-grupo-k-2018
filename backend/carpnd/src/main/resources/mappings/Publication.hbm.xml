@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-access="field"
+                   default-cascade="save-update">
+    <class name="model.Publication">
+        <id column="id" name="id">
+            <generator class="native" />
+        </id>
+
+        <!--<list name="vehicles" cascade="all"  lazy="false">-->
+            <!--<key column="user_id" />-->
+            <!--<list-index  column="publication_vehicle_index"/>-->
+            <!--<one-to-many  class="model.Vehicle" />-->
+        <!--</list>-->
+
+        <one-to-one name="vehicle" class="model.Vehicle"/>
+
+        <many-to-one name="owner" class="model.User" lazy="false"
+                     column="publication_owner" not-null="false" />
+
+        <one-to-one name="acquireLocation" class="model.AdressLocation"/>
+
+
+        <list name="returnLocations" cascade="all"  lazy="false">
+            <key column="publication_id" />
+            <list-index  column="publication_r_locations_index"/>
+            <one-to-many  class="model.AdressLocation" />
+        </list>
+
+        <one-to-one name="enabledDays" class="model.PublicationsEnabledDays"/>
+
+        <one-to-one name="costPerHour" class="model.MoneyAndAmount"/>
+
+    </class>
+</hibernate-mapping>

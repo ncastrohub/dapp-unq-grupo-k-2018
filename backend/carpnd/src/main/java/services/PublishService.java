@@ -1,23 +1,42 @@
 package services;
 
 
-import api.forms.UserForm;
-import api.forms.UserUpdateForm;
-import api.forms.VehicleForm;
-import api.forms.VehicleUpdateForm;
-import model.exceptions.FormValidationError;
-import model.User;
-import model.Vehicle;
+import api.forms.*;
+import model.*;
+import model.exceptions.*;
+import org.joda.time.LocalDate;
 import org.springframework.transaction.annotation.Transactional;
 import services.Validators.GenericValidator;
+import utils.OwnPaginationPage;
 
 import java.io.Serializable;
 import java.util.List;
 
-public class PublicationConcernService {
+public class PublishService {
 
     private UserService userService;
     private VehicleService vehicleService;
+    private PublicationService publicationService;
+    private ReservationService reservationService;
+
+
+    public void setReservationService(ReservationService reservationService) {
+        this.reservationService = reservationService;
+    }
+
+    public ReservationService getReservationService() {
+        return reservationService;
+    }
+
+
+    public PublicationService getPublicationService() {
+        return publicationService;
+    }
+
+    public void setPublicationService(PublicationService publicationService) {
+        this.publicationService = publicationService;
+    }
+
 
     public UserService getUserService() {
         return userService;
@@ -54,7 +73,7 @@ public class PublicationConcernService {
 
     public void updateVehicle(Long userId, VehicleUpdateForm vehicle) throws FormValidationError {
         GenericValidator.validate(vehicle);
-        Vehicle vehicleInDb = this.vehicleService.findById(new Long(vehicle.id));
+        Vehicle vehicleInDb = this.vehicleService.findById(vehicle.id);
         vehicleInDb.description = vehicle.description;
         vehicleInDb.type = vehicle.type;
         vehicleInDb.capacity = vehicle.capacity;
@@ -92,6 +111,48 @@ public class PublicationConcernService {
     public User retriveUser(Long id) {
         return this.userService.findById(id);
     }
+
+
+    public Publication createPublicationForUser(Long userId, PublicationForm publication) throws FormValidationError {
+        GenericValidator.validate(publication);
+
+        User publicationUser = this.userService.findById(userId);
+
+        Publication newPublication = new Publication(
+                        publicationUser,
+                publication.getCostPerDayInstance(),
+                publication.getVehicleInstance(),
+                publication.getAcquireLocationInstance(),
+                publication.getReturnLocationsList(),
+                publication.getEnabledDaysInstance()
+                );
+
+        this.publicationService.save(newPublication);
+        return newPublication;
+    }
+
+    public Publication retrievePublication(Long publicationId) {
+        return this.publicationService.findById(publicationId);
+    }
+
+    public Reservation makeReservation(Long customerId, List<LocalDate> daysToReserve, Long publicationId,
+           Long returnLocationId) throws DayDisabledException, DayAlreadyReservedException,
+            InvalidAmountOfDaysToReserveException, NoReturnLocationInPublicationException {
+
+        Publication publication = this.publicationService.findById(publicationId);
+        User customer = this.userService.findById(customerId);
+        AdressLocation returnLocation = publication.getReturnLocationsById(returnLocationId);
+        Reservation reservation = publication.makeReservation(customer, daysToReserve, returnLocation);
+        this.publicationService.update(publication);
+        this.reservationService.save(reservation);
+        return reservation;
+    }
+
+    public OwnPaginationPage<Publication> getPublicationPage(int pageNumber) {
+        return null;
+    }
+
+
 }
 
 

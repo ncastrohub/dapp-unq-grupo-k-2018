@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import {  LOCALE_ID, NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule }     from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,6 +17,14 @@ import { CreateuserComponent } from './user/createuser/createuser.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserServiceService } from './user/service/user-service.service';
 import { UsereditComponent } from './user/useredit/useredit.component';
+import { GooglemapsComponent } from './maps/googlemaps/googlemaps.component';
+import { PublicationListComponent } from './publication/publication-list/publication-list.component';
+import { PublicationService } from './publication/publication.service';
+import { PublicationCreateComponent } from './publication/publication-create/publication-create.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DateSelectorComponent } from './publication/date-selector/date-selector.component';
+import {MomentModule} from 'angular2-moment/moment.module';
+import { CostDefinerComponent } from './publication/cost-definer/cost-definer.component';
 
 // AGREGADO PARA AUTENTICACION
 import {AuthService} from "./auth/auth.service";
@@ -31,17 +41,32 @@ import { CallbackComponent } from './callback.component';
     UserListComponent,
     UsereditComponent,
     CallbackComponent,
+    GooglemapsComponent,
+    PublicationListComponent,
+    PublicationCreateComponent,
+    DateSelectorComponent,
+    CostDefinerComponent,
   ],
   imports: [
+    MomentModule,
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      libraries: ["places"],
+      apiKey: 'AIzaSyApkqv2wRZywgM-wVDJmceHuBROKB1gvOQ'
+    }),
+    NgbModule.forRoot()
   ],
-  providers: [VehicleService, UserServiceService, AppConfig,
-// AGREGADO PARA AUTENTICACION
-    AuthService,
-// FIN AGREGADO
+  providers: [VehicleService,
+  // AGREGADO PARA AUTENTICACION
+      AuthService,
+  // FIN AGREGADO
+    UserServiceService,
+    AppConfig,
+    PublicationService,
     { provide: LOCALE_ID, useValue: 'en' }],
   bootstrap: [AppComponent]
 })

@@ -1,22 +1,55 @@
 package model;
 
 import model.exceptions.*;
+import org.codehaus.jackson.annotate.JsonIgnore;
 
-import java.time.LocalDate;
+import org.joda.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 
-public class Publication {
+public class Publication extends IdModel {
 
     private User owner;
     private Vehicle vehicle;
 
     private AdressLocation acquireLocation;
-    private LinkedList<AdressLocation> returnLocations;
-    private PublicationsEnabledDays enabledDays;
-    private MoneyAndAmount costPerHour;
-    private List<ReservedPublication> reservedPublicationList;
 
+    private List<AdressLocation> returnLocations;
+
+    private PublicationsEnabledDays enabledDays;
+
+    private MoneyAndAmount costPerHour;
+
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
+    public void setAcquireLocation(AdressLocation acquireLocation) {
+        this.acquireLocation = acquireLocation;
+    }
+
+    public void setReturnLocations(List<AdressLocation> returnLocations) {
+        this.returnLocations = returnLocations;
+    }
+
+    public PublicationsEnabledDays getEnabledDays() {
+        return enabledDays;
+    }
+
+    public void setEnabledDays(PublicationsEnabledDays enabledDays) {
+        this.enabledDays = enabledDays;
+    }
+
+    public void setCostPerHour(MoneyAndAmount costPerHour) {
+        this.costPerHour = costPerHour;
+    }
+
+    public Publication(){}
     public Publication(User owner, MoneyAndAmount costPerHour,
                        Vehicle vehicle, AdressLocation acquireLocation,
                        LinkedList<AdressLocation> returnLocations,
@@ -27,7 +60,6 @@ public class Publication {
         this.acquireLocation = acquireLocation;
         this.returnLocations = returnLocations;
         this.enabledDays = enabledDays;
-        this.reservedPublicationList = new LinkedList<>();
 
     }
 
@@ -47,23 +79,21 @@ public class Publication {
         return acquireLocation;
     }
 
-    public LinkedList<AdressLocation> getReturnLocations() {
+    @JsonIgnore
+    public List<AdressLocation> getReturnLocations() {
         return returnLocations;
     }
 
+    @JsonIgnore
     public PublicationsEnabledDays getAvaiblesDays() {
         return this.enabledDays;
     }
 
-    public void makeReservation(User customer, LinkedList<LocalDate> reservationDays) throws DayAlreadyReservedException, DayDisabledException, InvalidAmountOfDaysToReserveException {
+    public Reservation makeReservation(User customer, List<LocalDate> reservationDays, AdressLocation returnLocation) throws DayAlreadyReservedException, DayDisabledException, InvalidAmountOfDaysToReserveException {
         this.enabledDays.reserveDays(reservationDays);
-        ReservedPublication newReservedPublication = new ReservedPublication(this, reservationDays, customer);
-        this.reservedPublicationList.add(newReservedPublication);
+        return new Reservation(this, reservationDays, customer, returnLocation);
     }
 
-    public List<ReservedPublication> getReservedPublicationList() {
-        return reservedPublicationList;
-    }
 
     public boolean canReserve(LocalDate dayOne) {
 
@@ -76,5 +106,27 @@ public class Publication {
 
     public void disabledDays(LinkedList<LocalDate> reservationDays) throws DayAlreadyDisabledException {
         this.enabledDays.disableDays(reservationDays);
+    }
+
+
+    public List<LocalDate> getDisabledDays(){
+        return this.enabledDays.getDisabledDays();
+    }
+
+    public List<LocalDate> getReservedDays() {
+        return  this.enabledDays.getReservedDays();
+    }
+
+    public void setReturnLocations(LinkedList<AdressLocation> returnLocations) {
+        this.returnLocations = returnLocations;
+    }
+
+    public AdressLocation getReturnLocationsById(Long locationId) throws NoReturnLocationInPublicationException {
+        Optional<AdressLocation> matchLocation = this.returnLocations.stream().filter(location -> location.getId().equals(locationId)).findFirst();
+        if (matchLocation.isPresent()){
+            return matchLocation.get();
+        }else {
+            throw new NoReturnLocationInPublicationException();
+        }
     }
 }

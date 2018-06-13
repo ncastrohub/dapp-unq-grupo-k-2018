@@ -1,9 +1,13 @@
 package repositories;
 
+import org.hibernate.Query;
+import org.springframework.orm.hibernate4.HibernateCallback;
+import org.springframework.orm.hibernate4.HibernateTemplate;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
+import utils.OwnPaginationPage;
+
 import java.io.Serializable;
 import java.util.List;
-
-import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 /**
  * Generic hibernate DAO
@@ -14,7 +18,7 @@ public abstract class HibernateGenericDAO<T> extends HibernateDaoSupport impleme
 
     private static final long serialVersionUID = 5058950102420892922L;
 
-    protected Class<T> persistentClass = this.getDomainClass();
+    private Class<T> persistentClass = this.getDomainClass();
 
     @SuppressWarnings("unchecked")
     public int count() {
@@ -43,10 +47,9 @@ public abstract class HibernateGenericDAO<T> extends HibernateDaoSupport impleme
         this.getHibernateTemplate().delete(obj);
     }
 
+    @SuppressWarnings("unchecked")
     public List<T> findAll() {
-        List<T> find = (List<T>) this.getHibernateTemplate().find("from " + this.persistentClass.getName() + " o");
-        return find;
-
+        return (List<T>) this.getHibernateTemplate().find("from " + this.persistentClass.getName() + " o");
     }
 
     public List<T> findByExample(final T exampleObject) {
@@ -67,6 +70,37 @@ public abstract class HibernateGenericDAO<T> extends HibernateDaoSupport impleme
 
     public void update(final T entity) {
         this.getHibernateTemplate().update(entity);
+    }
+
+    /*Esto deberia ir en el service, pero no puedo obtener el domainClass`*/
+    public OwnPaginationPage<T> getPaginationPage(Integer pageNumber){
+        List<T> elementList = this.getAllByPage(4, pageNumber);
+        OwnPaginationPage<T> page = new OwnPaginationPage<>();
+        page.setElementList(elementList);
+        if (pageNumber > 0) {
+            page.beforeUrl = "/" + this.getDomainClass().getSimpleName().toLowerCase() + "/list/" + (pageNumber - 1);
+        }
+        Integer total =  this.count();
+        Integer currentPage = pageNumber + 1;
+        if (total - (currentPage * 4) > 0) {
+            page.nextUrl = "/" + this.getDomainClass().getSimpleName().toLowerCase() + "/list/" + (pageNumber  + 1);
+        }
+        return page;
+    }
+
+    public OwnPaginationPage<T> getPaginationPage(){
+        return this.getPaginationPage(0);
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<T> getAllByPage(final int pageSize, final int pageNumber) {
+        HibernateTemplate template = this.getHibernateTemplate();
+        return (List<T>) template.execute((HibernateCallback) session -> {
+            Query query = session.createQuery("from "+ this.persistentClass.getName() + " o");
+            query.setMaxResults(pageSize);
+            query.setFirstResult(pageSize * pageNumber);
+            return query.list();
+        });
     }
 
 }

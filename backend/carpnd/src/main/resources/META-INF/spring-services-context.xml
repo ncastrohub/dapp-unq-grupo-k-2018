@@ -19,17 +19,28 @@
         <property name="repository" ref="persistence.userrepository" />
     </bean>
 
-    <bean id="services.publication" class="services.PublicationConcernService">
+    <bean id="services.reservation" class="services.ReservationService">
+        <property name="repository" ref="persistence.reservationrepository" />
+    </bean>
+
+    <bean id="services.publication" class="services.PublicationService">
+        <property name="repository" ref="persistence.publicationrepository" />
+    </bean>
+
+    <bean id="services.publish" class="services.PublishService">
         <property name="userService" ref="services.user" />
         <property name="vehicleService" ref="services.vehicle" />
-    </bean>
-
-    <!--<bean depends-on="services.publication" id="fixture.vehicle" class="fixtures.VehicleAndUserFixture">-->
-        <!--<property name="publicationService" ref="services.publication" />-->
-    <!--</bean>-->
-
-    <bean class="scripting.InitializeUser">
         <property name="publicationService" ref="services.publication" />
+        <property name="reservationService" ref="services.reservation" />
     </bean>
+
+    <bean class="fixtures.VehicleAndUserFixture">
+        <property name="publishService" ref="services.publish" />
+    </bean>
+
+
+    <!--<bean class="scripting.InitializeUser">-->
+        <!--<property name="publishService" ref="services.publication" />-->
+    <!--</bean>-->
 
 </beans>

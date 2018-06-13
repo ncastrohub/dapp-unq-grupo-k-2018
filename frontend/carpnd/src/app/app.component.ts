@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { } from '@types/googlemaps';
 
 // AGREGADO PARA AUTENTICACION
 import { AuthService } from './auth/auth.service';
@@ -9,7 +10,6 @@ import { AuthService } from './auth/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-
 
 export class AppComponent {
   title = 'Carpnd';

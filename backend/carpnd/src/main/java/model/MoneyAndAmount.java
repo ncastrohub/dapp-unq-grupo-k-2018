@@ -1,8 +1,26 @@
 package model;
 
-public class MoneyAndAmount {
+public class MoneyAndAmount extends IdModel {
     public CustomCurrencies currency;
     public Double amount;
+
+    public CustomCurrencies getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(CustomCurrencies currency) {
+        this.currency = currency;
+    }
+
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+
+    public MoneyAndAmount(){}
 
     public MoneyAndAmount(Double amount, CustomCurrencies aCurrency) {
         this.amount = amount;
@@ -33,5 +51,9 @@ public class MoneyAndAmount {
 
     public void subtract(MoneyAndAmount moneyAndAmount) {
         this.amount = this.amount - moneyAndAmount.amount;
+    }
+
+    public MoneyAndAmount createNew() {
+        return new MoneyAndAmount(this.amount, this.currency);
     }
 }

@@ -1,5 +1,3 @@
-<div class="container">
-    <h1>Vehicle Form</h1>
 
     <div *ngFor="let error of errorList" class="alert alert-danger" role="alert">
       {{error}}
@@ -40,4 +38,4 @@
       <button type="submit" [disabled]="!vehicleForm.form.valid" class="btn btn-success">Create</button>
  
     </form>
-</div>
+

@@ -1,39 +1,49 @@
 package model;
 
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
+import org.joda.time.LocalDate;
 
-public class Reservation {
+import java.util.List;
 
-    public ReservedPublication publication;
-    public AdressLocation acquireLocation;
-    public LocalDateTime acquireTime;
-    public LocalDateTime returnTime;
+public class Reservation extends IdModel {
+
+    private ReservedPublication publicationSnapshot;
+
+    public Publication publication;
     public ReservationState state;
-    public AdressLocation returnLocation;
-    public User owner;
     public User customer;
 
-    public Reservation(
-            User owner,
-            User customer,
-            LocalDateTime acquireTime, AdressLocation acquireLocation,
-            LocalDateTime returnTime, AdressLocation returnLocation,
-            ReservedPublication publication) {
-        this.owner = owner;
+    public Reservation(Publication publication, List<LocalDate> reservationDays,
+                       User customer, AdressLocation returnLocation) {
+        this.publication = publication;
         this.customer = customer;
         this.state = new WaitingForOwnerState();
-        this.acquireTime = acquireTime;
-        this.acquireLocation = acquireLocation;
-        this.returnTime = returnTime;
-        this.returnLocation = returnLocation;
-        this.publication = publication;
+        this.publicationSnapshot = new ReservedPublication(
+                publication,
+                reservationDays,
+                customer,
+                returnLocation
+        );
     }
 
+    public ReservedPublication getPublicationSnapshot() {
+        return publicationSnapshot;
+    }
+
+
     public MoneyAndAmount finalPrice() {
-        MoneyAndAmount costPerHour = this.publication.getCostPerHour();
-        Long hours = acquireTime.until( returnTime, ChronoUnit.HOURS);
-        Double roundedValue = hours.doubleValue();
-        return costPerHour.plusBy(roundedValue);
+        MoneyAndAmount costPerHour = this.getPublicationSnapshot().getCostPerHour();
+//        Long hours = Duration.between(this.publicationSnapshot.getAcquireTime(), this.publicationSnapshot.returnTime).toHours();
+        Integer hours2 = this.publicationSnapshot.getHoursBetween();
+
+//        Double roundedValue = hours.doubleValue();
+        return costPerHour.plusBy(new Double(hours2));
+    }
+
+    public User getOwner() {
+        return publication.getOwner();
+    }
+
+    public User getCustomer() {
+        return customer;
     }
 }

@@ -18,9 +18,6 @@
             </type>
         </property>
 
-        <!--<property name="owner" />-->
-
-
         <many-to-one name="owner" class="model.User" lazy="false"
                      column="vehicle_user" not-null="false" />
     </class>

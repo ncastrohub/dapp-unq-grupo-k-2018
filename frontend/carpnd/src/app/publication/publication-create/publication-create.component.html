@@ -1,0 +1,57 @@
+<div>
+  
+  <h1>Create a new Publication</h1>
+
+  <div class='row'>
+	
+    <div class="col-3" >
+      <div class=".panel-default">
+        
+        {{ publication | json }}
+      </div>
+
+    </div>
+
+
+    <div *ngIf="moment == 'vehicle'" class="col-6" >
+
+      <app-create-vehicle (onComplete)='saveVehicle($event)'> </app-create-vehicle>    
+      
+    </div>
+
+    <div class="col-6" *ngIf="moment == 'acquire'" >
+
+      <app-googlemaps (onComplete)='saveAcquireLocation($event)'> </app-googlemaps>
+    
+    </div>
+
+
+    <div class="col-6" *ngIf="moment == 'return'">
+      <div>
+        <label>Return Locations</label>
+
+        <app-googlemaps (onComplete)='addReturnLocation($event)'> </app-googlemaps>
+        <button (click)='finishReturnLocation()' [disabled]='!returnLocations'> Save Locations </button>
+
+      </div>
+    </div>
+
+    <div class="col-6" *ngIf="moment == 'cost'">
+      <div>
+        <label>implementar el seteo del costo</label>
+          <app-cost-definer (onComplete)='addReturnLocation($event)' > </app-cost-definer>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+<!-- 
+  <ngbd-datepicker-config> </ngbd-datepicker-config>
+-->
+
+
+</div>
+

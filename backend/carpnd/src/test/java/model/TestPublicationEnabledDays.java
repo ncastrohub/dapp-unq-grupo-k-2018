@@ -6,7 +6,7 @@ import model.exceptions.DayDisabledException;
 import model.exceptions.DayNotReservedException;
 import org.junit.Test;
 
-import java.time.LocalDate;
+import org.joda.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -92,7 +92,7 @@ public class TestPublicationEnabledDays {
             assertFalse(true);
         }
 
-        enabledDays.releaseDay(LocalDate.of(dayOne.getYear(), dayOne.getMonth(), dayOne.getDayOfMonth()));
+        enabledDays.releaseDay(new LocalDate(dayOne.getYear(), dayOne.getMonthOfYear(), dayOne.getDayOfMonth()));
 
     }
 

@@ -4,7 +4,7 @@ import model.exceptions.*;
 import org.junit.Test;
 import utils.builders.PublicationBuilder;
 
-import java.time.LocalDate;
+import org.joda.time.LocalDate;
 import java.util.LinkedList;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -62,7 +62,9 @@ public class TestPublication {
         AdressLocation acquirePlace = mock(AdressLocation.class);
 
         LinkedList<AdressLocation> returnLocations = new LinkedList<>();
-        returnLocations.add(mock(AdressLocation.class));
+        AdressLocation returnLocation = mock(AdressLocation.class);
+
+        returnLocations.add(returnLocation);
         returnLocations.add(mock(AdressLocation.class));
         returnLocations.add(mock(AdressLocation.class));
         returnLocations.add(mock(AdressLocation.class));
@@ -86,10 +88,8 @@ public class TestPublication {
         reservationDays.add(dayTwo);
         reservationDays.add(dayThree);
 
-        publication.makeReservation(customer, reservationDays);
-        ReservedPublication reservedPublication = publication.getReservedPublicationList().get(0);
-        assertThat(reservedPublication.getCustomer()).isEqualTo(customer);
-        assertThat(reservedPublication.getReservedDays()).isEqualTo(reservationDays);
+        Reservation reservation = publication.makeReservation(customer, reservationDays, returnLocation);
+        assertThat(reservation.getPublicationSnapshot().publication.getId()).isEqualTo(publication.getId());
     }
 
     @Test
@@ -102,7 +102,9 @@ public class TestPublication {
         AdressLocation acquirePlace = mock(AdressLocation.class);
 
         LinkedList<AdressLocation> returnLocations = new LinkedList<>();
-        returnLocations.add(mock(AdressLocation.class));
+        AdressLocation returnLocation = mock(AdressLocation.class);
+
+        returnLocations.add(returnLocation);
         returnLocations.add(mock(AdressLocation.class));
         returnLocations.add(mock(AdressLocation.class));
         returnLocations.add(mock(AdressLocation.class));
@@ -126,7 +128,7 @@ public class TestPublication {
         reservationDays.add(dayTwo);
         reservationDays.add(dayThree);
 
-        publication.makeReservation(customer, reservationDays);
+        Reservation reservation = publication.makeReservation(customer, reservationDays, returnLocation);
 
         assertThat(publication.canReserve(dayOne)).isFalse();
         assertThat(publication.canReserve(dayTwo)).isFalse();
@@ -146,7 +148,9 @@ public class TestPublication {
         AdressLocation acquirePlace = mock(AdressLocation.class);
 
         LinkedList<AdressLocation> returnLocations = new LinkedList<>();
-        returnLocations.add(mock(AdressLocation.class));
+        AdressLocation returnLocation = mock(AdressLocation.class);
+
+        returnLocations.add(returnLocation);
         returnLocations.add(mock(AdressLocation.class));
         returnLocations.add(mock(AdressLocation.class));
         returnLocations.add(mock(AdressLocation.class));
@@ -170,7 +174,7 @@ public class TestPublication {
         reservationDays.add(dayTwo);
         reservationDays.add(dayThree);
 
-        publication.makeReservation(customer, reservationDays);
+        Reservation reservation = publication.makeReservation(customer, reservationDays, returnLocation);
 
         publication.releaseDays(reservationDays);
 
@@ -191,7 +195,9 @@ public class TestPublication {
         AdressLocation acquirePlace = mock(AdressLocation.class);
 
         LinkedList<AdressLocation> returnLocations = new LinkedList<>();
-        returnLocations.add(mock(AdressLocation.class));
+        AdressLocation returnLocation = mock(AdressLocation.class);
+
+        returnLocations.add(returnLocation);
         returnLocations.add(mock(AdressLocation.class));
         returnLocations.add(mock(AdressLocation.class));
         returnLocations.add(mock(AdressLocation.class));
@@ -223,7 +229,7 @@ public class TestPublication {
         reservationDays.add(daySix);
 
 
-        assertThrows(InvalidAmountOfDaysToReserveException.class, ()-> publication.makeReservation(customer, reservationDays));
+        assertThrows(InvalidAmountOfDaysToReserveException.class, ()-> publication.makeReservation(customer, reservationDays, returnLocation));
 
     }
 
@@ -237,7 +243,9 @@ public class TestPublication {
         AdressLocation acquirePlace = mock(AdressLocation.class);
 
         LinkedList<AdressLocation> returnLocations = new LinkedList<>();
-        returnLocations.add(mock(AdressLocation.class));
+        AdressLocation returnLocation = mock(AdressLocation.class);
+
+        returnLocations.add(returnLocation);
         returnLocations.add(mock(AdressLocation.class));
         returnLocations.add(mock(AdressLocation.class));
         returnLocations.add(mock(AdressLocation.class));
@@ -265,7 +273,7 @@ public class TestPublication {
 
         publication.disabledDays(reservationDays);
 
-        assertThrows(DayDisabledException.class, ()-> publication.makeReservation(customer, reservationDays));
+        assertThrows(DayDisabledException.class, ()-> publication.makeReservation(customer, reservationDays, returnLocation));
     }
 
     /**/

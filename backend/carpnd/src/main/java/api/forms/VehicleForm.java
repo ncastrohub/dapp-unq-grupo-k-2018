@@ -5,6 +5,7 @@ import me.geso.tinyvalidator.constraints.HttpUrl;
 import me.geso.tinyvalidator.constraints.Min;
 import me.geso.tinyvalidator.constraints.NotNull;
 import me.geso.tinyvalidator.constraints.Size;
+import model.Vehicle;
 import model.VehicleType;
 
 @Data
@@ -25,5 +26,13 @@ public class VehicleForm {
     @NotNull(message = "required")
     public String photo; // Agregar el link a las fotos!
 
+    public Vehicle getVehicleInstance() {
+        Vehicle vehicle = new Vehicle();
+        vehicle.capacity = this.capacity;
+        vehicle.type = this.type;
+        vehicle.description = this.description;
+        vehicle.photo = this.photo;
+        return vehicle;
+    }
 }
 
