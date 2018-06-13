@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Vehicle } from '../vehicle'
 import { VehicleService } from '../service/vehicle.service';
 import { Router } from '@angular/router';
-import { Subscription }   from 'rxjs/Subscription';
+import { Subscription }   from 'rxjs';
 
 @Component({
   selector: 'app-vehicle',
