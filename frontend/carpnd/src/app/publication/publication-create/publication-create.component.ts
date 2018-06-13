@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { CreateVehicleComponent } from '../../vehicle/create/create.component';
 import { GooglemapsComponent } from '../../maps/googlemaps/googlemaps.component';
 import { DateSelectorComponent } from '../date-selector/date-selector.component';
-
+import { CostDefinerComponent } from '../cost-definer/cost-definer.component'; 
 
 @Component({
   selector: 'app-publication-create',
