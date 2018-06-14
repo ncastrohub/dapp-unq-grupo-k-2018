@@ -33,7 +33,7 @@ public class Reservation extends IdModel {
     public MoneyAndAmount finalPrice() {
         MoneyAndAmount costPerHour = this.getPublicationSnapshot().getCostPerHour();
 //        Long hours = Duration.between(this.publicationSnapshot.getAcquireTime(), this.publicationSnapshot.returnTime).toHours();
-        Integer hours2 = this.publicationSnapshot.getHoursBetween();
+        Integer hours2 = this.getPublicationSnapshot().getHoursBetween();
 
 //        Double roundedValue = hours.doubleValue();
         return costPerHour.plusBy(new Double(hours2));

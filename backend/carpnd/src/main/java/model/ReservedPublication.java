@@ -49,11 +49,11 @@ public class ReservedPublication extends IdModel {
     }
 
     public LocalDateTime getReturnTime() {
+
         return returnTime;
     }
 
-    public Integer getHoursBetween() {
-        return Hours.hoursBetween(
+    public Integer getHoursBetween() { return Hours.hoursBetween(
                 this.getAcquireTime(),
                 this.getReturnTime()
         ).getHours();
