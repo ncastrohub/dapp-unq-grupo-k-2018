@@ -1,7 +1,6 @@
 package model;
 
 import org.junit.Test;
-
 import org.joda.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
@@ -19,7 +18,11 @@ public class TestReservedPublication {
         List<LocalDate> reservedDays = new LinkedList<>();
         User customer = mock(User.class);
         reservedDays.add(LocalDate.now());
+        AdressLocation acquireLocation = mock(AdressLocation.class);
 
+        when(publication.getCostPerHour()).thenReturn( new MoneyAndAmount(10.00, CustomCurrencies.ARS));
+        when(publication.getAcquireLocation()).thenReturn(acquireLocation);
+        when(acquireLocation.createNew()).thenReturn(acquireLocation);
         ReservedPublication reservedPublication = new ReservedPublication(publication, reservedDays, customer, mock(AdressLocation.class));
 
         assertThat(reservedPublication.publication).isEqualTo(publication);
@@ -32,11 +35,14 @@ public class TestReservedPublication {
         Publication publication = mock(Publication.class);
         List<LocalDate> reservedDays = new LinkedList<>();
         User customer = mock(User.class);
-
+        AdressLocation acquireLocation = mock(AdressLocation.class);
         reservedDays.add(LocalDate.now());
         MoneyAndAmount costPerHour = new MoneyAndAmount(12.12, CustomCurrencies.ARS);
 
         when(publication.getCostPerHour()).thenReturn(costPerHour);
+
+        when(publication.getAcquireLocation()).thenReturn(acquireLocation);
+        when(acquireLocation.createNew()).thenReturn(acquireLocation);
 
         ReservedPublication reservedPublication = new ReservedPublication(publication, reservedDays, customer, mock(AdressLocation.class));
 
@@ -47,6 +53,5 @@ public class TestReservedPublication {
         assertThat(reservedPublication.getCostPerHour()).isEqualTo(costPerHour);
         assertThat(reservedPublication.getCostPerHour()).isNotEqualTo(newCostPerHour);
     }
-
 
 }
