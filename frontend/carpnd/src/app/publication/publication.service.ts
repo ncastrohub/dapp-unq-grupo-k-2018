@@ -12,7 +12,7 @@ export class PublicationService {
   constructor(private http: HttpClient, private config: AppConfig) {}
 
   getPublicationList(): Observable<Page<Publication>> {
-  	return this.http.get<Page<Publication>>( this.config.serveUrl + 'publication/list/');
+  	return this.http.get<Page<Publication>>( this.config.serveUrl + 'publication/publication/list/');
   }
 
   createPublication(userId: string, publication: CreatePublication): Observable<CreatePublication> {

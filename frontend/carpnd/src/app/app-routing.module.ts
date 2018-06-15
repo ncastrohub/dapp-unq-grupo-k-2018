@@ -30,7 +30,7 @@ const routes: Routes = [
 // AGREGADO PARA AUTENTICACION
   { path: 'callback', component: CallbackComponent },
 // FIN AGREGADO
-  { path: 'publication/list', component: CreateuserComponent },
+  { path: 'publication/list', component: PublicationListComponent },
   { path: 'publication/create', component: PublicationCreateComponent },
   { path: 'publication/locations', component: GooglemapsComponent },
 ];
