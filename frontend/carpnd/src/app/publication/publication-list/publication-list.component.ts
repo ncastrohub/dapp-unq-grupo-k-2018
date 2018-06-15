@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './publication-list.component.html',
   styleUrls: ['./publication-list.component.css']
 })
+
 export class PublicationListComponent implements OnInit {
   
   errorList = [];
@@ -25,6 +26,10 @@ export class PublicationListComponent implements OnInit {
       data => this.publicationList = data,
       error => this.errorList.push(error)
     );
+  }
+
+  goToDetails(publicationId:string) {
+    this.router.navigate(['/publication/detail/' + publicationId]);
   }
 
 }

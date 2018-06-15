@@ -1,8 +1,6 @@
 <div>
   
   <h1>Create a new Publication</h1>
-        {{ publication | json }}
-
   <div class='row'>
   
     <div class="col-4" >
@@ -21,6 +19,9 @@
           </div>
           <img *ngIf="publication.vehicle" class="card-img-bottom" src="{{publication.vehicle.photo}}" alt="Card image cap">
         </div>
+      
+
+
       
     </div>
 

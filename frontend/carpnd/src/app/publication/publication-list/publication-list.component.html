@@ -1,16 +1,25 @@
 
-<div>
+<div *ngIf="publicationList" >
 
-    {{this.publicationList | json}}
-  
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
+	<div class="col-12">
+		<div  *ngFor="let publication of publicationList.elementList" class="card col-4" >
+		  <img class="card-img-top" [src]="publication.vehicle.photo" alt="Card image cap">
+		  <div class="card-body">
+		    <h5 class="card-title"></h5>
+		    <p class="card-text">{{publication.vehicle.description}}</p>
+		    <p class="card-text">Capcity: {{publication.vehicle.capacity}}</p>
+		    <p class="card-text">Type: {{publication.vehicle.type}}</p>
+		    <p class="card-text">Location: {{publication.acquireLocation.adressName}}</p>
+		    <button (click)="goToDetails(publication.id)" class="btn btn-primary">Reserve</button>
+		  </div>
+		</div>
 
+	</div>
 
+	<nav aria-label="Navigation">
+		  <ul class="pagination">
+		    <li class="page-item"><a class="page-link" href="publicationList.backUrl">Previous</a></li>
+		    <li class="page-item"><a class="page-link" href="publicationList.nextUrl">Next</a></li>
+		  </ul>
+	</nav>
 </div>

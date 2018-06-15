@@ -140,6 +140,14 @@ public class PublishApi {
         return Response.ok(page).build();
     }
 
+    @GET
+    @Consumes("application/json")
+    @Produces("application/json")
+    @Path(value = "/publication/{publicationId}/")
+    public Response publicationDetail(@PathParam("publicationId") Long publicationId) {
+        return Response.ok(this.publishService.getPublicationService().findById(publicationId)).build();
+    }
+
     @POST
     @Consumes("application/json")
     @Produces("application/json")

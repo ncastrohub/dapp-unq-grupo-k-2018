@@ -29,6 +29,7 @@ import { CostDefinerComponent } from './publication/cost-definer/cost-definer.co
 // AGREGADO PARA AUTENTICACION
 import {AuthService} from "./auth/auth.service";
 import { CallbackComponent } from './callback.component';
+import { DetailComponent } from './publication/detail/detail.component';
 // FIN AGREGADO
 
 @NgModule({
@@ -46,6 +47,7 @@ import { CallbackComponent } from './callback.component';
     PublicationCreateComponent,
     DateSelectorComponent,
     CostDefinerComponent,
+    DetailComponent,
   ],
   imports: [
     MomentModule,

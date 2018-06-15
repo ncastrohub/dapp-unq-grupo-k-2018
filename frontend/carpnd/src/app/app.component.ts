@@ -15,7 +15,7 @@ export class AppComponent {
   title = 'Carpnd';
   constructor(
 // AGREGADO PARA AUTENTICACION
-    public authService: AuthService
+    //public authService: AuthService
 // FIN AGREGADO
   ) {}
 }
