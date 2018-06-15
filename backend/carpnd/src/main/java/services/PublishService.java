@@ -8,6 +8,7 @@ import org.joda.time.LocalDate;
 import org.springframework.transaction.annotation.Transactional;
 import services.Validators.GenericValidator;
 import utils.OwnPaginationPage;
+import utils.builders.PublicationsEnabledDaysFormBuilder;
 
 import java.io.Serializable;
 import java.util.List;
@@ -124,7 +125,7 @@ public class PublishService {
                 publication.getVehicleInstance(),
                 publication.getAcquireLocationInstance(),
                 publication.getReturnLocationsList(),
-                publication.getEnabledDaysInstance()
+                PublicationsEnabledDaysFormBuilder.some().getModelInstance()
                 );
 
         this.publicationService.save(newPublication);

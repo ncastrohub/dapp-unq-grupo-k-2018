@@ -1,48 +1,67 @@
 <div>
   
   <h1>Create a new Publication</h1>
+        {{ publication | json }}
 
   <div class='row'>
-	
-    <div class="col-3" >
-      <div class=".panel-default">
-        
-        {{ publication | json }}
-      </div>
+  
+    <div class="col-4" >
+      
+        <div class="card bg-info">
+          <div class="card-header">
+            Vehicle
+          </div>
 
-    </div>
-
-
-    <div *ngIf="moment == 'vehicle'" class="col-6" >
-
-      <app-create-vehicle (onComplete)='saveVehicle($event)'> </app-create-vehicle>    
+          <div class="card-body" *ngIf="publication.vehicle">
+            <ul class="list-group list-group-flush" >
+              <li class="list-group-item">{{publication.vehicle.type}}</li>
+              <li class="list-group-item">{{publication.vehicle.description}}</li>
+              <li class="list-group-item">{{publication.vehicle.capacity}}</li>
+            </ul>            
+          </div>
+          <img *ngIf="publication.vehicle" class="card-img-bottom" src="{{publication.vehicle.photo}}" alt="Card image cap">
+        </div>
       
     </div>
 
-    <div class="col-6" *ngIf="moment == 'acquire'" >
+    <div class="col-6" >
 
-      <app-googlemaps (onComplete)='saveAcquireLocation($event)'> </app-googlemaps>
-    
+        <div *ngIf="moment == 'vehicle'"  >
+
+          <app-create-vehicle (onComplete)='saveVehicle($event)'> </app-create-vehicle>    
+          
+        </div>
+
+        <div *ngIf="moment == 'acquire'" >
+
+          <app-googlemaps (onComplete)='saveAcquireLocation($event)'> </app-googlemaps>
+        
+        </div>
+
+
+        <div *ngIf="moment == 'return'">
+          <div>
+            <label>Return Locations</label>
+
+            <app-googlemaps (onComplete)='addReturnLocation($event)'> </app-googlemaps>
+            
+            <button (click)='finishReturnLocation()' [disabled]='!publication.returnLocations.lenght == 0'> Save Locations </button>
+
+          </div>
+        </div>
+
+        <div *ngIf="moment == 'cost'">
+          <div>
+            <label>implementar el seteo del costo</label>
+              <app-cost-definer (onComplete)='saveCost($event)' > </app-cost-definer>
+          </div>
+        </div>
+
+        <div *ngIf="moment == 'complete'">
+          <button (click)='createPublication()'> Create Publication </button>
+        </div>
+
     </div>
-
-
-    <div class="col-6" *ngIf="moment == 'return'">
-      <div>
-        <label>Return Locations</label>
-
-        <app-googlemaps (onComplete)='addReturnLocation($event)'> </app-googlemaps>
-        <button (click)='finishReturnLocation()' [disabled]='!returnLocations'> Save Locations </button>
-
-      </div>
-    </div>
-
-    <div class="col-6" *ngIf="moment == 'cost'">
-      <div>
-        <label>implementar el seteo del costo</label>
-          <app-cost-definer (onComplete)='addReturnLocation($event)' > </app-cost-definer>
-      </div>
-    </div>
-
   </div>
 
 

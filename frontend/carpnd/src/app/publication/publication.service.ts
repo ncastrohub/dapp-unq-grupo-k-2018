@@ -16,7 +16,7 @@ export class PublicationService {
   }
 
   createPublication(userId: string, publication: CreatePublication): Observable<CreatePublication> {
-  	return this.http.post<CreatePublication>( this.config.serveUrl + 'publication/create/' + userId, publication);
+  	return this.http.post<CreatePublication>( this.config.serveUrl + 'publication/' + userId +  '/publication/create/' , publication);
   }
 
  /* getUserList(): Observable<[User]> {

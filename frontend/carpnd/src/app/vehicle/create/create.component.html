@@ -31,10 +31,10 @@
       <div class="form-group">
         <label for="photo">Photo</label>
         <input type="text" class="form-control" id="photo"
-         required pattern="(https?:\/\/.*\.(?:png|jpg))"
+         required 
          [(ngModel)]="vehicle.photo" name="photo"/>
        </div>
-
+<!-- pattern="(https?:\/\/.*\.(?:png|jpg))" -->
       <button type="submit" [disabled]="!vehicleForm.form.valid" class="btn btn-success">Create</button>
  
     </form>

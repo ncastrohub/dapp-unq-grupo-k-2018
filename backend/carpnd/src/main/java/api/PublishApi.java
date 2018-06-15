@@ -140,14 +140,14 @@ public class PublishApi {
         return Response.ok(page).build();
     }
 
-    @GET
+    @POST
     @Consumes("application/json")
     @Produces("application/json")
     @Path(value = "/{userId}/publication/create/")
     public Response publicationCreate(@PathParam("userId") Long userId, PublicationForm publicationForm) {
         try {
-            this.publishService.createPublicationForUser(userId, publicationForm);
-            return Response.ok(publicationForm).build();
+            Publication newPublication = this.publishService.createPublicationForUser(userId, publicationForm);
+            return Response.ok(newPublication).build();
         } catch (FormValidationError formValidationError) {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
         }

@@ -16,40 +16,27 @@ import { CostDefinerComponent } from '../cost-definer/cost-definer.component';
 
 export class PublicationCreateComponent {
 
-  moment = "vehicle";  
-  constructor(private service: PublicationService, private router: Router) {
-    this.publication = new CreatePublication();
-    this.publication.vehicle = new Vehicle();
-    this.publication.acquireLocation = new Location();
-    this.publication.returnLocations = [];
-    // this.publication.enabledDays = new Days();
-    this.publication.costPerHour = new MoneyAndAmount();
-  }
-
-  publication:CreatePublication;
-
+  moment = "vehicle";
+  publication = new CreatePublication();
+  returnLocations = [];
   capacities = [1, 2, 3, 4, 5, 6, 7];
-
   carTypes = ['SEDAN', 'VAN'];
 
   currencies = ['ARS']
-
-  submitted = false;
-
   errorList = [];
 
-  addDisableDay(day:number, month:number, year:number) {
- 	this.publication.enabledDays.disabledDays.push([year,month,day])
+  constructor(private service: PublicationService, private router: Router) {
+    this.publication = new CreatePublication();
   }
 
   addReturnLocation($event) {
- 	  this.publication.returnLocations.push($event.location);
-    this.moment = 'cost';
+     this.returnLocations.push($event.location);
   }
 
-  // addReservedDay(day:string, month:string, year:string) {
- 	// this.publication.enabledDays.disabledDays.add([year,month,day])
-  // }
+  finishReturnLocation() {
+    this.publication.returnLocations = this.returnLocations;
+    this.moment = 'cost';
+  }
 
   saveVehicle($event) {
   	this.publication.vehicle = $event.vehicle;
@@ -61,14 +48,18 @@ export class PublicationCreateComponent {
     this.moment = "return";  
   }
 
+  saveCost($event) {
+    this.publication.costPerHour = $event.cost;
+    this.moment = "complete";
+  }
 
-  // onSubmit() {
-	 //  this.service.createPublication('1', this.publication).subscribe(
-	 //    data => {
-	 //      this.router.navigate(['/publication/list']);
-	 //    },
-	 //    error => this.errorList.push(error)
-	 //  );
-  // }
+  createPublication() {
+	  this.service.createPublication('1', this.publication).subscribe(
+	    data => {
+	      this.router.navigate(['/publication/list']);
+	    },
+	    error => this.errorList.push(error)
+	  );
+  }
 
 }

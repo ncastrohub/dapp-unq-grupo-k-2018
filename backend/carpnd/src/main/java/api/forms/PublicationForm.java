@@ -23,7 +23,6 @@ public class PublicationForm {
     @Size(min = 1)
     public LinkedList<AdressLocationForm> returnLocations;
 
-    @NotNull
     public PublicationsEnabledDaysForm enabledDays;
 
     @NotNull
