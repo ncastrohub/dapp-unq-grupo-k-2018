@@ -8,8 +8,8 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { CreateuserComponent } from './user/createuser/createuser.component';
 import { UsereditComponent } from './user/useredit/useredit.component';
 // AGREGADO PARA AUTENTICACION
-//import { AuthGuard } from './auth/auth.guard';
-//import { CallbackComponent } from './callback.component';
+import { AuthGuard } from './auth/auth.guard';
+import { CallbackComponent } from './callback.component';
 // FIN AGREGADO
 import { PublicationListComponent } from './publication/publication-list/publication-list.component';
 import { PublicationCreateComponent } from './publication/publication-create/publication-create.component';
@@ -30,7 +30,7 @@ const routes: Routes = [
 // FIN AGREGADO
   },
 // AGREGADO PARA AUTENTICACION
-  //{ path: 'callback', component: CallbackComponent },
+  { path: 'callback', component: CallbackComponent },
 // FIN AGREGADO
   { path: 'publication/list', component: PublicationListComponent },
   { path: 'publication/create', component: PublicationCreateComponent },
@@ -41,7 +41,7 @@ const routes: Routes = [
   exports: [ RouterModule ],
   imports: [ RouterModule.forRoot(routes) ]
 // AGREGADO PARA AUTENTICACION
-  //, providers: [AuthGuard]
+  , providers: [AuthGuard]
 // FIN AGREGADO
 })
 

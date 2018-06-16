@@ -18,9 +18,11 @@ export class CreateuserComponent {
  constructor(private service: UserServiceService, private router: Router, public authService: AuthService) {
 // FIN MODIFICADO
 
-    this.user = new User()
-    this.user.name = authService.userProfile.name;
-    this.user.email = authService.userProfile.email;
+    this.user = new User();
+    if (this.authService.isLoggedIn){
+      this.user.name = authService.userProfile.name;
+      this.user.email = authService.userProfile.email;
+    }
   }
 
   user:User;
