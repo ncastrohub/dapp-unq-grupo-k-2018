@@ -1,5 +1,39 @@
 <p>
-  detail works!
+  Publication detail
 </p>
 
+
+<div>
+<code>
 {{ publication | json }}
+</code>
+
+</div>
+
+
+<br>
+
+<div>
+
+<ngbd-datepicker-config (onComplete)="addReservationDays($event)"> </ngbd-datepicker-config>
+
+
+<div class="form-group">
+	<label for="costumerId">Costumer Id</label>
+	<input type="text" class="form-control" id="costumerId"
+ 	required 
+ 	[(ngModel)]="costumerId" name="costumerId"/>
+</div>
+
+<div *ngIf="publication" class="list-group">
+  <button *ngFor="let location of publication.returnLocations" (click)="setReturnLocation(location)" type="button" class="list-group-item list-group-item-action">{{location.adressName}}</button>
+  
+</div>
+
+
+<button (click)="makeReservation()" > Reservar </button>
+
+{{reservationDays | json}}
+  {{costumerId}}
+
+</div>

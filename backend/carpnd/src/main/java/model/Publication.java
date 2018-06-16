@@ -79,7 +79,6 @@ public class Publication extends IdModel {
         return acquireLocation;
     }
 
-    @JsonIgnore
     public List<AdressLocation> getReturnLocations() {
         return returnLocations;
     }

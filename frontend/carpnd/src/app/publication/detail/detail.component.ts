@@ -11,15 +11,31 @@ import { switchMap } from 'rxjs/operators';
 })
 export class DetailComponent implements OnInit {
 	publication: Publication;
+  reservationDays;
+  costumerId: number;
+  returnLocation: Location;
 
-  	constructor(private service: PublicationService, private router: Router, private route: ActivatedRoute) { }
+	constructor(private service: PublicationService, private router: Router, private route: ActivatedRoute) { }
 
-  	ngOnInit() {
-      let publicationId = this.route.snapshot.paramMap.get('publicationId');
-  		this.route.queryParams.subscribe(params => {
-  			this.service.getPublication(publicationId).subscribe(data => {
-  				this.publication = data;
-  			})   
-		})
-	}
+	ngOnInit() {
+    let publicationId = this.route.snapshot.paramMap.get('publicationId');
+		this.route.queryParams.subscribe(params => {
+			this.service.getPublication(publicationId).subscribe(data => {
+				this.publication = data;
+			})   
+	  })
+  }
+
+  addReservationDays($event){
+    this.reservationDays = $event.dateList;
+  }
+
+  setReturnLocation(location:Location) {
+    this.returnLocation = location;
+  }
+
+  makeReservation(){
+    this.service.makeReservation(publication, reservationDays, costumerId, returnLocation);
+  }
+
 }
