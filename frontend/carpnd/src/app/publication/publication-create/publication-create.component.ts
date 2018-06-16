@@ -6,7 +6,11 @@ import { Router } from '@angular/router';
 import { CreateVehicleComponent } from '../../vehicle/create/create.component';
 import { GooglemapsComponent } from '../../maps/googlemaps/googlemaps.component';
 import { DateSelectorComponent } from '../date-selector/date-selector.component';
-import { CostDefinerComponent } from '../cost-definer/cost-definer.component'; 
+import { CostDefinerComponent } from '../cost-definer/cost-definer.component';
+
+// AGREGADO PARA AUTENTICACION
+import { AuthService } from '../../auth/auth.service';
+// FIN AGREGADO
 
 @Component({
   selector: 'app-publication-create',
@@ -25,7 +29,7 @@ export class PublicationCreateComponent {
   currencies = ['ARS']
   errorList = [];
 
-  constructor(private service: PublicationService, private router: Router) {
+  constructor(private service: PublicationService, private router: Router, public authService: AuthService) {
     this.publication = new CreatePublication();
   }
 
@@ -40,12 +44,12 @@ export class PublicationCreateComponent {
 
   saveVehicle($event) {
   	this.publication.vehicle = $event.vehicle;
-    this.moment = "acquire";  
+    this.moment = "acquire";
   }
 
   saveAcquireLocation($event) {
     this.publication.acquireLocation = $event.location;
-    this.moment = "return";  
+    this.moment = "return";
   }
 
   saveCost($event) {

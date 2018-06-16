@@ -1,18 +1,17 @@
-<div class="container">
+<div class="container" *ngIf="!authService.isLoggedIn"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
     <h1>User Form</h1>
+</div>
+    <!-- AGREGADO PARA AUTENTICACION -->
+    <div class="form-group" *ngIf="!authService.isLoggedIn">
+      <p>&nbsp;</p>
+      <h2> Log in to create </h2>
+    </div>
+    <!-- FIN AGREGADO -->
 
     <div *ngFor="let error of errorList" class="alert alert-danger" role="alert">
       {{error}}
     </div>
     <form (ngSubmit)="onSubmit()" #userForm="ngForm">
-
-<!-- AGREGADO PARA AUTENTICACION -->
-      <div class="form-group" *ngIf="!authService.isLoggedIn">
-        <p>&nbsp;</p>
-        <h2>Log in to create a user</h2>
-      </div>
-<!-- FIN AGREGADO -->
-
 
 		<div class="form-group" *ngIf="authService.isLoggedIn"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
         	<label for="name">Full Name</label>
@@ -38,4 +37,4 @@
       <!-- AGREGADO *ngIf PARA AUTENTICACION -->
 
     </form>
-</div>
+

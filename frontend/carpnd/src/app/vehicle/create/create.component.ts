@@ -3,6 +3,10 @@ import { Vehicle } from '../vehicle'
 import { VehicleService } from '../service/vehicle.service';
 import { Router } from '@angular/router';
 
+// AGREGADO PARA AUTENTICACION
+import { AuthService } from '../../auth/auth.service';
+// FIN AGREGADO
+
 @Component({
   selector: 'app-create-vehicle',
   templateUrl: './create.component.html',
@@ -12,11 +16,12 @@ import { Router } from '@angular/router';
 export class CreateVehicleComponent {
 
   @Output() public onComplete: EventEmitter<any> = new EventEmitter();
-
-  constructor(private service: VehicleService, private router: Router) {
+// MODIFICADO PARA AUTENTICACION
+  constructor(private service: VehicleService, private router: Router, public authService: AuthService) {
+// FIN MODIFICADO
     this.vehicle = new Vehicle();
   }
-  
+
   vehicle:Vehicle;
 
   capacities = [1, 2, 3, 4, 5, 6, 7];

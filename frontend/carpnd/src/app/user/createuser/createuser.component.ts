@@ -19,6 +19,7 @@ export class CreateuserComponent {
 // FIN MODIFICADO
 
     this.user = new User();
+//Lee los datos del usuario
     if (this.authService.isLoggedIn){
       this.user.name = authService.userProfile.name;
       this.user.email = authService.userProfile.email;

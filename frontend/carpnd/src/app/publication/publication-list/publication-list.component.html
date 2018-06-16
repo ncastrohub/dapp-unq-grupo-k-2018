@@ -1,4 +1,14 @@
 
+<div class="container"*ngIf="!authService.isLoggedIn">
+  <h1>Publication list</h1>
+</div>
+      <!-- AGREGADO PARA AUTENTICACION -->
+<div class="form-group" *ngIf="!authService.isLoggedIn">
+  <p>&nbsp;</p>
+  <h2>Log in to list </h2>
+</div>
+<!-- FIN AGREGADO -->
+
 <div *ngIf="publicationList" >
 
 	<div class="col-12">
@@ -23,3 +33,4 @@
 		  </ul>
 	</nav>
 </div>
+

@@ -1,4 +1,15 @@
-<table class="table">
+
+  <div class="container"*ngIf="!authService.isLoggedIn">
+    <h1>Vehicle list</h1>
+  </div>
+    <!-- AGREGADO PARA AUTENTICACION -->
+    <div class="form-group" *ngIf="!authService.isLoggedIn">
+      <p>&nbsp;</p>
+      <h2>Log in to list </h2>
+    </div>
+    <!-- FIN AGREGADO -->
+
+    <table class="table"*ngIf="authService.isLoggedIn"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -10,7 +21,7 @@
       <th scope="col">Eliminar</th>
     </tr>
   </thead>
-  
+
 
   <tbody>
     <tr *ngFor="let vehicle of vehicleList" >
@@ -24,3 +35,5 @@
     </tr>
   </tbody>
 </table>
+
+

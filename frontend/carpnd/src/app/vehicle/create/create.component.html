@@ -1,41 +1,51 @@
-
+<div class="container"*ngIf="!authService.isLoggedIn">
+  <h1>Vehicle Form</h1>
+</div>
     <div *ngFor="let error of errorList" class="alert alert-danger" role="alert">
       {{error}}
     </div>
 
     <form (ngSubmit)="onSubmit()" #vehicleForm="ngForm">
 
-      <div class="form-group">
+      <!-- AGREGADO PARA AUTENTICACION -->
+      <div class="form-group" *ngIf="!authService.isLoggedIn">
+        <p>&nbsp;</p>
+        <h2>Log in to create </h2>
+      </div>
+      <!-- FIN AGREGADO -->
+
+      <div class="form-group"*ngIf="authService.isLoggedIn"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
         <label for="capacity">Capacity</label>
-        <select class="form-control" id="capacity" required 
+        <select class="form-control" id="capacity" required
           [(ngModel)]="vehicle.capacity" name="capacity" >
           <option *ngFor="let cap of capacities" [value]="cap">{{cap}}</option>
         </select>
       </div>
 
-      <div class="form-group">
+      <div class="form-group"*ngIf="authService.isLoggedIn"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
         <label for="vehicleType">Model</label>
-        <select class="form-control" id="vehicleType" required 
+        <select class="form-control" id="vehicleType" required
           [(ngModel)]="vehicle.type" name="vehicleType" >
           <option *ngFor="let type of carTypes" [value]="type">{{type}}</option>
         </select>
       </div>
 
-      <div class="form-group">
+      <div class="form-group"*ngIf="authService.isLoggedIn"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
         <label for="description">Description</label>
         <textarea minlength="10" maxlength="30" type="text" class="form-control" id="description"
          required
          [(ngModel)]="vehicle.description" name="description"> </textarea>
        </div>
 
-      <div class="form-group">
+      <div class="form-group"*ngIf="authService.isLoggedIn"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
         <label for="photo">Photo</label>
         <input type="text" class="form-control" id="photo"
-         required 
+         required
          [(ngModel)]="vehicle.photo" name="photo"/>
        </div>
 <!-- pattern="(https?:\/\/.*\.(?:png|jpg))" -->
-      <button type="submit" [disabled]="!vehicleForm.form.valid" class="btn btn-success">Create</button>
- 
+      <button type="submit" *ngIf="authService.isLoggedIn" [disabled]="!vehicleForm.form.valid" class="btn btn-success">Create</button>
+      <!-- AGREGADO *ngIf PARA AUTENTICACION -->
+
     </form>
 

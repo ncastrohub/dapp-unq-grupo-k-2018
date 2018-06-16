@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { VehicleService } from '../service/vehicle.service';
 import { Vehicle } from '../vehicle'
 import { Router } from '@angular/router';
-
+// AGREGADO PARA AUTENTICACION
+import { AuthService } from '../../auth/auth.service';
+// FIN AGREGADO
 
 @Component({
   selector: 'app-list',
@@ -13,11 +15,11 @@ import { Router } from '@angular/router';
 
 export class ListComponent implements OnInit {
 
-  constructor(private service: VehicleService, private router:Router) { }
+  constructor(private service: VehicleService, private router:Router, public authService: AuthService) { }
 
   errorList = [];
   vehicleList: [Vehicle];
-  
+
   ngOnInit() {
   	this.getVehicleList();
   }

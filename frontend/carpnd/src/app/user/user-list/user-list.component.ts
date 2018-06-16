@@ -3,6 +3,9 @@ import { User } from '../user'
 import { Router } from '@angular/router';
 import { UserServiceService } from '../service/user-service.service';
 
+// AGREGADO PARA AUTENTICACION
+import { AuthService } from '../../auth/auth.service';
+// FIN AGREGADO
 
 @Component({
   selector: 'app-user-list',
@@ -15,8 +18,8 @@ export class UserListComponent implements OnInit {
 
   errorList = [];
   userList: [User];
-  
-   constructor(private service: UserServiceService, private router:Router) { }
+
+   constructor(private service: UserServiceService, private router:Router, public authService: AuthService) { }
 
   ngOnInit() {
   	this.getUserList();

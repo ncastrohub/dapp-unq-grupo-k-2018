@@ -1,11 +1,19 @@
-<div>
-  
-  <h1>Create a new Publication</h1>
-  <div class='row'>
-  
+  <div class="container"*ngIf="!authService.isLoggedIn">
+    <h1>Publication Form</h1>
+  </div>
+    <!-- AGREGADO PARA AUTENTICACION -->
+    <div class="form-group" *ngIf="!authService.isLoggedIn">
+      <p>&nbsp;</p>
+      <h2>Log in to create </h2>
+    </div>
+    <!-- FIN AGREGADO -->
+
+
+  <div class='row' *ngIf="authService.isLoggedIn"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
+    <h1>Create a new Publication </h1>
     <div class="col-4" >
-      
-        <div class="card bg-info">
+
+        <div class="card bg-info"*ngIf="authService.isLoggedIn"><!-- AGREGADO *ngIf PARA AUTENTICACION -->
           <div class="card-header">
             Vehicle
           </div>
@@ -15,28 +23,28 @@
               <li class="list-group-item">{{publication.vehicle.type}}</li>
               <li class="list-group-item">{{publication.vehicle.description}}</li>
               <li class="list-group-item">{{publication.vehicle.capacity}}</li>
-            </ul>            
+            </ul>
           </div>
           <img *ngIf="publication.vehicle" class="card-img-bottom" src="{{publication.vehicle.photo}}" alt="Card image cap">
         </div>
-      
 
 
-      
+
+
     </div>
 
     <div class="col-6" >
 
         <div *ngIf="moment == 'vehicle'"  >
 
-          <app-create-vehicle (onComplete)='saveVehicle($event)'> </app-create-vehicle>    
-          
+          <app-create-vehicle (onComplete)='saveVehicle($event)'> </app-create-vehicle>
+
         </div>
 
         <div *ngIf="moment == 'acquire'" >
 
           <app-googlemaps (onComplete)='saveAcquireLocation($event)'> </app-googlemaps>
-        
+
         </div>
 
 
@@ -45,7 +53,7 @@
             <label>Return Locations</label>
 
             <app-googlemaps (onComplete)='addReturnLocation($event)'> </app-googlemaps>
-            
+
             <button (click)='finishReturnLocation()' [disabled]='!publication.returnLocations.lenght == 0'> Save Locations </button>
 
           </div>
@@ -58,20 +66,19 @@
           </div>
         </div>
 
-        <div *ngIf="moment == 'complete'">
           <button (click)='createPublication()'> Create Publication </button>
         </div>
 
     </div>
-  </div>
 
 
 
 
-<!-- 
+
+<!--
   <ngbd-datepicker-config> </ngbd-datepicker-config>
 -->
 
 
-</div>
+
 
