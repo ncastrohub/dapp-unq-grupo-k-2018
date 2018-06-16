@@ -1,36 +1,35 @@
-
-<div class="container"*ngIf="!authService.isLoggedIn">
+<div class="container"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
   <h1>Publication list</h1>
 </div>
-      <!-- AGREGADO PARA AUTENTICACION -->
+<!-- AGREGADO PARA AUTENTICACION -->
 <div class="form-group" *ngIf="!authService.isLoggedIn">
   <p>&nbsp;</p>
-  <h2>Log in to list </h2>
+  <h2> Access denied, Please log in </h2>
 </div>
 <!-- FIN AGREGADO -->
 
 <div *ngIf="publicationList" >
 
-	<div class="col-12">
-		<div  *ngFor="let publication of publicationList.elementList" class="card col-4" >
-		  <img class="card-img-top" [src]="publication.vehicle.photo" alt="Card image cap">
-		  <div class="card-body">
-		    <h5 class="card-title"></h5>
-		    <p class="card-text">{{publication.vehicle.description}}</p>
-		    <p class="card-text">Capcity: {{publication.vehicle.capacity}}</p>
-		    <p class="card-text">Type: {{publication.vehicle.type}}</p>
-		    <p class="card-text">Location: {{publication.acquireLocation.adressName}}</p>
-		    <button (click)="goToDetails(publication.id)" class="btn btn-primary">Reserve</button>
-		  </div>
-		</div>
+  <div class="col-12">
+    <div  *ngFor="let publication of publicationList.elementList" class="card col-4" >
+      <img class="card-img-top" [src]="publication.vehicle.photo" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text">{{publication.vehicle.description}}</p>
+        <p class="card-text">Capcity: {{publication.vehicle.capacity}}</p>
+        <p class="card-text">Type: {{publication.vehicle.type}}</p>
+        <p class="card-text">Location: {{publication.acquireLocation.adressName}}</p>
+        <button (click)="goToDetails(publication.id)" class="btn btn-primary">Reserve</button>
+      </div>
+    </div>
 
-	</div>
+  </div>
 
-	<nav aria-label="Navigation">
-		  <ul class="pagination">
-		    <li class="page-item"><a class="page-link" href="publicationList.backUrl">Previous</a></li>
-		    <li class="page-item"><a class="page-link" href="publicationList.nextUrl">Next</a></li>
-		  </ul>
-	</nav>
+  <nav aria-label="Navigation">
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" href="publicationList.backUrl">Previous</a></li>
+      <li class="page-item"><a class="page-link" href="publicationList.nextUrl">Next</a></li>
+    </ul>
+  </nav>
 </div>
 

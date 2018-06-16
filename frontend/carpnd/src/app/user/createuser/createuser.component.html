@@ -4,8 +4,8 @@
     <!-- AGREGADO PARA AUTENTICACION -->
     <div class="form-group" *ngIf="!authService.isLoggedIn">
       <p>&nbsp;</p>
-      <h2> Log in to create </h2>
-    </div>
+      <h2> Access denied, Please log in </h2>
+    </div>"""
     <!-- FIN AGREGADO -->
 
     <div *ngFor="let error of errorList" class="alert alert-danger" role="alert">
