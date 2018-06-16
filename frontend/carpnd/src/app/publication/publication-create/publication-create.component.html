@@ -1,19 +1,19 @@
-  <div class="container"*ngIf="!authService.isLoggedIn">
-    <h1>Publication Form</h1>
-  </div>
-    <!-- AGREGADO PARA AUTENTICACION -->
-    <div class="form-group" *ngIf="!authService.isLoggedIn">
-      <p>&nbsp;</p>
-      <h2>Access denied, Please log in </h2>
-    </div>
-    <!-- FIN AGREGADO -->
+<div class="container">
+  <div class="form-group" *ngIf="authService.isLoggedIn"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
+    <!-- <h1>Publication Form</h1>-->
+   </div> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
 
+  <!-- AGREGADO PARA AUTENTICACION -->
+  <div class="form-group" *ngIf="!authService.isLoggedIn">
+    <h1> Access denied, Please log in </h1>
+  </div>
+  <!-- FIN AGREGADO -->
 
   <div class='row' *ngIf="authService.isLoggedIn"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
     <h1>Create a new Publication </h1>
     <div class="col-4" >
 
-        <div class="card bg-info"*ngIf="authService.isLoggedIn"><!-- AGREGADO *ngIf PARA AUTENTICACION -->
+        <div class="card bg-info" *ngIf="authService.isLoggedIn"><!-- AGREGADO *ngIf PARA AUTENTICACION -->
           <div class="card-header">
             Vehicle
           </div>
@@ -51,7 +51,7 @@
 
             <app-googlemaps (onComplete)='addReturnLocation($event)'> </app-googlemaps>
 
-            <button (click)='finishReturnLocation()' [disabled]='!publication.returnLocations.lenght == 0'> Save Locations </button>
+            <button (click)='finishReturnLocation()'class="btn btn-success" [disabled]='!publication.returnLocations.lenght == 0'> Save Locations </button>
 
           </div>
         </div>
@@ -63,11 +63,11 @@
           </div>
         </div>
 
-          <button (click)='createPublication()'> Create Publication </button>
+          <button (click)='createPublication()'class="btn btn-success"> Create Publication </button>
         </div>
 
     </div>
-
+</div>
 
 
 

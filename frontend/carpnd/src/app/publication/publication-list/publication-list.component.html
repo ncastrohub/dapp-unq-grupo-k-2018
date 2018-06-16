@@ -1,15 +1,15 @@
-<div class="container"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
-  <h1>Publication list</h1>
-</div>
-<!-- AGREGADO PARA AUTENTICACION -->
-<div class="form-group" *ngIf="!authService.isLoggedIn">
-  <p>&nbsp;</p>
-  <h2> Access denied, Please log in </h2>
-</div>
-<!-- FIN AGREGADO -->
+<div class="container">
+  <div class="form-group" *ngIf="authService.isLoggedIn"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
+    <!--<h1>Publication List</h1>-->
+  </div> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
 
-<div *ngIf="publicationList" >
+  <!-- AGREGADO PARA AUTENTICACION -->
+  <div class="form-group" *ngIf="!authService.isLoggedIn">
+    <h1> Access denied, Please log in </h1>
+  </div>
+  <!-- FIN AGREGADO -->
 
+  <div *ngIf="publicationList" >
   <div class="col-12">
     <div  *ngFor="let publication of publicationList.elementList" class="card col-4" >
       <img class="card-img-top" [src]="publication.vehicle.photo" alt="Card image cap">
@@ -31,5 +31,6 @@
       <li class="page-item"><a class="page-link" href="publicationList.nextUrl">Next</a></li>
     </ul>
   </nav>
+</div>
 </div>
 

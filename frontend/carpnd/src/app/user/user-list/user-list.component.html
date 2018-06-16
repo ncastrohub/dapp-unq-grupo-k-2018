@@ -1,10 +1,11 @@
-<div class="container" *ngIf="!authService.isLoggedIn">
-  <h1>User list</h1>
-</div>
+<div class="container">
+  <div class="form-group" *ngIf="authService.isLoggedIn"> <!-- AGREGADO PARA AUTENTICACION -->
+    <!--<h1>User list</h1>-->
+  </div> <!-- AGREGADO PARA AUTENTICACION -->
+
   <!-- AGREGADO PARA AUTENTICACION -->
   <div class="form-group" *ngIf="!authService.isLoggedIn">
-    <p>&nbsp;</p>
-    <h2>Access denied, Please log in </h2>
+    <h1>Access denied, Please log in </h1>
   </div>
   <!-- FIN AGREGADO -->
 <table class="table" *ngIf="authService.isLoggedIn"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
@@ -33,4 +34,5 @@
     </tr>
   </tbody>
 </table>
+</div>
 

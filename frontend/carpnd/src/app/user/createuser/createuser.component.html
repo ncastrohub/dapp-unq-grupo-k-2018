@@ -1,12 +1,13 @@
-<div class="container" *ngIf="!authService.isLoggedIn"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
-    <h1>User Form</h1>
-</div>
-    <!-- AGREGADO PARA AUTENTICACION -->
-    <div class="form-group" *ngIf="!authService.isLoggedIn">
-      <p>&nbsp;</p>
-      <h2> Access denied, Please log in </h2>
-    </div>"""
-    <!-- FIN AGREGADO -->
+<div class="container">
+  <div class="form-group" *ngIf="authService.isLoggedIn"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
+    <!--<h1>User Form</h1>-->
+  </div> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
+
+  <!-- AGREGADO PARA AUTENTICACION -->
+  <div class="form-group" *ngIf="!authService.isLoggedIn">
+    <h1> Access denied, Please log in </h1>
+  </div>
+  <!-- FIN AGREGADO -->
 
     <div *ngFor="let error of errorList" class="alert alert-danger" role="alert">
       {{error}}
@@ -37,4 +38,4 @@
       <!-- AGREGADO *ngIf PARA AUTENTICACION -->
 
     </form>
-
+</div>
