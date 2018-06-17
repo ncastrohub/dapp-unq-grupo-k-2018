@@ -92,11 +92,11 @@ export class GooglemapsComponent implements OnInit {
 
   }
   
-  onSubmit() {
+  onSubmit($event) {
     let newLocation = this.selectedLocation;
     this.selectedLocation = new Location();
 
-    this.onComplete.emit({ event:event, location: newLocation });
+    this.onComplete.emit({ event:$event, location: newLocation });
   }
 
 }

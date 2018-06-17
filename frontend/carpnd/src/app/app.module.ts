@@ -25,11 +25,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DateSelectorComponent } from './publication/date-selector/date-selector.component';
 import {MomentModule} from 'angular2-moment/moment.module';
 import { CostDefinerComponent } from './publication/cost-definer/cost-definer.component';
+import {ReservationService} from './reservation/reservation.service';
+
 
 // AGREGADO PARA AUTENTICACION
 import {AuthService} from "./auth/auth.service";
 import { CallbackComponent } from './callback.component';
 import { DetailComponent } from './publication/detail/detail.component';
+import { ReservationListComponent } from './reservation/reservation-list/reservation-list.component';
 // FIN AGREGADO
 
 @NgModule({
@@ -48,6 +51,7 @@ import { DetailComponent } from './publication/detail/detail.component';
     DateSelectorComponent,
     CostDefinerComponent,
     DetailComponent,
+    ReservationListComponent,
   ],
   imports: [
     MomentModule,
@@ -66,6 +70,7 @@ import { DetailComponent } from './publication/detail/detail.component';
   // AGREGADO PARA AUTENTICACION
       AuthService,
   // FIN AGREGADO
+  ReservationService,
     UserServiceService,
     AppConfig,
     PublicationService,

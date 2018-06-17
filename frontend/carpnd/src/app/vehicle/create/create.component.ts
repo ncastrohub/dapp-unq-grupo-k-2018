@@ -31,9 +31,9 @@ export class CreateVehicleComponent {
   submitted = false;
   errorList = [];
 
-  onSubmit() {
+  onSubmit($event) {
 
-    this.onComplete.emit({ event:event, vehicle: this.vehicle });
+    this.onComplete.emit({ event:$event, vehicle: this.vehicle });
 
 	  // this.service.createVehicle('1', this.vehicle).subscribe(
 	  //   data => {

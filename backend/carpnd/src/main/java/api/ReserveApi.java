@@ -3,13 +3,12 @@ package api;
 import api.forms.ReserveForm;
 import model.Reservation;
 import model.exceptions.*;
+import org.apache.cxf.rs.security.cors.CrossOriginResourceSharing;
 import services.ReserveService;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 @Path("/reservation")
 public class ReserveApi {
@@ -38,5 +37,17 @@ public class ReserveApi {
 
     public void setReserveService(ReserveService reserveService) {
         this.reserveService = reserveService;
+    }
+
+
+    @GET
+    @Path("/reservation/{reservationId}")
+    @Produces("application/json")
+    @CrossOriginResourceSharing(
+            allowAllOrigins = true,
+            allowCredentials = true
+    )
+    public Response getVehiclesForUser(@PathParam("reservationId") Long reservationId) {
+        return Response.ok(this.reserveService.getReservationService().findById(reservationId)).build();
     }
 }

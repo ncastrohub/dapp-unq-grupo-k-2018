@@ -113,7 +113,6 @@ public class PublishService {
         return this.userService.findById(id);
     }
 
-
     public Publication createPublicationForUser(Long userId, PublicationForm publication) throws FormValidationError {
         GenericValidator.validate(publication);
 
@@ -136,22 +135,12 @@ public class PublishService {
         return this.publicationService.findById(publicationId);
     }
 
-//    public Reservation makeReservation(Long customerId, List<LocalDate> daysToReserve, Long publicationId,
-//           Long returnLocationId) throws DayDisabledException, DayAlreadyReservedException,
-//            InvalidAmountOfDaysToReserveException, NoReturnLocationInPublicationException {
-//
-//        Publication publication = this.publicationService.findById(publicationId);
-//        User customer = this.userService.findById(customerId);
-//        AdressLocation returnLocation = publication.getReturnLocationsById(returnLocationId);
-//        Reservation reservation = publication.makeReservation(customer, daysToReserve, returnLocation);
-//        this.publicationService.update(publication);
-//        this.reservationService.save(reservation);
-//        return reservation;
-//    }
 
-    public OwnPaginationPage<Publication> getPublicationPage(int pageNumber) {
-        return null;
-    }
+
+//
+//    public OwnPaginationPage<Publication> getPublicationPage(int pageNumber) {
+//        return null;
+//    }
 
 
 }

@@ -103,4 +103,15 @@ public abstract class HibernateGenericDAO<T> extends HibernateDaoSupport impleme
         });
     }
 
+    @SuppressWarnings("unchecked")
+    public List<T> getPageList(final int pageSize, final int pageNumber, String queryParameter) {
+        HibernateTemplate template = this.getHibernateTemplate();
+        return (List<T>) template.execute((HibernateCallback) session -> {
+            Query query = session.createQuery(queryParameter);
+            query.setMaxResults(pageSize);
+            query.setFirstResult(pageSize * pageNumber);
+            return query.list();
+        });
+    }
+
 }

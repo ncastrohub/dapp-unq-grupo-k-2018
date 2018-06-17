@@ -1,5 +1,6 @@
 package repositories;
 
+import org.hibernate.Query;
 import utils.OwnPaginationPage;
 
 import java.io.Serializable;
@@ -30,8 +31,8 @@ public interface GenericRepository<T> {
 
     List<T> getAllByPage(final int pageSize, final int pageNumber);
 
-    OwnPaginationPage<T> getPaginationPage(Integer pageNumber);
-
     OwnPaginationPage<T> getPaginationPage();
+
+    List<T> getPageList(final int pageSize, final int pageNumber, String query);
 }
 
