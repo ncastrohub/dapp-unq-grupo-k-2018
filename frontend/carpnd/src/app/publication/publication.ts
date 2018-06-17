@@ -42,6 +42,14 @@ export class CreatePublication {
 	costPerHour: MoneyAndAmount;
 }
 
+
+export class ReserveParameters {
+	reservationDays: number[][];
+	returnLocation: number;
+	publication: number;
+	customer:number;
+}
+
 export class Page<T> {
 	beforeUrl: string;
 	nextUrl: string;

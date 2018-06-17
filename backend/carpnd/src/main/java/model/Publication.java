@@ -125,7 +125,7 @@ public class Publication extends IdModel {
         if (matchLocation.isPresent()){
             return matchLocation.get();
         }else {
-            throw new NoReturnLocationInPublicationException();
+            throw new NoReturnLocationInPublicationException("Return Location selected no corresponding to Publication");
         }
     }
 }

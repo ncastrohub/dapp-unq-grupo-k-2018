@@ -2,6 +2,6 @@
 
 <button (click)="addDay()" class="btn btn-success">Add to reserve</button>
 
-<button type="submit" [disabled]="!dateList" class="btn btn-success">Finish</button>
+<button (click)="complete()" [disabled]="dateList.length <= 0" class="btn btn-success">Finish</button>
 
 {{ dateList | json }}

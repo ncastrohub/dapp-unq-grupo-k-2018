@@ -34,6 +34,13 @@
         <property name="reservationService" ref="services.reservation" />
     </bean>
 
+    <bean id="services.reserve" class="services.ReserveService">
+        <property name="userService" ref="services.user" />
+        <property name="vehicleService" ref="services.vehicle" />
+        <property name="publicationService" ref="services.publication" />
+        <property name="reservationService" ref="services.reservation" />
+    </bean>
+
     <bean class="fixtures.VehicleAndUserFixture">
         <property name="publishService" ref="services.publish" />
     </bean>

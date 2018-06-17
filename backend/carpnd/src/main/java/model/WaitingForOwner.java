@@ -2,11 +2,12 @@ package model;
 
 class WaitingForOwner extends StateNode {
     public void ownerAccepts(ReservationState context) {
-        context.setState(new ConfirmedByBothSides());
+//        context.setState(new ConfirmedByBothSides());
     }
 
     public void ownerRejects(ReservationState context) {
-        context.setState(new Rejected());
+
+//        context.setState(new Rejected());
     }
 
     public void userAccepts(ReservationState context) {
@@ -14,6 +15,7 @@ class WaitingForOwner extends StateNode {
     }
 
     public void userRejects(ReservationState context) {
-        context.setState(new Cancelled());
+
+//        context.setState(new Cancelled());
     }
 }

@@ -36,7 +36,7 @@ export class DateSelectorComponent {
     this.dateList.push([year, month, day]);
   }
 
-  onSubmit() {
+  complete() {
     this.onComplete.emit({ event:event, dateList: this.dateList });
   }
 }

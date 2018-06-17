@@ -28,10 +28,15 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
         <property name="publishService" ref="services.publish" />
     </bean>
 
+    <bean id="reserveApi" class="api.ReserveApi">
+        <property name="reserveService" ref="services.reserve" />
+    </bean>
+
 
     <jaxrs:server id="carpn" address="/"  >
         <jaxrs:serviceBeans>
             <ref bean="publicationApi" />
+            <ref bean="reserveApi" />
         </jaxrs:serviceBeans>
         <jaxrs:extensionMappings>
             <entry key="json" value="application/json" />

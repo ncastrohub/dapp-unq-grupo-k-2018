@@ -20,7 +20,7 @@
 
 <div class="form-group">
 	<label for="costumerId">Costumer Id</label>
-	<input type="text" class="form-control" id="costumerId"
+	<input type="number" class="form-control" id="costumerId"
  	required 
  	[(ngModel)]="costumerId" name="costumerId"/>
 </div>
@@ -35,5 +35,8 @@
 
 {{reservationDays | json}}
   {{costumerId}}
+
+
+  {{parameters | json}}
 
 </div>
