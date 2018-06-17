@@ -1,15 +1,22 @@
 package model;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.joda.time.LocalDate;
 
 import java.util.List;
 
 public class Reservation extends IdModel {
 
+    @JsonIgnore
     private ReservedPublication publicationSnapshot;
 
+    @JsonIgnore
     public Publication publication;
+
+
     public ReservationState state;
+
+    @JsonIgnore
     public User customer;
 
     public Reservation(Publication publication, List<LocalDate> reservationDays,
@@ -32,10 +39,7 @@ public class Reservation extends IdModel {
 
     public MoneyAndAmount finalPrice() {
         MoneyAndAmount costPerHour = this.getPublicationSnapshot().getCostPerHour();
-//        Long hours = Duration.between(this.publicationSnapshot.getAcquireTime(), this.publicationSnapshot.returnTime).toHours();
         Integer hours2 = this.getPublicationSnapshot().getHoursBetween();
-
-//        Double roundedValue = hours.doubleValue();
         return costPerHour.plusBy(new Double(hours2));
     }
 

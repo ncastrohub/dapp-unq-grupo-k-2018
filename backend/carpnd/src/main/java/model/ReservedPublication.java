@@ -53,6 +53,7 @@ public class ReservedPublication extends IdModel {
         return returnTime;
     }
 
+    @JsonIgnore
     public Integer getHoursBetween() { return Hours.hoursBetween(
                 this.getAcquireTime(),
                 this.getReturnTime()

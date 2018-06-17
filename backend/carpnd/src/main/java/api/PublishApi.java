@@ -116,8 +116,6 @@ public class PublishApi {
         return Response.ok().build();
     }
 
-
-
     @POST
     @Consumes("application/json")
     @Produces("application/json")
@@ -160,5 +158,7 @@ public class PublishApi {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
         }
     }
+
+    
 
 }

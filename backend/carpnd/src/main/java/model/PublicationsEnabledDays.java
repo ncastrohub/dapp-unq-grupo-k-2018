@@ -9,32 +9,8 @@ import java.util.List;
 
 public class PublicationsEnabledDays extends IdModel {
 
-//    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", timezone="GMT")
-//    @JsonFormat(shape = JsonFormat.Shape.OBJECT, pattern = "yyyy-MM-dd HH:mm a z")
-//    @JsonSerialize(contentUsing = JodaSerializers)
-
     private List<LocalDate> disabledDays;
-
-//    @JsonSerialize(contentUsing = JodaSerializers)
-//    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", timezone="GMT")
     private List<LocalDate> reservedDays;
-
-//    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", timezone="GMT")
-//    public LocalDate getHoy() {
-//        return hoy;
-//    }
-
-//    public void setHoy(LocalDate hoy) {
-//        this.hoy = hoy;
-//    }
-
-    public void setDisabledDays(List<LocalDate> disabledDays) {
-        this.disabledDays = disabledDays;
-    }
-
-    public void setReservedDays(List<LocalDate> reservedDays) {
-        this.reservedDays = reservedDays;
-    }
 
     public List<LocalDate> getReservedDays() {
         return reservedDays;
@@ -48,21 +24,19 @@ public class PublicationsEnabledDays extends IdModel {
 
         this.disabledDays = new LinkedList<>();
         this.reservedDays = new LinkedList<>();
-//        this.hoy = LocalDate.now();
     }
 
     public PublicationsEnabledDays(List<LocalDate> reservedDays, List<LocalDate> disabledDays) {
         this.disabledDays = disabledDays;
         this.reservedDays = reservedDays;
-//        this.hoy = LocalDate.now();
     }
 
     public void reserveDay(LocalDate dayOne) throws DayDisabledException, DayAlreadyReservedException {
         if (disabledDays.contains(dayOne)) {
-            throw new DayDisabledException();
+            throw new DayDisabledException("One Selected Day is Disabled");
         }
         if (reservedDays.contains(dayOne)){
-            throw new DayAlreadyReservedException();
+            throw new DayAlreadyReservedException("One of selected Days are reserved");
         }
         this.reservedDays.add(dayOne);
     }
@@ -87,8 +61,9 @@ public class PublicationsEnabledDays extends IdModel {
     }
 
     public void reserveDays(List<LocalDate> reservationDays) throws DayAlreadyReservedException, DayDisabledException, InvalidAmountOfDaysToReserveException {
-        if (reservationDays.size() > 4) {
-            throw new InvalidAmountOfDaysToReserveException();
+
+        if (reservationDays.size() > 5) {
+            throw new InvalidAmountOfDaysToReserveException("Days to reserve must be less than 5");
         }
         for (LocalDate localDate : reservationDays) {
             this.reserveDay(localDate);

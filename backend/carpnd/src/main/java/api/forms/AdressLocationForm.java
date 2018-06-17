@@ -14,7 +14,6 @@ public class AdressLocationForm {
     @NotNull
     public String geoLongitude;
 
-
     public AdressLocation getAcquireLocationInstance() {
         AdressLocation aAndLocation = new AdressLocation();
         aAndLocation.adressName = this.adressName;

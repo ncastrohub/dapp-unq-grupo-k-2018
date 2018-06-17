@@ -33,6 +33,9 @@ public class TestPublicationService {
     private PublishService publicationService;
 
     @Autowired
+    private ReserveService reserveService;
+
+    @Autowired
     private UserService userService;
 
     @Test
@@ -83,7 +86,7 @@ public class TestPublicationService {
 
         assertThat(createdPublication.getId()).isNotNull();
 
-        Reservation cratedReservation = this.publicationService.makeReservation(
+        Reservation cratedReservation = this.reserveService.makeReservation(
                 customer.getId(),
                 daysToReserve,
                 createdPublication.getId(),

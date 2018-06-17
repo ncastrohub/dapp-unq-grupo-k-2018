@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AppConfig } from '../config';
 import { Observable } from 'rxjs';
-import { Publication } from './publication';
+import { Publication, ReserveParameters } from './publication';
 import { Page, CreatePublication } from './publication';
 
 
@@ -23,24 +23,8 @@ export class PublicationService {
     return this.http.get<Publication>( this.config.serveUrl + 'publication/publication/' + publicationId + "/");
   }
 
- /* getUserList(): Observable<[User]> {
-  	return this.http.get<[User]>( this.config.serveUrl + 'publication/user/list');
+  makeReservation(parameters: ReserveParameters): Observable<any> {
+    return this.http.post<any>( this.config.serveUrl + 'reservation/reserve/', parameters);
   }
-
-  createUser(user:User): Observable<any> {
-  	return this.http.post<any>( this.config.serveUrl + 'publication/user/new', user);
-  }
-
-  deleteUser(user: User): Observable<any> {
-  	return this.http.post<any>(this.config.serveUrl + 'publication/user/delete', user);
-  }
-
-  updateUser(user: User): Observable<any> {
-    return this.http.post<any>( this.config.serveUrl + 'publication/user/edit', user);
-  }
-
-  loadUserToEdit(user: User) {
-    this.userSource.next(user); 
-  }*/
 
 }

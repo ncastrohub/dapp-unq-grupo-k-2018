@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PublicationService } from '../publication.service';
-import { Publication } from '../publication';
+import { Publication, ReserveParameters,Location } from '../publication';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 
@@ -11,15 +11,41 @@ import { switchMap } from 'rxjs/operators';
 })
 export class DetailComponent implements OnInit {
 	publication: Publication;
+  parameters: ReserveParameters;
+  errorList = [];
 
-  	constructor(private service: PublicationService, private router: Router, private route: ActivatedRoute) { }
 
-  	ngOnInit() {
-      let publicationId = this.route.snapshot.paramMap.get('publicationId');
-  		this.route.queryParams.subscribe(params => {
-  			this.service.getPublication(publicationId).subscribe(data => {
-  				this.publication = data;
-  			})   
-		})
-	}
+  reservationDays;
+  costumerId: number;
+
+	constructor(private service: PublicationService, private router: Router, private route: ActivatedRoute) { }
+
+	ngOnInit() {
+    this.parameters = new ReserveParameters(); 
+    let publicationId = this.route.snapshot.paramMap.get('publicationId');
+		this.route.queryParams.subscribe(params => {
+			this.service.getPublication(publicationId).subscribe(data => {
+				this.publication = data;
+			})   
+	  })
+  }
+
+  addReservationDays($event){
+    this.parameters.reservationDays = $event.dateList;
+  }
+
+  setReturnLocation(location:Location) {
+    this.parameters.returnLocation = location.id;
+  }
+
+  makeReservation(){
+    this.parameters.customer = this.costumerId;
+    this.parameters.publication = this.publication.id;
+    this.service.makeReservation(this.parameters).subscribe(data => {
+        this.router.navigate(['/publication/list']);
+      },
+      error => this.errorList.push(error)
+    );
+  }
+
 }
