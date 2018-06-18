@@ -9,6 +9,7 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 import services.PublishService;
 import utils.builders.PublicationFormBuilder;
 import utils.builders.UserBuilder;
+import utils.builders.VehicleBuilder;
 
 
 
@@ -65,6 +66,8 @@ public class VehicleAndUserFixture implements BeanPostProcessor {
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         User owner = UserBuilder.someUser();
+        owner.addVehicle(VehicleBuilder.some());
+        owner.addVehicle(VehicleBuilder.some());
         this.publishService.getUserService().save(owner);
         try {
             this.publishService.createPublicationForUser(owner.getId(), PublicationFormBuilder.some());

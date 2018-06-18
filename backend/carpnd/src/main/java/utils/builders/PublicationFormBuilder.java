@@ -8,7 +8,7 @@ public class PublicationFormBuilder {
 
     public static PublicationForm some() {
         PublicationForm pForm = new PublicationForm();
-        pForm.vehicle = VehicleFormBuilder.some();
+        pForm.vehicle = VehicleUpdateFormBuilder.some();
         pForm.acquireLocation = AdressLocationFormBuilder.some();
         pForm.returnLocations = new LinkedList<>();
         pForm.returnLocations.add(AdressLocationFormBuilder.some());

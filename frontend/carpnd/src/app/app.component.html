@@ -34,27 +34,27 @@
 
        </div>
      </li>
+     <li class="nav-item pull-right" >
+          <!-- AGREGADO PARA AUTENTICACION -->
+          <!-- FROM https://auth0.com/authenticate/angular2/google-apps/ -->
+            <button
+              class="btn btn-primary btn-margin"
+              *ngIf="!authService.isLoggedIn"
+              (click)="authService.login()">
+              Log In
+            </button>
 
+            <button
+              class="btn btn-primary btn-margin"
+              *ngIf="authService.isLoggedIn"
+              (click)="authService.logout()">
+                Log Out
+            </button>
+          <!-- FIN AGREGADO -->
+      </li>
     </ul>
-    <!-- <a routerLink="/logout" class="btn btn-outline-danger my-2 my-sm-0"> LogOut </a> -->
+          <!-- <a routerLink="/logout" class="btn btn-outline-danger my-2 my-sm-0"> LogOut </a> -->
   </div>
-
-<!-- AGREGADO PARA AUTENTICACION -->
-<!-- FROM https://auth0.com/authenticate/angular2/google-apps/ -->
-          <button
-            class="btn btn-primary btn-margin"
-            *ngIf="!authService.isLoggedIn"
-            (click)="authService.login()">
-            Log In
-          </button>
-
-          <button
-            class="btn btn-primary btn-margin"
-            *ngIf="authService.isLoggedIn"
-            (click)="authService.logout()">
-              Log Out
-          </button>
-<!-- FIN AGREGADO -->
 
 </nav>
 <br>

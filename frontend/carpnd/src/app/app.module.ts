@@ -33,6 +33,7 @@ import {AuthService} from "./auth/auth.service";
 import { CallbackComponent } from './callback.component';
 import { DetailComponent } from './publication/detail/detail.component';
 import { ReservationListComponent } from './reservation/reservation-list/reservation-list.component';
+import { VehicleListComponent } from './vehicle/vehicle-list/vehicle-list.component';
 // FIN AGREGADO
 
 @NgModule({
@@ -52,6 +53,7 @@ import { ReservationListComponent } from './reservation/reservation-list/reserva
     CostDefinerComponent,
     DetailComponent,
     ReservationListComponent,
+    VehicleListComponent,
   ],
   imports: [
     MomentModule,

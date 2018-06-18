@@ -15,7 +15,7 @@ import { AuthService } from '../../auth/auth.service';
 
 export class CreateVehicleComponent {
 
-  @Output() public onComplete: EventEmitter<any> = new EventEmitter();
+  // @Output() public onComplete: EventEmitter<any> = new EventEmitter();
 // MODIFICADO PARA AUTENTICACION
   constructor(private service: VehicleService, private router: Router, public authService: AuthService) {
 // FIN MODIFICADO
@@ -33,14 +33,14 @@ export class CreateVehicleComponent {
 
   onSubmit($event) {
 
-    this.onComplete.emit({ event:$event, vehicle: this.vehicle });
+    // this.onComplete.emit({ event:$event, vehicle: this.vehicle });
 
-	  // this.service.createVehicle('1', this.vehicle).subscribe(
-	  //   data => {
-	  //     this.router.navigate(['/vehicle/list']);
-	  //   },
-	  //   error => this.errorList.push(error)
-	  // );
+	  this.service.createVehicle('1', this.vehicle).subscribe(
+	    data => {
+	      this.router.navigate(['/vehicle/list']);
+	    },
+	    error => this.errorList.push(error)
+	  );
   }
 
 }

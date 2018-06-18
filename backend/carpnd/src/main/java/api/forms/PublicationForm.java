@@ -14,7 +14,7 @@ import java.util.LinkedList;
 public class PublicationForm {
 
     @NotNull
-    public VehicleForm vehicle;
+    public VehicleUpdateForm vehicle;
 
     @NotNull
     public AdressLocationForm acquireLocation;

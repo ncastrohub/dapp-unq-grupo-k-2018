@@ -1,15 +1,9 @@
 <div class="container">
-  <div class="form-group" *ngIf="authService.isLoggedIn"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
-    <!-- <h1>Vehicle List</h1>-->
-   </div> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
+  <div class="form-group" >
+     <h1>Vehicle List</h1>
+   </div>
 
-  <!-- AGREGADO PARA AUTENTICACION -->
-  <div class="form-group" *ngIf="!authService.isLoggedIn">
-    <h1> Access denied, Please log in </h1>
-  </div>
-  <!-- FIN AGREGADO -->
-
-    <table class="table"*ngIf="authService.isLoggedIn"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
+    <table class="table"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
   <thead>
     <tr>
       <th scope="col">#</th>

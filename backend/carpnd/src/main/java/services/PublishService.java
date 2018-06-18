@@ -2,12 +2,12 @@ package services;
 
 
 import api.forms.*;
-import model.*;
-import model.exceptions.*;
-import org.joda.time.LocalDate;
+import model.Publication;
+import model.User;
+import model.Vehicle;
+import model.exceptions.FormValidationError;
 import org.springframework.transaction.annotation.Transactional;
 import services.Validators.GenericValidator;
-import utils.OwnPaginationPage;
 import utils.builders.PublicationsEnabledDaysFormBuilder;
 
 import java.io.Serializable;
@@ -117,11 +117,18 @@ public class PublishService {
         GenericValidator.validate(publication);
 
         User publicationUser = this.userService.findById(userId);
+        Vehicle selectedVehicle = null;
+
+        for (Vehicle vehicle :  publicationUser.getVehicles()) {
+            if (vehicle.getId() == publication.vehicle.id) {
+                selectedVehicle = vehicle;
+            }
+        }
 
         Publication newPublication = new Publication(
                         publicationUser,
                 publication.getCostPerDayInstance(),
-                publication.getVehicleInstance(),
+                selectedVehicle,
                 publication.getAcquireLocationInstance(),
                 publication.getReturnLocationsList(),
                 PublicationsEnabledDaysFormBuilder.some().getModelInstance()

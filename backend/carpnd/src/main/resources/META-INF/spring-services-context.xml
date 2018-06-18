@@ -41,9 +41,9 @@
         <property name="reservationService" ref="services.reservation" />
     </bean>
 
-    <bean class="fixtures.VehicleAndUserFixture">
-        <property name="publishService" ref="services.publish" />
-    </bean>
+    <!--<bean class="fixtures.VehicleAndUserFixture">-->
+        <!--<property name="publishService" ref="services.publish" />-->
+    <!--</bean>-->
 
 
     <!--<bean class="scripting.InitializeUser">-->
