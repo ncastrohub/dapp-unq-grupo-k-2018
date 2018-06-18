@@ -4,11 +4,20 @@
 <hibernate-mapping default-access="field"
                    default-cascade="save-update">
     <class name="model.Reservation">
+
         <id column="id" name="id">
             <generator class="native" />
         </id>
 
         <one-to-one name="publicationSnapshot" class="model.ReservedPublication"/>
+
+        <many-to-one name="customer" class="model.User" lazy="false"
+                     column="reservation_customer" not-null="false" />
+
+        <many-to-one name="publication" class="model.Publication"
+                     column="reservation_publication" not-null="true" />
+
+        <one-to-one name="state" class="model.ReservationState"/>
 
     </class>
 </hibernate-mapping>

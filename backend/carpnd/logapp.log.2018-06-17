@@ -1,0 +1,1058 @@
+2018-06-17 00:32:35,461 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 00:32:35,465 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 00:32:35,466 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 00:32:35,467 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 00:32:35,468 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 00:32:35,468 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 00:32:35,469 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 00:32:35,470 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 00:32:35,471 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 00:32:35,471 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 00:32:35,472 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 00:32:35,473 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 00:32:35,474 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 00:32:35,474 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 00:32:35,475 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 00:32:35,475 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 00:32:35,478 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 00:32:35,478 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 00:32:36,893 WARN  org.springframework.context.support.AbstractApplicationContext (AbstractApplicationContext.java:487) - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [services.ReserveServiceService] for bean with name 'services.reserve' defined in URL [file:/home/ncastro/dev/dapp/dapp-unq-grupo-k-2018/backend/carpnd/target/classes/META-INF/spring-services-context.xml]; nested exception is java.lang.ClassNotFoundException: services.ReserveServiceService
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1317)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:622)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:591)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1386)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:742)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized(ContextHandler.java:890)
+	at org.eclipse.jetty.servlet.ServletContextHandler.callContextInitialized(ServletContextHandler.java:558)
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:853)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:370)
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1497)
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.startWebapp(JettyWebAppContext.java:360)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1459)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:785)
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:287)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:545)
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.doStart(JettyWebAppContext.java:428)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:138)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:117)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.doStart(ContextHandlerCollection.java:167)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:138)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:117)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:138)
+	at org.eclipse.jetty.server.Server.start(Server.java:419)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:108)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:386)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.startJetty(AbstractJettyMojo.java:467)
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.execute(AbstractJettyMojo.java:329)
+	at org.eclipse.jetty.maven.plugin.JettyRunMojo.execute(JettyRunMojo.java:179)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+	at org.codehaus.classworlds.Launcher.main(Launcher.java:47)
+Caused by: java.lang.ClassNotFoundException: services.ReserveServiceService
+	at org.codehaus.plexus.classworlds.strategy.SelfFirstStrategy.loadClass(SelfFirstStrategy.java:50)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.unsynchronizedLoadClass(ClassRealm.java:271)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClass(ClassRealm.java:247)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClass(ClassRealm.java:239)
+	at org.eclipse.jetty.webapp.WebAppClassLoader.loadClass(WebAppClassLoader.java:565)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:249)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:395)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1309)
+	... 63 more
+2018-06-17 00:32:36,901 ERROR org.springframework.web.context.ContextLoader (ContextLoader.java:331) - Context initialization failed
+org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [services.ReserveServiceService] for bean with name 'services.reserve' defined in URL [file:/home/ncastro/dev/dapp/dapp-unq-grupo-k-2018/backend/carpnd/target/classes/META-INF/spring-services-context.xml]; nested exception is java.lang.ClassNotFoundException: services.ReserveServiceService
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1317)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:622)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:591)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1386)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:742)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized(ContextHandler.java:890)
+	at org.eclipse.jetty.servlet.ServletContextHandler.callContextInitialized(ServletContextHandler.java:558)
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:853)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:370)
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1497)
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.startWebapp(JettyWebAppContext.java:360)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1459)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:785)
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:287)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:545)
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.doStart(JettyWebAppContext.java:428)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:138)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:117)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.doStart(ContextHandlerCollection.java:167)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:138)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:117)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:138)
+	at org.eclipse.jetty.server.Server.start(Server.java:419)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:108)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:386)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.startJetty(AbstractJettyMojo.java:467)
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.execute(AbstractJettyMojo.java:329)
+	at org.eclipse.jetty.maven.plugin.JettyRunMojo.execute(JettyRunMojo.java:179)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+	at org.codehaus.classworlds.Launcher.main(Launcher.java:47)
+Caused by: java.lang.ClassNotFoundException: services.ReserveServiceService
+	at org.codehaus.plexus.classworlds.strategy.SelfFirstStrategy.loadClass(SelfFirstStrategy.java:50)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.unsynchronizedLoadClass(ClassRealm.java:271)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClass(ClassRealm.java:247)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClass(ClassRealm.java:239)
+	at org.eclipse.jetty.webapp.WebAppClassLoader.loadClass(WebAppClassLoader.java:565)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:249)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:395)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1309)
+	... 63 more
+2018-06-17 00:35:15,664 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 00:35:15,668 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 00:35:15,669 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 00:35:15,669 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 00:35:15,670 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 00:35:15,671 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 00:35:15,672 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 00:35:15,672 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 00:35:15,673 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 00:35:15,673 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 00:35:15,674 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 00:35:15,675 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 00:35:15,675 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 00:35:15,676 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 00:35:15,677 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 00:35:15,677 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 00:35:15,679 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 00:35:15,680 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 00:35:16,947 WARN  org.springframework.context.support.AbstractApplicationContext (AbstractApplicationContext.java:487) - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'services.reserve' defined in URL [file:/home/ncastro/dev/dapp/dapp-unq-grupo-k-2018/backend/carpnd/target/classes/META-INF/spring-services-context.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'userService' of bean class [services.ReserveService]: Bean property 'userService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1506)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized(ContextHandler.java:890)
+	at org.eclipse.jetty.servlet.ServletContextHandler.callContextInitialized(ServletContextHandler.java:558)
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:853)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:370)
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1497)
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.startWebapp(JettyWebAppContext.java:360)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1459)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:785)
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:287)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:545)
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.doStart(JettyWebAppContext.java:428)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:138)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:117)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.doStart(ContextHandlerCollection.java:167)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:138)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:117)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:138)
+	at org.eclipse.jetty.server.Server.start(Server.java:419)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:108)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:386)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.startJetty(AbstractJettyMojo.java:467)
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.execute(AbstractJettyMojo.java:329)
+	at org.eclipse.jetty.maven.plugin.JettyRunMojo.execute(JettyRunMojo.java:179)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+	at org.codehaus.classworlds.Launcher.main(Launcher.java:47)
+Caused by: org.springframework.beans.NotWritablePropertyException: Invalid property 'userService' of bean class [services.ReserveService]: Bean property 'userService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:1067)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:926)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:95)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:75)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1502)
+	... 66 more
+2018-06-17 00:35:16,959 ERROR org.springframework.web.context.ContextLoader (ContextLoader.java:331) - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'services.reserve' defined in URL [file:/home/ncastro/dev/dapp/dapp-unq-grupo-k-2018/backend/carpnd/target/classes/META-INF/spring-services-context.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'userService' of bean class [services.ReserveService]: Bean property 'userService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1506)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized(ContextHandler.java:890)
+	at org.eclipse.jetty.servlet.ServletContextHandler.callContextInitialized(ServletContextHandler.java:558)
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:853)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:370)
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1497)
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.startWebapp(JettyWebAppContext.java:360)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1459)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:785)
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:287)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:545)
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.doStart(JettyWebAppContext.java:428)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:138)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:117)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.doStart(ContextHandlerCollection.java:167)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:138)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:117)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:138)
+	at org.eclipse.jetty.server.Server.start(Server.java:419)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:108)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:386)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.startJetty(AbstractJettyMojo.java:467)
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.execute(AbstractJettyMojo.java:329)
+	at org.eclipse.jetty.maven.plugin.JettyRunMojo.execute(JettyRunMojo.java:179)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+	at org.codehaus.classworlds.Launcher.main(Launcher.java:47)
+Caused by: org.springframework.beans.NotWritablePropertyException: Invalid property 'userService' of bean class [services.ReserveService]: Bean property 'userService' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:1067)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:926)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:95)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:75)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1502)
+	... 66 more
+2018-06-17 00:36:21,822 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 00:36:21,827 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 00:36:21,828 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 00:36:21,828 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 00:36:21,829 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 00:36:21,830 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 00:36:21,831 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 00:36:21,831 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 00:36:21,832 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 00:36:21,832 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 00:36:21,833 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 00:36:21,833 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 00:36:21,834 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 00:36:21,834 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 00:36:21,835 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 00:36:21,835 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 00:36:21,837 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 00:36:21,837 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 00:36:24,163 WARN  org.springframework.context.support.AbstractApplicationContext (AbstractApplicationContext.java:487) - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [api.ReserveApiApi] for bean with name 'reserveApi' defined in ServletContext resource [/WEB-INF/application-context.xml]; nested exception is java.lang.ClassNotFoundException: api.ReserveApiApi
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1317)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:622)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:591)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1386)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:742)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized(ContextHandler.java:890)
+	at org.eclipse.jetty.servlet.ServletContextHandler.callContextInitialized(ServletContextHandler.java:558)
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:853)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:370)
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1497)
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.startWebapp(JettyWebAppContext.java:360)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1459)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:785)
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:287)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:545)
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.doStart(JettyWebAppContext.java:428)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:138)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:117)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.doStart(ContextHandlerCollection.java:167)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:138)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:117)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:138)
+	at org.eclipse.jetty.server.Server.start(Server.java:419)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:108)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:386)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.startJetty(AbstractJettyMojo.java:467)
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.execute(AbstractJettyMojo.java:329)
+	at org.eclipse.jetty.maven.plugin.JettyRunMojo.execute(JettyRunMojo.java:179)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+	at org.codehaus.classworlds.Launcher.main(Launcher.java:47)
+Caused by: java.lang.ClassNotFoundException: api.ReserveApiApi
+	at org.codehaus.plexus.classworlds.strategy.SelfFirstStrategy.loadClass(SelfFirstStrategy.java:50)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.unsynchronizedLoadClass(ClassRealm.java:271)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClass(ClassRealm.java:247)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClass(ClassRealm.java:239)
+	at org.eclipse.jetty.webapp.WebAppClassLoader.loadClass(WebAppClassLoader.java:565)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:249)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:395)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1309)
+	... 63 more
+2018-06-17 00:36:24,177 ERROR org.springframework.web.context.ContextLoader (ContextLoader.java:331) - Context initialization failed
+org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [api.ReserveApiApi] for bean with name 'reserveApi' defined in ServletContext resource [/WEB-INF/application-context.xml]; nested exception is java.lang.ClassNotFoundException: api.ReserveApiApi
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1317)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:622)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:591)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1386)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:742)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized(ContextHandler.java:890)
+	at org.eclipse.jetty.servlet.ServletContextHandler.callContextInitialized(ServletContextHandler.java:558)
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:853)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:370)
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1497)
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.startWebapp(JettyWebAppContext.java:360)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1459)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:785)
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:287)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:545)
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.doStart(JettyWebAppContext.java:428)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:138)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:117)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.doStart(ContextHandlerCollection.java:167)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:138)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:117)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:138)
+	at org.eclipse.jetty.server.Server.start(Server.java:419)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:108)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:386)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.startJetty(AbstractJettyMojo.java:467)
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.execute(AbstractJettyMojo.java:329)
+	at org.eclipse.jetty.maven.plugin.JettyRunMojo.execute(JettyRunMojo.java:179)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+	at org.codehaus.classworlds.Launcher.main(Launcher.java:47)
+Caused by: java.lang.ClassNotFoundException: api.ReserveApiApi
+	at org.codehaus.plexus.classworlds.strategy.SelfFirstStrategy.loadClass(SelfFirstStrategy.java:50)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.unsynchronizedLoadClass(ClassRealm.java:271)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClass(ClassRealm.java:247)
+	at org.codehaus.plexus.classworlds.realm.ClassRealm.loadClass(ClassRealm.java:239)
+	at org.eclipse.jetty.webapp.WebAppClassLoader.loadClass(WebAppClassLoader.java:565)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:249)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:395)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1309)
+	... 63 more
+2018-06-17 00:37:30,098 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 00:37:30,102 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 00:37:30,103 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 00:37:30,103 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 00:37:30,104 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 00:37:30,104 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 00:37:30,105 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 00:37:30,105 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 00:37:30,106 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 00:37:30,106 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 00:37:30,107 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 00:37:30,107 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 00:37:30,107 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 00:37:30,108 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 00:37:30,108 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 00:37:30,109 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 00:37:30,116 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 00:37:30,116 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 01:18:48,637 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 01:18:48,641 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 01:18:48,642 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 01:18:48,642 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 01:18:48,643 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 01:18:48,643 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 01:18:48,643 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 01:18:48,644 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 01:18:48,644 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 01:18:48,645 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 01:18:48,646 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 01:18:48,646 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 01:18:48,647 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 01:18:48,648 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 01:18:48,648 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 01:18:48,649 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 01:18:48,651 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 01:18:48,651 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 01:25:06,960 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 01:25:06,964 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 01:25:06,965 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 01:25:06,965 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 01:25:06,966 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 01:25:06,966 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 01:25:06,967 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 01:25:06,967 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 01:25:06,967 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 01:25:06,968 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 01:25:06,968 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 01:25:06,969 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 01:25:06,969 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 01:25:06,969 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 01:25:06,970 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 01:25:06,970 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 01:25:06,972 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 01:25:06,972 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 01:27:37,068 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 01:27:37,073 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 01:27:37,074 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 01:27:37,074 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 01:27:37,075 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 01:27:37,076 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 01:27:37,077 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 01:27:37,077 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 01:27:37,078 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 01:27:37,078 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 01:27:37,079 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 01:27:37,079 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 01:27:37,079 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 01:27:37,080 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 01:27:37,080 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 01:27:37,081 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 01:27:37,083 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 01:27:37,083 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 01:29:17,369 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 01:29:17,373 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 01:29:17,374 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 01:29:17,374 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 01:29:17,375 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 01:29:17,375 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 01:29:17,376 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 01:29:17,376 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 01:29:17,377 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 01:29:17,377 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 01:29:17,377 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 01:29:17,378 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 01:29:17,378 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 01:29:17,379 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 01:29:17,379 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 01:29:17,379 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 01:29:17,381 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 01:29:17,382 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 01:31:44,171 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 01:31:44,175 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 01:31:44,176 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 01:31:44,177 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 01:31:44,178 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 01:31:44,179 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 01:31:44,180 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 01:31:44,180 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 01:31:44,181 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 01:31:44,181 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 01:31:44,182 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 01:31:44,182 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 01:31:44,182 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 01:31:44,183 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 01:31:44,183 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 01:31:44,184 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 01:31:44,186 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 01:31:44,187 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 01:35:12,305 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 01:35:12,310 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 01:35:12,311 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 01:35:12,311 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 01:35:12,312 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 01:35:12,313 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 01:35:12,313 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 01:35:12,314 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 01:35:12,314 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 01:35:12,315 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 01:35:12,316 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 01:35:12,316 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 01:35:12,316 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 01:35:12,317 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 01:35:12,317 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 01:35:12,318 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 01:35:12,319 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 01:35:12,320 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 01:39:37,935 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 01:39:37,941 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 01:39:37,942 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 01:39:37,942 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 01:39:37,943 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 01:39:37,944 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 01:39:37,945 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 01:39:37,945 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 01:39:37,946 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 01:39:37,947 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 01:39:37,947 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 01:39:37,948 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 01:39:37,949 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 01:39:37,949 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 01:39:37,950 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 01:39:37,951 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 01:39:37,953 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 01:39:37,953 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 01:42:31,176 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 01:42:31,180 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 01:42:31,181 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 01:42:31,181 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 01:42:31,182 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 01:42:31,183 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 01:42:31,184 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 01:42:31,184 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 01:42:31,185 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 01:42:31,185 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 01:42:31,186 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 01:42:31,186 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 01:42:31,187 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 01:42:31,187 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 01:42:31,187 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 01:42:31,188 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 01:42:31,190 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 01:42:31,190 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 01:51:32,049 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 01:51:32,052 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 01:51:32,053 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 01:51:32,054 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 01:51:32,055 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 01:51:32,055 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 01:51:32,056 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 01:51:32,057 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 01:51:32,057 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 01:51:32,058 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 01:51:32,058 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 01:51:32,058 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 01:51:32,059 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 01:51:32,059 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 01:51:32,060 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 01:51:32,060 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 01:51:32,062 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 01:51:32,062 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 12:52:59,993 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 12:53:00,000 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 12:53:00,001 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 12:53:00,002 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 12:53:00,004 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 12:53:00,004 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 12:53:00,006 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 12:53:00,007 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 12:53:00,008 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 12:53:00,009 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 12:53:00,011 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 12:53:00,012 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 12:53:00,014 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 12:53:00,015 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 12:53:00,016 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 12:53:00,017 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 12:53:00,021 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 12:53:00,021 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 19:11:39,640 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 19:11:39,644 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 19:11:39,644 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 19:11:39,645 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 19:11:39,645 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 19:11:39,646 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 19:11:39,646 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 19:11:39,646 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 19:11:39,647 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 19:11:39,647 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 19:11:39,648 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 19:11:39,648 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 19:11:39,649 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 19:11:39,649 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 19:11:39,649 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 19:11:39,650 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 19:11:39,651 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 19:11:39,652 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 19:25:34,841 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 19:25:34,845 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 19:25:34,845 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 19:25:34,846 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 19:25:34,846 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 19:25:34,846 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 19:25:34,847 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 19:25:34,847 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 19:25:34,848 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 19:25:34,848 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 19:25:34,848 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 19:25:34,849 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 19:25:34,849 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 19:25:34,849 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 19:25:34,850 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 19:25:34,850 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 19:25:34,852 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 19:25:34,852 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 20:00:24,500 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 20:00:24,531 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 20:00:24,532 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 20:00:24,532 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 20:00:24,533 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 20:00:24,533 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 20:00:24,534 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 20:00:24,534 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 20:00:24,535 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 20:00:24,535 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 20:00:24,536 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 20:00:24,536 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 20:00:24,536 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 20:00:24,537 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 20:00:24,537 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 20:00:24,537 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 20:00:24,539 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 20:00:24,539 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 20:04:51,087 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 20:04:51,092 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 20:04:51,093 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 20:04:51,094 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 20:04:51,095 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 20:04:51,095 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 20:04:51,096 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 20:04:51,097 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 20:04:51,097 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 20:04:51,098 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 20:04:51,099 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 20:04:51,100 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 20:04:51,101 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 20:04:51,102 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 20:04:51,103 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 20:04:51,103 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 20:04:51,106 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 20:04:51,106 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 20:16:16,525 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 20:16:16,528 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 20:16:16,529 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 20:16:16,530 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 20:16:16,530 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 20:16:16,531 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 20:16:16,531 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 20:16:16,532 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 20:16:16,532 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 20:16:16,533 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 20:16:16,534 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 20:16:16,534 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 20:16:16,535 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 20:16:16,536 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 20:16:16,537 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 20:16:16,537 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 20:16:16,540 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 20:16:16,540 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 20:22:44,803 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 20:22:44,806 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 20:22:44,807 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 20:22:44,807 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 20:22:44,808 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 20:22:44,809 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 20:22:44,809 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 20:22:44,810 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 20:22:44,810 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 20:22:44,811 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 20:22:44,811 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 20:22:44,811 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 20:22:44,812 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 20:22:44,812 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 20:22:44,813 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 20:22:44,813 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 20:22:44,815 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 20:22:44,815 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 20:56:32,163 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 20:56:32,167 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 20:56:32,168 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 20:56:32,168 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 20:56:32,169 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 20:56:32,169 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 20:56:32,169 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 20:56:32,169 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 20:56:32,170 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 20:56:32,170 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 20:56:32,170 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 20:56:32,171 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 20:56:32,171 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 20:56:32,171 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 20:56:32,172 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 20:56:32,172 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 20:56:32,174 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 20:56:32,174 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 21:13:54,135 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 21:13:54,139 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 21:13:54,140 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 21:13:54,140 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 21:13:54,141 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 21:13:54,141 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 21:13:54,142 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 21:13:54,142 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 21:13:54,143 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 21:13:54,143 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 21:13:54,144 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 21:13:54,144 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 21:13:54,145 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 21:13:54,145 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 21:13:54,146 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 21:13:54,146 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 21:13:54,148 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 21:13:54,148 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 21:39:21,253 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 21:39:21,258 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 21:39:21,259 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 21:39:21,259 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 21:39:21,260 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 21:39:21,260 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 21:39:21,261 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 21:39:21,261 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 21:39:21,262 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 21:39:21,263 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 21:39:21,263 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 21:39:21,264 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 21:39:21,264 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 21:39:21,265 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 21:39:21,265 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 21:39:21,266 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 21:39:21,268 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 21:39:21,269 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 22:05:15,717 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 22:05:15,721 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 22:05:15,722 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 22:05:15,722 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 22:05:15,723 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 22:05:15,723 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 22:05:15,724 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 22:05:15,724 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 22:05:15,724 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 22:05:15,725 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 22:05:15,725 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 22:05:15,725 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 22:05:15,726 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 22:05:15,726 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 22:05:15,726 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 22:05:15,727 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 22:05:15,728 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 22:05:15,729 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 22:10:29,786 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 22:10:29,789 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 22:10:29,790 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 22:10:29,790 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 22:10:29,791 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 22:10:29,791 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 22:10:29,792 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 22:10:29,792 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 22:10:29,792 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 22:10:29,793 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 22:10:29,793 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 22:10:29,793 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 22:10:29,794 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 22:10:29,795 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 22:10:29,795 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 22:10:29,796 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 22:10:29,798 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 22:10:29,799 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 22:28:39,972 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 22:28:39,976 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 22:28:39,977 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 22:28:39,978 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 22:28:39,979 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 22:28:39,979 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 22:28:39,980 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 22:28:39,980 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 22:28:39,981 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 22:28:39,981 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 22:28:39,982 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 22:28:39,982 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 22:28:39,983 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 22:28:39,983 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 22:28:39,984 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 22:28:39,984 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 22:28:39,985 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 22:28:39,986 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 22:31:08,362 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 22:31:08,366 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 22:31:08,367 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 22:31:08,368 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 22:31:08,368 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 22:31:08,369 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 22:31:08,369 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 22:31:08,370 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 22:31:08,370 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 22:31:08,371 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 22:31:08,371 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 22:31:08,371 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 22:31:08,372 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 22:31:08,372 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 22:31:08,373 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 22:31:08,373 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 22:31:08,374 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 22:31:08,375 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 22:39:08,057 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 22:39:08,060 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 22:39:08,061 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 22:39:08,061 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 22:39:08,062 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 22:39:08,062 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 22:39:08,062 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 22:39:08,062 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 22:39:08,063 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 22:39:08,063 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 22:39:08,063 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 22:39:08,064 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 22:39:08,064 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 22:39:08,064 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 22:39:08,065 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 22:39:08,065 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 22:39:08,067 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 22:39:08,067 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 22:44:54,582 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 22:44:54,585 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 22:44:54,586 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 22:44:54,587 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 22:44:54,587 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 22:44:54,588 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 22:44:54,589 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 22:44:54,589 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 22:44:54,590 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 22:44:54,590 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 22:44:54,591 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 22:44:54,592 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 22:44:54,592 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 22:44:54,593 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 22:44:54,594 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 22:44:54,594 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 22:44:54,596 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 22:44:54,597 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 22:47:24,864 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 22:47:24,867 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 22:47:24,868 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 22:47:24,868 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 22:47:24,869 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 22:47:24,870 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 22:47:24,870 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 22:47:24,871 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 22:47:24,871 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 22:47:24,871 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 22:47:24,872 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 22:47:24,872 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 22:47:24,873 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 22:47:24,873 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 22:47:24,874 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 22:47:24,874 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 22:47:24,876 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 22:47:24,876 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 22:48:00,650 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 22:48:00,653 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 22:48:00,654 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 22:48:00,654 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 22:48:00,655 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 22:48:00,655 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 22:48:00,655 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 22:48:00,656 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 22:48:00,656 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 22:48:00,656 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 22:48:00,657 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 22:48:00,657 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 22:48:00,657 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 22:48:00,658 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 22:48:00,658 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 22:48:00,658 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 22:48:00,659 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 22:48:00,660 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 22:52:03,171 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 22:52:03,175 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 22:52:03,176 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 22:52:03,176 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 22:52:03,177 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 22:52:03,178 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 22:52:03,178 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 22:52:03,179 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 22:52:03,180 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 22:52:03,180 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 22:52:03,181 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 22:52:03,181 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 22:52:03,182 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 22:52:03,182 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 22:52:03,182 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 22:52:03,183 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 22:52:03,184 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 22:52:03,185 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 22:55:35,881 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table AdressLocation drop constraint FK_elhg8py3grkb7treo09ojmist
+2018-06-17 22:55:35,886 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.ADRESSLOCATION
+2018-06-17 22:55:35,887 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Publication drop constraint FK_18fn9w3o2u9xdi2kr7jpxxbxy
+2018-06-17 22:55:35,887 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATION
+2018-06-17 22:55:35,888 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_disabledDays drop constraint FK_361ikhoqa2le18652c7rggw9v
+2018-06-17 22:55:35,888 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_DISABLEDDAYS
+2018-06-17 22:55:35,889 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table PublicationsEnabledDays_reservedDays drop constraint FK_a5omfyv7646h1x5gpelt5wlas
+2018-06-17 22:55:35,889 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.PUBLICATIONSENABLEDDAYS_RESERVEDDAYS
+2018-06-17 22:55:35,890 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_rc2uyo4t2by7kco6brdv6q4oe
+2018-06-17 22:55:35,891 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 22:55:35,891 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication drop constraint FK_q0r83c5b852duhtqrk7xvll6h
+2018-06-17 22:55:35,892 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION
+2018-06-17 22:55:35,892 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table ReservedPublication_reservedDays drop constraint FK_r1u58yyj8lhkpr15haxb4x6qv
+2018-06-17 22:55:35,893 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.RESERVEDPUBLICATION_RESERVEDDAYS
+2018-06-17 22:55:35,893 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_cnrc5r4easwq49trqfnyry509
+2018-06-17 22:55:35,894 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
+2018-06-17 22:55:35,896 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:425) - HHH000389: Unsuccessful: alter table Vehicle drop constraint FK_l6r17yh6ca1wd5mbvecq3la6o
+2018-06-17 22:55:35,896 ERROR org.hibernate.tool.hbm2ddl.SchemaExport (SchemaExport.java:426) - usuario no tiene privilegios suficientes o objeto no encontrado: PUBLIC.VEHICLE
