@@ -20,6 +20,10 @@ public class ReserveApi {
     @Consumes("application/json")
     @Produces("application/json")
     @Path(value = "/reserve/")
+    @CrossOriginResourceSharing(
+            allowAllOrigins = true,
+            allowCredentials = true
+    )
     public Response makeReservation(ReserveForm reserveForm) {
         try {
             Reservation newReservation = this.reserveService.reservePublication(reserveForm);

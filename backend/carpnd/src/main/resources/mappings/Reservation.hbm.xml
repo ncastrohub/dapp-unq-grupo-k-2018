@@ -8,19 +8,8 @@
             <generator class="native" />
         </id>
 
-
         <one-to-one name="publicationSnapshot" class="model.ReservedPublication"/>
-
-
-
 
     </class>
 </hibernate-mapping>
 
-
-
-        <!--private ReservedPublication publicationSnapshot;-->
-
-        <!--public Publication publication;-->
-        <!--public ReservationState state;-->
-        <!--public User customer;-->

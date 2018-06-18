@@ -20,6 +20,8 @@ public class ReservedPublication extends IdModel {
     public AdressLocation returnLocation;
     private LocalDateTime returnTime;
 
+    public ReservedPublication(){}
+
     @JsonIgnore
     private User customer;
 

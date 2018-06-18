@@ -15,7 +15,7 @@ import { PublicationListComponent } from './publication/publication-list/publica
 import { PublicationCreateComponent } from './publication/publication-create/publication-create.component';
 import { GooglemapsComponent } from './maps/googlemaps/googlemaps.component';
 import { DetailComponent } from './publication/detail/detail.component';
-
+import { ReservationDetailComponent } from './reservation/reservation-detail/reservation-detail.component';
 
 const routes: Routes = [
   { path: 'vehicle/create', component: CreateVehicleComponent },
@@ -35,6 +35,7 @@ const routes: Routes = [
   { path: 'publication/list', component: PublicationListComponent },
   { path: 'publication/create', component: PublicationCreateComponent },
   { path: 'publication/detail/:publicationId', component: DetailComponent },
+  { path: 'reservation/detail/:reservationId', component: ReservationDetailComponent },
 ];
 
 @NgModule({

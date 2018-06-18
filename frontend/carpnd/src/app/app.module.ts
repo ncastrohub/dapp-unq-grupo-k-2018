@@ -23,17 +23,17 @@ import { PublicationService } from './publication/publication.service';
 import { PublicationCreateComponent } from './publication/publication-create/publication-create.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DateSelectorComponent } from './publication/date-selector/date-selector.component';
-import {MomentModule} from 'angular2-moment/moment.module';
+import { MomentModule } from 'angular2-moment/moment.module';
 import { CostDefinerComponent } from './publication/cost-definer/cost-definer.component';
-import {ReservationService} from './reservation/reservation.service';
+import { ReservationService } from './reservation/reservation.service';
 
 
 // AGREGADO PARA AUTENTICACION
-import {AuthService} from "./auth/auth.service";
+import { AuthService } from "./auth/auth.service";
 import { CallbackComponent } from './callback.component';
 import { DetailComponent } from './publication/detail/detail.component';
-import { ReservationListComponent } from './reservation/reservation-list/reservation-list.component';
 import { VehicleListComponent } from './vehicle/vehicle-list/vehicle-list.component';
+import { ReservationDetailComponent } from './reservation/reservation-detail/reservation-detail.component';
 // FIN AGREGADO
 
 @NgModule({
@@ -52,8 +52,8 @@ import { VehicleListComponent } from './vehicle/vehicle-list/vehicle-list.compon
     DateSelectorComponent,
     CostDefinerComponent,
     DetailComponent,
-    ReservationListComponent,
     VehicleListComponent,
+    ReservationDetailComponent,
   ],
   imports: [
     MomentModule,
@@ -73,10 +73,10 @@ import { VehicleListComponent } from './vehicle/vehicle-list/vehicle-list.compon
       AuthService,
   // FIN AGREGADO
   ReservationService,
-    UserServiceService,
-    AppConfig,
-    PublicationService,
-    { provide: LOCALE_ID, useValue: 'en' }],
+  UserServiceService,
+  AppConfig,
+  PublicationService,
+  { provide: LOCALE_ID, useValue: 'en' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

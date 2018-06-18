@@ -13,6 +13,7 @@ public class Reservation extends IdModel {
     @JsonIgnore
     public Publication publication;
 
+    public Reservation() {}
 
     public ReservationState state;
 

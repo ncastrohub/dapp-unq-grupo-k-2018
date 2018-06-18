@@ -9,6 +9,8 @@ import model.exceptions.FormValidationError;
 import org.apache.cxf.rs.security.cors.CrossOriginResourceSharing;
 import services.PublishService;
 import utils.OwnPaginationPage;
+import utils.builders.UserBuilder;
+import utils.builders.VehicleBuilder;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
@@ -157,6 +159,20 @@ public class PublishApi {
         } catch (FormValidationError formValidationError) {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
         }
+    }
+
+
+    @GET
+    @Consumes("application/json")
+    @Produces("application/json")
+    @Path(value = "/setup/")
+    public Response setup() {
+        User user = UserBuilder.someUser();
+        user.addVehicle(VehicleBuilder.some());
+        user.addVehicle(VehicleBuilder.some());
+        this.publishService.getUserService().save(user);
+        this.publishService.getUserService().save(UserBuilder.someUser());
+        return Response.ok("done").build();
     }
 
 }

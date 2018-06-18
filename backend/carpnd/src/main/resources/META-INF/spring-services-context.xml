@@ -41,6 +41,11 @@
         <property name="reservationService" ref="services.reservation" />
     </bean>
 
+    <!--<bean id="initMethodExampleBean"-->
+          <!--class="fixtures.FixtureWirer"-->
+          <!--init-method="init">-->
+    <!--</bean>-->
+
     <!--<bean class="fixtures.VehicleAndUserFixture">-->
         <!--<property name="publishService" ref="services.publish" />-->
     <!--</bean>-->
