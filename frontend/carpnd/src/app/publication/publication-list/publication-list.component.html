@@ -10,7 +10,7 @@
   <!-- FIN AGREGADO -->
 
   <div *ngIf="publicationList" >
-  <div class="col-12">
+  <div class="col-12"*ngIf="authService.isLoggedIn"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
     <div  *ngFor="let publication of publicationList.elementList" class="card col-4" >
       <img class="card-img-top" [src]="publication.vehicle.photo" alt="Card image cap">
       <div class="card-body">
@@ -26,7 +26,7 @@
   </div>
 
   <nav aria-label="Navigation">
-    <ul class="pagination">
+    <ul class="pagination" *ngIf="authService.isLoggedIn"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
       <li class="page-item"><a class="page-link" href="publicationList.backUrl">Previous</a></li>
       <li class="page-item"><a class="page-link" href="publicationList.nextUrl">Next</a></li>
     </ul>
