@@ -5,7 +5,6 @@ import { Observable } from 'rxjs';
 import { Publication, ReserveParameters } from './publication';
 import { Page, CreatePublication } from './publication';
 
-
 @Injectable()
 export class PublicationService {
 

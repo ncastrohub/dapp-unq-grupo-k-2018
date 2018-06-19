@@ -4,67 +4,115 @@
 
 <!-- *ngIf="authService.isLoggedIn" -->
 
-<div >
-  <!-- AGREGADO PARA AUTENTICACION -->
-  <!-- FIN AGREGADO -->
+   
+ <h1>Create a new Publication</h1>
+ <hr>
+  <div class='row'> 
+    <div class="col-4" >
+        <h4>Publication</h4>
 
-{{ publication | json}}
+        <div class="card card-1" *ngIf="publication.vehicle">
+          <div class="card-header text-white bg-dark mb-3">
+            Vehicle
+          </div>
 
-  <h1>Create a new Publication </h1>
-  <div class='row'> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
-            <div class="col-4" >
+          <div class="card-body">
+            <ul class="list-group list-group-flush" >
+              <li class="list-group-item">{{publication.vehicle.type}}</li>
+              <li class="list-group-item">{{publication.vehicle.description}}</li>
+              <li class="list-group-item">{{publication.vehicle.capacity}}</li>
+            </ul>
+          </div>
+          <img *ngIf="publication.vehicle" class="card-img-bottom" src="{{publication.vehicle.photo}}" alt="Vehicle Photo">
+        </div>
 
-                <div class="card bg-info"><!-- AGREGADO *ngIf PARA AUTENTICACION -->
-                  <div class="card-header">
-                    Vehicle
-                  </div>
+        <div class="card card-1" *ngIf="publication.acquireLocation" >
+          <div class="card-header text-white bg-dark mb-3">
+            Acquire Location
+          </div>
 
-                  <div class="card-body" *ngIf="publication.vehicle">
-                    <ul class="list-group list-group-flush" >
-                      <li class="list-group-item">{{publication.vehicle.type}}</li>
-                      <li class="list-group-item">{{publication.vehicle.description}}</li>
-                      <li class="list-group-item">{{publication.vehicle.capacity}}</li>
-                    </ul>
-                  </div>
-                  <img *ngIf="publication.vehicle" class="card-img-bottom" src="{{publication.vehicle.photo}}" alt="Card image cap">
-                </div>
+          <div class="card-body">
+            <ul class="list-group list-group-flush" >
+              <li class="list-group-item">{{publication.acquireLocation.adressName}}</li>
+            </ul>
+          </div>
+        </div>
 
+        <div class="card card-1" *ngIf="publication.returnLocations" >
+          <div class="card-header text-white bg-dark mb-3">
+            Return Locations
+          </div>
+
+          <div class="card-body">
+            <ul class="list-group list-group-flush" >
+              <li *ngFor="let location of publication.returnLocations" class="list-group-item">{{location.adressName}}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card card-1" *ngIf="publication.costPerHour" >
+          <div class="card-header text-white bg-dark mb-3">
+            Cost
+          </div>
+
+          <div class="card-body">
+            <ul class="list-group list-group-flush" >
+              <li  class="list-group-item">{{publication.costPerHour.currency}}</li>
+              <li  class="list-group-item">{{publication.costPerHour.amount}}</li>
+            </ul>
+          </div>
+        </div>
+
+
+    </div>
+
+      <div class="col-lg-8 col-8" >
+        <div *ngIf="moment == 'vehicle'"  >
+          
+          <div class="alert alert-primary" role="alert">
+            Select a Vehicle
+          </div>
+
+          <app-vehicle-list (onComplete)='saveVehicle($event)'>  </app-vehicle-list>
+        
+        </div>
+
+        <div *ngIf="moment == 'acquire'" >
+          <div class="alert alert-primary" role="alert">
+            Select the location where the vehicle will be retired
+          </div>
+
+          <app-googlemaps (onComplete)='saveAcquireLocation($event)'> </app-googlemaps>
+
+        </div>
+
+
+        <div *ngIf="moment == 'return'">
+          <div>
+             <div class="alert alert-primary" role="alert">
+                Select the locations where the vehicle will be returned
+              </div>
+
+            <app-googlemaps (onComplete)='addReturnLocation($event)'> </app-googlemaps>
+
+            <br>
+            <button (click)='finishReturnLocation()'class="btn btn-success" [disabled]='returnLocations.length == 0'> Finish </button>
+
+          </div>
+        </div>
+
+        <div *ngIf="moment == 'cost'">
+          <div>
+            <div class="alert alert-primary" role="alert">
+                Select cost per hour
             </div>
 
-              <div class="col-6" >
-                <div *ngIf="moment == 'vehicle'"  >
-                
-                  <app-vehicle-list (onComplete)='saveVehicle($event)'>  </app-vehicle-list>
-                
-                </div>
+            <app-cost-definer (onComplete)='saveCost($event)' > </app-cost-definer>
+          </div>
+        </div>
 
-                <div *ngIf="moment == 'acquire'" >
-
-                  <app-googlemaps (onComplete)='saveAcquireLocation($event)'> </app-googlemaps>
-
-                </div>
-
-
-                <div *ngIf="moment == 'return'">
-                  <div>
-                    <label>Return Locations</label>
-
-                    <app-googlemaps (onComplete)='addReturnLocation($event)'> </app-googlemaps>
-
-                    <button (click)='finishReturnLocation()'class="btn btn-success" [disabled]='returnLocations.length == 0'> Save Locations </button>
-
-                  </div>
-                </div>
-
-                <div *ngIf="moment == 'cost'">
-                  <div>
-                    <label>implementar el seteo del costo</label>
-                      <app-cost-definer (onComplete)='saveCost($event)' > </app-cost-definer>
-                  </div>
-                </div>
-
-                <button (click)='createPublication()'  [disabled]="!moment == 'finish'" class="btn btn-success"> Create Publication </button>
-              </div>
+        <br>
+        <button (click)='createPublication()'  [disabled]=" moment != 'complete' " class="btn btn-success"> Save Publication </button>
+      </div>
         
     </div>
-</div>

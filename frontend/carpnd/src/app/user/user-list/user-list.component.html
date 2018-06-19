@@ -1,14 +1,8 @@
-<div class="container">
-  <div class="form-group" > <!-- AGREGADO PARA AUTENTICACION -->
-    <!--<h1>User list</h1>-->
-  </div> <!-- AGREGADO PARA AUTENTICACION -->
-
-  <!-- AGREGADO PARA AUTENTICACION -->
-  <div class="form-group" *ngIf="!authService.isLoggedIn">
-    <h1>Access denied, Please log in </h1>
+ <div class="form-group" >
+    <h1>User list</h1>
   </div>
-  <!-- FIN AGREGADO -->
-<table class="table" > <!-- AGREGADO *ngIf PARA AUTENTICACION -->
+
+<table class="table" >
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -21,7 +15,6 @@
     </tr>
   </thead>
 
-
   <tbody>
     <tr *ngFor="let user of userList" >
       <th scope="row">1</th>
@@ -29,10 +22,10 @@
       <td>{{user.lastName}}</td>
       <td>{{user.cuil}}</td>
       <td>{{user.email}}</td>
-      <td>  <button type='button' (click)="edit(user)" ><span class="oi oi-pencil"></span></button> </td>
-      <td>  <button type='button' (click)="delete(user)" ><span class="oi oi-trash"></span></button> </td>
+      <td>  <span (click)="edit(user)" class="oi oi-pencil clickeable"></span></td>
+      <td>  <span (click)="delete(user)" class="oi oi-trash clickeable"></span></td>
     </tr>
   </tbody>
 </table>
-</div>
+
 

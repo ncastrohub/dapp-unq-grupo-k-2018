@@ -1,13 +1,8 @@
-<div class="container">
 
-  <!-- AGREGADO PARA AUTENTICACION -->
-  <div class="form-group" *ngIf="!authService.isLoggedIn">
-    <h1> Access denied, Please log in </h1>
-  </div>
+    <div class='col col-md-8 offset-md-2'>
 
-  <!-- FIN AGREGADO -->
     <div *ngFor="let error of errorList" class="alert alert-danger" role="alert">
-      {{error}}
+      {{error | json }}
     </div>
 
     <form (ngSubmit)="onSubmit()" #vehicleForm="ngForm">
@@ -46,4 +41,5 @@
       <!-- AGREGADO *ngIf PARA AUTENTICACION -->
 
     </form>
-</div>
+
+    </div>

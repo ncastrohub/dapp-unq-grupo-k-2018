@@ -2,10 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../user'
 import { Router } from '@angular/router';
 import { UserServiceService } from '../service/user-service.service';
-
-// AGREGADO PARA AUTENTICACION
 import { AuthService } from '../../auth/auth.service';
-// FIN AGREGADO
 
 @Component({
   selector: 'app-user-list',

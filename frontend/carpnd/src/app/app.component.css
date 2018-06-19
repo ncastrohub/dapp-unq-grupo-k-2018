@@ -1,5 +1,5 @@
 /* Application-wide Styles */
-h1 {
+/*h1 {
   color: #369;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 250%;
@@ -15,12 +15,34 @@ body {
 body, input[text], button {
   color: #888;
   font-family: Cambria, Georgia;
-}
+}*/
 /* everywhere else */
+/*
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
 
 agm-map {
   height: 300px;
+}*/
+
+
+.card {
+  border-radius: 2px;
+}
+
+.card-2 {
+
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.clickeable {
+     cursor:pointer;
+     color:blue;
+     text-decoration:underline;
+}
+
+.clickeable:hover {
+     text-decoration:none;
+     text-shadow: 1px 1px 1px #555;
 }
