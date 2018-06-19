@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { Publication, ReserveParameters } from './publication';
 import { Page, CreatePublication } from './publication';
 
+import { Subject }    from 'rxjs';
+
 @Injectable()
 export class PublicationService {
 
@@ -24,6 +26,14 @@ export class PublicationService {
 
   makeReservation(parameters: ReserveParameters): Observable<any> {
     return this.http.post<any>( this.config.serveUrl + 'reservation/reserve/', parameters);
+  }
+
+  private datesListSource = new Subject<number[][]>();
+ 
+  datesList$ = this.datesListSource.asObservable();
+ 
+  setList(dates: number[][]) {
+    this.datesListSource.next(dates);
   }
 
 }

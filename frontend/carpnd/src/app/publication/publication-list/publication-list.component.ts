@@ -10,7 +10,7 @@ import { AuthService } from '../../auth/auth.service';
 @Component({
   selector: 'app-publication-list',
   templateUrl: './publication-list.component.html',
-  styleUrls: ['./publication-list.component.css']
+  styleUrls: ['./publication-list.component.css', '../../app.component.css']
 })
 
 export class PublicationListComponent implements OnInit {

@@ -1,10 +1,7 @@
 package model;
 
-public class WaitingForOwnerState extends ReservationState {
+public class WaitingForOwnerState {
 
-    @Override
-    public Boolean getWaitingForOwner() {
-        return true;
-    }
+
 
 }

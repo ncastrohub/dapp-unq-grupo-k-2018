@@ -1,42 +1,46 @@
-<p>
+<h1>
   Publication detail
-</p>
+</h1>
+<div >
+	<div class='col-6 offset-3'>
+		<img class="card-img-top" [src]="publication.vehicle.photo" alt="Card image cap">
+		<div class="card-body">
+		  <h5 class="card-title"></h5>
+		  <p class="card-text">{{publication.vehicle.description}}</p>
+		  <p class="card-text">Capcity: {{publication.vehicle.capacity}}</p>
+		  <p class="card-text">Type: {{publication.vehicle.type}}</p>
+		  <p class="card-text">Acquire Location: <br> {{publication.acquireLocation.adressName}}</p>
+		  <p class="card-text">Cost: {{publication.costPerHour.amount}} {{publication.costPerHour.currency}}</p>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+
+			<div class='col-5'>
+
+				<ngbd-datepicker-config *ngIf="publication"  (onComplete)="addReservationDays($event)"> </ngbd-datepicker-config>
+
+			</div>
+			<div class='col-4 offset-1'>
+				<div class="form-group">
+					<label for="costumerId">Costumer Id</label>
+					<input type="number" class="form-control" id="costumerId"
+				 	required 
+				 	[(ngModel)]="costumerId" name="costumerId"/>
+				</div>
+			<label for="costumerId">Return Location</label>
+			<div *ngIf="publication" class="list-group">
+			  <button *ngFor="let location of publication.returnLocations" (click)="setReturnLocation(location)" type="button" class="list-group-item list-group-item-action">{{location.adressName}}</button>
+			</div>
+			</div>
+			
+	</div>
+	<div class="row">
+	</div>
+
+<button class="btn btn-warning btn-lg btn-block" [disabled]="!parameters.reservationDays || !costumerId || !parameters.returnLocation" (click)="makeReservation()" > Reservar </button>
 
 
-<div>
-<code>
-{{ publication | json }}
-</code>
-
-</div>
-
-
-<br>
-
-<div>
-
-<ngbd-datepicker-config (onComplete)="addReservationDays($event)"> </ngbd-datepicker-config>
-
-
-<div class="form-group">
-	<label for="costumerId">Costumer Id</label>
-	<input type="number" class="form-control" id="costumerId"
- 	required 
- 	[(ngModel)]="costumerId" name="costumerId"/>
-</div>
-
-<div *ngIf="publication" class="list-group">
-  <button *ngFor="let location of publication.returnLocations" (click)="setReturnLocation(location)" type="button" class="list-group-item list-group-item-action">{{location.adressName}}</button>
-  
-</div>
-
-
-<button (click)="makeReservation()" > Reservar </button>
-
-{{reservationDays | json}}
-  {{costumerId}}
-
-
-  {{parameters | json}}
+{{parameters | json}}
 
 </div>

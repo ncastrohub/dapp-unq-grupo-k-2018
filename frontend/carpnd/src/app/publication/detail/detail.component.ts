@@ -25,8 +25,9 @@ export class DetailComponent implements OnInit {
     let publicationId = this.route.snapshot.paramMap.get('publicationId');
 		this.route.queryParams.subscribe(params => {
 			this.service.getPublication(publicationId).subscribe(data => {
-				this.publication = data;
-			})   
+        this.publication = data;
+        this.service.setList(this.publication.enabledDays.disabledDays)
+			})
 	  })
   }
 

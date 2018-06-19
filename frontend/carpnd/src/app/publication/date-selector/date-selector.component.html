@@ -1,7 +1,27 @@
-<ngb-datepicker [(ngModel)]="model"></ngb-datepicker>
+<div class="form-group">
 
-<button (click)="addDay()" class="btn btn-success">Add to reserve</button>
+	<div class="row">
+			<div class="col-6">
+				
+			<ngb-datepicker [(ngModel)]="model"></ngb-datepicker>
+				
+			</div>
 
-<button (click)="complete()" [disabled]="dateList.length <= 0" class="btn btn-success">Finish</button>
+			<div class="col-6">
+				
+			<ul class="list-group">
+			  <li *ngFor="let date of dateList" class="list-group-item">{{date[2]}}/{{date[1]}}/{{date[0]}}</li>
+			</ul>
+				
+			</div>
+	</div>
 
-{{ dateList | json }}
+</div>
+
+<div class="form-group">
+<button (click)="addDay()" class="btn btn-success btn-lg">Reserve day</button>
+<br>
+<br>
+<button (click)="complete()" [disabled]="dateList.length <= 0" class="btn btn-success btn-lg">Finish</button>
+</div>
+

@@ -1,11 +1,14 @@
 package model;
 
-public abstract class ReservationState extends IdModel {
+public class ReservationState extends IdModel {
 
     public Boolean waitingForOwner;
 
-    public abstract Boolean getWaitingForOwner();
+    public Boolean getWaitingForOwner() {
+        return true;
+    }
 
-    ReservationState(){}
+    public void setWaitingForOwner(Boolean state) {
 
+    }
 }
