@@ -14,15 +14,12 @@ import { AuthService } from '../../auth/auth.service';
 })
 export class CreateuserComponent {
 
-// MODIFICADO PARA AUTENTICACION
- constructor(private service: UserServiceService, private router: Router, public authService: AuthService) {
-// FIN MODIFICADO
+ constructor(private service: UserServiceService, private router: Router
+            , public authService: AuthService) {   // MODIFICADO PARA AUTENTICACION
 
-    this.user = new User();
 //Lee los datos del usuario
     if (this.authService.isLoggedIn){
-      this.user.name = authService.userProfile.name;
-      this.user.email = authService.userProfile.email;
+      this.user = authService.user;
     }
   }
 

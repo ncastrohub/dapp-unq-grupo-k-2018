@@ -4,6 +4,8 @@ import * as auth0 from 'auth0-js';
 import { environment } from './../../environments/environment';
 import { Router } from '@angular/router';
 
+import { User } from '../user/user';
+
 (window as any).global = window;
 
 @Injectable()
@@ -20,6 +22,7 @@ export class AuthService {
   // Store authentication data
   expiresAt: number;
   userProfile: any;
+  user : User;      // AGREGADO PARA TENER USUARIOS
   accessToken: string;
   authenticated: boolean;
 
@@ -68,7 +71,12 @@ export class AuthService {
     this.accessToken = authResult.accessToken;
     this.userProfile = profile;
     this.authenticated = true;
-  }
+ // AGREGADO PARA TENER USUARIOS
+    this.user = new User();
+    this.user.name = this.userProfile.name;
+    this.user.email = this.userProfile.email;
+ // FIN AGREGADO PARA TENER USUARIOS
+    }
 
   logout() {
     // Log out of Auth0 session
