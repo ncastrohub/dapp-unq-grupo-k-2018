@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../user';
-import { Observable ,  BehaviorSubject } from 'rxjs';
+import { Observable, of,  BehaviorSubject } from 'rxjs';
 import { AppConfig } from '../../config';
 
 @Injectable()
@@ -11,6 +11,13 @@ export class UserServiceService {
   userObservable = this.userSource.asObservable();
 
   constructor(private http: HttpClient, private config: AppConfig) { }
+
+  getUser(user : User): Observable<User> {
+    user.lastName = "mocked";
+    return of(user);
+
+    //    return this.http.get<User>( url: this.config.serveUrl + 'publication/user/get/{{user.email}}');
+  }
 
   getUserList(): Observable<[User]> {
   	return this.http.get<[User]>( this.config.serveUrl + 'publication/user/list');
@@ -29,7 +36,7 @@ export class UserServiceService {
   }
 
   loadUserToEdit(user: User) {
-    this.userSource.next(user); 
+    this.userSource.next(user);
   }
 
 }

@@ -12,6 +12,12 @@
     <div *ngFor="let error of errorList" class="alert alert-danger" role="alert">
       {{error}}
     </div>
+
+<div *ngIf="authService.isLoggedIn">
+ PARA PRUEBA: "{{user.name}}" "{{user.lastName}}"   "{{user.cuil}}"  "{{user.email}}"
+</div>
+
+
     <form (ngSubmit)="onSubmit()" #userForm="ngForm">
 
 		<div class="form-group" *ngIf="authService.isLoggedIn"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
@@ -34,7 +40,8 @@
          [(ngModel)]="user.email" name="email"/>
        </div>
 
-      <button type="submit" *ngIf="authService.isLoggedIn" [disabled]="!userForm.form.valid" class="btn btn-success">Create</button>
+      <button type="submit" *ngIf="authService.isLoggedIn"
+              [disabled]="!userForm.form.valid" class="btn btn-success">Edit</button>
       <!-- AGREGADO *ngIf PARA AUTENTICACION -->
 
     </form>

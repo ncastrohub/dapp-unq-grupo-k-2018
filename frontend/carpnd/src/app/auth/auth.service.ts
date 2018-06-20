@@ -4,7 +4,10 @@ import * as auth0 from 'auth0-js';
 import { environment } from './../../environments/environment';
 import { Router } from '@angular/router';
 
+// AGREGADO PARA TENER USUARIOS
 import { User } from '../user/user';
+import { UserServiceService } from '../user/service/user-service.service';
+// FIN AGREGADO PARA TENER USUARIOS
 
 (window as any).global = window;
 
@@ -26,7 +29,8 @@ export class AuthService {
   accessToken: string;
   authenticated: boolean;
 
-  constructor(private router: Router) {
+  constructor(private userService : UserServiceService  // MODIFICADO PARA TENER USUARIOS
+    , private router: Router) {
     this.getAccessToken();
   }
 
@@ -75,7 +79,9 @@ export class AuthService {
     this.user = new User();
     this.user.name = this.userProfile.name;
     this.user.email = this.userProfile.email;
- // FIN AGREGADO PARA TENER USUARIOS
+    this.userService.getUser(this.user)
+      .subscribe(user => this.user = user);
+// FIN AGREGADO PARA TENER USUARIOS
     }
 
   logout() {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../user';
 import { UserServiceService } from '../service/user-service.service';
 import { Router } from '@angular/router';
@@ -16,17 +16,25 @@ export class CreateuserComponent {
 
  constructor(private service: UserServiceService, private router: Router
             , public authService: AuthService) {   // MODIFICADO PARA AUTENTICACION
-
-//Lee los datos del usuario
-    if (this.authService.isLoggedIn){
-      this.user = authService.user;
-    }
   }
 
+//  @Input()
   user:User;
 
   submitted = false;
   errorList = [];
+
+// MODIFICADO
+  getUser() : void {
+    if (this.authService.isLoggedIn) {
+      this.user = this.authService.user;
+    }
+  }
+
+  ngOnInit() {
+     this.getUser();
+  }
+// FIN MODIFICADO
 
   onSubmit() {
 	  this.service.createUser(this.user).subscribe(
