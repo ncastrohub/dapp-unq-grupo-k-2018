@@ -121,7 +121,7 @@ public class PublishApi {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
         }
     }
-// FIN AGREGADO
+// FIN AGREGADO PARA PROCESAR USUARIOS
 
     @POST
     @Consumes("application/json")

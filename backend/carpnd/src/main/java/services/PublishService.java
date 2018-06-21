@@ -110,7 +110,7 @@ public class PublishService {
 
     }
 
-// AGREGADO PARA USUARIOS
+// AGREGADO PARA PROCESAR USUARIOS
 public User getByEmail(UserForm userForm) throws FormValidationError {
     GenericValidator.validate(userForm);
     User userInDb;
@@ -122,7 +122,7 @@ public User getByEmail(UserForm userForm) throws FormValidationError {
     this.userService.update(userInDb);
     return userInDb;
 }
-// FIN AGREGADO PARA USUARIOS
+// FIN AGREGADO PARA PROCESAR USUARIOS
 
     public User retriveUser(Long id) {
         return this.userService.findById(id);
