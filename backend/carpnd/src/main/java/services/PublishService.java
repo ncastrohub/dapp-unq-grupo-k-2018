@@ -2,6 +2,7 @@ package services;
 
 
 import api.forms.*;
+import javassist.NotFoundException;
 import model.*;
 import model.exceptions.*;
 import org.joda.time.LocalDate;
@@ -108,6 +109,20 @@ public class PublishService {
         this.userService.update(userInDb);
 
     }
+
+// AGREGADO PARA USUARIOS
+public User getByEmail(UserForm userForm) throws FormValidationError {
+    GenericValidator.validate(userForm);
+    User userInDb;
+    try {
+        userInDb = this.userService.findByEmail(userForm.email);
+    } catch (NotFoundException notFoundError) {
+        userInDb = this.createUser(userForm);
+    }
+    this.userService.update(userInDb);
+    return userInDb;
+}
+// FIN AGREGADO PARA USUARIOS
 
     public User retriveUser(Long id) {
         return this.userService.findById(id);

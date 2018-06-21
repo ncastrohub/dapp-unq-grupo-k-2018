@@ -14,9 +14,9 @@ export class UserServiceService {
 
   getUser(user : User): Observable<User> {
     user.lastName = "mocked";
-    return of(user);
+    if (!user.cuil) { user.cuil = "-emptyCUIL-"}
 
-    //    return this.http.get<User>( url: this.config.serveUrl + 'publication/user/get/{{user.email}}');
+    return this.http.post<User>(this.config.serveUrl + 'publication/user/getByEmail/', user);
   }
 
   getUserList(): Observable<[User]> {

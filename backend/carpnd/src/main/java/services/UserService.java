@@ -1,8 +1,10 @@
 package services;
 
+import javassist.NotFoundException;
 import model.User;
 import model.Vehicle;
 import org.springframework.transaction.annotation.Transactional;
+import java.util.List;
 
 import java.io.Serializable;
 
@@ -19,5 +21,14 @@ public class UserService extends GenericService<User> {
         return user;
     }
 
+    @Transactional
+    public User findByEmail(String email) throws NotFoundException {
+        User user = new User();
+        user.email = email;
+        List<User> userList = this.getRepository().findByExample(user);
+        if (userList.isEmpty())
+              { throw new NotFoundException(""); }
+         else { return userList.get(0); }
+    }
 
 }

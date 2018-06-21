@@ -107,6 +107,22 @@ public class PublishApi {
         }
     }
 
+// AGREGADO PARA PROCESAR USUARIOS
+    @POST
+    @Path(value = "/user/getByEmail/")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response getUserByEmail(UserForm userF) {
+        try {
+
+            User theUser = publishService.getByEmail(userF);
+            return Response.ok(theUser).build();
+        } catch (FormValidationError formValidationError) {
+            return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
+        }
+    }
+// FIN AGREGADO
+
     @POST
     @Consumes("application/json")
     @Produces("application/json")
