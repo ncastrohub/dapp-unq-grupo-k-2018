@@ -18,8 +18,7 @@ export class CreateuserComponent {
             , public authService: AuthService) {   // MODIFICADO PARA AUTENTICACION
   }
 
-//  @Input()
-  user:User;
+  user : User;
 
   submitted = false;
   errorList = [];
@@ -37,7 +36,7 @@ export class CreateuserComponent {
 // FIN MODIFICADO
 
   onSubmit() {
-	  this.service.createUser(this.user).subscribe(
+	  this.service.updateUser(this.user).subscribe(
 	    data => {
 	      this.router.navigate(['/user/list']);
 	    },

@@ -13,8 +13,8 @@ export class UserServiceService {
   constructor(private http: HttpClient, private config: AppConfig) { }
 
   getUser(user : User): Observable<User> {
-    user.lastName = "mocked";
-    if (!user.cuil) { user.cuil = "-emptyCUIL-"}
+    if (!user.lastName) { user.lastName = "-emptyLastname-"; }
+    if (!user.cuil)     { user.cuil     = "-emptyCUIL-";     }
 
     return this.http.post<User>(this.config.serveUrl + 'publication/user/getByEmail/', user);
   }
