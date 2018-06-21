@@ -36,6 +36,10 @@ public class PublishApi {
         this.publishService = service;
     }
 
+// //////////////////////////////////////////////////7
+// VEHICLES
+// //////////////////////////////////////////////////7
+
     @GET
     @Path("/{userId}/vehicle/list")
     @Produces("application/json")
@@ -48,14 +52,6 @@ public class PublishApi {
         List vehicleList = publishService.getVehiclesForUser(new Long(userId));
         return Response.ok(vehicleList).build();
     }
-
-    @GET
-    @Path("/user/list")
-    @Produces("application/json")
-    public Response getUserList() {
-        return Response.ok(publishService.getUsers()).build();
-    }
-
 
     @POST
     @Path(value = "/{userId}/vehicle/new")
@@ -92,6 +88,17 @@ public class PublishApi {
         } catch (FormValidationError formValidationError) {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
         }
+    }
+
+// //////////////////////////////////////////////////7
+// USERS
+// //////////////////////////////////////////////////7
+
+    @GET
+    @Path("/user/list")
+    @Produces("application/json")
+    public Response getUserList() {
+        return Response.ok(publishService.getUsers()).build();
     }
 
     @POST
@@ -144,6 +151,10 @@ public class PublishApi {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
         }
     }
+
+// //////////////////////////////////////////////////7
+// PUBLICATION
+// //////////////////////////////////////////////////7
 
     @GET
     @Consumes("application/json")
