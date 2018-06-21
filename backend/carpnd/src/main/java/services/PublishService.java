@@ -47,7 +47,6 @@ public class PublishService {
         this.userService = userService;
     }
 
-
     public void setVehicleService(VehicleService vehicleService) {
         this.vehicleService = vehicleService;
     }

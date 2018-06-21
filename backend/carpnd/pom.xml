@@ -365,43 +365,6 @@
             <version>2.9.5</version>
         </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>com.fasterxml.jackson.module</groupId>-->
-            <!--<artifactId>jackson-module-parameter-names</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>com.fasterxml.jackson.datatype</groupId>-->
-            <!--<artifactId>jackson-datatype-jdk8</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>com.fasterxml.jackson.datatype</groupId>-->
-            <!--<artifactId>jackson-datatype-jsr310</artifactId>-->
-        <!--</dependency>-->
-
-
-        <!--<dependency>-->
-            <!--<groupId>org.codehaus.jackson</groupId>-->
-            <!--<artifactId>jackson-mapper-asl</artifactId>-->
-            <!--<version>${jackson.version}</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>org.codehaus.jackson</groupId>-->
-            <!--<artifactId>jackson-jaxrs</artifactId>-->
-            <!--<version>${jackson.version}</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>com.fasterxml.jackson.core</groupId>-->
-            <!--<artifactId>jackson-annotations</artifactId>-->
-            <!--<version>2.9.1</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>org.codehaus.jackson</groupId>-->
-            <!--<artifactId>jackson-xc</artifactId>-->
-            <!--<version>${jackson.version}</version>-->
-        <!--</dependency>-->
 
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
@@ -409,56 +372,6 @@
             <version>2.8.5</version>
         </dependency>
 
-
-        <!--<dependency>-->
-            <!--<groupId>com.fasterxml.jackson.core</groupId>-->
-            <!--<artifactId>jackson-core</artifactId>-->
-            <!--<version>2.9.5</version>-->
-        <!--</dependency>-->
-
-        <!-- /Jackson -->
-
-
-        <!--<dependency>-->
-        <!--<groupId>org.mortbay.jetty</groupId>-->
-        <!--<artifactId>jetty</artifactId>-->
-        <!--<version>${jetty.version}</version>-->
-        <!--<scope>provided</scope>-->
-        <!--<exclusions>-->
-        <!--<exclusion>-->
-        <!--<groupId>org.mortbay.jetty</groupId>-->
-        <!--<artifactId>servlet-api-2.5</artifactId>-->
-        <!--</exclusion>-->
-        <!--</exclusions>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-        <!--<groupId>org.mortbay.jetty</groupId>-->
-        <!--<artifactId>jetty-util</artifactId>-->
-        <!--<version>${jetty.version}</version>-->
-        <!--<scope>provided</scope>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-        <!--<groupId>org.mortbay.jetty</groupId>-->
-        <!--<artifactId>jetty-management</artifactId>-->
-        <!--<version>${jetty.version}</version>-->
-        <!--<scope>provided</scope>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-        <!--<groupId>org.mortbay.jetty</groupId>-->
-        <!--<artifactId>jetty-naming</artifactId>-->
-        <!--<version>${jetty.version}</version>-->
-        <!--<scope>provided</scope>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-        <!--<groupId>org.mortbay.jetty</groupId>-->
-        <!--<artifactId>jetty-plus</artifactId>-->
-        <!--<version>${jetty.version}</version>-->
-        <!--<scope>provided</scope>-->
-        <!--</dependency>-->
 
 
         <dependency>
@@ -487,48 +400,20 @@
             <artifactId>cxf-rt-rs-security-cors</artifactId>
             <version>2.6.1</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.fasterxml.jackson.datatype</groupId>-->
-            <!--<artifactId>jackson-datatype-jsr310</artifactId>-->
-            <!--<version>2.7.1</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>com.fasterxml.jackson.datatype</groupId>-->
-            <!--<artifactId>jackson-datatype-jsr310</artifactId>-->
-            <!--<version>2.7.1</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>com.fasterxml.jackson.datatype</groupId>-->
-            <!--<artifactId>jackson-datatype-jsr310</artifactId>-->
-            <!--<version>2.7.1</version>-->
-        <!--</dependency>-->
 
-        <!-- ///////////////////////////////////////////// -->
-        <!-- ///////////Authorization Server////////////// -->
-        <!-- ///////////////////////////////////////////// -->
 
-        <!--TOMADO DE: http://www.baeldung.com/rest-api-spring-oauth2-angularjs-->
-        <!-- SECCION 2.1. Maven Configuration-->
 
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-web</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework</groupId>-->
-            <!--<artifactId>spring-jdbc</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>mysql</groupId>-->
-            <!--<artifactId>mysql-connector-java</artifactId>-->
-            <!--<scope>runtime</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.security.oauth</groupId>-->
-            <!--<artifactId>spring-security-oauth2</artifactId>-->
-            <!--<version>2.3.3.RELEASE</version>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; SECCION 2.1. FIN&ndash;&gt;-->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>1.8.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.8.9</version>
+        </dependency>
 
     </dependencies>
 

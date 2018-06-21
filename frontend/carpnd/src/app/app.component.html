@@ -43,14 +43,14 @@
               <!-- FROM https://auth0.com/authenticate/angular2/google-apps/ -->
                 <button
                   class="btn btn-success"
-                  *ngIf="!authService.isLoggedIn"
+                  *ngIf="!authService.isAuthenticated()"
                   (click)="authService.login()">
                   Log In
                 </button>
 
                 <button
                   class="btn btn-danger"
-                  *ngIf="authService.isLoggedIn"
+                  *ngIf="authService.isAuthenticated()"
                   (click)="authService.logout()">
                     Log Out
                 </button>

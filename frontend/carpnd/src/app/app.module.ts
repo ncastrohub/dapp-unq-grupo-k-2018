@@ -26,15 +26,16 @@ import { DateSelectorComponent } from './publication/date-selector/date-selector
 import { MomentModule } from 'angular2-moment/moment.module';
 import { CostDefinerComponent } from './publication/cost-definer/cost-definer.component';
 import { ReservationService } from './reservation/reservation.service';
-
-
-// AGREGADO PARA AUTENTICACION
-import { AuthService } from "./auth/auth.service";
-import { CallbackComponent } from './callback.component';
 import { DetailComponent } from './publication/detail/detail.component';
 import { VehicleListComponent } from './vehicle/vehicle-list/vehicle-list.component';
 import { ReservationDetailComponent } from './reservation/reservation-detail/reservation-detail.component';
-// FIN AGREGADO
+
+
+import { AuthService } from "./auth/auth.service";
+import { CallbackComponent } from './callback.component';
+
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './auth/token.bearer.interceptor';
 
 @NgModule({
   declarations: [
@@ -68,15 +69,19 @@ import { ReservationDetailComponent } from './reservation/reservation-detail/res
     }),
     NgbModule.forRoot()
   ],
-  providers: [VehicleService,
-  // AGREGADO PARA AUTENTICACION
-      AuthService,
-  // FIN AGREGADO
-  ReservationService,
-  UserServiceService,
-  AppConfig,
-  PublicationService,
-  { provide: LOCALE_ID, useValue: 'en' }],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    },
+    VehicleService,
+    AuthService,
+    ReservationService,
+    UserServiceService,
+    AppConfig,
+    PublicationService,
+    { provide: LOCALE_ID, useValue: 'en' }],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

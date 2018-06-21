@@ -20,9 +20,9 @@ export class CreateuserComponent {
 
     this.user = new User();
 //Lee los datos del usuario
-    if (this.authService.isLoggedIn){
-      this.user.name = authService.userProfile.name;
-      this.user.email = authService.userProfile.email;
+    if (this.authService.isAuthenticated()){
+      // this.user.name = authService.userProfile.name;
+      // this.user.email = authService.userProfile.email;
     }
   }
 
