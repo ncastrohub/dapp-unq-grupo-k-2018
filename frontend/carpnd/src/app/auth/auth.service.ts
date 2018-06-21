@@ -25,7 +25,6 @@ export class AuthService {
   // Store authentication data
   expiresAt: number;
   userProfile: any;
-  user : User;      // AGREGADO PARA TENER USUARIOS
   accessToken: string;
   authenticated: boolean;
 
@@ -76,11 +75,8 @@ export class AuthService {
     this.userProfile = profile;
     this.authenticated = true;
  // AGREGADO PARA TENER USUARIOS
-    this.user = new User();
-    this.user.name = this.userProfile.name;
-    this.user.email = this.userProfile.email;
-    this.userService.getUser(this.user)
-      .subscribe(user => this.user = user);
+    this.userService.setAuthService(this);
+    this.userService.getAUser(this.userProfile)
 // FIN AGREGADO PARA TENER USUARIOS
     }
 

@@ -29,8 +29,15 @@
       <td>{{user.lastName}}</td>
       <td>{{user.cuil}}</td>
       <td>{{user.email}}</td>
+<!-- NO ESTAN FUNCIONANDO
       <td>  <button type='button' (click)="edit(user)" ><span class="oi oi-pencil"></span></button> </td>
-      <td>  <button type='button' (click)="delete(user)" ><span class="oi oi-trash"></span></button> </td>
+-->
+      <td>  <button type='button'
+                    *ngIf="service.getLoggedUser().id==user.id"
+                    (click)="editLoggedUser()" ><span class="oi oi-pencil"></span></button> </td>
+      <td>  <button type='button'
+                    *ngIf="service.getLoggedUser().id==user.id"
+                    (click)="delete(user.id)" ><span class="oi oi-trash"></span></button> </td>
     </tr>
   </tbody>
 </table>

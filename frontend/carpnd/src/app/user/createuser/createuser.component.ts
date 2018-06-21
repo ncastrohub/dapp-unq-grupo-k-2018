@@ -26,7 +26,7 @@ export class CreateuserComponent {
 // MODIFICADO
   getUser() : void {
     if (this.authService.isLoggedIn) {
-      this.user = this.authService.user;
+      this.user = this.service.user;
     }
   }
 

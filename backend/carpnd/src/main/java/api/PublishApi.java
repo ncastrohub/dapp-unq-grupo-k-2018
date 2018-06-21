@@ -130,12 +130,12 @@ public class PublishApi {
     }
 // FIN AGREGADO PARA PROCESAR USUARIOS
 
-    @POST
+    @GET
     @Consumes("application/json")
     @Produces("application/json")
-    @Path(value = "/user/delete/")
-    public Response deleteUser(UserUpdateForm userForm) {
-        publishService.deleteUser(userForm.id);
+    @Path(value = "/user/delete/{userId}/")
+    public Response deleteUser(@PathParam("userId") Long userId) {
+        publishService.deleteUser(userId);
         return Response.ok().build();
     }
 

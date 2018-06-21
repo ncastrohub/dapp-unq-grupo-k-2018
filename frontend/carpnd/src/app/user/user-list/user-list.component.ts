@@ -19,7 +19,7 @@ export class UserListComponent implements OnInit {
   errorList = [];
   userList: [User];
 
-   constructor(private service: UserServiceService, private router:Router, public authService: AuthService) { }
+   constructor(public service: UserServiceService, private router:Router, public authService: AuthService) { }
 
   ngOnInit() {
   	this.getUserList();
@@ -32,13 +32,17 @@ export class UserListComponent implements OnInit {
     );
   }
 
+  editLoggedUser(){
+    this.router.navigate(['/user/create']);
+  }
+
   edit(user:User){
     this.service.loadUserToEdit(user);
     this.router.navigate(['/user/edit']);
   }
 
-  delete(user:User){
-    this.service.deleteUser(user).subscribe(
+  delete(userId:number){
+    this.service.deleteUser(userId).subscribe(
       data => this.getUserList(),
       error => this.errorList.push(error)
     )
