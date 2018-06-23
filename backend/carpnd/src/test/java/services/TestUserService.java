@@ -32,7 +32,7 @@ public class TestUserService {
                 .withCUIL("1212312337")
                 .buildForm();
         User createdUser = this.publicationService.createUser(user);
-        User userOnDb = this.publicationService.retriveUser(createdUser.getId());
+        User userOnDb = this.publicationService.retrieveUser(createdUser.getId());
 
         assertThat(createdUser.getId()).isEqualTo(userOnDb.getId());
         assertThat(createdUser.name).isEqualTo(userOnDb.name);
@@ -75,7 +75,7 @@ public class TestUserService {
 
         this.publicationService.updateUser(updateForm);
 
-        User userUpdated = this.publicationService.retriveUser(createdUser.getId());
+        User userUpdated = this.publicationService.retrieveUser(createdUser.getId());
 
         assertThat(userUpdated.name).isEqualTo("Super Nachito");
         assertThat(userUpdated.lastName).isEqualTo("El mejor");

@@ -21,7 +21,6 @@ public class UserService extends GenericService<User> {
         return user;
     }
 
-// AGREGADO PARA PROCESAR USUARIOS
     @Transactional
     public User findByEmail(String email) throws NotFoundException {
         User user = new User();
@@ -31,6 +30,5 @@ public class UserService extends GenericService<User> {
               { throw new NotFoundException(""); }
          else { return userList.get(0); }
     }
-// FIN AGREGADO PARA PROCESAR USUARIOS
 
 }

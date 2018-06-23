@@ -14,20 +14,10 @@ import { AuthService } from '../../auth/auth.service';
 })
 export class CreateuserComponent {
 
-//  constructor(private service: UserServiceService, private router: Router, public authService: AuthService) {
-// // FIN MODIFICADO
-
-//     this.user = new User();
-// //Lee los datos del usuario
-//     if (this.authService.isAuthenticated()){
-//       // this.user.name = authService.userProfile.name;
-//       // this.user.email = authService.userProfile.email;
-//     }
-// =======
 constructor(private service: UserServiceService, private router: Router
             , public authService: AuthService) {}
 
-  user : User;
+  user = new User();
 
   submitted = false;
   errorList = [];

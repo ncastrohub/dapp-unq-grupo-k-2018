@@ -38,10 +38,6 @@ public class PublishApi {
         this.publishService = service;
     }
 
-// //////////////////////////////////////////////////7
-// VEHICLES
-// //////////////////////////////////////////////////7
-
     @GET
     @Path("/{userId}/vehicle/list")
     @Produces("application/json")
@@ -92,46 +88,6 @@ public class PublishApi {
         }
     }
 
-// //////////////////////////////////////////////////7
-// USERS
-// //////////////////////////////////////////////////7
-
-    @GET
-    @Path("/user/list")
-    @Produces("application/json")
-    public Response getUserList() {
-        return Response.ok(publishService.getUsers()).build();
-    }
-
-    @POST
-        @Path(value = "/user/new")
-    @Consumes("application/json")
-    @Produces("application/json")
-    public Response createUser(UserForm userF) {
-        try {
-            User newUser = publishService.createUser(userF);
-            return Response.ok(newUser).build();
-        } catch (FormValidationError formValidationError) {
-            return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
-        }
-    }
-
-// AGREGADO PARA PROCESAR USUARIOS
-    @POST
-    @Path(value = "/user/getByEmail/")
-    @Consumes("application/json")
-    @Produces("application/json")
-    public Response getUserByEmail(UserForm userF) {
-        try {
-
-            User theUser = publishService.getByEmail(userF);
-            return Response.ok(theUser).build();
-        } catch (FormValidationError formValidationError) {
-            return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
-        }
-    }
-// FIN AGREGADO PARA PROCESAR USUARIOS
-
     @GET
     @Consumes("application/json")
     @Produces("application/json")
@@ -153,10 +109,6 @@ public class PublishApi {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
         }
     }
-
-// //////////////////////////////////////////////////7
-// PUBLICATION
-// //////////////////////////////////////////////////7
 
     @GET
     @Consumes("application/json")
@@ -188,18 +140,18 @@ public class PublishApi {
         }
     }
 
-
-    @GET
-    @Consumes("application/json")
-    @Produces("application/json")
-    @Path(value = "/setup/")
-    public Response setup() {
-        User user = UserBuilder.someUser();
-        user.addVehicle(VehicleBuilder.some());
-        user.addVehicle(VehicleBuilder.some());
-        this.publishService.getUserService().save(user);
-        this.publishService.getUserService().save(UserBuilder.someUser());
-        return Response.ok("done").build();
-    }
+//
+//    @GET
+//    @Consumes("application/json")
+//    @Produces("application/json")
+//    @Path(value = "/setup/")
+//    public Response setup() {
+//        User user = UserBuilder.someUser();
+//        user.addVehicle(VehicleBuilder.some());
+//        user.addVehicle(VehicleBuilder.some());
+//        this.publishService.getUserService().save(user);
+//        this.publishService.getUserService().save(UserBuilder.someUser());
+//        return Response.ok("done").build();
+//    }
 
 }

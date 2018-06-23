@@ -7,10 +7,9 @@ import { CreateVehicleComponent } from './vehicle/create/create.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { CreateuserComponent } from './user/createuser/createuser.component';
 import { UsereditComponent } from './user/useredit/useredit.component';
-// AGREGADO PARA AUTENTICACION
 import { AuthGuard } from './auth/auth.guard';
+import { NotAuthGuard } from './auth/not-auth.guard';
 import { CallbackComponent } from './callback.component';
-// FIN AGREGADO
 import { PublicationListComponent } from './publication/publication-list/publication-list.component';
 import { PublicationCreateComponent } from './publication/publication-create/publication-create.component';
 import { GooglemapsComponent } from './maps/googlemaps/googlemaps.component';
@@ -20,30 +19,20 @@ import { ReservationDetailComponent } from './reservation/reservation-detail/res
 const routes: Routes = [
   { path: 'vehicle/create', component: CreateVehicleComponent },
   { path: 'vehicle/edit', component: EditVehicleComponent},
-  { path: 'vehicle/list', component: ListComponent },
-  { path: 'user/list', component: UserListComponent },
-  { path: 'user/edit', component: UsereditComponent },
-  { path: 'user/create', component: CreateuserComponent
-// AGREGADO PARA AUTENTICACION
-// DESCOMENTAR PARA GUARDAR UNA RUTA
-//    ,  canActivate: [AuthGuard]
-// FIN AGREGADO
-  },
-// AGREGADO PARA AUTENTICACION
-  { path: 'callback', component: CallbackComponent },
-// FIN AGREGADO
-  { path: 'publication/list', component: PublicationListComponent },
-  { path: 'publication/create', component: PublicationCreateComponent },
-  { path: 'publication/detail/:publicationId', component: DetailComponent },
-  { path: 'reservation/detail/:reservationId', component: ReservationDetailComponent },
+  { path: 'vehicle/list', component: ListComponent, canActivate: [AuthGuard] },
+  { path: 'user/edit', component: UsereditComponent, canActivate: [AuthGuard] },
+  { path: 'user/create', component: CreateuserComponent, canActivate: [NotAuthGuard]},
+  { path: 'publication/list', component: PublicationListComponent, canActivate: [AuthGuard]  },
+  { path: 'publication/create', component: PublicationCreateComponent, canActivate: [AuthGuard]  },
+  { path: 'publication/detail/:publicationId', component: DetailComponent, canActivate: [AuthGuard]  },
+  { path: 'reservation/detail/:reservationId', component: ReservationDetailComponent, canActivate: [AuthGuard]  },
+  { path: 'callback', component: CallbackComponent, canActivate: [NotAuthGuard] },
 ];
 
 @NgModule({
   exports: [ RouterModule ],
   imports: [ RouterModule.forRoot(routes) ]
-// AGREGADO PARA AUTENTICACION
-  , providers: [AuthGuard]
-// FIN AGREGADO
+  , providers: [AuthGuard, NotAuthGuard]
 })
 
 export class AppRoutingModule {}

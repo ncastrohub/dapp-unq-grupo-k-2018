@@ -23,7 +23,6 @@ import { PublicationService } from './publication/publication.service';
 import { PublicationCreateComponent } from './publication/publication-create/publication-create.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DateSelectorComponent } from './publication/date-selector/date-selector.component';
-import { MomentModule } from 'angular2-moment/moment.module';
 import { CostDefinerComponent } from './publication/cost-definer/cost-definer.component';
 import { ReservationService } from './reservation/reservation.service';
 import { DetailComponent } from './publication/detail/detail.component';
@@ -57,7 +56,6 @@ import { TokenInterceptor } from './auth/token.bearer.interceptor';
     ReservationDetailComponent,
   ],
   imports: [
-    MomentModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
