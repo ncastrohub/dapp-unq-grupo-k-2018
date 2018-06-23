@@ -30,7 +30,7 @@ export class AuthService {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         window.location.hash = '';
-        this.setSession(authResult);
+        this.getUserInfo(authResult);
         this.router.navigate(['/']);
       } else if (err) {
         this.router.navigate(['/']);
@@ -39,12 +39,21 @@ export class AuthService {
     });
   }
 
-  private setSession(authResult): void {
-    const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
-    localStorage.setItem('access_token', authResult.accessToken);
-    localStorage.setItem('id_token', authResult.idToken);
-    localStorage.setItem('expires_at', expiresAt);
-    localStorage.setItem('email', authResult.idTokenPayload.email);
+  private _setSession(authResult, profile): void {
+    let response = this.userService.getAUser(profile)
+     response.subscribe(
+      data => {
+        localStorage.setItem('access_token', authResult.accessToken);
+        localStorage.setItem('id_token', authResult.idToken);
+        localStorage.setItem('expires_at', authResult.expiresIn * 1000 + Date.now());
+        localStorage.setItem('email', authResult.idTokenPayload.email);
+        this.router.navigate(['/publication/list']);
+      },
+      error => {
+        let error = error;
+        this.router.navigate(['/']);
+      }
+    );
   }
   
   public logout(): void {
@@ -52,7 +61,10 @@ export class AuthService {
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
     localStorage.removeItem('email');
-    this.router.navigate(['/']);
+    this.auth0.logout({
+      returnTo: 'http://localhost:4200',
+      clientID: environment.auth.clientID
+    });
   }
 
   public isAuthenticated(): boolean {
@@ -63,5 +75,35 @@ export class AuthService {
   public getToken() {
     return localStorage.getItem('access_token');
   }
+
+  getUserInfo(authResult) {
+    // Use access token to retrieve user's profile and set session
+    this.auth0.client.userInfo(authResult.accessToken, (err, profile) => {
+      if (profile) {
+        this._setSession(authResult, profile);
+      }
+  });
+
+
+// private _setSession(authResult, profile) {
+// -    // Save authentication data and update login status subject
+// -    this.expiresAt = authResult.expiresIn * 1000 + Date.now();
+// -    this.accessToken = authResult.accessToken;
+// -    this.userProfile = profile;
+// -    this.authenticated = true;
+// - // AGREGADO PARA TENER USUARIOS
+// -    this.userService.setAuthService(this);
+// -    this.userService.getAUser(this.userProfile)
+// -// FIN AGREGADO PARA TENER USUARIOS
+// -    }
+// -
+// -  logout() {
+// -    // Log out of Auth0 session
+// -    // Ensure that returnTo URL is specified in Auth0
+// -    // Application settings for Allowed Logout URLs
+// -    this.auth0.logout({
+// -      returnTo: 'http://localhost:4200',
+// -      clientID: environment.auth.clientID
+// -    });
 
 }

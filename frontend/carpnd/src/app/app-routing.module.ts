@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'vehicle/edit', component: EditVehicleComponent},
   { path: 'vehicle/list', component: ListComponent, canActivate: [AuthGuard] },
   { path: 'user/edit', component: UsereditComponent, canActivate: [AuthGuard] },
-  { path: 'user/create', component: CreateuserComponent, canActivate: [NotAuthGuard]},
+  { path: 'user/create', component: CreateuserComponent, canActivate: [AuthGuard]},
   { path: 'publication/list', component: PublicationListComponent, canActivate: [AuthGuard]  },
   { path: 'publication/create', component: PublicationCreateComponent, canActivate: [AuthGuard]  },
   { path: 'publication/detail/:publicationId', component: DetailComponent, canActivate: [AuthGuard]  },

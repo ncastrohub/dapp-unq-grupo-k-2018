@@ -5,6 +5,7 @@ import javafx.util.Pair;
 import javassist.NotFoundException;
 import model.User;
 import model.exceptions.FormValidationError;
+import org.apache.cxf.rs.security.cors.CrossOriginResourceSharing;
 import services.PublishService;
 
 import javax.ws.rs.*;
@@ -58,6 +59,10 @@ public class UserApi {
     @Path(value = "/get-by-email/")
     @Consumes("application/json")
     @Produces("application/json")
+    @CrossOriginResourceSharing(
+            allowAllOrigins = true,
+            allowCredentials = true
+    )
     public Response getUserByEmail(UserForm userF) {
         try {
             User theUser = publishService.getByEmail(userF.email);

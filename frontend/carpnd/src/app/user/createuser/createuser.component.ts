@@ -14,11 +14,12 @@ import { AuthService } from '../../auth/auth.service';
 })
 export class CreateuserComponent {
 
-constructor(private service: UserServiceService, private router: Router
-            , public authService: AuthService) {}
-
-  user = new User();
-
+  constructor(private service: UserServiceService, private router: Router
+              , public authService: AuthService) {
+       this.getUser();
+  }
+  
+  user : User;
   submitted = false;
   errorList = [];
 
@@ -29,7 +30,6 @@ constructor(private service: UserServiceService, private router: Router
   }
 
   ngOnInit() {
-     this.getUser();
   }
 // FIN MODIFICADO
 

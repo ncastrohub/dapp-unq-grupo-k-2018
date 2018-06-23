@@ -20,23 +20,30 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
     <bean id="jaxbProvider" class="org.apache.cxf.jaxrs.provider.JAXBElementProvider" />
     <bean id='jacksonProvider' class='org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider' />
     <bean id='cors-filter' class="org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter" />
+
     <!-- =========================== -->
     <!-- =========Servicios  ========= -->
     <!-- =========================== -->
+
+    <bean id="reserveApi" class="api.ReserveApi">
+        <property name="reserveService" ref="services.reserve" />
+    </bean>
+
+    <bean id="userApi" class="api.UserApi">
+        <property name="publishService" ref="services.publish" />
+    </bean>
 
     <bean id="publicationApi" class="api.PublishApi">
         <property name="publishService" ref="services.publish" />
     </bean>
 
-    <bean id="reserveApi" class="api.ReserveApi">
-        <property name="reserveService" ref="services.reserve" />
-    </bean>
 
 
     <jaxrs:server id="carpn" address="/"  >
         <jaxrs:serviceBeans>
             <ref bean="publicationApi" />
             <ref bean="reserveApi" />
+            <ref bean="userApi" />
         </jaxrs:serviceBeans>
         <jaxrs:extensionMappings>
             <entry key="json" value="application/json" />

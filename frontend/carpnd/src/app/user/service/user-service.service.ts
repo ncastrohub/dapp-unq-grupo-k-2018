@@ -27,31 +27,26 @@ export class UserServiceService {
 
   constructor(private http: HttpClient, private config: AppConfig) { }
 
-  getAUser(profile: any): Observable<User> {
+  getAUser(profile: any) {
     this.user = new User();
-    this.user.name     = profile.name;
+    this.user.name     = profile.given_name;
     this.user.email    = profile.email;
-    this.user.lastName = profile.lastName;
-    this.user.cuil     = profile.cuil;
+    this.user.lastName = profile.family_name;
+    this.user.cuil     = "";
+    this.error = {};
 
-    this.getUser(this.user)
-      .subscribe(user => this.user = user);
-
-    return of(this.user);
+    return this.getUser(this.user)
   }
+
+
 
   getUser(user : User): Observable<User> {
-    // NECESARIOS POR LA VALIDACION DEL FORM USER
-    if (!user.name)     { user.name     = "-emptyName-";     }
-    if (!user.lastName) { user.lastName = "-emptyLastname-"; }
-    if (!user.cuil)     { user.cuil     = "-emptyCUIL-";     }
-
-    return this.http.post<User>(this.config.serveUrl + 'publication/user/getByEmail/', user);
+    return this.http.post<User>(this.config.serveUrl + 'user/get-by-email/', user);
   }
 
-  getUserList(): Observable<[User]> {
-  	return this.http.get<[User]>( this.config.serveUrl + 'publication/user/list');
-  }
+  // getUserList(): Observable<[User]> {
+  // 	return this.http.get<[User]>( this.config.serveUrl + 'publication/user/list');
+  // }
 
   createUser(user:User): Observable<any> {
   	return this.http.post<any>( this.config.serveUrl + 'publication/user/new', user);
