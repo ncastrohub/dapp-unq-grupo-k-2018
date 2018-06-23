@@ -22,8 +22,15 @@
       <td>{{user.lastName}}</td>
       <td>{{user.cuil}}</td>
       <td>{{user.email}}</td>
-      <td>  <span (click)="edit(user)" class="oi oi-pencil clickeable"></span></td>
-      <td>  <span (click)="delete(user)" class="oi oi-trash clickeable"></span></td>
+      <td>  <span (click)="editLoggedUser()" class="oi oi-pencil clickeable"></span></td>
+      <td>  <span (click)="delete(user.id)" class="oi oi-trash clickeable"></span></td>
+
+     <!--  <td>  <button type='button'
+                    *ngIf="service.getLoggedUser().id==user.id"
+                    (click)="editLoggedUser()" ><span class="oi oi-pencil"></span></button> </td>
+      <td>  <button type='button'
+                    *ngIf="service.getLoggedUser().id==user.id"
+                    (click)="delete(user.id)" ><span class="oi oi-trash"></span></button> </td> -->
     </tr>
   </tbody>
 </table>

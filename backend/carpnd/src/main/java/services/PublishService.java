@@ -2,6 +2,7 @@ package services;
 
 
 import api.forms.*;
+import javassist.NotFoundException;
 import model.Publication;
 import model.User;
 import model.Vehicle;
@@ -20,27 +21,20 @@ public class PublishService {
     private PublicationService publicationService;
     private ReservationService reservationService;
 
+    public ReservationService getReservationService() {
+        return reservationService;
+    }
+    public PublicationService getPublicationService() {
+        return publicationService;
+    }
+    public UserService        getUserService()        { return userService;        }
 
     public void setReservationService(ReservationService reservationService) {
         this.reservationService = reservationService;
     }
 
-    public ReservationService getReservationService() {
-        return reservationService;
-    }
-
-
-    public PublicationService getPublicationService() {
-        return publicationService;
-    }
-
     public void setPublicationService(PublicationService publicationService) {
         this.publicationService = publicationService;
-    }
-
-
-    public UserService getUserService() {
-        return userService;
     }
 
     public void setUserService(UserService userService) {
@@ -50,6 +44,10 @@ public class PublishService {
     public void setVehicleService(VehicleService vehicleService) {
         this.vehicleService = vehicleService;
     }
+
+// //////////////////////////////////////////////////7
+// VEHICLES
+// //////////////////////////////////////////////////7
 
     public Vehicle createVehicleForUser(Serializable userId, VehicleForm vehicle) throws FormValidationError {
         GenericValidator.validate(vehicle);
@@ -81,8 +79,20 @@ public class PublishService {
         this.vehicleService.update(vehicleInDb);
     }
 
+    // //////////////////////////////////////////////////7
+    // USERS
+    // //////////////////////////////////////////////////7
+
     public List<User> getUsers() {
         return this.userService.retriveAll();
+    }
+
+    public User retriveUser(Long id) {
+        return this.userService.findById(id);
+    }
+
+    public void deleteUser(Long userId) {
+        this.userService.deleteById(userId);
     }
 
     public User createUser(UserForm userF) throws FormValidationError {
@@ -91,10 +101,6 @@ public class PublishService {
                 userF.name, userF.lastName, userF.cuil, userF.email);
         this.userService.save(newUser);
         return newUser;
-    }
-
-    public void deleteUser(Long userId) {
-        this.userService.deleteById(userId);
     }
 
     public void updateUser(UserUpdateForm userForm) throws FormValidationError {
@@ -108,9 +114,24 @@ public class PublishService {
 
     }
 
-    public User retriveUser(Long id) {
-        return this.userService.findById(id);
+    // AGREGADO PARA PROCESAR USUARIOS
+    public User getByEmail(UserForm userForm) throws FormValidationError {
+        GenericValidator.validate(userForm);
+        User userInDb;
+        try {
+            userInDb = this.userService.findByEmail(userForm.email);
+        } catch (NotFoundException notFoundError) {
+            userInDb = this.createUser(userForm);
+        }
+        this.userService.update(userInDb);
+        return userInDb;
     }
+    // FIN AGREGADO PARA PROCESAR USUARIOS
+
+
+// //////////////////////////////////////////////////7
+// PUBLICATIONS
+// //////////////////////////////////////////////////7
 
     public Publication createPublicationForUser(Long userId, PublicationForm publication) throws FormValidationError {
         GenericValidator.validate(publication);

@@ -1,9 +1,3 @@
-  
-  <!-- *ngIf="!authService.isLoggedIn" -->
-  
-  <!-- <div class="form-group" >
-    <h1> Access denied, Please log in </h1>
-  </div> -->
 
 
     <div class="form-group" >
@@ -13,6 +7,12 @@
     <div *ngFor="let error of errorList" class="alert alert-danger" role="alert">
       {{error | json}}
     </div>
+
+<div *ngIf="authService.isLoggedIn">
+ PARA PRUEBA: "{{user.id}}" "{{user.name}}" "{{user.lastName}}"   "{{user.cuil}}"  "{{user.email}}"
+</div>
+
+
     <form (ngSubmit)="onSubmit()" #userForm="ngForm">
 
 		<div class="form-group" >
@@ -41,6 +41,9 @@
      </div>
 
     <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-success btn-lg">Create</button>
+<!-- 
+      <button type="submit" *ngIf="authService.isLoggedIn"
+              [disabled]="!userForm.form.valid" class="btn btn-success">Edit</button> -->
 
     </form>
 

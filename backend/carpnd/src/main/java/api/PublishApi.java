@@ -38,6 +38,10 @@ public class PublishApi {
         this.publishService = service;
     }
 
+// //////////////////////////////////////////////////7
+// VEHICLES
+// //////////////////////////////////////////////////7
+
     @GET
     @Path("/{userId}/vehicle/list")
     @Produces("application/json")
@@ -50,14 +54,6 @@ public class PublishApi {
         List vehicleList = publishService.getVehiclesForUser(new Long(userId));
         return Response.ok(vehicleList).build();
     }
-
-    @GET
-    @Path("/user/list")
-    @Produces("application/json")
-    public Response getUserList() {
-        return Response.ok(publishService.getUsers()).build();
-    }
-
 
     @POST
     @Path(value = "/{userId}/vehicle/new")
@@ -96,6 +92,17 @@ public class PublishApi {
         }
     }
 
+// //////////////////////////////////////////////////7
+// USERS
+// //////////////////////////////////////////////////7
+
+    @GET
+    @Path("/user/list")
+    @Produces("application/json")
+    public Response getUserList() {
+        return Response.ok(publishService.getUsers()).build();
+    }
+
     @POST
         @Path(value = "/user/new")
     @Consumes("application/json")
@@ -109,12 +116,28 @@ public class PublishApi {
         }
     }
 
+// AGREGADO PARA PROCESAR USUARIOS
     @POST
+    @Path(value = "/user/getByEmail/")
     @Consumes("application/json")
     @Produces("application/json")
-    @Path(value = "/user/delete/")
-    public Response deleteUser(UserUpdateForm userForm) {
-        publishService.deleteUser(userForm.id);
+    public Response getUserByEmail(UserForm userF) {
+        try {
+
+            User theUser = publishService.getByEmail(userF);
+            return Response.ok(theUser).build();
+        } catch (FormValidationError formValidationError) {
+            return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
+        }
+    }
+// FIN AGREGADO PARA PROCESAR USUARIOS
+
+    @GET
+    @Consumes("application/json")
+    @Produces("application/json")
+    @Path(value = "/user/delete/{userId}/")
+    public Response deleteUser(@PathParam("userId") Long userId) {
+        publishService.deleteUser(userId);
         return Response.ok().build();
     }
 
@@ -130,6 +153,10 @@ public class PublishApi {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
         }
     }
+
+// //////////////////////////////////////////////////7
+// PUBLICATION
+// //////////////////////////////////////////////////7
 
     @GET
     @Consumes("application/json")

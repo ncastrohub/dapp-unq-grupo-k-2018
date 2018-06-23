@@ -4,6 +4,11 @@ import * as auth0 from 'auth0-js';
 import { environment } from './../../environments/environment';
 import { Router } from '@angular/router';
 
+// AGREGADO PARA TENER USUARIOS
+import { User } from '../user/user';
+import { UserServiceService } from '../user/service/user-service.service';
+// FIN AGREGADO PARA TENER USUARIOS
+
 (window as any).global = window;
 
 @Injectable()
@@ -23,8 +28,14 @@ export class AuthService {
   // accessToken: string;
   // authenticated: boolean;
 
-  constructor(private router: Router) {
-    // this.getAccessToken();
+// <<<<<<< HEAD
+//   constructor(private router: Router) {
+//     // this.getAccessToken();
+// =======
+  constructor(private userService : UserServiceService  // MODIFICADO PARA TENER USUARIOS
+    , private router: Router) {
+    this.getToken();
+
   }
 
   login() {
@@ -53,8 +64,6 @@ export class AuthService {
     localStorage.setItem('expires_at', expiresAt);
     localStorage.setItem('email', authResult.idTokenPayload.email);
   }
-
-
   public logout(): void {
     // Remove tokens and expiry time from localStorage
     localStorage.removeItem('access_token');
@@ -64,6 +73,21 @@ export class AuthService {
     // Go back to the home route
     this.router.navigate(['/']);
   }
+
+
+// <<<<<<< HEAD
+// =======
+//   private _setSession(authResult, profile) {
+//     // Save authentication data and update login status subject
+//     this.expiresAt = authResult.expiresIn * 1000 + Date.now();
+//     this.accessToken = authResult.accessToken;
+//     this.userProfile = profile;
+//     this.authenticated = true;
+//  // AGREGADO PARA TENER USUARIOS
+//     this.userService.setAuthService(this);
+//     this.userService.getAUser(this.userProfile)
+// // FIN AGREGADO PARA TENER USUARIOS
+//     }
 
   public isAuthenticated(): boolean {
     // Check whether the current time is past the

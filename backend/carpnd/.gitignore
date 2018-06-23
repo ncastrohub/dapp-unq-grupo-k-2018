@@ -81,3 +81,5 @@ target
 hs_err_pid*
 
 carpnd.iml
+
+logapp.log.*
