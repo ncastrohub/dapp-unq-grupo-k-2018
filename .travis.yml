@@ -19,12 +19,4 @@ jobs:
         app: carpn-api
         api_key: b2edf305-d8fc-4410-9dbc-ec128b3001ac
         on: develop
-    - stage: deploy-client
-      script: skip     # usually you do not want to rerun any tests
-      before_deploy: cd frontend/carpnd
-      deploy: &heroku
-        provider: heroku
-        url: https://carpn-client.herokuapp.com/
-        app: carpn-client
-        api_key: b2edf305-d8fc-4410-9dbc-ec128b3001ac
-        on: develop
+    

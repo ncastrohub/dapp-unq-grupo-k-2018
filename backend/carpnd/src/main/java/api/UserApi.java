@@ -1,7 +1,7 @@
 package api;
 
 import api.forms.UserForm;
-import javafx.util.Pair;
+import org.testng.internal.collections.Pair;
 import javassist.NotFoundException;
 import model.User;
 import model.exceptions.FormValidationError;

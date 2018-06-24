@@ -1,6 +1,7 @@
 package model.exceptions;
 
-import javafx.util.Pair;
+
+import org.testng.internal.collections.Pair;
 
 public class ExceptionWithError extends Exception {
 
