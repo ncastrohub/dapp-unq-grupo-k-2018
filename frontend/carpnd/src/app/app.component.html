@@ -39,19 +39,27 @@
       </ul>
        <ul class="navbar-nav">
          <li class="nav-item" >
-                <button
-                  class="btn btn-success"
-                  *ngIf="!authService.isAuthenticated()"
-                  (click)="authService.login()">
-                  Log In
-                </button>
+            <button
+              class="btn btn-success"
+              *ngIf="!authService.isAuthenticated()"
+              (click)="authService.login()">
+              Log In
+            </button>
 
-                <button
-                  class="btn btn-danger"
-                  *ngIf="authService.isAuthenticated()"
-                  (click)="authService.logout()">
-                    Log Out
-                </button>
+
+            <button style="margin-left: 10px;" 
+              class="btn btn-warning"
+              *ngIf="!authService.isAuthenticated()"
+              (click)="authService.signUp()">
+              Sign Up
+            </button>
+
+            <button
+              class="btn btn-danger"
+              *ngIf="authService.isAuthenticated()"
+              (click)="authService.logout()">
+                Log Out
+            </button>
           </li>
 
     </ul>

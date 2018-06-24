@@ -12,9 +12,6 @@ import { AuthService } from './auth/auth.service';
 })
 
 export class AppComponent {
-  title = 'Carpnd';
-
-  constructor(public authService: AuthService) { // AGREGADO PARA AUTENTICACION
-
-  }
+  title = 'Lend your Car';
+  constructor(public authService: AuthService) {}
 }

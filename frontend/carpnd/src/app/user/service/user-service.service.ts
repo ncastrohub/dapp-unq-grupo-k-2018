@@ -1,12 +1,10 @@
-///<reference path="../user.ts"/>
-///<reference path="../../../../node_modules/rxjs/internal/Observable.d.ts"/>
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../user';
 import { Observable, of, BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { AppConfig } from '../../config';
-import {AuthService} from "../../auth/auth.service";
+import { AuthService } from "../../auth/auth.service";
 
 @Injectable()
 export class UserServiceService {
@@ -28,29 +26,34 @@ export class UserServiceService {
   constructor(private http: HttpClient, private config: AppConfig) { }
 
   getAUser(profile: any) {
-    this.user = new User();
-    this.user.name     = profile.given_name;
-    this.user.email    = profile.email;
-    this.user.lastName = profile.family_name;
-    this.user.cuil     = "";
-    this.error = {};
-
-    return this.getUser(this.user)
+    let user = new User();
+    user.name     = profile.given_name;
+    user.email    = profile.email;
+    user.lastName = profile.family_name;
+    user.cuil     = "";
+    return this.getUser(user)
   }
-
-
 
   getUser(user : User): Observable<User> {
     return this.http.post<User>(this.config.serveUrl + 'user/get-by-email/', user);
   }
 
-  // getUserList(): Observable<[User]> {
-  // 	return this.http.get<[User]>( this.config.serveUrl + 'publication/user/list');
-  // }
+  getUserList(): Observable<[User]> {
+  	return this.http.get<[User]>( this.config.serveUrl + 'publication/user/list');
+  }
 
   createUser(user:User): Observable<any> {
-  	return this.http.post<any>( this.config.serveUrl + 'publication/user/new', user);
+  	return this.http.post<any>( this.config.serveUrl + '/user/new', user);
   }
+
+  createNewUserFromProfile(profile): Observable<User> {
+    let user = new User();
+    user.name     = profile.given_name;
+    user.email    = profile.email;
+    user.lastName = profile.family_name;
+    return this.createUser(user);
+  }
+
 
   deleteUser(userId: number): Observable<any> {
   	return this.http.get<any>(this.config.serveUrl + 'publication/user/delete/' + userId)

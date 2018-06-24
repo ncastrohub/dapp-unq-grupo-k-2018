@@ -26,7 +26,8 @@ const routes: Routes = [
   { path: 'publication/create', component: PublicationCreateComponent, canActivate: [AuthGuard]  },
   { path: 'publication/detail/:publicationId', component: DetailComponent, canActivate: [AuthGuard]  },
   { path: 'reservation/detail/:reservationId', component: ReservationDetailComponent, canActivate: [AuthGuard]  },
-  { path: 'callback', component: CallbackComponent, canActivate: [NotAuthGuard] },
+  { path: 'callback/:authorization_role', component: CallbackComponent, canActivate: [NotAuthGuard] },
+  // { path: 'sign_up', component: CallbackComponent, canActivate: [NotAuthGuard] },
 ];
 
 @NgModule({

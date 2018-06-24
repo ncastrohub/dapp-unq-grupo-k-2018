@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth/auth.service';
-
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-callback',
   template: `
@@ -12,9 +12,16 @@ import { AuthService } from './auth/auth.service';
 })
 export class CallbackComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private route: ActivatedRoute) {}
   ngOnInit() {
-    this.authService.handleAuthentication();
+
+    let authorization_role = this.route.snapshot.paramMap.get('authorization_role');
+    if (authorization_role == 'login') {
+      this.authService.handleAuthenticationLogin();
+    }
+    if (authorization_role == 'sign_up') {
+      this.authService.handleAuthenticationSignUp();
+    }
   }
 
 }
