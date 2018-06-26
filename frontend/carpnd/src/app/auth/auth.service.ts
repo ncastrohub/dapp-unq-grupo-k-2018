@@ -55,23 +55,25 @@ export class AuthService {
       }
 
       private _setSession(authResult, profile): void {
+        localStorage.setItem('access_token', authResult.accessToken);
         let response = this.userService.getAUser(profile)
          response.subscribe(
           data => {
             let expire_at = authResult.expiresIn * 1000 + Date.now();
-            localStorage.setItem('access_token', authResult.accessToken);
             localStorage.setItem('id_token', authResult.idToken);
             localStorage.setItem('expires_at', expire_at.toString());
             localStorage.setItem('email', authResult.idTokenPayload.email);
             this.router.navigate(['/publication/list']);
           },
           error => {
+            localStorage.removeItem('access_token');
             this.router.navigate(['/']);
           }
         )
       }
 
       private setSessionData(authResult, profile): void {
+        localStorage.setItem('access_token', authResult.accessToken);
         let response = this.userService.createNewUserFromProfile(profile);
          response.subscribe(
           data => {
@@ -83,7 +85,9 @@ export class AuthService {
             this.router.navigate(['/user/detail']);
           },
           error => {
+            localStorage.removeItem('access_token');
             this.router.navigate(['/']);
+
           }
         )
       }

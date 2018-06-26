@@ -1,13 +1,27 @@
 package model.exceptions;
 
-
-import org.testng.internal.collections.Pair;
+import java.util.Map.Entry;
 
 public class ExceptionWithError extends Exception {
 
-    public Pair<String, String> error;
+    public Entry<String, String> error;
 
     public ExceptionWithError(String value) {
-        this.error = new Pair<>("error",value);
+        this.error = new Entry<String, String>() {
+            @Override
+            public String getKey() {
+                return "error";
+            }
+
+            @Override
+            public String getValue() {
+                return value;
+            }
+
+            @Override
+            public String setValue(String value) {
+                return null;
+            }
+        };
     }
 }
