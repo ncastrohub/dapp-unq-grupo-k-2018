@@ -24,6 +24,10 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
         <property name="userService" ref="services.user" />
     </bean>
 
+    <bean id='auth-no-user-filter' class="scripting.AuthWithNoUser" >
+        <property name="userService" ref="services.user" />
+    </bean>
+
     <!-- =========================== -->
     <!-- =========Servicios  ========= -->
     <!-- =========================== -->
@@ -56,6 +60,7 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
             <ref bean="jacksonProvider" />
             <ref bean="cors-filter" />
             <ref bean="auth-filter" />
+            <ref bean="auth-no-user-filter" />
         </jaxrs:providers>
         <jaxrs:features>
             <cxf:logging />

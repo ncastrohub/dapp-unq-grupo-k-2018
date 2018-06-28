@@ -13,8 +13,6 @@ import { VehicleService } from './vehicle/service/vehicle.service';
 import { AppConfig } from './config';
 import { EditVehicleComponent } from './vehicle/edit/edit.component';
 import { CreateVehicleComponent } from './vehicle/create/create.component';
-import { CreateuserComponent } from './user/createuser/createuser.component';
-import { UserListComponent } from './user/user-list/user-list.component';
 import { UserServiceService } from './user/service/user-service.service';
 import { UsereditComponent } from './user/useredit/useredit.component';
 import { GooglemapsComponent } from './maps/googlemaps/googlemaps.component';
@@ -35,6 +33,7 @@ import { CallbackComponent } from './callback.component';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './auth/token.bearer.interceptor';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -42,8 +41,6 @@ import { TokenInterceptor } from './auth/token.bearer.interceptor';
     ListComponent,
     EditVehicleComponent,
     CreateVehicleComponent,
-    CreateuserComponent,
-    UserListComponent,
     UsereditComponent,
     CallbackComponent,
     GooglemapsComponent,
@@ -54,6 +51,7 @@ import { TokenInterceptor } from './auth/token.bearer.interceptor';
     DetailComponent,
     VehicleListComponent,
     ReservationDetailComponent,
+    UserDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,4 +80,5 @@ import { TokenInterceptor } from './auth/token.bearer.interceptor';
     { provide: LOCALE_ID, useValue: 'en' }],
     bootstrap: [AppComponent]
 })
+
 export class AppModule { }

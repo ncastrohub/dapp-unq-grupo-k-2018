@@ -25,21 +25,8 @@ export class UserServiceService {
 
   constructor(private http: HttpClient, private config: AppConfig) { }
 
-  getAUser(profile: any) {
-    let user = new User();
-    user.name     = profile.given_name;
-    user.email    = profile.email;
-    user.lastName = profile.family_name;
-    user.cuil     = "";
-    return this.getUser(user)
-  }
-
-  getUser(user : User): Observable<User> {
-    return this.http.post<User>(this.config.serveUrl + 'user/get-by-email/', user);
-  }
-
-  getUserList(): Observable<[User]> {
-  	return this.http.get<[User]>( this.config.serveUrl + 'publication/user/list');
+  getUser(): Observable<User> {
+    return this.http.post<User>(this.config.serveUrl + 'user/currentUser/', {});
   }
 
   createUser(user:User): Observable<any> {
@@ -54,16 +41,15 @@ export class UserServiceService {
     return this.createUser(user);
   }
 
-
   deleteUser(userId: number): Observable<any> {
-  	return this.http.get<any>(this.config.serveUrl + 'publication/user/delete/' + userId)
+  	return this.http.get<any>(this.config.serveUrl + 'user/delete/' + userId)
       .pipe(
         tap(_ => this.authService.logout() )
       );
   }
 
   updateUser(user: User): Observable<any> {
-    return this.http.post<any>( this.config.serveUrl + 'publication/user/edit', user);
+    return this.http.post<any>( this.config.serveUrl + 'user/edit', user);
   }
 
   loadUserToEdit(user: User) {

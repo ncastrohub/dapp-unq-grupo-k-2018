@@ -6,8 +6,8 @@ import { Subscription }   from 'rxjs';
 
 @Component({
   selector: 'app-useredit',
-  templateUrl: '../createuser/createuser.component.html',
-  styleUrls: ['../createuser/createuser.component.css']
+  templateUrl: './useredit.component.html',
+  // styleUrls: ['../createuser/createuser.component.css']
 })
 
 export class UsereditComponent implements OnInit {
@@ -30,7 +30,7 @@ export class UsereditComponent implements OnInit {
   onSubmit() {
     this.service.updateUser(this.user).subscribe(
         data => {
-          this.router.navigate(['/user/list']);
+          this.router.navigate(['/publication/list']);
         },
         error => this.errorList.push(error)
       );

@@ -31,4 +31,12 @@ public class UserService extends GenericService<User> {
          else { return userList.get(0); }
     }
 
+    @Transactional
+    public User getByEmail(String email){
+        User user = new User();
+        user.email = email;
+        List<User> userList = this.getRepository().findByExample(user);
+        return userList.get(0);
+    }
+
 }

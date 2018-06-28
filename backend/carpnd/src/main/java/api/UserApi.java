@@ -1,29 +1,44 @@
 package api;
 
 import api.forms.UserForm;
-import javafx.util.Pair;
-import javassist.NotFoundException;
+import api.forms.UserUpdateForm;
 import model.User;
 import model.exceptions.FormValidationError;
+import org.apache.cxf.message.Message;
+import org.apache.cxf.phase.PhaseInterceptorChain;
 import org.apache.cxf.rs.security.cors.CrossOriginResourceSharing;
 import org.apache.cxf.security.SecurityContext;
-import org.springframework.security.access.annotation.Secured;
 import scripting.AuthRequired;
+import scripting.SecuredRequest;
 import services.PublishService;
 
+import javax.annotation.Resource;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
+import java.security.Principal;
 
 @Path("/user")
 public class UserApi {
 
-    @Context
-    private HttpHeaders headers;
+//    @Resource
+    public SecurityContext getSecurityContext() {
+        return securityContext;
+    }
 
+//    @Resource
+    public void setSecurityContext(SecurityContext securityContext) {
+        this.securityContext = securityContext;
+    }
+
+    //    @Context
+//    private HttpHeaders headers;
+//
     @Context
     SecurityContext securityContext;
+
+
 
     public PublishService getPublishService() {
         return publishService;
@@ -37,16 +52,23 @@ public class UserApi {
 
 
 
-    @GET
-    @AuthRequired()
-    @Path("/list")
-    @Produces("application/json")
-    public Response getUserList(@Context SecurityContext securityContext) {
-        return Response.ok(publishService.getUsers()).build();
+    private User getCurrentUser(SecurityContext securityContext){
+        Long userId = new Long(securityContext.getUserPrincipal().getName());
+        return this.publishService.getUserService().findById(userId);
     }
 
+
+
+//    @GET
+//    @AuthRequired()
+//    @Path("/list")
+//    @Produces("application/json")
+//    public Response getUserList(@Context SecurityContext securityContext) {
+//        return Response.ok(publishService.getUsers()).build();
+//    }
+
     @POST
-    @AuthRequired()
+    @AuthRequired
     @Path(value = "/new")
     @Consumes("application/json")
     @Produces("application/json")
@@ -60,22 +82,43 @@ public class UserApi {
     }
 
 
-    @POST
-    @AuthRequired
-    @Path(value = "/get-by-email/")
+    @GET
+    @SecuredRequest
     @Consumes("application/json")
     @Produces("application/json")
-    @CrossOriginResourceSharing(
-            allowAllOrigins = true,
-            allowCredentials = true
-    )
-    public Response getUserByEmail(UserForm userF, @Context SecurityContext securityContext) {
+    @Path(value = "/delete/")
+    public Response deleteUser(@Context SecurityContext securityContext) {
+        publishService.deleteUser(this.getCurrentUser(securityContext).getId());
+        return Response.ok().build();
+    }
+
+
+    @POST
+    @SecuredRequest
+    @Consumes("application/json")
+    @Produces("application/json")
+    @Path(value = "/edit/")
+    public Response updateUser(UserUpdateForm userForm) {
         try {
-            User theUser = publishService.getByEmail(securityContext.getUserPrincipal().getName());
-            return Response.ok(theUser).build();
-        } catch (NotFoundException e) {
-            return Response.status(Response.Status.BAD_REQUEST).entity(new Pair<>("error","Cannot found user with that email")).build();
+            this.publishService.updateUser(userForm);
+            return Response.ok(userForm).build();
+        } catch (FormValidationError formValidationError) {
+            return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
         }
+    }
+
+
+    @POST
+    @SecuredRequest
+    @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
+    @Path(value ="/currentUser/")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response currentUser(@Context SecurityContext securityContext) {
+        Principal principal = securityContext.getUserPrincipal();
+        String email = principal.getName();
+        User user = this.publishService.getUserService().getByEmail(email);
+        return Response.ok(user).build();
     }
 
 }

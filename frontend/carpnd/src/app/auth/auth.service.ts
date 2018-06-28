@@ -38,7 +38,7 @@ export class AuthService {
             console.log(err);
           }
         });
-      }
+      } 
 
       public handleAuthenticationSignUp(): void {
         this.auth0 = new auth0.WebAuth(environmenttwo.auth);
@@ -56,7 +56,7 @@ export class AuthService {
 
       private _setSession(authResult, profile): void {
         localStorage.setItem('access_token', authResult.accessToken);
-        let response = this.userService.getAUser(profile)
+        let response = this.userService.getUser()
          response.subscribe(
           data => {
             let expire_at = authResult.expiresIn * 1000 + Date.now();

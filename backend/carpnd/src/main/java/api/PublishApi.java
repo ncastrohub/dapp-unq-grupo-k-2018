@@ -28,6 +28,9 @@ public class PublishApi {
     @Context
     private HttpHeaders headers;
 
+
+
+
     public PublishService getPublishService() {
         return publishService;
     }
@@ -88,14 +91,6 @@ public class PublishApi {
         }
     }
 
-    @GET
-    @Consumes("application/json")
-    @Produces("application/json")
-    @Path(value = "/user/delete/{userId}/")
-    public Response deleteUser(@PathParam("userId") Long userId) {
-        publishService.deleteUser(userId);
-        return Response.ok().build();
-    }
 
     @POST
     @Consumes("application/json")

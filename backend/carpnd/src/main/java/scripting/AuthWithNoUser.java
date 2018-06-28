@@ -23,9 +23,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.security.Principal;
 
-@SecuredRequest
+@AuthRequired
 @Provider
-public class AuthenticationFilter implements ContainerRequestFilter {
+public class AuthWithNoUser implements ContainerRequestFilter {
 
 
     public UserService getUserService() {
@@ -60,43 +60,41 @@ public class AuthenticationFilter implements ContainerRequestFilter {
             requestContext.abortWith(Response.status(Response.Status.UNAUTHORIZED).build());
         }
 
+
+
         String email = jsonObj.get("email").toString();
+
+        requestContext.setSecurityContext(new SecurityContext() {
+
+            @Override
+            public Principal getUserPrincipal() {
+                return () -> email;
+            }
+
+            @Override
+            public boolean isUserInRole(String role) {
+                return true;
+            }
+
+            @Override
+            public boolean isSecure() {
+                return true;
+            }
+
+            @Override
+            public String getAuthenticationScheme() {
+                return AUTHENTICATION_SCHEME;
+            }
+        });
+
+
 
         try {
             User currentUser = userService.findByEmail(email);
-
-            requestContext.setSecurityContext(new SecurityContext() {
-
-                @Override
-                public Principal getUserPrincipal() {
-                    return () -> email;
-                }
-
-                @Override
-                public boolean isUserInRole(String role) {
-                    return true;
-                }
-
-                @Override
-                public boolean isSecure() {
-                    return true;
-                }
-
-                @Override
-                public String getAuthenticationScheme() {
-                    return AUTHENTICATION_SCHEME;
-                }
-
-            });
-
-
-
-        }catch (NotFoundException e) {
             requestContext.abortWith(
                     Response.status(Response.Status.UNAUTHORIZED
-                    ).entity(new Pair<>("error","Cannot found user with that email")).build());
-        }
-
+                    ).entity(new Pair<>("error","Already user with that email")).build());
+        }catch (NotFoundException ignored) {}
 
     }
 

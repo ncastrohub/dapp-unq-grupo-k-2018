@@ -1,2 +1,0 @@
-2018-04-30 01:00:38,489 WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper (SqlExceptionHelper.java:144) - SQL Error: -104, SQLState: 23505
-2018-04-30 01:00:38,510 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper (SqlExceptionHelper.java:146) - integrity constraint violation: unique constraint or index violation; SYS_PK_10034 table: VEHICLE
