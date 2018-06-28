@@ -64,7 +64,6 @@ public class AuthenticationFilter implements ContainerRequestFilter {
 
         try {
             User currentUser = userService.findByEmail(email);
-
             requestContext.setSecurityContext(new SecurityContext() {
 
                 @Override
