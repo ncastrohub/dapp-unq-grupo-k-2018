@@ -18,7 +18,7 @@
             <list-index  column="user_vehicle_index"/>
             <one-to-many  class="model.Vehicle" />
         </list>
-
+        <one-to-one name="availableMoney" class="model.MoneyAndAmount"/>
 
     </class>
 </hibernate-mapping>

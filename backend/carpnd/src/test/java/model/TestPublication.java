@@ -52,7 +52,7 @@ public class TestPublication {
 
 
     @Test
-    public void testWhenReserveVehicleForSomeDaysAPublicationReservedIsCreated() throws DayAlreadyReservedException, DayDisabledException, InvalidAmountOfDaysToReserveException {
+    public void testWhenReserveVehicleForSomeDaysAPublicationReservedIsCreated() throws DayAlreadyReservedException, DayDisabledException, InvalidAmountOfDaysToReserveException, NotEnoughCreditException {
 
         User owner = mock(User.class);
         User customer = mock(User.class);
@@ -93,7 +93,7 @@ public class TestPublication {
     }
 
     @Test
-    public void testWhenPublicationIsReservedDaysReservedAreNotAvailable() throws DayAlreadyReservedException, DayDisabledException, InvalidAmountOfDaysToReserveException {
+    public void testWhenPublicationIsReservedDaysReservedAreNotAvailable() throws DayAlreadyReservedException, DayDisabledException, InvalidAmountOfDaysToReserveException, NotEnoughCreditException {
         User owner = mock(User.class);
         User customer = mock(User.class);
 
@@ -139,7 +139,7 @@ public class TestPublication {
 
 
     @Test
-    public void testWhenReservedDaysAreReleasedThatDaysCanBeReservedAgain() throws DayAlreadyReservedException, DayDisabledException, DayNotReservedException, InvalidAmountOfDaysToReserveException {
+    public void testWhenReservedDaysAreReleasedThatDaysCanBeReservedAgain() throws DayAlreadyReservedException, DayDisabledException, DayNotReservedException, InvalidAmountOfDaysToReserveException, NotEnoughCreditException {
         User owner = mock(User.class);
         User customer = mock(User.class);
 

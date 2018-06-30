@@ -1,6 +1,7 @@
 package services;
 
 import javassist.NotFoundException;
+import model.MoneyAndAmount;
 import model.User;
 import model.Vehicle;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,4 +40,8 @@ public class UserService extends GenericService<User> {
         return userList.get(0);
     }
 
+    @Transactional
+    public void addMoneyToUser(User user, MoneyAndAmount amountToAdd) {
+        this.getRepository().findById(user.getId()).availableMoney.sum(amountToAdd);
+    }
 }

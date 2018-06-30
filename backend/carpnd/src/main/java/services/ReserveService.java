@@ -52,7 +52,7 @@ public class ReserveService {
 
     public Reservation makeReservation(Long customerId, List<LocalDate> daysToReserve, Long publicationId,
                                        Long returnLocationId) throws DayDisabledException, DayAlreadyReservedException,
-            InvalidAmountOfDaysToReserveException, NoReturnLocationInPublicationException {
+            InvalidAmountOfDaysToReserveException, NoReturnLocationInPublicationException, NotEnoughCreditException {
 
         Publication publication = this.publicationService.findById(publicationId);
         User customer = this.userService.findById(customerId);
@@ -63,10 +63,9 @@ public class ReserveService {
         return reservation;
     }
 
-    public Reservation reservePublication(ReserveForm reserveForm) throws FormValidationError, NoReturnLocationInPublicationException, InvalidAmountOfDaysToReserveException, DayDisabledException, DayAlreadyReservedException {
+    public Reservation reservePublication(ReserveForm reserveForm) throws FormValidationError, NoReturnLocationInPublicationException, InvalidAmountOfDaysToReserveException, DayDisabledException, DayAlreadyReservedException, NotEnoughCreditException {
         GenericValidator.validate(reserveForm);
         return this.makeReservation(reserveForm.customer, reserveForm.reservationDays, reserveForm.publication, reserveForm.returnLocation);
     }
-
 
 }

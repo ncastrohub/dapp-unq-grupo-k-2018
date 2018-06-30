@@ -82,5 +82,12 @@ public class PublicationsEnabledDays extends IdModel {
         }
     }
 
+    public boolean canReserveDays(List<LocalDate> reservationDays) {
+        Boolean can = true;
+        for (LocalDate day: reservationDays){
+            can = can && this.canReserve(day);
+        }
+        return can;
+    }
 }
 

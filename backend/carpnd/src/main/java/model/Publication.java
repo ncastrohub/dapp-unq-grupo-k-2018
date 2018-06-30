@@ -4,6 +4,7 @@ import model.exceptions.*;
 import org.codehaus.jackson.annotate.JsonIgnore;
 
 import org.joda.time.LocalDate;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -20,6 +21,103 @@ public class Publication extends IdModel {
     private PublicationsEnabledDays enabledDays;
 
     private MoneyAndAmount costPerHour;
+
+    public Publication() {
+    }
+
+    public Publication(User owner, MoneyAndAmount costPerHour,
+                       Vehicle vehicle, AdressLocation acquireLocation,
+                       LinkedList<AdressLocation> returnLocations,
+                       PublicationsEnabledDays enabledDays) {
+        this.owner = owner;
+        this.costPerHour = costPerHour;
+        this.vehicle = vehicle;
+        this.acquireLocation = acquireLocation;
+        this.returnLocations = returnLocations;
+        this.enabledDays = enabledDays;
+
+    }
+
+    public Reservation makeReservation(User customer, List<LocalDate> reservationDays, AdressLocation returnLocation) throws DayAlreadyReservedException, DayDisabledException, InvalidAmountOfDaysToReserveException, NotEnoughCreditException {
+        this.canPay(customer.availableMoney, reservationDays.size());
+        this.enabledDays.reserveDays(reservationDays);
+        this.reserveMoney(customer, reservationDays.size());
+        return new Reservation(this, reservationDays, customer, returnLocation);
+    }
+
+    private void reserveMoney(User customer, int size) {
+        customer.reduceMoney(this.costPerHour.plusBy((double) size));
+        this.owner.availableMoney.sum(this.costPerHour.plusBy((double) size));
+    }
+
+
+    private void canPay(MoneyAndAmount availableMoney, int amountOfDays) throws NotEnoughCreditException {
+        if (this.costPerHour.plusBy((double) amountOfDays).isMayorTo(availableMoney)) {
+            throw new NotEnoughCreditException("customer has not enough money");
+        }
+    }
+
+
+    public boolean canReserve(LocalDate dayOne) {
+
+        return this.enabledDays.canReserve(dayOne);
+    }
+
+    void releaseDays(LinkedList<LocalDate> reservationDays) throws DayNotReservedException {
+        this.enabledDays.releaseDays(reservationDays);
+    }
+
+    void disabledDays(LinkedList<LocalDate> reservationDays) throws DayAlreadyDisabledException {
+        this.enabledDays.disableDays(reservationDays);
+    }
+
+    public void setReturnLocations(LinkedList<AdressLocation> returnLocations) {
+        this.returnLocations = returnLocations;
+    }
+
+    public AdressLocation getReturnLocationsById(Long locationId) throws NoReturnLocationInPublicationException {
+        Optional<AdressLocation> matchLocation = this.returnLocations.stream().filter(location -> location.getId().equals(locationId)).findFirst();
+        if (matchLocation.isPresent()) {
+            return matchLocation.get();
+        } else {
+            throw new NoReturnLocationInPublicationException("Return Location selected no corresponding to Publication");
+        }
+    }
+
+
+    public MoneyAndAmount getCostPerHour() {
+        return this.costPerHour;
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public AdressLocation getAcquireLocation() {
+        return acquireLocation;
+    }
+
+    public List<AdressLocation> getReturnLocations() {
+        return returnLocations;
+    }
+
+    @JsonIgnore
+    PublicationsEnabledDays getAvaiblesDays() {
+        return this.enabledDays;
+    }
+
+
+    public List<LocalDate> getDisabledDays() {
+        return this.enabledDays.getDisabledDays();
+    }
+
+    public List<LocalDate> getReservedDays() {
+        return this.enabledDays.getReservedDays();
+    }
 
     public void setOwner(User owner) {
         this.owner = owner;
@@ -47,85 +145,5 @@ public class Publication extends IdModel {
 
     public void setCostPerHour(MoneyAndAmount costPerHour) {
         this.costPerHour = costPerHour;
-    }
-
-    public Publication(){}
-    public Publication(User owner, MoneyAndAmount costPerHour,
-                       Vehicle vehicle, AdressLocation acquireLocation,
-                       LinkedList<AdressLocation> returnLocations,
-                       PublicationsEnabledDays enabledDays) {
-        this.owner = owner;
-        this.costPerHour = costPerHour;
-        this.vehicle = vehicle;
-        this.acquireLocation = acquireLocation;
-        this.returnLocations = returnLocations;
-        this.enabledDays = enabledDays;
-
-    }
-
-    public MoneyAndAmount getCostPerHour() {
-        return this.costPerHour;
-    }
-
-    public User getOwner() {
-        return owner;
-    }
-
-    public Vehicle getVehicle() {
-        return vehicle;
-    }
-
-    public AdressLocation getAcquireLocation() {
-        return acquireLocation;
-    }
-
-    public List<AdressLocation> getReturnLocations() {
-        return returnLocations;
-    }
-
-    @JsonIgnore
-    public PublicationsEnabledDays getAvaiblesDays() {
-        return this.enabledDays;
-    }
-
-    public Reservation makeReservation(User customer, List<LocalDate> reservationDays, AdressLocation returnLocation) throws DayAlreadyReservedException, DayDisabledException, InvalidAmountOfDaysToReserveException {
-        this.enabledDays.reserveDays(reservationDays);
-        return new Reservation(this, reservationDays, customer, returnLocation);
-    }
-
-
-    public boolean canReserve(LocalDate dayOne) {
-
-        return this.enabledDays.canReserve(dayOne);
-    }
-
-    public void releaseDays(LinkedList<LocalDate> reservationDays) throws DayNotReservedException {
-        this.enabledDays.releaseDays(reservationDays);
-    }
-
-    public void disabledDays(LinkedList<LocalDate> reservationDays) throws DayAlreadyDisabledException {
-        this.enabledDays.disableDays(reservationDays);
-    }
-
-
-    public List<LocalDate> getDisabledDays(){
-        return this.enabledDays.getDisabledDays();
-    }
-
-    public List<LocalDate> getReservedDays() {
-        return  this.enabledDays.getReservedDays();
-    }
-
-    public void setReturnLocations(LinkedList<AdressLocation> returnLocations) {
-        this.returnLocations = returnLocations;
-    }
-
-    public AdressLocation getReturnLocationsById(Long locationId) throws NoReturnLocationInPublicationException {
-        Optional<AdressLocation> matchLocation = this.returnLocations.stream().filter(location -> location.getId().equals(locationId)).findFirst();
-        if (matchLocation.isPresent()){
-            return matchLocation.get();
-        }else {
-            throw new NoReturnLocationInPublicationException("Return Location selected no corresponding to Publication");
-        }
     }
 }

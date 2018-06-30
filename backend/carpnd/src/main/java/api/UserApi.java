@@ -1,5 +1,6 @@
 package api;
 
+import api.forms.MoneyAndAmountForm;
 import api.forms.UserForm;
 import api.forms.UserUpdateForm;
 import model.User;
@@ -31,22 +32,16 @@ import java.security.Principal;
 @Path("/user")
 public class UserApi {
 
-//    @Resource
     public SecurityContext getSecurityContext() {
         return securityContext;
     }
 
-//    @Resource
     public void setSecurityContext(SecurityContext securityContext) {
         this.securityContext = securityContext;
     }
 
-    //    @Context
-//    private HttpHeaders headers;
-//
     @Context
     SecurityContext securityContext;
-
 
 
     public PublishService getPublishService() {
@@ -58,8 +53,6 @@ public class UserApi {
     public void setPublishService(final PublishService service) {
         this.publishService = service;
     }
-
-
 
     private User getCurrentUser(SecurityContext securityContext){
         Long userId = new Long(securityContext.getUserPrincipal().getName());
@@ -95,16 +88,6 @@ public class UserApi {
         String email = jsonObj.get("email").toString();
         return this.publishService.getUserService().getByEmail(email);
     }
-
-
-
-//    @GET
-//    @AuthRequired()
-//    @Path("/list")
-//    @Produces("application/json")
-//    public Response getUserList(@Context SecurityContext securityContext) {
-//        return Response.ok(publishService.getUsers()).build();
-//    }
 
     @POST
     @AuthRequired
@@ -153,12 +136,25 @@ public class UserApi {
     @Path(value ="/currentUser/")
     @Consumes("application/json")
     @Produces("application/json")
-    public Response currentUser(@Context HttpHeaders headers, @Context SecurityContext securityContext) {
-
-//        Principal principal = securityContext.getUserPrincipal();
-//        String email = principal.getName();
-//        User user = this.publishService.getUserService().getByEmail(email);
+    public Response currentUser(@Context HttpHeaders headers) {
         return Response.ok(getCurrentUserFromHeaders(headers)).build();
+    }
+
+
+    @POST
+    @SecuredRequest
+    @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
+    @Path(value ="/addMoney/")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response addMoneyToUser(@Context HttpHeaders headers, MoneyAndAmountForm amount) {
+        User user = getCurrentUserFromHeaders(headers);
+        try {
+            this.publishService.addMoneyToUser(user, amount);
+        } catch (FormValidationError formValidationError) {
+            return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
+        }
+        return Response.ok().build();
     }
 
 }

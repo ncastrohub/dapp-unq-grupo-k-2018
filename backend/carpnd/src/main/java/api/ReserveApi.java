@@ -29,7 +29,7 @@ public class ReserveApi {
             return Response.ok(newReservation).build();
         } catch (FormValidationError formValidationError) {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
-        } catch (NoReturnLocationInPublicationException | InvalidAmountOfDaysToReserveException | DayDisabledException | DayAlreadyReservedException e) {
+        } catch (NoReturnLocationInPublicationException | InvalidAmountOfDaysToReserveException | DayDisabledException | NotEnoughCreditException | DayAlreadyReservedException e) {
             return Response.status(Response.Status.BAD_REQUEST).entity(e.error).build();
         }
     }

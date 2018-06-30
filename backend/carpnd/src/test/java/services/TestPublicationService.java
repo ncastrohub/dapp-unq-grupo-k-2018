@@ -65,7 +65,7 @@ public class TestPublicationService {
 
 
     @Test
-    public void testMakeReservationOfAPublication() throws FormValidationError, DayDisabledException, DayAlreadyReservedException, InvalidAmountOfDaysToReserveException, NoReturnLocationInPublicationException {
+    public void testMakeReservationOfAPublication() throws FormValidationError, DayDisabledException, DayAlreadyReservedException, InvalidAmountOfDaysToReserveException, NoReturnLocationInPublicationException, NotEnoughCreditException {
 
         User owner = UserBuilder.someUser();
         User customer = UserBuilder.someUser();

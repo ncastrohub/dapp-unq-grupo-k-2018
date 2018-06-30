@@ -41,7 +41,7 @@ public class MoneyAndAmount extends IdModel {
         }
     }
 
-    public MoneyAndAmount add(MoneyAndAmount moneyAndAmount) {
+    public MoneyAndAmount sum(MoneyAndAmount moneyAndAmount) {
         return new MoneyAndAmount(this.amount + moneyAndAmount.amount, CustomCurrencies.ARS);
     }
 
@@ -55,5 +55,9 @@ public class MoneyAndAmount extends IdModel {
 
     public MoneyAndAmount createNew() {
         return new MoneyAndAmount(this.amount, this.currency);
+    }
+
+    public MoneyAndAmount reduceAndGet(MoneyAndAmount moneyAndAmount) {
+        return new MoneyAndAmount(this.amount - moneyAndAmount.amount, CustomCurrencies.ARS);
     }
 }

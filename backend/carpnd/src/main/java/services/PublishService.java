@@ -3,6 +3,7 @@ package services;
 
 import api.forms.*;
 import javassist.NotFoundException;
+import model.MoneyAndAmount;
 import model.Publication;
 import model.User;
 import model.Vehicle;
@@ -145,6 +146,11 @@ public class PublishService {
         return this.publicationService.findById(publicationId);
     }
 
+    public void addMoneyToUser(User user, MoneyAndAmountForm amount) throws FormValidationError {
+        GenericValidator.validate(amount);
+        MoneyAndAmount amountToAdd = amount.getModelInstance();
+        this.userService.addMoneyToUser(user, amountToAdd);
+    }
 }
 
 

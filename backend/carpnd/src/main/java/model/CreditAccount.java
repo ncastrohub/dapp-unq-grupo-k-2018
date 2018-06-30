@@ -21,7 +21,7 @@ public class CreditAccount {
     }
 
     public void addCredit(MoneyAndAmount moneyAndAmount) {
-        this.availableCredit = this.availableCredit.add(moneyAndAmount);
+        this.availableCredit = this.availableCredit.sum(moneyAndAmount);
     }
 
     public void reserveMoney(MoneyAndAmount moneyAndAmount, Reservation reservation) throws NotEnoughCreditException {
@@ -29,7 +29,7 @@ public class CreditAccount {
             this.availableCredit.subtract(moneyAndAmount);
             this.reservedMoney.add(new ReservationMoney(moneyAndAmount, reservation));
         }else{
-            throw new NotEnoughCreditException();
+            throw new NotEnoughCreditException("customer has not enough money");
         }
     }
 }

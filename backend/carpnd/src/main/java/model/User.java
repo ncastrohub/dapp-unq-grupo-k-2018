@@ -12,9 +12,11 @@ public class User extends IdModel {
     public String lastName;
     public String cuil;
     public String email;
+//
+//    @JsonIgnore
+//    private SystemRateManager rateManager;
 
-    @JsonIgnore
-    private SystemRateManager rateManager;
+    public MoneyAndAmount availableMoney;
 
     @JsonIgnore
     private List<Vehicle> vehicles = new LinkedList<>();
@@ -27,25 +29,26 @@ public class User extends IdModel {
         this.lastName = lastName;
         this.cuil = cuil;
         this.email = email;
-        this.rateManager = new SystemRateManager();
+//        this.rateManager = new SystemRateManager();
         this.vehicles = new LinkedList<>();
+        this.availableMoney = new MoneyAndAmount(0.00, CustomCurrencies.ARS);
     }
 
     /*
     Return user's owner rate on the system
      */
-    public Long ownerRate() {
-//        TODO: Implementar
-        return rateManager.ownerRate;
-    }
+//    public Long ownerRate() {
+////        TODO: Implementar
+//        return rateManager.ownerRate;
+//    }
 
     /*
     Return user's customer rate on the system
      */
-    public Long customerRate() {
-//        TODO: Implementar
-        return rateManager.customerRate;
-    }
+//    public Long customerRate() {
+////        TODO: Implementar
+//        return rateManager.customerRate;
+//    }
 
 
     public String getName() {
@@ -63,11 +66,11 @@ public class User extends IdModel {
     public String getEmail() {
         return email;
     }
-
-    @JsonIgnore
-    public SystemRateManager getRateManager() {
-        return rateManager;
-    }
+//
+//    @JsonIgnore
+//    public SystemRateManager getRateManager() {
+//        return rateManager;
+//    }
 
     @JsonIgnore
     public List<Vehicle> getVehicles() {
@@ -90,9 +93,9 @@ public class User extends IdModel {
         this.email = email;
     }
 
-    public void setRateManager(SystemRateManager rateManager) {
-        this.rateManager = rateManager;
-    }
+//    public void setRateManager(SystemRateManager rateManager) {
+//        this.rateManager = rateManager;
+//    }
 
     public void setVehicles(List vehicles) {
         this.vehicles = vehicles;
@@ -104,6 +107,10 @@ public class User extends IdModel {
 
     public void removeVehicle(Vehicle vehicle) {
         this.vehicles.remove(vehicle);
+    }
+
+    public void reduceMoney(MoneyAndAmount moneyAndAmount) {
+        this.availableMoney = this.availableMoney.reduceAndGet(moneyAndAmount);
     }
 }
 

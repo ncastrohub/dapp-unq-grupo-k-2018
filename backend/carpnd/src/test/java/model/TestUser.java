@@ -24,11 +24,4 @@ public class TestUser {
 
     }
 
-    @Test
-    public void userIsCreatedWithOwnerAndCustomerReputationIsEmptyZero(){
-        User user = UserBuilder.someUser();
-        assertThat(user.ownerRate()).isEqualTo(0);
-        assertThat(user.customerRate()).isEqualTo(0);
-    }
-
 }
