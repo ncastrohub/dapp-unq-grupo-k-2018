@@ -10,6 +10,12 @@
             <generator class="native" />
         </id>
 
+        <property name="currentState">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">model.StateTypes</param>
+            </type>
+        </property>
+
     </class>
 
 </hibernate-mapping>

@@ -17,7 +17,7 @@
         <many-to-one name="publication" class="model.Publication"
                      column="reservation_publication" not-null="true" />
 
-        <!--<one-to-one name="state" class="model.ReservationState"/>-->
+        <one-to-one name="state" class="model.ReservationState"/>
 
     </class>
 </hibernate-mapping>
