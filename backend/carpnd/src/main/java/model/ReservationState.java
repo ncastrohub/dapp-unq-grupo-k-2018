@@ -2,13 +2,15 @@ package model;
 
 public class ReservationState extends IdModel {
 
-    public Boolean waitingForOwner;
+    private StateTypes currentState;
 
-    public Boolean getWaitingForOwner() {
-        return true;
+    public ReservationState(StateTypes waitConfirmOwner) {
+        this.currentState = waitConfirmOwner;
     }
 
-    public void setWaitingForOwner(Boolean state) {
-
+    public void setWaitForOwnerToConfirm(){
+        this.currentState = StateTypes.WAIT_CONFIRM_OWNER;
     }
+
+
 }

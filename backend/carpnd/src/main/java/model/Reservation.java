@@ -13,6 +13,8 @@ public class Reservation extends IdModel {
     @JsonIgnore
     public Publication publication;
 
+    public ReservationState state;
+
     public Reservation() {}
 
 //    public ReservationState state;
@@ -24,7 +26,7 @@ public class Reservation extends IdModel {
                        User customer, AdressLocation returnLocation) {
         this.publication = publication;
         this.customer = customer;
-//        this.state = new ReservationState();
+        this.state = new ReservationState(StateTypes.WAIT_CONFIRM_OWNER);
         this.publicationSnapshot = new ReservedPublication(
                 publication,
                 reservationDays,

@@ -2,7 +2,9 @@ package model;
 
 
 import model.exceptions.*;
+import org.joda.time.Days;
 import org.joda.time.LocalDate;
+import org.joda.time.Weeks;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -29,6 +31,7 @@ public class PublicationsEnabledDays extends IdModel {
     public PublicationsEnabledDays(List<LocalDate> reservedDays, List<LocalDate> disabledDays) {
         this.disabledDays = disabledDays;
         this.reservedDays = reservedDays;
+
     }
 
     public void reserveDay(LocalDate dayOne) throws DayDisabledException, DayAlreadyReservedException {

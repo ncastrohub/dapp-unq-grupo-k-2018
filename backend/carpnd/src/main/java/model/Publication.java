@@ -35,7 +35,6 @@ public class Publication extends IdModel {
         this.acquireLocation = acquireLocation;
         this.returnLocations = returnLocations;
         this.enabledDays = enabledDays;
-
     }
 
     public Reservation makeReservation(User customer, List<LocalDate> reservationDays, AdressLocation returnLocation) throws DayAlreadyReservedException, DayDisabledException, InvalidAmountOfDaysToReserveException, NotEnoughCreditException {
@@ -56,7 +55,6 @@ public class Publication extends IdModel {
             throw new NotEnoughCreditException("customer has not enough money");
         }
     }
-
 
     public boolean canReserve(LocalDate dayOne) {
 
