@@ -2,7 +2,11 @@ package utils.builders;
 
 import api.forms.PublicationsEnabledDaysForm;
 
+import org.joda.time.Days;
 import org.joda.time.LocalDate;
+import org.joda.time.Weeks;
+
+import java.time.DayOfWeek;
 import java.util.LinkedList;
 
 public class PublicationsEnabledDaysFormBuilder {
@@ -10,9 +14,9 @@ public class PublicationsEnabledDaysFormBuilder {
     public static PublicationsEnabledDaysForm some() {
         PublicationsEnabledDaysForm pform = new PublicationsEnabledDaysForm();
         pform.disabledDays = new LinkedList<>();
-        pform.disabledDays.add(LocalDate.now());
-        pform.disabledDays.add(LocalDate.now().plusDays(1));
-        pform.disabledDays.add(LocalDate.now().plusDays(2));
+        pform.disabledDays.add(DayOfWeek.FRIDAY.getValue());
+        pform.disabledDays.add(DayOfWeek.MONDAY.getValue());
+        pform.disabledDays.add(DayOfWeek.THURSDAY.getValue());
 
         pform.reservedDays = new LinkedList<>();
         pform.reservedDays.add(LocalDate.now().plusDays(6));

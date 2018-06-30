@@ -65,8 +65,8 @@ public class Publication extends IdModel {
         this.enabledDays.releaseDays(reservationDays);
     }
 
-    void disabledDays(LinkedList<LocalDate> reservationDays) throws DayAlreadyDisabledException {
-        this.enabledDays.disableDays(reservationDays);
+    void disabledDays(LinkedList<Integer> reservationDays) {
+        this.enabledDays.setDisabledDays(reservationDays);
     }
 
     public void setReturnLocations(LinkedList<AdressLocation> returnLocations) {
@@ -109,7 +109,7 @@ public class Publication extends IdModel {
     }
 
 
-    public List<LocalDate> getDisabledDays() {
+    public List<Integer> getDisabledDays() {
         return this.enabledDays.getDisabledDays();
     }
 
@@ -143,5 +143,13 @@ public class Publication extends IdModel {
 
     public void setCostPerHour(MoneyAndAmount costPerHour) {
         this.costPerHour = costPerHour;
+    }
+
+    public void disabledDays(List<LocalDate> reservationDays) {
+        LinkedList<Integer> daysOfWeek = new LinkedList<>();
+        for (LocalDate date: reservationDays){
+            daysOfWeek.add(date.getDayOfWeek());
+        }
+        this.disabledDays(daysOfWeek);
     }
 }

@@ -1,12 +1,10 @@
 package model;
 
-import model.exceptions.DayAlreadyDisabledException;
 import model.exceptions.DayAlreadyReservedException;
 import model.exceptions.DayDisabledException;
 import model.exceptions.DayNotReservedException;
-import org.junit.Test;
-
 import org.joda.time.LocalDate;
+import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -31,14 +29,10 @@ public class TestPublicationEnabledDays {
         LocalDate dayThree = LocalDate.now().plusDays(8);
         LocalDate dayFour = LocalDate.now().plusDays(10);
 
-        try {
-            enabledDays.setDisabled(dayOne);
-            enabledDays.setDisabled(dayTwo);
-            enabledDays.setDisabled(dayThree);
-            enabledDays.setDisabled(dayFour);
-        } catch (DayAlreadyDisabledException e) {
-            assertFalse(true);
-        }
+        enabledDays.setDisabled(dayOne.getDayOfWeek());
+        enabledDays.setDisabled(dayTwo.getDayOfWeek());
+        enabledDays.setDisabled(dayThree.getDayOfWeek());
+        enabledDays.setDisabled(dayFour.getDayOfWeek());
 
         assertThrows(DayDisabledException.class, ()-> enabledDays.reserveDay(dayOne));
         assertThrows(DayDisabledException.class, ()-> enabledDays.reserveDay(dayTwo));

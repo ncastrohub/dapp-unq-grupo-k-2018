@@ -2,6 +2,7 @@ package api.forms;
 
 import lombok.Data;
 import me.geso.tinyvalidator.constraints.NotNull;
+import me.geso.tinyvalidator.constraints.Size;
 import model.PublicationsEnabledDays;
 import org.joda.time.LocalDate;
 
@@ -11,13 +12,14 @@ import java.util.List;
 public class PublicationsEnabledDaysForm {
 
     @NotNull
-    public List<LocalDate> disabledDays;
+    @Size(max = 7)
+    public List<Integer> disabledDays;
 
     @NotNull
     public List<LocalDate> reservedDays;
 
     public PublicationsEnabledDays getModelInstance() {
-        PublicationsEnabledDays pEnableDays = new PublicationsEnabledDays(this.reservedDays, this.disabledDays);
-        return pEnableDays;
+        return new PublicationsEnabledDays(this.reservedDays, this.disabledDays);
     }
+
 }

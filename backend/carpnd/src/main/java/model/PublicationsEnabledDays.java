@@ -1,41 +1,33 @@
 package model;
 
-
 import model.exceptions.*;
-import org.joda.time.Days;
 import org.joda.time.LocalDate;
-import org.joda.time.Weeks;
 
 import java.util.LinkedList;
 import java.util.List;
 
 public class PublicationsEnabledDays extends IdModel {
 
-    private List<LocalDate> disabledDays;
+    private List<Integer> disabledDays;
     private List<LocalDate> reservedDays;
 
     public List<LocalDate> getReservedDays() {
         return reservedDays;
     }
 
-    public List<LocalDate> getDisabledDays() {
-        return this.disabledDays;
-    }
-
     PublicationsEnabledDays(){
-
         this.disabledDays = new LinkedList<>();
         this.reservedDays = new LinkedList<>();
     }
 
-    public PublicationsEnabledDays(List<LocalDate> reservedDays, List<LocalDate> disabledDays) {
+    public PublicationsEnabledDays(List<LocalDate> reservedDays, List<Integer> disabledDays) {
         this.disabledDays = disabledDays;
         this.reservedDays = reservedDays;
 
     }
 
     public void reserveDay(LocalDate dayOne) throws DayDisabledException, DayAlreadyReservedException {
-        if (disabledDays.contains(dayOne)) {
+        if (this.disabledDays.contains(dayOne.getDayOfWeek())) {
             throw new DayDisabledException("One Selected Day is Disabled");
         }
         if (reservedDays.contains(dayOne)){
@@ -44,15 +36,12 @@ public class PublicationsEnabledDays extends IdModel {
         this.reservedDays.add(dayOne);
     }
 
-    public void setDisabled(LocalDate disabled) throws DayAlreadyDisabledException {
-        if (this.disabledDays.contains(disabled)){
-            throw new DayAlreadyDisabledException();
-        }
-        this.disabledDays.add(disabled);
+    public void setDisabledDays(List<Integer> disabledDays){
+        this.disabledDays = disabledDays;
     }
 
     public boolean canReserve(LocalDate dayOne) {
-        return !this.reservedDays.contains(dayOne) && !this.disabledDays.contains(dayOne);
+        return !this.reservedDays.contains(dayOne) && !this.disabledDays.contains(dayOne.getDayOfWeek());
     }
 
     public void releaseDay(LocalDate date) throws DayNotReservedException {
@@ -79,18 +68,20 @@ public class PublicationsEnabledDays extends IdModel {
         }
     }
 
-    public void disableDays(List<LocalDate> reservationDays) throws DayAlreadyDisabledException {
-        for (LocalDate localDate : reservationDays) {
-            this.setDisabled(localDate);
-        }
-    }
-
     public boolean canReserveDays(List<LocalDate> reservationDays) {
         Boolean can = true;
         for (LocalDate day: reservationDays){
             can = can && this.canReserve(day);
         }
         return can;
+    }
+
+    public List<Integer> getDisabledDays() {
+        return disabledDays;
+    }
+
+    public void setDisabled(int disabled) {
+        this.disabledDays.add(disabled);
     }
 }
 
