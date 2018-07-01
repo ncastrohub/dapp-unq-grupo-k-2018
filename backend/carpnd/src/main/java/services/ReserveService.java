@@ -7,6 +7,7 @@ import model.Reservation;
 import model.User;
 import model.exceptions.*;
 import org.joda.time.LocalDate;
+import org.springframework.transaction.annotation.Transactional;
 import services.Validators.GenericValidator;
 
 import java.util.List;
@@ -68,4 +69,27 @@ public class ReserveService {
         return this.makeReservation(reserveForm.customer, reserveForm.reservationDays, reserveForm.publication, reserveForm.returnLocation);
     }
 
+    @Transactional()
+    public Reservation confirmByOwner(Long reservationId, User owner) throws ReservationStateError, NotReservationOwnerException {
+        Reservation reservation = this.reservationService.getRepository().findById(reservationId);
+        reservation.confirmByOwner(owner);
+        this.reservationService.getRepository().update(reservation);
+        return reservation;
+    }
+
+    @Transactional()
+    public Reservation returnVehicle(Long reservationId, User owner) throws NotReservationOwnerException, ReservationStateError {
+        Reservation reservation = this.reservationService.findById(reservationId);
+        reservation.returnVehicle(owner);
+        this.reservationService.update(reservation);
+        return reservation;
+    }
+
+    @Transactional()
+    public Object reject(Long reservationId, User owner) throws NotReservationOwnerException, ReservationStateError {
+        Reservation reservation = this.reservationService.findById(reservationId);
+        reservation.reject(owner);
+        this.reservationService.update(reservation);
+        return reservation;
+    }
 }

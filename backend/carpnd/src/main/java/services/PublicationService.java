@@ -22,6 +22,12 @@ public class PublicationService extends GenericService<Publication> {
     }
 
 
+    @Transactional(readOnly = true)
+    public ListAndTotal<Publication> findBy(VehicleType vehicleType, Integer pageNumber) {
+        return ((PublicationRespository) this.getRepository()).findByVehicleType(vehicleType, pageNumber);
+    }
+
+
     public OwnPaginationPage<Publication> getPaginationPageByVehicleType(VehicleType vehicleType, Integer pageNumber){
         ListAndTotal<Publication> result = this.findByVehicleType(vehicleType, pageNumber);
 
@@ -37,6 +43,7 @@ public class PublicationService extends GenericService<Publication> {
         }
         return page;
     }
+
 
     public OwnPaginationPage<Publication> getPaginationPageByVehicleType(VehicleType vehicleType){
         return this.getPaginationPageByVehicleType(vehicleType, 0);

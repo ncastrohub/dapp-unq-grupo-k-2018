@@ -5,43 +5,19 @@ import api.forms.UserForm;
 import api.forms.UserUpdateForm;
 import model.User;
 import model.exceptions.FormValidationError;
-import org.apache.cxf.message.Message;
-import org.apache.cxf.phase.PhaseInterceptorChain;
 import org.apache.cxf.rs.security.cors.CrossOriginResourceSharing;
-import org.apache.cxf.security.SecurityContext;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.util.EntityUtils;
-import org.json.JSONObject;
 import scripting.AuthRequired;
 import scripting.SecuredRequest;
 import services.PublishService;
+import utils.GetUserFromHeaders;
 
-import javax.annotation.Resource;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
-import java.io.IOException;
-import java.io.InputStream;
-import java.security.Principal;
 
 @Path("/user")
 public class UserApi {
-
-    public SecurityContext getSecurityContext() {
-        return securityContext;
-    }
-
-    public void setSecurityContext(SecurityContext securityContext) {
-        this.securityContext = securityContext;
-    }
-
-    @Context
-    SecurityContext securityContext;
 
 
     public PublishService getPublishService() {
@@ -53,41 +29,41 @@ public class UserApi {
     public void setPublishService(final PublishService service) {
         this.publishService = service;
     }
+//
+//    private User getCurrentUser(SecurityContext securityContext){
+//        Long userId = new Long(securityContext.getUserPrincipal().getName());
+//        return this.publishService.getUserService().findById(userId);
+//    }
 
-    private User getCurrentUser(SecurityContext securityContext){
-        Long userId = new Long(securityContext.getUserPrincipal().getName());
-        return this.publishService.getUserService().findById(userId);
-    }
-
-    public User getCurrentUserFromHeaders(HttpHeaders headers){
-        String authorizationHeader = headers.getHeaderString(HttpHeaders.AUTHORIZATION);
-        HttpClient client = new DefaultHttpClient();
-        HttpGet request = new HttpGet("https://tpi-desapp2.auth0.com/userinfo");
-        request.setHeader(HttpHeaders.CONTENT_TYPE, "application/json");
-        request.setHeader(HttpHeaders.AUTHORIZATION, authorizationHeader);
-        HttpResponse response = null;
-        try {
-            response = client.execute(request);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        HttpEntity entity = response.getEntity();
-        try {
-            InputStream instream = entity.getContent();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        String json = null;
-        try {
-            json = EntityUtils.toString(entity);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        JSONObject jsonObj = new JSONObject(json);
-
-        String email = jsonObj.get("email").toString();
-        return this.publishService.getUserService().getByEmail(email);
-    }
+//    public User getCurrentUserFromHeaders(HttpHeaders headers){
+//        String authorizationHeader = headers.getHeaderString(HttpHeaders.AUTHORIZATION);
+//        HttpClient client = new DefaultHttpClient();
+//        HttpGet request = new HttpGet("https://tpi-desapp2.auth0.com/userinfo");
+//        request.setHeader(HttpHeaders.CONTENT_TYPE, "application/json");
+//        request.setHeader(HttpHeaders.AUTHORIZATION, authorizationHeader);
+//        HttpResponse response = null;
+//        try {
+//            response = client.execute(request);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        HttpEntity entity = response.getEntity();
+//        try {
+//            InputStream instream = entity.getContent();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        String json = null;
+//        try {
+//            json = EntityUtils.toString(entity);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        JSONObject jsonObj = new JSONObject(json);
+//
+//        String email = jsonObj.get("email").toString();
+//        return this.publishService.getUserService().getByEmail(email);
+//    }
 
     @POST
     @AuthRequired
@@ -109,8 +85,9 @@ public class UserApi {
     @Consumes("application/json")
     @Produces("application/json")
     @Path(value = "/delete/")
-    public Response deleteUser(@Context SecurityContext securityContext) {
-        publishService.deleteUser(this.getCurrentUser(securityContext).getId());
+    public Response deleteUser(@Context HttpHeaders headers) {
+        User user = GetUserFromHeaders.getCurrentUserFromHeaders(headers, this.publishService);
+        publishService.deleteUser(user.getId());
         return Response.ok().build();
     }
 
@@ -137,7 +114,8 @@ public class UserApi {
     @Consumes("application/json")
     @Produces("application/json")
     public Response currentUser(@Context HttpHeaders headers) {
-        return Response.ok(getCurrentUserFromHeaders(headers)).build();
+        User user = GetUserFromHeaders.getCurrentUserFromHeaders(headers, this.publishService);
+        return Response.ok(user).build();
     }
 
 
@@ -148,7 +126,7 @@ public class UserApi {
     @Consumes("application/json")
     @Produces("application/json")
     public Response addMoneyToUser(@Context HttpHeaders headers, MoneyAndAmountForm amount) {
-        User user = getCurrentUserFromHeaders(headers);
+        User user = GetUserFromHeaders.getCurrentUserFromHeaders(headers, this.publishService);
         try {
             this.publishService.addMoneyToUser(user, amount);
         } catch (FormValidationError formValidationError) {

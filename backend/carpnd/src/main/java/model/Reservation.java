@@ -1,5 +1,7 @@
 package model;
 
+import model.exceptions.NotReservationOwnerException;
+import model.exceptions.ReservationStateError;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.joda.time.LocalDate;
 
@@ -52,5 +54,26 @@ public class Reservation extends IdModel {
 
     public User getCustomer() {
         return customer;
+    }
+
+    public void confirmByOwner(User owner) throws NotReservationOwnerException, ReservationStateError {
+        if (! this.getOwner().getId().equals(owner.getId())) {
+            throw new NotReservationOwnerException("you dont own this reservation");
+        }
+        this.state.setInProcess();
+    }
+
+    public void returnVehicle(User owner) throws NotReservationOwnerException, ReservationStateError {
+        if (! this.getOwner().getId().equals(owner.getId())) {
+            throw new NotReservationOwnerException("you dont own this reservation");
+        }
+        this.state.setReturnVehicle();
+    }
+
+    public void reject(User owner) throws NotReservationOwnerException, ReservationStateError {
+        if (! this.getOwner().getId().equals(owner.getId())) {
+            throw new NotReservationOwnerException("you dont own this reservation");
+        }
+        this.state.reject();
     }
 }
