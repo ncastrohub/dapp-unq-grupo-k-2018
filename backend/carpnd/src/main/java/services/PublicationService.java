@@ -1,30 +1,47 @@
 package services;
 
 import model.Publication;
+import model.VehicleType;
 import org.springframework.transaction.annotation.Transactional;
 import repositories.PublicationRespository;
-
-import java.util.List;
+import utils.ListAndTotal;
+import utils.OwnPaginationPage;
 
 public class PublicationService extends GenericService<Publication> {
 
 
     @Transactional(readOnly = true)
-    @SuppressWarnings({"LambdaParameterTypeCanBeSpecified", "unchecked"})
-    public List<Publication> findByVehicleType() {
-        return ((PublicationRespository) this.getRepository()).findByVehicleType();
+    public ListAndTotal<Publication> findByVehicleType(VehicleType vehicleType, Integer pageNumber) {
+        return ((PublicationRespository) this.getRepository()).findByVehicleType(vehicleType, pageNumber);
     }
-        //        int pageSize = 4;
-//        int pageNumber = 2;
-//        HibernateTemplate template = this.getRepository().getHibernateTemplate();
-//        return (List<Publication>) template.execute((HibernateCallback) session -> {
-//            Criteria criteria = session.createCriteria(this.getDomainClass()).
-//                    createCriteria(String.valueOf(Vehicle.class)).add(Restrictions.eq("type", VehicleType.SEDAN));
-////                Query query = session.createQuery("from "+ this.getDomainClass().getName() + " o");
-//            criteria.setMaxResults(pageSize);
-//            criteria.setFirstResult(pageSize * pageNumber);
-//            return criteria.list();
-//        });
+
+
+    @Transactional(readOnly = true)
+    public ListAndTotal<Publication> findByVehicleType(VehicleType vehicleType) {
+        return ((PublicationRespository) this.getRepository()).findByVehicleType(vehicleType, 0);
+    }
+
+
+    public OwnPaginationPage<Publication> getPaginationPageByVehicleType(VehicleType vehicleType, Integer pageNumber){
+        ListAndTotal<Publication> result = this.findByVehicleType(vehicleType, pageNumber);
+
+        OwnPaginationPage<Publication> page = new OwnPaginationPage<>();
+        page.setElementList(result.elementList);
+        if (pageNumber > 0) {
+            page.beforeUrl = "publication/list/" + vehicleType.toString() + "/" + (pageNumber - 1);
+        }
+        Integer total =  result.total;
+        Integer currentPage = pageNumber + 1;
+        if (total - (currentPage * 4) > 0) {
+            page.nextUrl = "publication/list/" + vehicleType.toString() + "/" + (pageNumber + 1);
+        }
+        return page;
+    }
+
+    public OwnPaginationPage<Publication> getPaginationPageByVehicleType(VehicleType vehicleType){
+        return this.getPaginationPageByVehicleType(vehicleType, 0);
+    }
+
 
 
 }

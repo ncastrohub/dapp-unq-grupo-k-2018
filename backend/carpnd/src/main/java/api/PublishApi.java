@@ -7,6 +7,7 @@ import api.forms.VehicleForm;
 import api.forms.VehicleUpdateForm;
 import model.Publication;
 import model.Vehicle;
+import model.VehicleType;
 import model.exceptions.FormValidationError;
 import org.apache.cxf.rs.security.cors.CrossOriginResourceSharing;
 import scripting.SecuredRequest;
@@ -137,17 +138,26 @@ public class PublishApi {
     }
 
     @GET
-//    @SecuredRequest
 //    @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
-    @Path(value ="/getSedanPublications/")
+    @Path(value ="/list/{vehicleType}")
     @Consumes("application/json")
     @Produces("application/json")
-    public Response publicationListByVehicleSedan(@Context HttpHeaders headers) {
+    public Response publicationListByVehicleSedan(@Context HttpHeaders headers, @PathParam(value = "vehicleType") VehicleType vehicleType) {
 
-        return Response.ok(this.publishService.getPublicationService().findByVehicleType()).build();
+        return Response.ok(this.publishService.getPublicationService().getPaginationPageByVehicleType(vehicleType)).build();
     }
 
 
+    @GET
+//    @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
+    @Path(value ="/list/{vehicleType}/{pageNumber}")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response publicationPageAndVehicleTypeWithPageNumber(
+            @PathParam(value = "vehicleType") VehicleType vehicleType,
+            @PathParam(value="pageNumber") Integer pageNumber) {
 
+        return Response.ok(this.publishService.getPublicationService().getPaginationPageByVehicleType(vehicleType, pageNumber)).build();
+    }
 
 }
