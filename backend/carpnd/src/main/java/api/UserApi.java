@@ -3,8 +3,10 @@ package api;
 import api.forms.MoneyAndAmountForm;
 import api.forms.UserForm;
 import api.forms.UserUpdateForm;
+import javassist.NotFoundException;
 import model.User;
 import model.exceptions.FormValidationError;
+import org.apache.commons.mail.EmailException;
 import org.apache.cxf.message.Message;
 import org.apache.cxf.phase.PhaseInterceptorChain;
 import org.apache.cxf.rs.security.cors.CrossOriginResourceSharing;
@@ -15,6 +17,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
+import org.jboss.logging.annotations.Param;
 import org.json.JSONObject;
 import scripting.AuthRequired;
 import scripting.SecuredRequest;
@@ -28,6 +31,7 @@ import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.Principal;
+
 
 @Path("/user")
 public class UserApi {
@@ -62,7 +66,7 @@ public class UserApi {
     public User getCurrentUserFromHeaders(HttpHeaders headers){
         String authorizationHeader = headers.getHeaderString(HttpHeaders.AUTHORIZATION);
         HttpClient client = new DefaultHttpClient();
-        HttpGet request = new HttpGet("https://tpi-desapp2.auth0.com/userinfo");
+        HttpGet 587request = new HttpGet("https://tpi-desapp2.auth0.com/userinfo");
         request.setHeader(HttpHeaders.CONTENT_TYPE, "application/json");
         request.setHeader(HttpHeaders.AUTHORIZATION, authorizationHeader);
         HttpResponse response = null;
@@ -140,16 +144,6 @@ public class UserApi {
         return Response.ok(getCurrentUserFromHeaders(headers)).build();
     }
 
-// JT PRUEBA
-    @GET
-    @Path(value ="/prueba/")
-    @Consumes("application/json")
-    @Produces("application/json")
-    public Response unsecureCurrentUser() {
-        return Response.ok("Prueba exitosa").build();
-    }
-
-
     @POST
     @SecuredRequest
     @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
@@ -164,6 +158,52 @@ public class UserApi {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
         }
         return Response.ok().build();
+    }
+
+
+// JT PRUEBA
+    @GET
+    @Path(value ="/unsecurenew/{email}")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response unsecureCurrentUser(@PathParam("email") String email) {
+        User newUser;
+        try {
+            newUser = publishService.getByEmail(email);
+        } catch (NotFoundException e) {
+            try {
+                UserForm userF = new UserForm();
+                userF.email = email;
+                userF.name = "Julia";
+                userF.lastName = "Troilo";
+                userF.cuil = "20313097681";
+                newUser = publishService.createUser(userF);
+                try {
+                    publishService.sendTestEmail(newUser, "Grosa prueba exitosa!");
+                } catch (EmailException e1) {
+                    newUser.lastName += " (" + e1.getMessage() + ")";
+                }
+            } catch (FormValidationError formValidationError) {
+                return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
+            }
+        }
+        return Response.ok(newUser).build();
+    }
+
+    @GET
+    @Path(value = "/prueba/")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response unsecureNew() {
+            return Response.ok("Prueba vive!").build();
+    }
+
+    @GET
+    @Path(value = "/list/")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response unsecureList() {
+        return Response.ok(publishService.getUsers()).build();
     }
 
 }
