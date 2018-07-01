@@ -66,7 +66,7 @@ public class UserApi {
     public User getCurrentUserFromHeaders(HttpHeaders headers){
         String authorizationHeader = headers.getHeaderString(HttpHeaders.AUTHORIZATION);
         HttpClient client = new DefaultHttpClient();
-        HttpGet 587request = new HttpGet("https://tpi-desapp2.auth0.com/userinfo");
+        HttpGet request = new HttpGet("https://tpi-desapp2.auth0.com/userinfo");
         request.setHeader(HttpHeaders.CONTENT_TYPE, "application/json");
         request.setHeader(HttpHeaders.AUTHORIZATION, authorizationHeader);
         HttpResponse response = null;
