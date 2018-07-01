@@ -28,7 +28,7 @@ export class UsereditComponent implements OnInit {
   onSubmit() {
     this.service.updateUser(this.user).subscribe(
         data => {
-          this.router.navigate(['/publication/list']);
+          this.router.navigate(['/']);
         },
         error => this.errorList.push(error)
       );

@@ -14,7 +14,7 @@ export class Location {
 }
 
 export class Days {
-	disabledDays: number[][];
+	disabledDays: number[];
 	reservedDays: number[][];
 	id: number;
 }

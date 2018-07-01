@@ -36,4 +36,12 @@ export class PublicationListComponent implements OnInit {
     this.router.navigate(['/publication/detail/' + publicationId]);
   }
 
+  goUrl(url){
+    this.service.getPublicationForUrl(url).subscribe(
+      data => this.publicationList = data,
+      error => this.errorList.push(error)
+    );
+  }
+
+
 }

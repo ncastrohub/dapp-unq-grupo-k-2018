@@ -13,19 +13,19 @@ export class VehicleService {
   constructor(private http: HttpClient, private config: AppConfig) { }
 
   getVehicleList(userId: string): Observable<[Vehicle]> {
-  	return this.http.get<[Vehicle]>( this.config.serveUrl + 'publication/'+ userId +'/vehicle/list');
+  	return this.http.get<[Vehicle]>( this.config.serveUrl + 'publication/vehicle/list');
   }
 
   createVehicle(userId: string, vehicle: Vehicle): Observable<any> {
-  	return this.http.post<any>( this.config.serveUrl + 'publication/'+ userId +'/vehicle/new', vehicle);
+  	return this.http.post<any>( this.config.serveUrl + 'publication/vehicle/new', vehicle);
   }
 
   updateVehicle(userId: string, vehicle: Vehicle): Observable<any> {
-  	return this.http.post<any>( this.config.serveUrl + 'publication/'+ userId +'/vehicle/update', vehicle);
+  	return this.http.post<any>( this.config.serveUrl + 'publication/vehicle/update', vehicle);
   }
  	
  	deleteVehicle(userId: string, vehicle: Vehicle): Observable<any> {
-  	return this.http.post<any>( this.config.serveUrl + 'publication/'+ userId +'/vehicle/delete', vehicle);
+  	return this.http.post<any>( this.config.serveUrl + 'publication/vehicle/delete', vehicle);
   }
 
   loadVehicleToEdit(vehicle: Vehicle) {

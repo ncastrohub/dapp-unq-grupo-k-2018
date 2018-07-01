@@ -14,18 +14,27 @@ import { PublicationCreateComponent } from './publication/publication-create/pub
 import { GooglemapsComponent } from './maps/googlemaps/googlemaps.component';
 import { DetailComponent } from './publication/detail/detail.component';
 import { ReservationDetailComponent } from './reservation/reservation-detail/reservation-detail.component';
+import { HomeComponent } from './home/home/home.component';
+import { UsernotexistsComponent } from './home/usernotexists/usernotexists.component';
+import { CreditComponent } from './credit/credit/credit.component';
 
 const routes: Routes = [
-  { path: 'vehicle/create', component: CreateVehicleComponent },
-  { path: 'vehicle/edit', component: EditVehicleComponent},
+
+  { path: '', component: HomeComponent },
+  { path: 'user-not-exists', component: UsernotexistsComponent },
+  { path: 'vehicle/create', component: CreateVehicleComponent, canActivate: [AuthGuard] },
+  { path: 'vehicle/edit', component: EditVehicleComponent, canActivate: [AuthGuard]},
   { path: 'vehicle/list', component: ListComponent, canActivate: [AuthGuard] },
   { path: 'user/edit', component: UsereditComponent, canActivate: [AuthGuard] },
   { path: 'user/detail', component: UserDetailComponent, canActivate: [AuthGuard]},
+  { path: 'user/add-money', component: CreditComponent, canActivate: [AuthGuard]},
+  { path: 'publication/list', component: PublicationListComponent, canActivate: [AuthGuard]  },
   { path: 'publication/list', component: PublicationListComponent, canActivate: [AuthGuard]  },
   { path: 'publication/create', component: PublicationCreateComponent, canActivate: [AuthGuard]  },
   { path: 'publication/detail/:publicationId', component: DetailComponent, canActivate: [AuthGuard]  },
   { path: 'reservation/detail/:reservationId', component: ReservationDetailComponent, canActivate: [AuthGuard]  },
   { path: 'callback/:authorization_role', component: CallbackComponent, canActivate: [NotAuthGuard] },
+
 ];
 
 @NgModule({

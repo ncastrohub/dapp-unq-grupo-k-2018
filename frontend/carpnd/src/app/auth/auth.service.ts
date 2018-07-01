@@ -67,7 +67,7 @@ export class AuthService {
           },
           error => {
             localStorage.removeItem('access_token');
-            this.router.navigate(['/']);
+            this.router.navigate(['/user-not-exists']);
           }
         )
       }
@@ -95,6 +95,7 @@ export class AuthService {
 
   
       public logout(): void {
+        this.auth0 = new auth0.WebAuth(environment.auth);
         localStorage.removeItem('access_token');
         localStorage.removeItem('id_token');
         localStorage.removeItem('expires_at');

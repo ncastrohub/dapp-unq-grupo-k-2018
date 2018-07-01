@@ -103,7 +103,8 @@ public class UserApi {
     }
 
 
-// JT PRUEBA
+
+
     @GET
     @Path(value ="/unsecurenew/{email}")
     @Consumes("application/json")

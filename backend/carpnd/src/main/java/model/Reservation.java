@@ -9,7 +9,10 @@ import java.util.List;
 
 public class Reservation extends IdModel {
 
-    @JsonIgnore
+    public void setPublicationSnapshot(ReservedPublication publicationSnapshot) {
+        this.publicationSnapshot = publicationSnapshot;
+    }
+
     private ReservedPublication publicationSnapshot;
 
     @JsonIgnore
@@ -52,6 +55,7 @@ public class Reservation extends IdModel {
         return publication.getOwner();
     }
 
+    @JsonIgnore
     public User getCustomer() {
         return customer;
     }

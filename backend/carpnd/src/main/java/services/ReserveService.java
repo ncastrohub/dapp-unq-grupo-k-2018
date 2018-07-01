@@ -64,9 +64,9 @@ public class ReserveService {
         return reservation;
     }
 
-    public Reservation reservePublication(ReserveForm reserveForm) throws FormValidationError, NoReturnLocationInPublicationException, InvalidAmountOfDaysToReserveException, DayDisabledException, DayAlreadyReservedException, NotEnoughCreditException {
+    public Reservation reservePublication(ReserveForm reserveForm, Long customerId) throws FormValidationError, NoReturnLocationInPublicationException, InvalidAmountOfDaysToReserveException, DayDisabledException, DayAlreadyReservedException, NotEnoughCreditException {
         GenericValidator.validate(reserveForm);
-        return this.makeReservation(reserveForm.customer, reserveForm.reservationDays, reserveForm.publication, reserveForm.returnLocation);
+        return this.makeReservation(customerId, reserveForm.reservationDays, reserveForm.publication, reserveForm.returnLocation);
     }
 
     @Transactional()

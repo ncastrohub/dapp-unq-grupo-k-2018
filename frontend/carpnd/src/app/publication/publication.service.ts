@@ -13,15 +13,15 @@ export class PublicationService {
   constructor(private http: HttpClient, private config: AppConfig) {}
 
   getPublicationList(): Observable<Page<Publication>> {
-  	return this.http.get<Page<Publication>>( this.config.serveUrl + 'publication/publication/list/');
+  	return this.http.get<Page<Publication>>( this.config.serveUrl + 'publication/list/');
   }
 
   createPublication(userId: string, publication: CreatePublication): Observable<CreatePublication> {
-  	return this.http.post<CreatePublication>( this.config.serveUrl + 'publication/' + userId +  '/publication/create/' , publication);
+  	return this.http.post<CreatePublication>( this.config.serveUrl + 'publication/create/' , publication);
   }
 
   getPublication(publicationId: string): Observable<Publication> {
-    return this.http.get<Publication>( this.config.serveUrl + 'publication/publication/' + publicationId + "/");
+    return this.http.get<Publication>( this.config.serveUrl + 'publication/' + publicationId + "/");
   }
 
   makeReservation(parameters: ReserveParameters): Observable<any> {
@@ -34,6 +34,10 @@ export class PublicationService {
  
   setList(dates: number[][]) {
     this.datesListSource.next(dates);
+  }
+
+  getPublicationForUrl(url): Observable<Page<Publication>> {
+    return this.http.get<Page<Publication>>( this.config.serveUrl + url);
   }
 
 }

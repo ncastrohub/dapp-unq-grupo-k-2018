@@ -1,34 +1,57 @@
 <div class="container">
-  <div class="form-group"> 
-    <h1>Publication List</h1>
-  </div> 
+      <div class="form-group"> 
+        <h1>Select a Vehicle to Reserve</h1>
+      </div> 
 
-  <div *ngIf="publicationList" >
-    <div class="col-12">
-      
-      <div  *ngFor="let publication of publicationList.elementList" class="card card-1" style="width: 17rem; margin: 10px" >
-        <img class="card-img-top" [src]="publication.vehicle.photo" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text">{{publication.vehicle.description}}</p>
-          <p class="card-text">Capcity: {{publication.vehicle.capacity}}</p>
-          <p class="card-text">Type: {{publication.vehicle.type}}</p>
-          <p class="card-text">Acquire Location: <br> {{publication.acquireLocation.adressName}}</p>
-          <p class="card-text">Cost: {{publication.costPerHour.amount}} {{publication.costPerHour.currency}}</p>
-          <button (click)="goToDetails(publication.id)" class="btn btn-primary">Reserve</button>
+      <div *ngIf="publicationList" >
+        <div class="col-12">
+          
+          <div  *ngFor="let publication of publicationList.elementList" 
+          class="card card-1" style="width: 17rem; margin: 10px" >
+            <img class="card-img-top" [src]="publication.vehicle.photo" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <hr>
+              <p class="card-text">{{publication.vehicle.description}}</p>
+              <hr>
+              <p class="card-text">Capcity: {{publication.vehicle.capacity}}</p>
+              <hr>
+              <p class="card-text">Type: {{publication.vehicle.type}}</p>
+              <hr>
+              <p class="card-text">Acquire Location: <br> {{publication.acquireLocation.adressName}}</p>
+              <hr>
+              <p class="card-text">Cost Per Day: {{publication.costPerHour.amount}} {{publication.costPerHour.currency}}</p>
+              
+
+              <button (click)="goToDetails(publication.id)" class="btn btn-primary btn-block">Reserve</button>
+            
+            </div>
+
+          </div>
+         
+          <br>
+          <br>
+
+        
         </div>
 
-      </div>
-     
-      <br>
-      <br>
-    <nav aria-label="Navigation">
-      <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="publicationList.backUrl">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="publicationList.nextUrl">Next</a></li>
-      </ul>
-    </nav>
+        <div  class="row justify-content-md-center" >
+          <nav aria-label="Navigation">
+            <ul class="pagination pagination-lg">
+              <li class="page-item" [class.disabled]="publicationList.beforeUrl == null">
+                <button [disabled]="publicationList.beforeUrl == null" 
+                (click)=goUrl(publicationList.beforeUrl) class="page-link" >Previous</button></li>
+              
+              <li class="page-item" [class.disabled]="publicationList.nextUrl == null">
+                  <button [disabled]="publicationList.nextUrl == null" 
+                  (click)=goUrl(publicationList.nextUrl) class="page-link" >Next</button></li>
+            </ul>
+          </nav>
+
+        </div>
+        
+        {{publicationList | json}}
+
     </div>
-</div>
 </div>
 

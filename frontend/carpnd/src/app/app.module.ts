@@ -34,6 +34,11 @@ import { CallbackComponent } from './callback.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './auth/token.bearer.interceptor';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { HomeComponent } from './home/home/home.component';
+import { UsernotexistsComponent } from './home/usernotexists/usernotexists.component';
+import { LoadingComponent } from './loading/loading/loading.component';
+import { CreditComponent } from './credit/credit/credit.component';
+import { CreditService } from './credit/credit.service';
 
 @NgModule({
   declarations: [
@@ -52,6 +57,10 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
     VehicleListComponent,
     ReservationDetailComponent,
     UserDetailComponent,
+    HomeComponent,
+    UsernotexistsComponent,
+    LoadingComponent,
+    CreditComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +80,7 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
       useClass: TokenInterceptor,
       multi: true
     },
+    CreditService,
     VehicleService,
     AuthService,
     ReservationService,

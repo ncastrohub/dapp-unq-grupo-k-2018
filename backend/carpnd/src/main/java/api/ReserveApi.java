@@ -47,7 +47,7 @@ public class ReserveApi {
     public Response makeReservation(@Context HttpHeaders headers, ReserveForm reserveForm) {
         User customer = GetUserFromHeaders.getCurrentUserFromHeaders(headers, this.publishService);
         try {
-            Reservation newReservation = this.reserveService.reservePublication(reserveForm);
+            Reservation newReservation = this.reserveService.reservePublication(reserveForm, customer.getId());
             return Response.ok(newReservation).build();
         } catch (FormValidationError formValidationError) {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
@@ -111,10 +111,5 @@ public class ReserveApi {
             return Response.status(Response.Status.BAD_REQUEST).entity(reservationError.error).build();
         }
     }
-
-
-
-
-
 
 }

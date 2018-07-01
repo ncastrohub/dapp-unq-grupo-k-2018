@@ -18,7 +18,7 @@ export class ReservationService {
   constructor(private http: HttpClient, private config: AppConfig) { }
 
   getReservation(reservationId: string): Observable<Reservation> {
-    return this.http.get<Reservation>( this.config.serveUrl + 'reservation/reservation/' + reservationId + "/");
+    return this.http.get<Reservation>( this.config.serveUrl + 'reservation/' + reservationId + "/");
   }
 
 

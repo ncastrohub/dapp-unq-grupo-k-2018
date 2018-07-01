@@ -1,7 +1,7 @@
 <h1>
   Publication detail
 </h1>
-<div >
+<div *ngIf="publication">
 	<div class='col-6 offset-3'>
 		<img class="card-img-top" [src]="publication.vehicle.photo" alt="Card image cap">
 		<div class="card-body">
@@ -16,29 +16,25 @@
 	<hr>
 	<div class="row">
 
-			<div class='col-5'>
+		<div class='col-5'  >
 
-				<ngbd-datepicker-config *ngIf="publication"  (onComplete)="addReservationDays($event)"> </ngbd-datepicker-config>
+			<ngbd-datepicker-config [callback]="markSomeDatesAsDisable" *ngIf="publication"  (onComplete)="addReservationDays($event)"> </ngbd-datepicker-config>
 
-			</div>
-			<div class='col-4 offset-1'>
-				<div class="form-group">
-					<label for="costumerId">Costumer Id</label>
-					<input type="number" class="form-control" id="costumerId"
-				 	required 
-				 	[(ngModel)]="costumerId" name="costumerId"/>
-				</div>
-			<label for="costumerId">Return Location</label>
-			<div *ngIf="publication" class="list-group">
-			  <button *ngFor="let location of publication.returnLocations" (click)="setReturnLocation(location)" type="button" class="list-group-item list-group-item-action">{{location.adressName}}</button>
-			</div>
-			</div>
+		</div>
+
+
+		<div class='col-4 offset-1'>
+		<label for="costumerId">Return Location</label>
+		<div *ngIf="publication" class="list-group">
+		  <button *ngFor="let location of publication.returnLocations" (click)="setReturnLocation(location)" type="button" class="list-group-item list-group-item-action">{{location.adressName}}</button>
+		</div>
+		</div>
 			
 	</div>
 	<div class="row">
 	</div>
 
-<button class="btn btn-warning btn-lg btn-block" [disabled]="!parameters.reservationDays || !costumerId || !parameters.returnLocation" (click)="makeReservation()" > Reservar </button>
+<button class="btn btn-warning btn-lg btn-block" [disabled]="!parameters.reservationDays || !parameters.returnLocation" (click)="makeReservation()" > Reservar </button>
 
 
 {{parameters | json}}

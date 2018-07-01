@@ -16,6 +16,7 @@ public class User extends IdModel {
 //    @JsonIgnore
 //    private SystemRateManager rateManager;
 
+    @JsonIgnore
     public MoneyAndAmount availableMoney;
 
     @JsonIgnore

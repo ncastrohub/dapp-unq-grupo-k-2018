@@ -24,6 +24,7 @@
            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" i18n>Me</a>
            <div class="dropdown-menu">
              <a routerLink="/user/detail" data-toggle="tooltip" data-placement="bottom" title="View Profile" class="dropdown-item" >Profile</a>
+             <a routerLink="/user/add-money" data-toggle="tooltip" data-placement="bottom" title="Add money" class="dropdown-item" >Charge Money</a>
            </div>
          </li>
 
@@ -66,17 +67,19 @@
   </div>
 
 </nav>
+
+
+
 <br>
-<div class="container-fluid">
+<div class="container-fluid jumbotron">
 	<div class="row justify-content-md-center">
 		<div class="col col-md-1"></div>
-		<div class='col col-md-10'>
-      <div class="jumbotron card card-2">
+		
+    <div class='col col-md-10'>
         <hr class="">
           <div class="jumbotron bg-white text-dark card-2">
 	           <router-outlet ></router-outlet>
           </div>
-      </div>
 
 		</div>
 

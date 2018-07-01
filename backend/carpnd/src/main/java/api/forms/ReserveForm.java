@@ -22,7 +22,4 @@ public class ReserveForm {
     @NotNull
     public Long publication;
 
-    @NotNull
-    public Long customer;
-
 }
