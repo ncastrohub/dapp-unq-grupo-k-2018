@@ -8,14 +8,20 @@ import model.Publication;
 import model.User;
 import model.Vehicle;
 import model.exceptions.FormValidationError;
+import org.apache.commons.mail.EmailException;
 import org.springframework.transaction.annotation.Transactional;
 import services.Validators.GenericValidator;
 import utils.builders.PublicationsEnabledDaysFormBuilder;
+  import org.apache.commons.mail.SimpleEmail;
 
 import java.io.Serializable;
 import java.util.List;
 
 public class PublishService {
+
+// JT PRUEBA
+    private MailService mailService;
+// FIN JT PRUEBA
 
     private UserService userService;
     private VehicleService vehicleService;
@@ -41,6 +47,15 @@ public class PublishService {
     public void setPublicationService(PublicationService publicationService) {
         this.publicationService = publicationService;
     }
+
+// JT PRUEBA
+    public MailService getMailService() {
+        return mailService;
+    }
+    public void setMailService(MailService mailService) {
+        this.mailService = mailService;
+    }
+// FIN JT PRUEBA
 
     public void setUserService(UserService userService) {
         this.userService = userService;
@@ -151,7 +166,13 @@ public class PublishService {
         MoneyAndAmount amountToAdd = amount.getModelInstance();
         this.userService.addMoneyToUser(user, amountToAdd);
     }
+
+// JT PRUEBA
+    public void sendTestEmail(User user, String msg) throws EmailException {
+        mailService.sendMail(user,msg);
+    }
 }
+
 
 
 
