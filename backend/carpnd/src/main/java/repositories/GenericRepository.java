@@ -33,6 +33,8 @@ public interface GenericRepository<T> {
 
     OwnPaginationPage<T> getPaginationPage();
 
+    OwnPaginationPage<T> getPaginationPage(Integer pageNumber);
+
     List<T> getPageList(final int pageSize, final int pageNumber, String query);
 }
 

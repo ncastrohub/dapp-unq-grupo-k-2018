@@ -59,6 +59,9 @@ public class GenericService<T> implements Serializable {
     public OwnPaginationPage<T> getPaginationPage(){return this.repository.getPaginationPage();}
 
     @Transactional(readOnly = true)
+    public OwnPaginationPage<T> getPaginationPage(Integer pageNumber){return this.repository.getPaginationPage(pageNumber);}
+
+    @Transactional(readOnly = true)
     public List<T> getPageList(final int pageSize, final int pageNumber, String query) {return this.repository.getPageList(pageSize, pageNumber, query);}
 
 }

@@ -26,6 +26,20 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
+    <!--<servlet>-->
+        <!--<servlet-name>LoggingServlet</servlet-name>-->
+        <!--<servlet-class>ThisApp.logging.LoggingServlet</servlet-class>-->
+        <!--<init-param>-->
+            <!--<param-name>log4jPropsFilePath</param-name>-->
+            <!--<param-value>/WEB-INF/log4j.properties</param-value>-->
+        <!--</init-param>-->
+        <!--<init-param>-->
+            <!--<param-name>log4jLogFilePath</param-name>-->
+            <!--<param-value>/WEB-INF/cxf</param-value>-->
+        <!--</init-param>-->
+        <!--<load-on-startup>1</load-on-startup>-->
+    <!--</servlet>-->
+
     <servlet-mapping>
         <servlet-name>CXFServlet</servlet-name>
         <url-pattern>/api/*</url-pattern>

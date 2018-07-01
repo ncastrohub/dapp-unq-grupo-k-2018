@@ -6,11 +6,14 @@ import api.forms.UserUpdateForm;
 import api.forms.VehicleForm;
 import api.forms.VehicleUpdateForm;
 import model.Publication;
+import model.User;
 import model.Vehicle;
+import model.VehicleType;
 import model.exceptions.FormValidationError;
 import org.apache.cxf.rs.security.cors.CrossOriginResourceSharing;
 import scripting.SecuredRequest;
 import services.PublishService;
+import utils.GetUserFromHeaders;
 import utils.OwnPaginationPage;
 
 import javax.ws.rs.*;
@@ -28,40 +31,38 @@ public class PublishApi {
 
     @Context
     private HttpHeaders headers;
-
-
+    private PublishService publishService;
 
 
     public PublishService getPublishService() {
         return publishService;
     }
 
-    private PublishService publishService;
-
     public void setPublishService(final PublishService service) {
         this.publishService = service;
     }
 
     @GET
-    @Path("/{userId}/vehicle/list")
+    @SecuredRequest
+    @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
+    @Path("/vehicle/list")
     @Produces("application/json")
-    @CrossOriginResourceSharing(
-            allowAllOrigins = true,
-            allowCredentials = true
-    )
-    public Response getVehiclesForUser(@PathParam("userId") String userId) {
-
-        List vehicleList = publishService.getVehiclesForUser(new Long(userId));
+    public Response getVehiclesForUser(@Context HttpHeaders headers) {
+        User user = GetUserFromHeaders.getCurrentUserFromHeaders(headers, this.publishService);
+        List vehicleList = publishService.getVehiclesForUser(user.getId());
         return Response.ok(vehicleList).build();
     }
 
     @POST
-    @Path(value = "/{userId}/vehicle/new")
+    @SecuredRequest
+    @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
+    @Path(value = "/vehicle/new")
     @Consumes("application/json")
     @Produces("application/json")
-    public Response createVehicleForUser(@PathParam("userId") Long userId, VehicleForm vehicle) {
+    public Response createVehicleForUser(@Context HttpHeaders headers, VehicleForm vehicle) {
+        User user = GetUserFromHeaders.getCurrentUserFromHeaders(headers, this.publishService);
         try {
-            Vehicle newVehicle = publishService.createVehicleForUser(userId, vehicle);
+            Vehicle newVehicle = publishService.createVehicleForUser(user.getId(), vehicle);
             return Response.ok(newVehicle).build();
         } catch (FormValidationError formValidationError) {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
@@ -69,23 +70,25 @@ public class PublishApi {
     }
 
     @POST
-    @Path(value = "/{userId}/vehicle/delete")
+    @SecuredRequest
+    @Path(value = "/vehicle/delete/")
     @Consumes("application/json")
     @Produces("application/json")
-    public Response deleteVehicleForUser(@PathParam("userId") Long userId, VehicleUpdateForm vehicle) {
-        publishService.deleteVehicle(userId, vehicle.id);
+    public Response deleteVehicleForUser(@Context HttpHeaders headers, VehicleUpdateForm vehicle) {
+        User user = GetUserFromHeaders.getCurrentUserFromHeaders(headers, this.publishService);
+        publishService.deleteVehicle(user.getId(), vehicle.id);
         return Response.ok(vehicle).build();
     }
 
     @POST
-    @Path(value = "/{userId}/vehicle/update")
+    @SecuredRequest
+    @Path(value = "/vehicle/update/")
     @Consumes("application/json")
     @Produces("application/json")
-    public Response updateVehicleForUser(
-            @PathParam("userId") Long userId,
-            VehicleUpdateForm vehicle) {
+    public Response updateVehicleForUser(@Context HttpHeaders headers, VehicleUpdateForm vehicle) {
+        User user = GetUserFromHeaders.getCurrentUserFromHeaders(headers, this.publishService);
         try {
-            publishService.updateVehicle(userId, vehicle);
+            publishService.updateVehicle(user.getId(), vehicle);
             return Response.ok(vehicle).build();
         } catch (FormValidationError formValidationError) {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
@@ -93,43 +96,24 @@ public class PublishApi {
     }
 
 
-    @POST
-    @Consumes("application/json")
-    @Produces("application/json")
-    @Path(value = "/user/edit/")
-    public Response updateUser(UserUpdateForm userForm) {
-        try {
-            this.publishService.updateUser(userForm);
-            return Response.ok(userForm).build();
-        } catch (FormValidationError formValidationError) {
-            return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
-        }
-    }
-
     @GET
     @Consumes("application/json")
     @Produces("application/json")
-    @Path(value = "/publication/list/")
-    public Response publicationList() {
-        OwnPaginationPage<Publication> page = this.publishService.getPublicationService().getPaginationPage();
-        return Response.ok(page).build();
-    }
-
-    @GET
-    @Consumes("application/json")
-    @Produces("application/json")
-    @Path(value = "/publication/{publicationId}/")
+    @Path(value = "/{publicationId}/")
     public Response publicationDetail(@PathParam("publicationId") Long publicationId) {
         return Response.ok(this.publishService.getPublicationService().findById(publicationId)).build();
     }
 
+
     @POST
+    @SecuredRequest
     @Consumes("application/json")
     @Produces("application/json")
-    @Path(value = "/{userId}/publication/create/")
-    public Response publicationCreate(@PathParam("userId") Long userId, PublicationForm publicationForm) {
+    @Path(value = "/create/")
+    public Response publicationCreate(@Context HttpHeaders headers, PublicationForm publicationForm) {
+        User owner = GetUserFromHeaders.getCurrentUserFromHeaders(headers, this.publishService);
         try {
-            Publication newPublication = this.publishService.createPublicationForUser(userId, publicationForm);
+            Publication newPublication = this.publishService.createPublicationForUser(owner.getId(), publicationForm);
             return Response.ok(newPublication).build();
         } catch (FormValidationError formValidationError) {
             return Response.status(Response.Status.BAD_REQUEST).entity(formValidationError.errors).build();
@@ -137,17 +121,54 @@ public class PublishApi {
     }
 
     @GET
-//    @SecuredRequest
 //    @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
-    @Path(value ="/getSedanPublications/")
+    @Path(value ="/list/{vehicleType}")
     @Consumes("application/json")
     @Produces("application/json")
-    public Response publicationListByVehicleSedan(@Context HttpHeaders headers) {
-
-        return Response.ok(this.publishService.getPublicationService().findByVehicleType()).build();
+    public Response publicationListByVehicleSedan(@PathParam(value = "vehicleType") VehicleType vehicleType) {
+        return Response.ok(this.publishService.getPublicationService().getPaginationPageByVehicleType(vehicleType)).build();
     }
 
 
+    @GET
+//    @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
+    @Path(value ="/list/{vehicleType}/{pageNumber}/")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response publicationPageAndVehicleTypeWithPageNumber(
+            @PathParam(value = "vehicleType") VehicleType vehicleType,
+            @PathParam(value="pageNumber") Integer pageNumber) {
 
+        return Response.ok(this.publishService.getPublicationService().getPaginationPageByVehicleType(vehicleType, pageNumber)).build();
+    }
+
+    @GET
+//    @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
+    @Path(value ="/list/{vehicleType}/")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response publicationPageAndVehicleTypeWithPageNumber(
+            @PathParam(value = "vehicleType") VehicleType vehicleType) {
+
+        return Response.ok(this.publishService.getPublicationService().getPaginationPageByVehicleType(vehicleType)).build();
+    }
+
+    @GET
+//    @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
+    @Path(value ="/list/{pageNumber}/")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response publicationPage(@PathParam(value="pageNumber") Integer pageNumber) {
+        return Response.ok(this.publishService.getPublicationService().getPaginationPage(pageNumber)).build();
+    }
+
+    @GET
+//    @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
+    @Path(value ="/list/")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response publicationPage() {
+        return Response.ok(this.publishService.getPublicationService().getPaginationPage()).build();
+    }
 
 }
