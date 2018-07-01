@@ -32,6 +32,7 @@
         <property name="vehicleService" ref="services.vehicle" />
         <property name="publicationService" ref="services.publication" />
         <property name="reservationService" ref="services.reservation" />
+        <property name="mailService" ref="services.mail" />
     </bean>
 
     <bean id="services.reserve" class="services.ReserveService">
@@ -54,5 +55,8 @@
     <!--<bean class="scripting.InitializeUser">-->
         <!--<property name="publishService" ref="services.publication" />-->
     <!--</bean>-->
+
+    <bean id="services.mail" class="services.MailService">
+    </bean>
 
 </beans>
