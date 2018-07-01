@@ -14,7 +14,7 @@
             <!--<one-to-many  class="model.Vehicle" />-->
         <!--</list>-->
 
-        <one-to-one name="vehicle" class="model.Vehicle"/>
+        <one-to-one name="vehicle"  class="model.Vehicle"/>
 
         <many-to-one name="owner" class="model.User" lazy="false"
                      column="publication_owner" not-null="false" />

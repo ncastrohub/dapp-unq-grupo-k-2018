@@ -135,5 +135,10 @@ public class TestPublicationService {
     }
 
 
+    @Test
+    public void testGetPublicationListBySedanType() {
+        List<Publication> publicationList = this.publicationService.getPublicationService().findByVehicleType();
+    }
+
 
 }

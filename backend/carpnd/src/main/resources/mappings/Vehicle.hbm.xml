@@ -3,7 +3,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping default-access="field"
                    default-cascade="save-update">
-    <class name="model.Vehicle">
+    <class name="model.Vehicle" table="vehicle">
         <id column="id" name="id">
             <generator class="native" />
         </id>

@@ -1,6 +1,5 @@
 package services;
 
-import org.hibernate.Query;
 import org.springframework.transaction.annotation.Transactional;
 import repositories.GenericRepository;
 import utils.OwnPaginationPage;
@@ -55,9 +54,6 @@ public class GenericService<T> implements Serializable {
 
     @Transactional(readOnly = true)
     public List<T> getAllByPage(final int pageSize, final int pageNumber) {return this.repository.getAllByPage(pageSize, pageNumber);}
-//
-//    @Transactional(readOnly = true)
-//    public OwnPaginationPage<T> getPaginationPage(Integer pageNumber){return this.repository.getPaginationPage(pageNumber);}
 
     @Transactional(readOnly = true)
     public OwnPaginationPage<T> getPaginationPage(){return this.repository.getPaginationPage();}

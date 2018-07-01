@@ -11,7 +11,7 @@
         <list name="disabledDays" cascade="all"  lazy="false">
             <key column="enabled_days_id" />
             <list-index  column="disabled_days"/>
-            <element type="Integer"/>
+            <element type="int"/>
         </list>
 
         <list name="reservedDays" cascade="all"  lazy="false">

@@ -12,7 +12,7 @@ import java.util.Optional;
 public class Publication extends IdModel {
 
     private User owner;
-    private Vehicle vehicle;
+    public Vehicle vehicle;
 
     private AdressLocation acquireLocation;
 

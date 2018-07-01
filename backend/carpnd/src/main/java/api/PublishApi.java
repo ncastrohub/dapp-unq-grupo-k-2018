@@ -9,6 +9,7 @@ import model.Publication;
 import model.Vehicle;
 import model.exceptions.FormValidationError;
 import org.apache.cxf.rs.security.cors.CrossOriginResourceSharing;
+import scripting.SecuredRequest;
 import services.PublishService;
 import utils.OwnPaginationPage;
 
@@ -135,18 +136,18 @@ public class PublishApi {
         }
     }
 
-//
-//    @GET
-//    @Consumes("application/json")
-//    @Produces("application/json")
-//    @Path(value = "/setup/")
-//    public Response setup() {
-//        User user = UserBuilder.someUser();
-//        user.addVehicle(VehicleBuilder.some());
-//        user.addVehicle(VehicleBuilder.some());
-//        this.publishService.getUserService().save(user);
-//        this.publishService.getUserService().save(UserBuilder.someUser());
-//        return Response.ok("done").build();
-//    }
+    @GET
+//    @SecuredRequest
+//    @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
+    @Path(value ="/getSedanPublications/")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response publicationListByVehicleSedan(@Context HttpHeaders headers) {
+
+        return Response.ok(this.publishService.getPublicationService().findByVehicleType()).build();
+    }
+
+
+
 
 }
