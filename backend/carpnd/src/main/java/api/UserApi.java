@@ -140,6 +140,15 @@ public class UserApi {
         return Response.ok(getCurrentUserFromHeaders(headers)).build();
     }
 
+// JT PRUEBA
+    @GET
+    @Path(value ="/prueba/")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response unsecureCurrentUser() {
+        return Response.ok("Prueba exitosa").build();
+    }
+
 
     @POST
     @SecuredRequest
