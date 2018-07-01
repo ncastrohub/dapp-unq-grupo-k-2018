@@ -42,6 +42,8 @@ public class UserService extends GenericService<User> {
 
     @Transactional
     public void addMoneyToUser(User user, MoneyAndAmount amountToAdd) {
-        this.getRepository().findById(user.getId()).availableMoney.sum(amountToAdd);
+        User userOnDb = this.getRepository().findById(user.getId());
+        userOnDb.addMoney(amountToAdd);
+        this.getRepository().update(userOnDb);
     }
 }

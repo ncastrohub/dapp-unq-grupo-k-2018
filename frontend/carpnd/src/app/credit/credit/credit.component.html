@@ -4,3 +4,18 @@
 
 {{ user | json }}
 
+<div *ngIf="user && money" >
+
+<form  (ngSubmit)="onSubmit()" #creditForm="ngForm">
+
+  	<div class="form-group" >
+  	<label for="amount">Amount to charge </label>
+  		<input required type="digit" class="form-control" id="amount" minlength="0" maxlength="6"
+   	[(ngModel)]="money.amount" name="amount"/> <span>Currency: ARS </span>
+  	</div>
+
+  <button type="submit" [disabled]="!creditForm.form.valid" class="btn btn-success btn-lg">Charge Money</button>
+
+</form>
+
+</div>

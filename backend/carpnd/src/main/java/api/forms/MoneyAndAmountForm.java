@@ -13,7 +13,6 @@ public class MoneyAndAmountForm {
     public CustomCurrencies currency;
 
     @NotNull
-    @Min(0)
     public Double amount;
 
     public MoneyAndAmount getModelInstance() {

@@ -3,6 +3,7 @@ import { User } from '../../user/user';
 import { MoneyAndAmount } from '../../publication/publication';
 import { UserServiceService } from '../../user/service/user-service.service';
 import { Router } from '@angular/router';
+import { CreditService } from '../credit.service'; 
 
 
 @Component({
@@ -11,18 +12,34 @@ import { Router } from '@angular/router';
   styleUrls: ['./credit.component.css']
 })
 
+
 export class CreditComponent implements OnInit {
 
-  constructor(private service: UserServiceService, private router: Router) { }
-
+  money: MoneyAndAmount;
+  errorList = [];
   user: User;
 
+  constructor(private userService: UserServiceService, private creditService: CreditService, private router: Router) { 
+     this.money = new MoneyAndAmount();
+     this.money.currency = "ARS";
+  }
+
+
    ngOnInit() {
-  	this.service.getUser().subscribe(
+  	this.userService.getUser().subscribe(
       user => {
         this.user = user
       }
     );
   }
+
+   onSubmit() {
+    this.creditService.charge(this.money).subscribe(
+        data => {
+          this.router.navigate(['/']);
+        },
+        error => this.errorList.push(error)
+      );
+    }
 
 }

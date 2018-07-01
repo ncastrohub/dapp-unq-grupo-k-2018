@@ -12,11 +12,6 @@ public class User extends IdModel {
     public String lastName;
     public String cuil;
     public String email;
-//
-//    @JsonIgnore
-//    private SystemRateManager rateManager;
-
-    @JsonIgnore
     public MoneyAndAmount availableMoney;
 
     @JsonIgnore
@@ -112,6 +107,10 @@ public class User extends IdModel {
 
     public void reduceMoney(MoneyAndAmount moneyAndAmount) {
         this.availableMoney = this.availableMoney.reduceAndGet(moneyAndAmount);
+    }
+
+    public void addMoney(MoneyAndAmount amountToAdd) {
+        this.availableMoney.sum(amountToAdd);
     }
 }
 

@@ -5,6 +5,8 @@ import { Observable, of, BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { AppConfig } from '../config';
 import { AuthService } from "../auth/auth.service";
+import { MoneyAndAmount } from "../publication/publication";
+
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +20,8 @@ export class CreditService {
     return this.http.post<User>(this.config.serveUrl + 'user/currentUser/', {});
   }
 
+  charge(money: MoneyAndAmount) {
+    return this.http.post<User>(this.config.serveUrl + 'user/addMoney/', money);
+  }
 
 }

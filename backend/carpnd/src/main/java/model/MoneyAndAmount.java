@@ -42,7 +42,8 @@ public class MoneyAndAmount extends IdModel {
     }
 
     public MoneyAndAmount sum(MoneyAndAmount moneyAndAmount) {
-        return new MoneyAndAmount(this.amount + moneyAndAmount.amount, CustomCurrencies.ARS);
+        this.amount = this.amount + moneyAndAmount.amount;
+        return this;
     }
 
     public boolean isMayorTo(MoneyAndAmount moneyAndAmount) {
