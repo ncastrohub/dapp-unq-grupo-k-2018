@@ -40,6 +40,7 @@
         <property name="vehicleService" ref="services.vehicle" />
         <property name="publicationService" ref="services.publication" />
         <property name="reservationService" ref="services.reservation" />
+        <property name="mailService" ref="services.mail" />
     </bean>
 
     <!--<bean id="initMethodExampleBean"-->

@@ -19,9 +19,7 @@ import java.util.List;
 
 public class PublishService {
 
-// JT PRUEBA
     private MailService mailService;
-// FIN JT PRUEBA
 
     private UserService userService;
     private VehicleService vehicleService;
@@ -167,9 +165,12 @@ public class PublishService {
         this.userService.addMoneyToUser(user, amountToAdd);
     }
 
-// JT PRUEBA
     public void sendTestEmail(User user, String msg) throws EmailException {
         mailService.sendMail(user,msg);
+    }
+
+    public void sendEmail(User user, String msg, String subject) throws EmailException {
+        mailService.sendMailWithSubject(user, msg, subject);
     }
 }
 

@@ -17,9 +17,9 @@ export class ReservationDetailComponent implements OnInit {
   
   ngOnInit() {
   	let reservationId = this.route.snapshot.paramMap.get('reservationId');
-	this.service.getReservation(reservationId).subscribe(data => {
-		this.reservation = data;
-	})
+  	this.service.getReservation(reservationId).subscribe(data => {
+  		this.reservation = data;
+  	})
   
   }
 

@@ -4,6 +4,7 @@ import api.forms.ReserveForm;
 import model.Reservation;
 import model.User;
 import model.exceptions.*;
+import org.apache.commons.mail.EmailException;
 import org.apache.cxf.rs.security.cors.CrossOriginResourceSharing;
 import scripting.SecuredRequest;
 import services.PublishService;

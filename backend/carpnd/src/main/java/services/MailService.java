@@ -1,7 +1,8 @@
 package services;
 
 import model.User;
-        import org.apache.commons.mail.DefaultAuthenticator;
+import model.exceptions.CustomEmailException;
+import org.apache.commons.mail.DefaultAuthenticator;
         import org.apache.commons.mail.EmailException;
         import org.apache.commons.mail.SimpleEmail;
 
@@ -16,9 +17,21 @@ public class MailService {
 
     public void sendMail(User clientdestination, String description) throws EmailException {
         mail.setSubject("Email de prueba");
-        mail.setMsg("Probando:" + description);
+        mail.setMsg(description);
         mail.addTo(clientdestination.getEmail());
         mail.send();
+    }
+
+    public void sendMailWithSubject(User clientdestination, String description, String subject) {
+        try {
+            mail.addTo(clientdestination.getEmail());
+            mail.setSubject(subject);
+            mail.setMsg(description);
+            mail.send();
+        } catch (EmailException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void mailConfiguration() throws EmailException {
@@ -34,9 +47,13 @@ public class MailService {
         mailConfiguration();
     }
 
-    public MailService getInstance() throws EmailException {
+    public MailService getInstance() throws CustomEmailException {
         if (instance == null) {
-            instance = new MailService();
+            try {
+                instance = new MailService();
+            } catch (EmailException e) {
+                throw new CustomEmailException("There some error with the mail delivery");
+            }
         }
         return instance;
     }

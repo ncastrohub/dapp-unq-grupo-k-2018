@@ -39,7 +39,7 @@ export class CreateVehicleComponent {
 	    data => {
 	      this.router.navigate(['/vehicle/list']);
 	    },
-	    error => this.errorList.push(error)
+	    error => this.errorList.push(error.error)
 	  );
   }
 

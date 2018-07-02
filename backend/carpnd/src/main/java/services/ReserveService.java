@@ -6,6 +6,7 @@ import model.Publication;
 import model.Reservation;
 import model.User;
 import model.exceptions.*;
+import org.apache.commons.mail.EmailException;
 import org.joda.time.LocalDate;
 import org.springframework.transaction.annotation.Transactional;
 import services.Validators.GenericValidator;
@@ -46,10 +47,19 @@ public class ReserveService {
         this.reservationService = reservationService;
     }
 
+    public MailService getMailService() {
+        return mailService;
+    }
+
+    public void setMailService(MailService mailService) {
+        this.mailService = mailService;
+    }
+
     private UserService userService;
     private VehicleService vehicleService;
     private PublicationService publicationService;
     private ReservationService reservationService;
+    private MailService mailService;
 
     public Reservation makeReservation(Long customerId, List<LocalDate> daysToReserve, Long publicationId,
                                        Long returnLocationId) throws DayDisabledException, DayAlreadyReservedException,
@@ -61,6 +71,7 @@ public class ReserveService {
         Reservation reservation = publication.makeReservation(customer, daysToReserve, returnLocation);
         this.publicationService.update(publication);
         this.reservationService.save(reservation);
+        mailService.sendMailWithSubject(customer, "Se ha reservado un vehiculo", "Reserva echa desde carpn");
         return reservation;
     }
 
