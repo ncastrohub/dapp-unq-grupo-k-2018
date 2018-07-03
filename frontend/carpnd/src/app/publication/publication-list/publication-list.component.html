@@ -31,12 +31,14 @@
       </div>
 
 
-      <div *ngIf="publicationList" >
-        <div class="col-12">
 
+
+      <div *ngIf="publicationList" >
+
+       <div class="row">
           <div *ngFor="let publication of publicationList.elementList"  class="col-md-4">
 
-            <div  class="card card-1" style="width: 18rem; margin: 10px" >
+            <div  class="card" style="width: 18rem;" >
               <img class="card-img-top" [src]="publication.vehicle.photo" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title"></h5>
@@ -58,8 +60,9 @@
             </div>
          
           </div>
+          
+      </div>
 
-        </div>
 
         <div  class="row justify-content-md-center" >
           <nav aria-label="Navigation">
