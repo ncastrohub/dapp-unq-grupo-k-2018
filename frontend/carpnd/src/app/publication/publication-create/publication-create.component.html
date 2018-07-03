@@ -1,120 +1,130 @@
- <h1>Create a new Publication</h1>
- <hr>
-  <div class='row'> 
-    <div class="col-4" >
-        <h4>Publication</h4>
-
-        <div class="card card-1" *ngIf="publication.vehicle">
-          <div class="card-header text-white bg-dark mb-3">
-            Vehicle
-          </div>
-
-          <div class="card-body">
-            <ul class="list-group list-group-flush" >
-              <li class="list-group-item">{{publication.vehicle.type}}</li>
-              <li class="list-group-item">{{publication.vehicle.description}}</li>
-              <li class="list-group-item">{{publication.vehicle.capacity}}</li>
-            </ul>
-          </div>
-          <img *ngIf="publication.vehicle" class="card-img-bottom" src="{{publication.vehicle.photo}}" alt="Vehicle Photo">
-        </div>
-
-        <div class="card card-1" *ngIf="publication.acquireLocation" >
-          <div class="card-header text-white bg-dark mb-3">
-            Acquire Location
-          </div>
-
-          <div class="card-body">
-            <ul class="list-group list-group-flush" >
-              <li class="list-group-item">{{publication.acquireLocation.adressName}}</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card card-1" *ngIf="publication.returnLocations" >
-          <div class="card-header text-white bg-dark mb-3">
-            Return Locations
-          </div>
-
-          <div class="card-body">
-            <ul class="list-group list-group-flush" >
-              <li *ngFor="let location of publication.returnLocations" class="list-group-item">{{location.adressName}}</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card card-1" *ngIf="publication.costPerHour" >
-          <div class="card-header text-white bg-dark mb-3">
-            Cost
-          </div>
-
-          <div class="card-body">
-            <ul class="list-group list-group-flush" >
-              <li  class="list-group-item">{{publication.costPerHour.currency}}</li>
-              <li  class="list-group-item">{{publication.costPerHour.amount}}</li>
-            </ul>
-          </div>
-        </div>
-
-
+<div *ngIf='loading'>
+  <div class="text-center">
+        <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+        <div>Working...</div>
     </div>
 
-      <div>
-          <div *ngFor="let day of daysOfWeek" class="custom-control custom-checkbox">
-            <input type="checkbox" (change)="addDisableDay($event, day.value)" class="custom-control-input" id="{{day.name}}">
-            <label class="custom-control-label" for="{{day.name}}">{{day.name}}</label>
-          </div>
-
-        </div>
+</div>
 
 
-      <div class="col-lg-8 col-8" >
-        <div *ngIf="moment == 'vehicle'"  >
-          
-          <div class="alert alert-primary" role="alert">
-            Select a Vehicle
-          </div>
+<div [hidden]='loading'>
 
-          <app-vehicle-list (onComplete)='saveVehicle($event)'>  </app-vehicle-list>
-        
-        </div>
+       <h1>Publish a Car</h1>
+       <hr>
+        <div class='row'> 
+          <div class="col-4" >
+              <div class="card card-1" *ngIf="publication.vehicle">
+                <div class="card-header text-white bg-dark mb-3">
+                  Vehicle
+                </div>
 
-        <div *ngIf="moment == 'acquire'" >
-          <div class="alert alert-primary" role="alert">
-            Select the location where the vehicle will be retired
-          </div>
-
-          <app-googlemaps (onComplete)='saveAcquireLocation($event)'> </app-googlemaps>
-
-        </div>
-
-
-        <div *ngIf="moment == 'return'">
-          <div>
-             <div class="alert alert-primary" role="alert">
-                Select the locations where the vehicle will be returned
+                <div class="card-body">
+                  <ul class="list-group list-group-flush" >
+                    <li class="list-group-item">{{publication.vehicle.type}}</li>
+                    <li class="list-group-item">{{publication.vehicle.description}}</li>
+                    <li class="list-group-item">{{publication.vehicle.capacity}}</li>
+                  </ul>
+                </div>
+                <img [src]="publication.vehicle.photo" class="rounded float-left img-thumbnail" alt="...">
               </div>
 
-            <app-googlemaps (onComplete)='addReturnLocation($event)'> </app-googlemaps>
+              <div class="card card-1" *ngIf="publication.acquireLocation" >
+                <div class="card-header text-white bg-dark mb-3">
+                  Acquire Location
+                </div>
 
-            <br>
-            <button (click)='finishReturnLocation()'class="btn btn-success" [disabled]='returnLocations.length == 0'> Finish </button>
+                <div class="card-body">
+                  <ul class="list-group list-group-flush" >
+                    <li class="list-group-item">{{publication.acquireLocation.adressName}}</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="card card-1" *ngIf="publication.returnLocations" >
+                <div class="card-header text-white bg-dark mb-3">
+                  Return Locations
+                </div>
+
+                <div class="card-body">
+                  <ul class="list-group list-group-flush" >
+                    <li *ngFor="let location of publication.returnLocations" class="list-group-item">{{location.adressName}}</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="card card-1" *ngIf="publication.costPerHour" >
+                <div class="card-header text-white bg-dark mb-3">
+                  Cost
+                </div>
+
+                <div class="card-body">
+                  <ul class="list-group list-group-flush" >
+                    <li  class="list-group-item">{{publication.costPerHour.currency}}</li>
+                    <li  class="list-group-item">{{publication.costPerHour.amount}}</li>
+                  </ul>
+                </div>
+              </div>
+
 
           </div>
-        </div>
 
-        <div *ngIf="moment == 'cost'">
-          <div>
-            <div class="alert alert-primary" role="alert">
-                Select cost per hour
+            <div class="col-lg-8 col-8" >
+              
+              <div *ngIf="moment == 'vehicle'"  >
+                
+                <div class="alert alert-primary" role="alert">
+                  Select a Vehicle
+                </div>
+
+                <app-vehicle-list (onReady)="loading = false" (onComplete)='saveVehicle($event)'>  </app-vehicle-list>
+              
+              </div>
+
+              <div *ngIf="moment == 'acquire'" >
+                <div class="alert alert-primary" role="alert">
+                  Select the location where the vehicle will be retired
+                </div>
+
+                <app-googlemaps (onComplete)='saveAcquireLocation($event)'> </app-googlemaps>
+
+              </div>
+
+
+              <div *ngIf="moment == 'return'">
+                <div>
+                   <div class="alert alert-primary" role="alert">
+                      Select the locations where the vehicle will be returned
+                    </div>
+
+                  <app-googlemaps (onComplete)='addReturnLocation($event)'> </app-googlemaps>
+
+                  <br>
+                  <button (click)='finishReturnLocation()'class="btn btn-success" [disabled]='returnLocations.length == 0'> Finish </button>
+
+                </div>
+              </div>
+
+              <div *ngIf="moment == 'cost'">
+                <div>
+                  <div class="alert alert-primary" role="alert">
+                      Select cost per hour
+                  </div>
+
+                  <app-cost-definer (onComplete)='saveCost($event)' > </app-cost-definer>
+                </div>
+              </div>
+
+              <div *ngIf="moment == 'disabledDay'">
+                <div *ngFor="let day of daysOfWeek" class="custom-control custom-checkbox">
+                  <input type="checkbox" (change)="addDisableDay($event, day.value)" class="custom-control-input" id="{{day.name}}">
+                  <label class="custom-control-label" for="{{day.name}}">{{day.name}}</label>
+                </div>
+
+              </div>
+
+              <br>
+              <button (click)='createPublication()'  [disabled]="! publicationReady()" class="btn btn-success"> Publish</button>
             </div>
-
-            <app-cost-definer (onComplete)='saveCost($event)' > </app-cost-definer>
+              
           </div>
-        </div>
-
-        <br>
-        <button (click)='createPublication()'  [disabled]=" moment != 'complete' " class="btn btn-success"> Save Publication </button>
-      </div>
-        
-    </div>
+</div>

@@ -1,42 +1,64 @@
-<div class="container">
-      <div class="form-group"> 
-        <h1>Select a Vehicle to Reserve</h1>
-      </div> 
+<div *ngIf='loading'>
+  <div class="text-center">
+        <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+        <div>Working...</div>
+    </div>
 
-      <button (click)="getPublicationListByType('SEDAN')"> Filter By Sedan</button>
-      <button (click)="getPublicationListByType('COUPE')"> Filter by Coupe</button>
+</div>
+
+<div *ngIf='!loading'>
+
+<div class="container">
+      
+      <div class="row">
+        
+
+          <div class="col-md-6">
+            <div class="form-group"> 
+              <h1>Select a Vehicle to Reserve</h1>
+            </div> 
+          </div>
+          
+          <div class="col-md-2">
+
+            <button (click)="getPublicationListByType('SEDAN')" type="button" class="btn btn-primary btn-lg"> Sedan</button>
+          </div>
+           <div class="col-md-2">
+            <button (click)="getPublicationListByType('COUPE')" type="button" class="btn btn-secondary btn-lg">Coupe</button>
+          </div>
+
+        
+      </div>
 
 
       <div *ngIf="publicationList" >
         <div class="col-12">
-          
-          <div  *ngFor="let publication of publicationList.elementList" 
-          class="card card-1" style="width: 17rem; margin: 10px" >
-            <img class="card-img-top" [src]="publication.vehicle.photo" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title"></h5>
-              <hr>
-              <p class="card-text">{{publication.vehicle.description}}</p>
-              <hr>
-              <p class="card-text">Capcity: {{publication.vehicle.capacity}}</p>
-              <hr>
-              <p class="card-text">Type: {{publication.vehicle.type}}</p>
-              <hr>
-              <p class="card-text">Acquire Location: <br> {{publication.acquireLocation.adressName}}</p>
-              <hr>
-              <p class="card-text">Cost Per Day: {{publication.costPerHour.amount}} {{publication.costPerHour.currency}}</p>
+
+          <div *ngFor="let publication of publicationList.elementList"  class="col-md-4">
+
+            <div  class="card card-1" style="width: 18rem; margin: 10px" >
+              <img class="card-img-top" [src]="publication.vehicle.photo" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title"></h5>
+                <hr>
+                <p class="card-text">{{publication.vehicle.description}}</p>
+                <hr>
+                <p class="card-text">Capcity: {{publication.vehicle.capacity}}</p>
+                <hr>
+                <p class="card-text">Type: {{publication.vehicle.type}}</p>
+                <hr>
+                <p class="card-text">Acquire Location: <br> {{publication.acquireLocation.adressName}}</p>
+                <hr>
+                <p class="card-text">Cost Per Day: {{publication.costPerHour.amount}} {{publication.costPerHour.currency}}</p>
+
+                <button (click)="goToDetails(publication.id)" class="btn btn-primary btn-block">Reserve</button>
               
+              </div>
 
-              <button (click)="goToDetails(publication.id)" class="btn btn-primary btn-block">Reserve</button>
-            
             </div>
-
-          </div>
          
-          <br>
-          <br>
+          </div>
 
-        
         </div>
 
         <div  class="row justify-content-md-center" >
@@ -53,9 +75,8 @@
           </nav>
 
         </div>
-        
-        {{publicationList | json}}
 
     </div>
 </div>
 
+</div>

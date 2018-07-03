@@ -17,7 +17,7 @@ export class PublicationListComponent implements OnInit {
 
   errorList = [];
   publicationList: Page<Publication>;
-
+  loading = true;
   constructor(private service: PublicationService, private router: Router, public authService: AuthService) { }
 
   ngOnInit() {
@@ -26,9 +26,16 @@ export class PublicationListComponent implements OnInit {
 
 
   getPublicationList(){
+    this.loading = true;
     this.service.getPublicationList().subscribe(
-      data => this.publicationList = data,
-      error => this.errorList.push(error)
+      data => {
+        this.loading = false; 
+        this.publicationList = data
+      },
+      error => {
+        this.loading = false;
+        this.errorList.push(error)
+      }
     );
   }
 
@@ -37,16 +44,30 @@ export class PublicationListComponent implements OnInit {
   }
 
   goUrl(url){
+    this.loading = true;
     this.service.getPublicationForUrl(url).subscribe(
-      data => this.publicationList = data,
-      error => this.errorList.push(error)
+      data => {
+        this.loading = false; 
+        this.publicationList = data
+      },
+      error => {
+        this.loading = false;
+        this.errorList.push(error)
+      }
     );
   }
 
   getPublicationListByType(type : string){
+    this.loading = true;
     this.service.getPublicationListByType(type).subscribe(
-      data => this.publicationList = data,
-      error => this.errorList.push(error)
+      data => {
+        this.loading = false; 
+        this.publicationList = data
+      },
+      error => {
+        this.loading = false;
+        this.errorList.push(error)
+      }
     );
   }
 

@@ -62,7 +62,7 @@ export class DetailComponent implements OnInit {
     this.service.makeReservation(this.parameters).subscribe(data => {
         this.router.navigate(['/reservation/detail/' + data.id]);
       },
-      error => this.errorList.push(error)
+      error => this.errorList.push(error.error)
     );
   }
 

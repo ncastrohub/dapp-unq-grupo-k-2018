@@ -1,8 +1,46 @@
-<p>
-  reservation-detail works!
-</p>
+<h2> Reservation</h2>
+<hr>
+<div class="row" *ngIf="reservation">
 
-{{reservation | json}}
+		<div class="col-md-12">
+				
+			<div class="card-columns">
+
+			  <div class="card text-center">
+			    <div class="card-body">
+			      <h5 class="card-title">Reserved Days</h5>
+			      <p *ngFor='let day of reservation.publicationSnapshot.reservedDays' class="card-text">{{day[2]}}/{{day[1]}}/{{day[0]}}</p>
+			      <p class="card-text"><small class="text-muted"></small></p>
+			    </div>
+			  </div>
+
+			  <div class="card text-center">
+			    <div class="card-body">
+			      <h5 class="card-title">Acquire Adress</h5>
+			      <p class="card-text">{{reservation.publicationSnapshot.acquireLocation.adressName}}</p>
+			      <p class="card-text"><small class="text-muted"></small></p>
+			    </div>
+			  </div>
+			
+			  <div class="card text-center">
+			    <div class="card-body">
+			      <h5 class="card-title">Return Adress</h5>
+			      <p class="card-text">{{reservation.publicationSnapshot.returnLocation.adressName}}</p>
+			      <p class="card-text"><small class="text-muted"></small></p>
+			    </div>
+			  </div>
+
+			  <div class="card text-center">
+			    <div class="card-body">
+			      <h5 class="card-title">Status</h5>
+			      <p class="card-text">{{reservation.state.currentState | lowercase}}</p>
+			      <p class="card-text"><small class="text-muted"></small></p>
+			    </div>
+			  </div>
+			
+			</div>
+		</div>
+</div>
 
 
 <div *ngIf="reservation && myEmail" >
@@ -10,27 +48,27 @@
  <div *ngIf="reservation.owner.email == myEmail" [ngSwitch]="reservation.state.currentState">
  	
  	<div *ngSwitchCase="'WAIT_CONFIRM_OWNER'" >
- 		<button (click)="setState('IN_PROCESS')"> Confirm Reservation </button>
+ 		<button type="button"  class="btn btn-success" (click)="setState('IN_PROCESS')"> Confirm Reservation </button>
  	</div>
 
  	<div *ngSwitchCase="'WAIT_OWNER_TO_END'">
- 		<button (click)="setState('RETURNED')"> End Reservation </button>
+ 		<button class="btn btn-success" (click)="setState('RETURNED')"> End Reservation </button>
  	</div>
 
  	<div *ngSwitchCase="'IN_PROCESS'">
- 		<button [disabled]="true" > Reservation in Process </button>
+ 		<button type="button" class="btn btn-info" [disabled]="true" > Reservation in Process </button>
  	</div>
 
 	<div *ngSwitchCase="'RETURNED'">
- 		<button [disabled]="true" > Finalized </button>
+ 		<button type="button" class="btn btn-info" [disabled]="true" > Finalized </button>
  	</div>
 
 	<div *ngSwitchCase="'INTERRUPTED'">
- 		<button [disabled]="true" > Reservation Interrupted </button>
+ 		<button type="button" class="btn btn-info" [disabled]="true" > Reservation Interrupted </button>
  	</div>
 
  	<div *ngSwitchDefault >
- 		<button [disabled]="true"> Waiting Customer </button>
+ 		<button type="button" class="btn btn-info" [disabled]="true"> Waiting Customer </button>
  	</div>
 
  </div>
@@ -38,25 +76,25 @@
  <div *ngIf="reservation.owner.email != myEmail" [ngSwitch]="reservation.state.currentState">
  	
  	<div *ngSwitchCase="'WAIT_CONFIRM_OWNER'" >
- 		<button [disabled]="true"> Reservation witing to be confirmed for the owner </button>
- 		<button (click)="setState('INTERRUPTED')" > Interrupt </button>
+ 		<button type="button" class="btn btn-info" [disabled]="true"> Reservation witing to be confirmed for the owner </button>
+ 		<button type="button" class="btn btn-danger" (click)="setState('INTERRUPTED')" > Interrupt </button>
  	</div>
 
  	<div *ngSwitchCase="'WAIT_OWNER_TO_END'">
- 		<button [disabled]="true"> Waiting Owner the vehicle is Returned </button>
+ 		<button class="btn btn-info" type="button" [disabled]="true"> Waiting Owner the vehicle is Returned </button>
  	</div>
 
  	<div *ngSwitchCase="'IN_PROCESS'">
- 		<button (click)="setState('WAIT_OWNER_TO_END')" > Return To Owner </button>
- 		<button (click)="setState('INTERRUPTED')" > Interrupt </button>
+ 		<button type="button" class="btn btn-success"  (click)="setState('WAIT_OWNER_TO_END')" > Return To Owner </button>
+ 		<button type="button" class="btn btn-danger" (click)="setState('INTERRUPTED')" > Interrupt </button>
  	</div>
 
 	<div *ngSwitchCase="'RETURNED'">
- 		<button [disabled]="true" > Finalized </button>
+ 		<button type="button" class="btn btn-info" [disabled]="true" > Finalized </button>
  	</div>
 
 	<div *ngSwitchCase="! 'INTERRUPTED'">
- 		<button [disabled]="true" > Reservation Interrupted </button>
+ 		<button type="button" class="btn btn-info" [disabled]="true" > Reservation Interrupted </button>
  	</div>
 
  	<div *ngSwitchDefault >

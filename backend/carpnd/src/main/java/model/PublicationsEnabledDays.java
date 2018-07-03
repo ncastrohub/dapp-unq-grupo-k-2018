@@ -15,7 +15,7 @@ public class PublicationsEnabledDays extends IdModel {
         return reservedDays;
     }
 
-    PublicationsEnabledDays(){
+    public PublicationsEnabledDays(){
         this.disabledDays = new LinkedList<>();
         this.reservedDays = new LinkedList<>();
     }

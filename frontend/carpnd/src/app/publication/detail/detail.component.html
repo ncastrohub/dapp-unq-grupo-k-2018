@@ -1,44 +1,91 @@
-<h1>
-  Publication detail
-</h1>
 <div *ngIf="publication">
-	<div class='col-6 offset-3'>
-		<img class="card-img-top" [src]="publication.vehicle.photo" alt="Card image cap">
-		<div class="card-body">
-		  <h5 class="card-title"></h5>
-		  <p class="card-text">{{publication.vehicle.description}}</p>
-		  <p class="card-text">Capcity: {{publication.vehicle.capacity}}</p>
-		  <p class="card-text">Type: {{publication.vehicle.type}}</p>
-		  <p class="card-text">Acquire Location: <br> {{publication.acquireLocation.adressName}}</p>
-		  <p class="card-text">Cost: {{publication.costPerHour.amount}} {{publication.costPerHour.currency}}</p>
-		</div>
+	
+	<div *ngFor="let error of errorList" class="alert alert-danger" role="alert">
+  		{{error.value}}
 	</div>
-	<hr>
+
+
 	<div class="row">
 
-		<div class='col-5'  >
+		<div class="col-md-12">
+				
+			<div class="card-columns">
+			  
+			  <div class="card">
+			    <img [src]="publication.vehicle.photo" class="rounded float-left img-thumbnail" alt="...">
+			  </div>
 
-			<ngbd-datepicker-config [callback]="markSomeDatesAsDisable" *ngIf="publication"  (onComplete)="addReservationDays($event)"> </ngbd-datepicker-config>
-
-		</div>
-
-
-		<div class='col-4 offset-1'>
-		<label for="costumerId">Return Location</label>
-		<div *ngIf="publication" class="list-group">
-		  <button *ngFor="let location of publication.returnLocations" (click)="setReturnLocation(location)" type="button" class="list-group-item list-group-item-action">{{location.adressName}}</button>
-		</div>
-		</div>
+			  <div class="card text-center">
+			    <div class="card-body">
+			      <h5 class="card-title">Vehicle</h5>
+			      <p class="card-text">{{publication.vehicle.description}}</p>
+			      <p class="card-text"><small class="text-muted">Recomended By Users</small></p>
+			    </div>
+			  </div>
 			
+
+			  <div class="card text-center">
+			    <div class="card-body">
+			      <h5 class="card-title">Spects</h5>
+			      <p class="card-text">Capcity: {{publication.vehicle.capacity}}</p>
+			      <p class="card-text">Type: {{publication.vehicle.type}}</p>
+			      <p class="card-text"><small class="text-muted">Avaible this week</small></p>
+			    </div>
+			  </div>
+			  <div class="card bg-primary text-white text-center p-2">
+			      <blockquote class="blockquote mb-0">
+			      	<h5 class="card-title">Cost</h5>
+			        <p>{{publication.costPerHour.amount}} {{publication.costPerHour.currency}} P/Day</p>
+			      </blockquote>
+			      <p class="card-text"><small class="">Enough Credit</small></p>
+			    </div>
+
+			   <div class="card text-center">
+			    <div class="card-body">
+			      <h5 class="card-title">Acquire Location</h5>
+			      <p class="card-text">{{publication.acquireLocation.adressName}}</p>
+			      <p class="card-text"><small class="text-muted">Next to You</small></p>
+			    </div>
+			  </div>
+
+			
+			</div>
+		</div>
+
+
+		<div class="col-md-12">
+				
+			<div class="card-columns">
+			  
+			  
+			  <div class="card text-center">
+			    <div class="card-body">
+					<ngbd-datepicker-config [callback]="markSomeDatesAsDisable" *ngIf="publication"  (onComplete)="addReservationDays($event)"> </ngbd-datepicker-config>
+			    </div>
+			  </div>
+			
+
+			  <div class="card text-center">
+			    <div class="card-body">
+			     <label for="costumerId">Return Location</label>
+				<div *ngIf="publication" class="list-group">
+				  <button *ngFor="let location of publication.returnLocations" (click)="setReturnLocation(location)" type="button" class="list-group-item list-group-item-action">{{location.adressName}}</button>
+				</div>
+			    </div>
+			  </div>
+		</div>
+
+		
+		<div>
+
+					
+			<div class="row">
+			</div>
+
+			<button class="btn btn-warning btn-lg btn-block" [disabled]="!parameters.reservationDays || !parameters.returnLocation" (click)="makeReservation()" > Reservar </button>
+
+		</div>
+
 	</div>
-	<div class="row">
-	</div>
-
-<button class="btn btn-warning btn-lg btn-block" [disabled]="!parameters.reservationDays || !parameters.returnLocation" (click)="makeReservation()" > Reservar </button>
-
-
-{{parameters | json}}
-
-{{errorList | json}}
 
 </div>

@@ -13,7 +13,7 @@ export class ReservationListComponent implements OnInit {
 
   errorList = [];
   reservationList: Page<Reservation>;
-
+  loading = true;
   constructor(private service: ReservationService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -27,14 +27,20 @@ export class ReservationListComponent implements OnInit {
 
   getReservationListCustomer(){
     this.service.getReservationListCustomer().subscribe(
-      data => this.reservationList = data,
+      data => {
+        this.reservationList = data
+        this.loading = false;
+      },
       error => this.errorList.push(error)
     );
   }
 
   getReservationListOwner(){
     this.service.getReservationListOwner().subscribe(
-      data => this.reservationList = data,
+      data => { 
+        this.reservationList = data 
+        this.loading = false;
+      },
       error => this.errorList.push(error)
     );
   }
@@ -44,8 +50,12 @@ export class ReservationListComponent implements OnInit {
   }
 
   goUrl(url){
+    this.loading = true;
     this.service.getReservationForUrl(url).subscribe(
-      data => this.reservationList = data,
+      data => { 
+        this.reservationList = data
+        this.loading = false;
+      },
       error => this.errorList.push(error)
     );
   }

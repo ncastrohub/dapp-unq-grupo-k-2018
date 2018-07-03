@@ -29,7 +29,7 @@ public class MailService {
             mail.setMsg(description);
             mail.send();
         } catch (EmailException e) {
-            e.printStackTrace();
+            String mesasage = e.getMessage();
         }
 
     }

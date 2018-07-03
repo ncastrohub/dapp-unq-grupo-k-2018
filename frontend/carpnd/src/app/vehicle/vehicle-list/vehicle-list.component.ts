@@ -10,11 +10,13 @@ import { Vehicle } from '../vehicle'
 export class VehicleListComponent implements OnInit {
 
 	@Output() public onComplete: EventEmitter<any> = new EventEmitter();
+  @Output() public onReady: EventEmitter<any> = new EventEmitter();
 
   constructor(private service: VehicleService) { }
 
   errorList = [];
   vehicleList: [Vehicle];
+  loading = true;
 
   ngOnInit() {
   	this.getVehicleList();
@@ -22,8 +24,12 @@ export class VehicleListComponent implements OnInit {
 
   
   getVehicleList(){
+
     this.service.getVehicleList('1').subscribe(
-      data => this.vehicleList = data,
+      data => { 
+        this.vehicleList = data;
+        this.onReady.emit({loading: false})
+      },
       error => this.errorList.push(error)
     );
   }

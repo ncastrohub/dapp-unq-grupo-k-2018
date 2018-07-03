@@ -1,14 +1,46 @@
-<p>
-  reservation-list works!
-
   {{ reservationList| json }}
-</p>
 
-<div *ngIf="reservationList">
+<div *ngIf='loading'>
+  <div class="text-center">
+        <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+        <div>Working...</div>
+    </div>
 
-	<div *ngFor="let reservation of reservationList.elementList">
-			{{reservation.id | json}}	
-		<button (click)="show(reservation.id)" >Show</button>
+</div>
+
+<div *ngIf='!loading'>
+
+	<div *ngIf="reservationList">
+
+		<div *ngIf="reservationList.elementList != []">
+
+				<div *ngFor="let reservation of reservationList.elementList">
+						{{reservation.id | json}}	
+					<button (click)="show(reservation.id)" >Show</button>
+				</div>
+
+
+
+				<div  class="row justify-content-md-center" >
+		          <nav aria-label="Navigation">
+		            <ul class="pagination pagination-lg">
+		              <li class="page-item" [class.disabled]="reservationList.beforeUrl == null">
+		                <button [disabled]="reservationList.beforeUrl == null" 
+		                (click)=goUrl(reservationList.beforeUrl) class="page-link" >Previous</button></li>
+		              
+		              <li class="page-item" [class.disabled]="reservationList.nextUrl == null">
+		                  <button [disabled]="reservationList.nextUrl == null" 
+		                  (click)=goUrl(reservationList.nextUrl) class="page-link" >Next</button></li>
+		            </ul>
+		          </nav>
+
+		        </div>
+		</div>
+		<div *ngIf="! reservationList.elementList == []">
+			There is no Reservations
+		</div>
+
 	</div>
+
 
 </div>

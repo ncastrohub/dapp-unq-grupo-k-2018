@@ -1,27 +1,28 @@
-<div class="form-group">
+<div class="row">
 
-	<div class="row" *ngIf=callback>
-		<div class="col-6">
+	<div *ngIf=callback>
+		<div class="col-md-12">
 			
-		<ngb-datepicker [markDisabled]="callback" [(ngModel)]="model"></ngb-datepicker>
+			<ngb-datepicker [markDisabled]="callback" [(ngModel)]="model"></ngb-datepicker>
 			
 		</div>
 
-		<div class="col-6">
-			
+	</div>
+
+	<div class="col-md-12">
+		
 		<ul class="list-group">
 		  <li *ngFor="let date of dateList" class="list-group-item">{{date[2]}}/{{date[1]}}/{{date[0]}}</li>
 		</ul>
-			
-		</div>
+		
+	</div>
+	
+	<div class="col-md-4">
+		<button (click)="addDay()" class="btn btn-success btn-block">Select day</button>
 	</div>
 
-</div>
-
-<div class="form-group">
-	<button (click)="addDay()" class="btn btn-success btn-lg">Select day</button>
-	<br>
-	<br>
-	<button (click)="complete()" [disabled]="dateList.length <= 0" class="btn btn-success btn-lg">Finish</button>
+	<div class="col-md-4">
+		<button (click)="complete()" [disabled]="dateList.length <= 0" class="btn btn-success btn-block btn-sm">Finish</button>
+	</div>
 </div>
 

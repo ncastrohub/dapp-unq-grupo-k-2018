@@ -20,6 +20,8 @@ import { AuthService } from '../../auth/auth.service';
 
 export class PublicationCreateComponent {
 
+  loading = true;
+
   moment = "vehicle";
   publication = new CreatePublication();
   returnLocations = [];
@@ -63,8 +65,10 @@ export class PublicationCreateComponent {
 
   saveCost($event) {
     this.publication.costPerHour = $event.cost;
-    this.moment = "complete";
+    this.moment = "disabledDay";
   }
+
+
 
   addDisableDay($event, day_value){
     if($event.target.checked){
@@ -77,12 +81,20 @@ export class PublicationCreateComponent {
     }
   }
 
+  publicationReady(){
+    return this.publication.returnLocations && this.publication.vehicle && this.publication.acquireLocation && this.publication.costPerHour && this.publication.disabledDays;
+  }
+
   createPublication() {
+    this.loading = true;
 	  this.service.createPublication('1', this.publication).subscribe(
 	    data => {
 	      this.router.navigate(['/publication/list']);
 	    },
-	    error => this.errorList.push(error)
+	    error => {
+        this.loading = false;
+        this.errorList.push(error)
+      }
 	  );
   }
 
