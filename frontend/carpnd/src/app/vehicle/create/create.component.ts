@@ -20,8 +20,10 @@ export class CreateVehicleComponent {
   constructor(private service: VehicleService, private router: Router, public authService: AuthService) {
 // FIN MODIFICADO
     this.vehicle = new Vehicle();
+    this.loading = false;
   }
 
+  loading = true;
   vehicle:Vehicle;
 
   capacities = [1, 2, 3, 4, 5, 6, 7];
@@ -32,14 +34,17 @@ export class CreateVehicleComponent {
   errorList = [];
 
   onSubmit($event) {
-
-    // this.onComplete.emit({ event:$event, vehicle: this.vehicle });
+    this.loading = true;
 
 	  this.service.createVehicle('1', this.vehicle).subscribe(
 	    data => {
+        this.loading = false;
 	      this.router.navigate(['/vehicle/list']);
 	    },
-	    error => this.errorList.push(error.error)
+	    error => {
+        this.errorList.push(error.error)
+        this.loading = false;
+      }
 	  );
   }
 

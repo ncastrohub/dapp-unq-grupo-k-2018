@@ -18,7 +18,7 @@ export class CreditComponent implements OnInit {
   money: MoneyAndAmount;
   errorList = [];
   user: User;
-
+  loading = true;
   constructor(private userService: UserServiceService, private creditService: CreditService, private router: Router) { 
      this.money = new MoneyAndAmount();
      this.money.currency = "ARS";
@@ -28,12 +28,14 @@ export class CreditComponent implements OnInit {
    ngOnInit() {
   	this.userService.getUser().subscribe(
       user => {
-        this.user = user
+        this.loading = false;
+        this.user = user;
       }
     );
   }
 
    onSubmit() {
+    this.loading = true;
     this.creditService.charge(this.money).subscribe(
         data => {
           this.router.navigate(['/']);

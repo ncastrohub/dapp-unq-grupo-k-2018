@@ -1,5 +1,16 @@
 
+<div *ngIf='loading'>
+  <div class="text-center">
+        <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+        <div>Working...</div>
+    </div>
+
+</div>
+
+<div *ngIf='! loading'>
+
     <div class='col col-md-8 offset-md-2'>
+    <h2> Load a Car</h2>
 
     <div *ngFor="let error of errorList" class="alert alert-danger" role="alert">
       {{error | json }}
@@ -7,7 +18,7 @@
 
     <form (ngSubmit)="onSubmit()" #vehicleForm="ngForm">
 
-      <div class="form-group"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
+      <div class="form-group"> 
         <label for="capacity">Capacity</label>
         <select class="form-control" id="capacity" required
           [(ngModel)]="vehicle.capacity" name="capacity" >
@@ -15,7 +26,7 @@
         </select>
       </div>
 
-      <div class="form-group"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
+      <div class="form-group">
         <label for="vehicleType">Model</label>
         <select class="form-control" id="vehicleType" required
           [(ngModel)]="vehicle.type" name="vehicleType" >
@@ -23,23 +34,22 @@
         </select>
       </div>
 
-      <div class="form-group"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
+      <div class="form-group"> 
         <label for="description">Description</label>
         <textarea minlength="10" maxlength="30" type="text" class="form-control" id="description"
          required
          [(ngModel)]="vehicle.description" name="description"> </textarea>
        </div>
 
-      <div class="form-group"> <!-- AGREGADO *ngIf PARA AUTENTICACION -->
+      <div class="form-group"> 
         <label for="photo">Photo</label>
         <input type="text" class="form-control" id="photo"
          required
          [(ngModel)]="vehicle.photo" name="photo"/>
        </div>
-<!-- pattern="(https?:\/\/.*\.(?:png|jpg))" -->
-      <button type="submit" [disabled]="!vehicleForm.form.valid" class="btn btn-success">Create</button>
-      <!-- AGREGADO *ngIf PARA AUTENTICACION -->
-
+      <button type="submit" [disabled]="!vehicleForm.form.valid" class="btn btn-success">Load</button>
     </form>
 
     </div>
+
+</div>

@@ -77,7 +77,7 @@ public class PublishApi {
     @Produces("application/json")
     public Response deleteVehicleForUser(@Context HttpHeaders headers, VehicleUpdateForm vehicle) {
         User user = GetUserFromHeaders.getCurrentUserFromHeaders(headers, this.publishService);
-        publishService.deleteVehicle(user.getId(), vehicle.id);
+        publishService.deleteVehicle(vehicle.id, user.getId());
         return Response.ok(vehicle).build();
     }
 

@@ -16,7 +16,7 @@ import { AuthService } from '../../auth/auth.service';
 export class ListComponent implements OnInit {
 
   constructor(private service: VehicleService, private router:Router, public authService: AuthService) { }
-
+  loading = true;
   errorList = [];
   vehicleList: [Vehicle];
 
@@ -26,8 +26,14 @@ export class ListComponent implements OnInit {
 
   getVehicleList(){
     this.service.getVehicleList('1').subscribe(
-      data => this.vehicleList = data,
-      error => this.errorList.push(error)
+      data => {
+        this.vehicleList = data;
+        this.loading = false;
+      },
+      error => {
+        this.errorList.push(error);
+        this.loading = false;
+      }
     );
   }
 

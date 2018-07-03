@@ -1,21 +1,27 @@
-<p>
-  credit works!
-</p>
+<div *ngIf='loading'>
+	<div class="text-center">
+        <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+        <div>Working...</div>
+    </div>
 
-{{ user | json }}
+</div>
 
-<div *ngIf="user && money" >
+<div *ngIf='! loading'>
 
-<form  (ngSubmit)="onSubmit()" #creditForm="ngForm">
+	<div *ngIf="user && money" >
 
-  	<div class="form-group" >
-  	<label for="amount">Amount to charge </label>
-  		<input required type="digit" class="form-control" id="amount" minlength="0" maxlength="6"
-   	[(ngModel)]="money.amount" name="amount"/> <span>Currency: ARS </span>
-  	</div>
+	<form  (ngSubmit)="onSubmit()" #creditForm="ngForm">
 
-  <button type="submit" [disabled]="!creditForm.form.valid" class="btn btn-success btn-lg">Charge Money</button>
+	  	<div class="form-group" >
+	  	<label for="amount">Amount to charge </label>
+	  		<input required type="digit" class="form-control" id="amount" minlength="0" maxlength="6"
+	   	[(ngModel)]="money.amount" name="amount"/> <span>Currency: ARS </span>
+	  	</div>
 
-</form>
+	  <button type="submit" [disabled]="!creditForm.form.valid" class="btn btn-success btn-lg">Charge Money</button>
+
+	</form>
+
+	</div>
 
 </div>
