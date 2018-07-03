@@ -1,17 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AuthService } from './auth/auth.service';
 import { ActivatedRoute } from '@angular/router';
+
+
 @Component({
   selector: 'app-callback',
   template: `
-    <p>
-      callback works!
-    </p>
+   <div class="text-center">
+        <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+        <div>Working...</div>
+    </div>
   `,
   styles: []
 })
 export class CallbackComponent implements OnInit {
 
+   closeResult: string;
+
+ 
   constructor(private authService: AuthService, private route: ActivatedRoute) {}
   ngOnInit() {
 

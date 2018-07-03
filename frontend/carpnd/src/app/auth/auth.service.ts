@@ -32,7 +32,6 @@ export class AuthService {
           if (authResult && authResult.accessToken && authResult.idToken) {
             window.location.hash = '';
             this.getUserInfo(authResult);
-            this.router.navigate(['/']);
           } else if (err) {
             this.router.navigate(['/']);
             console.log(err);
@@ -46,7 +45,6 @@ export class AuthService {
           if (authResult && authResult.accessToken && authResult.idToken) {
             window.location.hash = '';
             this.createNewProfile(authResult);
-            this.router.navigate(['/']);
           } else if (err) {
             this.router.navigate(['/']);
             console.log(err);
@@ -63,7 +61,7 @@ export class AuthService {
             localStorage.setItem('id_token', authResult.idToken);
             localStorage.setItem('expires_at', expire_at.toString());
             localStorage.setItem('email', authResult.idTokenPayload.email);
-            this.router.navigate(['/publication/list']);
+            this.router.navigate(['/']);
           },
           error => {
             localStorage.removeItem('access_token');

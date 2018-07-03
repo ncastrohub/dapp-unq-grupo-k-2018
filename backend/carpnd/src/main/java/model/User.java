@@ -12,6 +12,7 @@ public class User extends IdModel {
     public String lastName;
     public String cuil;
     public String email;
+
     public MoneyAndAmount availableMoney;
 
     @JsonIgnore

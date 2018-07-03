@@ -14,11 +14,13 @@ export class UsereditComponent implements OnInit {
   constructor(private service: UserServiceService, private router: Router) { }
   
   user:User;
-
+  loading = true;
+  
   ngOnInit() {
     this.service.getUser().subscribe(
       user => {
         this.user = user
+        this.loading = false;
       }
     );
   }
@@ -26,11 +28,15 @@ export class UsereditComponent implements OnInit {
   errorList = [];
 
   onSubmit() {
+    this.loading = true;
     this.service.updateUser(this.user).subscribe(
         data => {
           this.router.navigate(['/']);
         },
-        error => this.errorList.push(error)
+        error => {
+          this.loading = false;
+          this.errorList.push(error)
+        }
       );
     }
 

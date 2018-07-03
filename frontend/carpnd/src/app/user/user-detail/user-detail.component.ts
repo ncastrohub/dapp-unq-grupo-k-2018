@@ -14,11 +14,13 @@ export class UserDetailComponent implements OnInit {
   constructor(private service: UserServiceService, private router: Router) { }
 
   user:User;
-
+  loading: boolean;
   ngOnInit() {
+    this.loading = true;
   	this.service.getUser().subscribe(
       user => {
-        this.user = user
+        this.user = user;
+        this.loading = false;
       }
     );
   }

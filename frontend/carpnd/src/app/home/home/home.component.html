@@ -1,48 +1,29 @@
 <div class="homeClass">
-	<!-- <div class='col-6 offset-3'>
-		<img class="card-img-top" [src]="publication.vehicle.photo" alt="Card image cap">
-		<div class="card-body">
-		  <h5 class="card-title"></h5>
-		  <p class="card-text">{{publication.vehicle.description}}</p>
-		  <p class="card-text">Capcity: {{publication.vehicle.capacity}}</p>
-		  <p class="card-text">Type: {{publication.vehicle.type}}</p>
-		  <p class="card-text">Acquire Location: <br> {{publication.acquireLocation.adressName}}</p>
-		  <p class="card-text">Cost: {{publication.costPerHour.amount}} {{publication.costPerHour.currency}}</p>
-		</div>
-	</div>
-	<hr>
-	<div class="row">
+	
+	<div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-ride="carousel">
+	  <div class="carousel-inner">
+	    <div class="carousel-item active">
+	      <img class="d-block w-100" src="https://thumbnails.trvl-media.com/mcm8YNugRlPyRnpMtFQ6GQ-lBf8=/768x432/images.trvl-media.com/media/content/shared/images/travelguides/destination/178242/Buenos-Aires-Metropolitan-Cathedral-64996.jpg" alt="First slide">
 
-			<div class='col-5'>
-
-				<ngbd-datepicker-config *ngIf="publication"  (onComplete)="addReservationDays($event)"> </ngbd-datepicker-config>
-
-			</div>
-			<div class='col-4 offset-1'>
-				<div class="form-group">
-					<label for="costumerId">Costumer Id</label>
-					<input type="number" class="form-control" id="costumerId"
-				 	required 
-				 	[(ngModel)]="costumerId" name="costumerId"/>
-				</div>
-			<label for="costumerId">Return Location</label>
-			<div *ngIf="publication" class="list-group">
-			  <button *ngFor="let location of publication.returnLocations" (click)="setReturnLocation(location)" type="button" class="list-group-item list-group-item-action">{{location.adressName}}</button>
-			</div>
-			</div>
-			
-	</div>
-	<div class="row">
+	    </div>
+	    <div class="carousel-item">
+	      <img class="d-block w-100" src="http://www.indianmomsconnect.com/wp-content/uploads/2016/02/43962-highway.jpg" alt="Second slide">
+	    </div>
+	    <div class="carousel-item">
+	      <img class="d-block w-100" src="https://www.publicdomainpictures.net/pictures/140000/velka/arizona-highway.jpg" alt="Third slide">
+	    </div> 
+	  </div>
+	  <div class="main-text hidden-xs">
+                <div class="col-md-12 text-center">
+                    <h1>
+                        Carpn: Car Lend Site</h1>
+                    <h3>
+                    	Have you a car available some days? make money with it.
+                    </h3>
+                    <h3>
+                    	Do you want a car? rent one.
+                    </h3>
+                </div>
+            </div>
 	</div>
 
-<button class="btn btn-warning btn-lg btn-block" [disabled]="!parameters.reservationDays || !costumerId || !parameters.returnLocation" (click)="makeReservation()" > Reservar </button>
-
-
-{{parameters | json}} -->
-
-
-<h1>
-	Welcome to Carpnd
-</h1>
-
-</div>

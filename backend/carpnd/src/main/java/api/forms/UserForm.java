@@ -23,4 +23,5 @@ public class UserForm {
     @Size(min=8, max=30)
     @NotNull(message = "required")
     public String email;
+
 }
