@@ -43,5 +43,11 @@ export class PublicationListComponent implements OnInit {
     );
   }
 
+  getPublicationListByType(type : string){
+    this.service.getPublicationListByType(type).subscribe(
+      data => this.publicationList = data,
+      error => this.errorList.push(error)
+    );
+  }
 
 }

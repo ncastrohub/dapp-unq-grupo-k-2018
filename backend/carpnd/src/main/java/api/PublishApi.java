@@ -19,6 +19,7 @@ import utils.OwnPaginationPage;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
@@ -107,7 +108,6 @@ public class PublishApi {
 
     @POST
     @SecuredRequest
-    @Consumes("application/json")
     @Produces("application/json")
     @Path(value = "/create/")
     public Response publicationCreate(@Context HttpHeaders headers, PublicationForm publicationForm) {
@@ -120,37 +120,30 @@ public class PublishApi {
         }
     }
 
-    @GET
-//    @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
-    @Path(value ="/list/{vehicleType}")
-    @Consumes("application/json")
-    @Produces("application/json")
-    public Response publicationListByVehicleSedan(@PathParam(value = "vehicleType") VehicleType vehicleType) {
-        return Response.ok(this.publishService.getPublicationService().getPaginationPageByVehicleType(vehicleType)).build();
-    }
+//    @GET
+////    @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
+//    @Path(value ="/list/{vehicleType}")
+//    @Consumes("application/json")
+//    @Produces("application/json")
+//    public Response publicationListByVehicleSedan(@PathParam(value = "vehicleType") VehicleType vehicleType) {
+//        return Response.ok(this.publishService.getPublicationService().getPaginationPageByVehicleType(vehicleType)).build();
+//    }
 
 
     @GET
-//    @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
-    @Path(value ="/list/{vehicleType}/{pageNumber}/")
-    @Consumes("application/json")
-    @Produces("application/json")
+    @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
+    @Path(value ="/listtype/{vehicleType}/{pageNumber}/")
     public Response publicationPageAndVehicleTypeWithPageNumber(
-            @PathParam(value = "vehicleType") VehicleType vehicleType,
-            @PathParam(value="pageNumber") Integer pageNumber) {
-
-        return Response.ok(this.publishService.getPublicationService().getPaginationPageByVehicleType(vehicleType, pageNumber)).build();
+            @PathParam("vehicleType") VehicleType vehicleType,
+            @PathParam("pageNumber") Integer pageNumber) {
+        return Response.ok(this.publishService.getPublicationService().getPaginationPageByVehicleType(vehicleType, pageNumber)).type("application/json").build();
     }
 
     @GET
 //    @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
-    @Path(value ="/list/{vehicleType}/")
-    @Consumes("application/json")
-    @Produces("application/json")
-    public Response publicationPageAndVehicleTypeWithPageNumber(
-            @PathParam(value = "vehicleType") VehicleType vehicleType) {
-
-        return Response.ok(this.publishService.getPublicationService().getPaginationPageByVehicleType(vehicleType)).build();
+    @Path("/listtype/{vehiculoNOmbre}/")
+    public Response AndVehicleType(@PathParam("vehiculoNOmbre") VehicleType vehiculoNOmbre) {
+        return Response.ok(this.publishService.getPublicationService().getPaginationPageByVehicleType(vehiculoNOmbre)).type("application/json").build();
     }
 
     @GET
@@ -158,7 +151,7 @@ public class PublishApi {
     @Path(value ="/list/{pageNumber}/")
     @Consumes("application/json")
     @Produces("application/json")
-    public Response publicationPage(@PathParam(value="pageNumber") Integer pageNumber) {
+    public Response publicationPage(@PathParam("pageNumber") Integer pageNumber) {
         return Response.ok(this.publishService.getPublicationService().getPaginationPage(pageNumber)).build();
     }
 

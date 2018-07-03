@@ -21,11 +21,11 @@ public class PublicationService extends GenericService<Publication> {
         return ((PublicationRespository) this.getRepository()).findByVehicleType(vehicleType, 0);
     }
 
-
-    @Transactional(readOnly = true)
-    public ListAndTotal<Publication> findBy(VehicleType vehicleType, Integer pageNumber) {
-        return ((PublicationRespository) this.getRepository()).findByVehicleType(vehicleType, pageNumber);
-    }
+//
+//    @Transactional(readOnly = true)
+//    public ListAndTotal<Publication> findBy(VehicleType vehicleType, Integer pageNumber) {
+//        return ((PublicationRespository) this.getRepository()).findByVehicleType(vehicleType, pageNumber);
+//    }
 
 
     public OwnPaginationPage<Publication> getPaginationPageByVehicleType(VehicleType vehicleType, Integer pageNumber){
@@ -34,12 +34,12 @@ public class PublicationService extends GenericService<Publication> {
         OwnPaginationPage<Publication> page = new OwnPaginationPage<>();
         page.setElementList(result.elementList);
         if (pageNumber > 0) {
-            page.beforeUrl = "publication/list/" + vehicleType.toString() + "/" + (pageNumber - 1);
+            page.beforeUrl = "publication/listtype/" + vehicleType.toString().toUpperCase() + "/" + (pageNumber - 1);
         }
         Integer total =  result.total;
         Integer currentPage = pageNumber + 1;
         if (total - (currentPage * 4) > 0) {
-            page.nextUrl = "publication/list/" + vehicleType.toString() + "/" + (pageNumber + 1);
+            page.nextUrl = "publication/listtype/" + vehicleType.toString().toUpperCase() + "/" + (pageNumber + 1);
         }
         return page;
     }

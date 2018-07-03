@@ -3,6 +3,10 @@
         <h1>Select a Vehicle to Reserve</h1>
       </div> 
 
+      <button (click)="getPublicationListByType('SEDAN')"> Filter By Sedan</button>
+      <button (click)="getPublicationListByType('COUPE')"> Filter by Coupe</button>
+
+
       <div *ngIf="publicationList" >
         <div class="col-12">
           

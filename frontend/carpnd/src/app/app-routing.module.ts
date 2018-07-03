@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'user/detail', component: UserDetailComponent, canActivate: [AuthGuard]},
   { path: 'user/add-money', component: CreditComponent, canActivate: [AuthGuard]},
   { path: 'publication/list', component: PublicationListComponent, canActivate: [AuthGuard]  },
-  { path: 'publication/list', component: PublicationListComponent, canActivate: [AuthGuard]  },
+  // { path: 'publication/list', component: PublicationListComponent, canActivate: [AuthGuard]  },
   { path: 'publication/create', component: PublicationCreateComponent, canActivate: [AuthGuard]  },
   { path: 'publication/detail/:publicationId', component: DetailComponent, canActivate: [AuthGuard]  },
   { path: 'reservation/detail/:reservationId', component: ReservationDetailComponent, canActivate: [AuthGuard]  },
