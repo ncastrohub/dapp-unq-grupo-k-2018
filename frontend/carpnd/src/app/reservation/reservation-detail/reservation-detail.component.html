@@ -3,3 +3,67 @@
 </p>
 
 {{reservation | json}}
+
+
+<div *ngIf="reservation && myEmail" >
+	
+ <div *ngIf="reservation.owner.email == myEmail" [ngSwitch]="reservation.state.currentState">
+ 	
+ 	<div *ngSwitchCase="'WAIT_CONFIRM_OWNER'" >
+ 		<button (click)="setState('IN_PROCESS')"> Confirm Reservation </button>
+ 	</div>
+
+ 	<div *ngSwitchCase="'WAIT_OWNER_TO_END'">
+ 		<button (click)="setState('RETURNED')"> End Reservation </button>
+ 	</div>
+
+ 	<div *ngSwitchCase="'IN_PROCESS'">
+ 		<button [disabled]="true" > Reservation in Process </button>
+ 	</div>
+
+	<div *ngSwitchCase="'RETURNED'">
+ 		<button [disabled]="true" > Finalized </button>
+ 	</div>
+
+	<div *ngSwitchCase="'INTERRUPTED'">
+ 		<button [disabled]="true" > Reservation Interrupted </button>
+ 	</div>
+
+ 	<div *ngSwitchDefault >
+ 		<button [disabled]="true"> Waiting Customer </button>
+ 	</div>
+
+ </div>
+
+ <div *ngIf="reservation.owner.email != myEmail" [ngSwitch]="reservation.state.currentState">
+ 	
+ 	<div *ngSwitchCase="'WAIT_CONFIRM_OWNER'" >
+ 		<button [disabled]="true"> Reservation witing to be confirmed for the owner </button>
+ 		<button (click)="setState('INTERRUPTED')" > Interrupt </button>
+ 	</div>
+
+ 	<div *ngSwitchCase="'WAIT_OWNER_TO_END'">
+ 		<button [disabled]="true"> Waiting Owner the vehicle is Returned </button>
+ 	</div>
+
+ 	<div *ngSwitchCase="'IN_PROCESS'">
+ 		<button (click)="setState('WAIT_OWNER_TO_END')" > Return To Owner </button>
+ 		<button (click)="setState('INTERRUPTED')" > Interrupt </button>
+ 	</div>
+
+	<div *ngSwitchCase="'RETURNED'">
+ 		<button [disabled]="true" > Finalized </button>
+ 	</div>
+
+	<div *ngSwitchCase="! 'INTERRUPTED'">
+ 		<button [disabled]="true" > Reservation Interrupted </button>
+ 	</div>
+
+ 	<div *ngSwitchDefault >
+ 	</div>
+
+ </div>
+
+
+
+</div>

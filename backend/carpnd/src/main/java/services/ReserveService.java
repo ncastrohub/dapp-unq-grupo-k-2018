@@ -1,12 +1,8 @@
 package services;
 
 import api.forms.ReserveForm;
-import model.AdressLocation;
-import model.Publication;
-import model.Reservation;
-import model.User;
+import model.*;
 import model.exceptions.*;
-import org.apache.commons.mail.EmailException;
 import org.joda.time.LocalDate;
 import org.springframework.transaction.annotation.Transactional;
 import services.Validators.GenericValidator;
@@ -102,5 +98,13 @@ public class ReserveService {
         reservation.reject(owner);
         this.reservationService.update(reservation);
         return reservation;
+    }
+
+    @Transactional()
+    public Reservation setState(Long reservationId, User user, StateTypes reservationState) throws CannotChangeStateError {
+    Reservation reserve = this.getReservationService().getRepository().findById(reservationId);
+    reserve.setState(user, reservationState);
+    this.getReservationService().getRepository().update(reserve);
+    return reserve;
     }
 }

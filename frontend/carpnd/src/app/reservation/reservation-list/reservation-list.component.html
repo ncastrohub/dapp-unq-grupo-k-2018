@@ -1,5 +1,14 @@
 <p>
   reservation-list works!
 
-  {{reservationList| json}}
+  {{ reservationList| json }}
 </p>
+
+<div *ngIf="reservationList">
+
+	<div *ngFor="let reservation of reservationList.elementList">
+			{{reservation.id | json}}	
+		<button (click)="show(reservation.id)" >Show</button>
+	</div>
+
+</div>

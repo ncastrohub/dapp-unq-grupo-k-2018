@@ -2,6 +2,7 @@ package api;
 
 import api.forms.ReserveForm;
 import model.Reservation;
+import model.StateTypes;
 import model.User;
 import model.exceptions.*;
 import org.apache.commons.mail.EmailException;
@@ -66,52 +67,53 @@ public class ReserveApi {
         return Response.ok(this.reserveService.getReservationService().findById(reservationId)).build();
     }
 
-    @POST
-    @SecuredRequest
-    @Consumes("application/json")
-    @Produces("application/json")
-    @Path(value = "/confirmByOwner/{reservationId}")
-    @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
-    public Response confirmReservationByOwner(@Context HttpHeaders headers, @PathParam("reservationId") Long reservationId) {
-        User owner = GetUserFromHeaders.getCurrentUserFromHeaders(headers, this.publishService);
-        try {
-            return Response.ok(this.reserveService.confirmByOwner(reservationId, owner)).build();
-        } catch (ReservationStateError | NotReservationOwnerException reservationError) {
-            return Response.status(Response.Status.BAD_REQUEST).entity(reservationError.error).build();
-        }
-    }
+//    @POST
+//    @SecuredRequest
+//    @Consumes("application/json")
+//    @Produces("application/json")
+//    @Path(value = "/confirmByOwner/{reservationId}")
+//    @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
+//    public Response confirmReservationByOwner(@Context HttpHeaders headers, @PathParam("reservationId") Long reservationId) {
+//        User owner = GetUserFromHeaders.getCurrentUserFromHeaders(headers, this.publishService);
+//        try {
+//            return Response.ok(this.reserveService.confirmByOwner(reservationId, owner)).build();
+//        } catch (ReservationStateError | NotReservationOwnerException reservationError) {
+//            return Response.status(Response.Status.BAD_REQUEST).entity(reservationError.error).build();
+//        }
+//    }
+
+
+//    @POST
+//    @SecuredRequest
+//    @Consumes("application/json")
+//    @Produces("application/json")
+//    @Path(value = "/returnVehicle/{reservationId}")
+//    @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
+//    public Response returnVehicle(@Context HttpHeaders headers, @PathParam("reservationId") Long reservationId) {
+//        User owner = GetUserFromHeaders.getCurrentUserFromHeaders(headers, this.publishService);
+//        try {
+//            return Response.ok(this.reserveService.returnVehicle(reservationId, owner)).build();
+//        } catch (ReservationStateError | NotReservationOwnerException reservationError) {
+//            return Response.status(Response.Status.BAD_REQUEST).entity(reservationError.error).build();
+//        }
+//    }
 
 
     @POST
     @SecuredRequest
     @Consumes("application/json")
     @Produces("application/json")
-    @Path(value = "/returnVehicle/{reservationId}")
+    @Path(value = "/setState/{reservationId}/{reservationState}")
     @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
-    public Response returnVehicle(@Context HttpHeaders headers, @PathParam("reservationId") Long reservationId) {
-        User owner = GetUserFromHeaders.getCurrentUserFromHeaders(headers, this.publishService);
+    public Response reject(@Context HttpHeaders headers, @PathParam("reservationId") Long reservationId, @PathParam("reservationState") StateTypes reservationState) {
+        User user = GetUserFromHeaders.getCurrentUserFromHeaders(headers, this.publishService);
         try {
-            return Response.ok(this.reserveService.returnVehicle(reservationId, owner)).build();
-        } catch (ReservationStateError | NotReservationOwnerException reservationError) {
-            return Response.status(Response.Status.BAD_REQUEST).entity(reservationError.error).build();
+            return Response.ok(this.reserveService.setState(reservationId, user, reservationState)).build();
+        } catch (CannotChangeStateError cannotChangeStateError) {
+            return Response.status(Response.Status.BAD_REQUEST).entity(cannotChangeStateError.error).build();
         }
     }
 
-
-    @POST
-    @SecuredRequest
-    @Consumes("application/json")
-    @Produces("application/json")
-    @Path(value = "/reject/{reservationId}")
-    @CrossOriginResourceSharing(allowAllOrigins = true, allowCredentials = true)
-    public Response reject(@Context HttpHeaders headers, @PathParam("reservationId") Long reservationId) {
-        User owner = GetUserFromHeaders.getCurrentUserFromHeaders(headers, this.publishService);
-        try {
-            return Response.ok(this.reserveService.reject(reservationId, owner)).build();
-        } catch (ReservationStateError | NotReservationOwnerException reservationError) {
-            return Response.status(Response.Status.BAD_REQUEST).entity(reservationError.error).build();
-        }
-    }
 
     @GET
     @Path(value ="/list/owner/{pageNumber}/")

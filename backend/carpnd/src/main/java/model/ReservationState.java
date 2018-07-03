@@ -1,7 +1,5 @@
 package model;
 
-import model.exceptions.ReservationStateError;
-
 public class ReservationState extends IdModel {
 
     public StateTypes getCurrentState() {
@@ -24,27 +22,19 @@ public class ReservationState extends IdModel {
 
     public ReservationState(){}
 
-    public void setInProcess() throws ReservationStateError {
-        if ( ! this.currentState.equals(StateTypes.WAIT_CONFIRM_OWNER)){
-            throw new ReservationStateError("cannot pass to in process the current reservation");
-        }else {
-            this.currentState = StateTypes.IN_PROCESS;
-        }
+    public void setInProcess()  {
+
+        this.currentState = StateTypes.IN_PROCESS;
+
     }
 
-    public void setReturnVehicle() throws ReservationStateError {
-        if ( ! this.currentState.equals(StateTypes.IN_PROCESS)){
-            throw new ReservationStateError("cannot return this vehicle");
-        }else {
-            this.currentState = StateTypes.RETURNED;
-        }
+    public void setReturnVehicle()  {
+        this.currentState = StateTypes.RETURNED;
     }
 
-    public void reject() throws ReservationStateError {
-        if ( this.currentState.equals(StateTypes.INTERRUPTED)){
-            throw new ReservationStateError("cannot reject this vehicle");
-        }else {
+    public void reject() {
+
             this.currentState = StateTypes.INTERRUPTED;
-        }
+
     }
 }

@@ -1,5 +1,6 @@
 package model;
 
+import model.exceptions.CannotChangeStateError;
 import model.exceptions.NotReservationOwnerException;
 import model.exceptions.ReservationStateError;
 import org.codehaus.jackson.annotate.JsonIgnore;
@@ -79,5 +80,31 @@ public class Reservation extends IdModel {
             throw new NotReservationOwnerException("you dont own this reservation");
         }
         this.state.reject();
+    }
+
+    public void setState(User user, StateTypes reservationState) throws CannotChangeStateError {
+        if (this.customer.getId().equals(user.getId())){
+            if (reservationState == StateTypes.INTERRUPTED && (this.state.getCurrentState() == StateTypes.IN_PROCESS || this.state.getCurrentState() == StateTypes.WAIT_CONFIRM_OWNER )) {
+                this.state.reject();
+                return;
+            }
+            if (reservationState == StateTypes.WAIT_OWNER_TO_END && this.state.getCurrentState() == StateTypes.IN_PROCESS ){
+                this.state.setCurrentState(reservationState);
+                return;
+            }
+            throw new CannotChangeStateError("Cannot change from current state");
+        }
+        if (this.publication.getOwner().getId().equals(user.getId())){
+            if (reservationState == StateTypes.IN_PROCESS && (this.state.getCurrentState() == StateTypes.WAIT_CONFIRM_OWNER )) {
+                this.state.setCurrentState(reservationState);
+                return;
+            }
+            if (reservationState == StateTypes.RETURNED && (this.state.getCurrentState() == StateTypes.WAIT_OWNER_TO_END )) {
+                this.state.setCurrentState(reservationState);
+                return;
+            }
+            throw new CannotChangeStateError("Cannot change from current state");
+        }
+        throw new CannotChangeStateError("Cannot change from current state");
     }
 }

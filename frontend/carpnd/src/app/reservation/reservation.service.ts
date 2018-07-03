@@ -32,5 +32,9 @@ export class ReservationService {
   	return this.http.get<Page<Reservation>>( this.config.serveUrl + 'reservation/list/owner');
   }
 
+  setState(reservationId: string, state: string): Observable<any> {
+    return this.http.post<any>( this.config.serveUrl + 'reservation/setState/'+ reservationId + '/' + state, {});
+  }
+
 }
 

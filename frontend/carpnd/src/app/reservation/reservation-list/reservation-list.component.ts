@@ -25,7 +25,6 @@ export class ReservationListComponent implements OnInit {
   	}
   }
 
-
   getReservationListCustomer(){
     this.service.getReservationListCustomer().subscribe(
       data => this.reservationList = data,
@@ -50,4 +49,9 @@ export class ReservationListComponent implements OnInit {
       error => this.errorList.push(error)
     );
   }
+
+  show(reservationId){
+    this.router.navigate(['/reservation/detail/' + reservationId]);
+  }
+
 }
