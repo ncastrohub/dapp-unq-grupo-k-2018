@@ -125,7 +125,6 @@ public class PublishService {
 
     }
 
-
     public User getByEmail(String email) throws NotFoundException {
         return this.userService.findByEmail(email);
     }

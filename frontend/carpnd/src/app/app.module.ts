@@ -39,6 +39,7 @@ import { UsernotexistsComponent } from './home/usernotexists/usernotexists.compo
 import { LoadingComponent } from './loading/loading/loading.component';
 import { CreditComponent } from './credit/credit/credit.component';
 import { CreditService } from './credit/credit.service';
+import { ReservationListComponent } from './reservation/reservation-list/reservation-list.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { CreditService } from './credit/credit.service';
     UsernotexistsComponent,
     LoadingComponent,
     CreditComponent,
+    ReservationListComponent,
   ],
   imports: [
     BrowserModule,

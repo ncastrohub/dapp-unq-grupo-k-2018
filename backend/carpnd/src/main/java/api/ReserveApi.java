@@ -113,4 +113,44 @@ public class ReserveApi {
         }
     }
 
+    @GET
+    @Path(value ="/list/owner/{pageNumber}/")
+    @SecuredRequest
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response reservationOwnerPage(@Context HttpHeaders headers, @PathParam(value="pageNumber") Integer pageNumber) {
+        User owner = GetUserFromHeaders.getCurrentUserFromHeaders(headers, this.publishService);
+        return Response.ok(this.reserveService.getReservationService().getPaginationPageOwner(owner.getId(), pageNumber)).build();
+    }
+
+    @GET
+    @Path(value ="/list/owner/")
+    @SecuredRequest
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response reservationOwnerPage(@Context HttpHeaders headers) {
+        User owner = GetUserFromHeaders.getCurrentUserFromHeaders(headers, this.publishService);
+        return Response.ok(this.reserveService.getReservationService().getPaginationPageOwner(owner.getId())).build();
+    }
+
+    @GET
+    @Path(value ="/list/customer/{pageNumber}/")
+    @SecuredRequest
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response reservationCustomerPage(@Context HttpHeaders headers, @PathParam(value="pageNumber") Integer pageNumber) {
+        User owner = GetUserFromHeaders.getCurrentUserFromHeaders(headers, this.publishService);
+        return Response.ok(this.reserveService.getReservationService().getPaginationPageCustomer(owner.getId(), pageNumber)).build();
+    }
+
+    @GET
+    @Path(value ="/list/customer/")
+    @SecuredRequest
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response reservationCustomerPage(@Context HttpHeaders headers) {
+        User owner = GetUserFromHeaders.getCurrentUserFromHeaders(headers, this.publishService);
+        return Response.ok(this.reserveService.getReservationService().getPaginationPageCustomer(owner.getId())).build();
+    }
+
 }

@@ -17,7 +17,7 @@ import { ReservationDetailComponent } from './reservation/reservation-detail/res
 import { HomeComponent } from './home/home/home.component';
 import { UsernotexistsComponent } from './home/usernotexists/usernotexists.component';
 import { CreditComponent } from './credit/credit/credit.component';
-
+import { ReservationListComponent } from './reservation/reservation-list/reservation-list.component';
 const routes: Routes = [
 
   { path: '', component: HomeComponent },
@@ -33,6 +33,8 @@ const routes: Routes = [
   { path: 'publication/create', component: PublicationCreateComponent, canActivate: [AuthGuard]  },
   { path: 'publication/detail/:publicationId', component: DetailComponent, canActivate: [AuthGuard]  },
   { path: 'reservation/detail/:reservationId', component: ReservationDetailComponent, canActivate: [AuthGuard]  },
+  { path: 'reservation/list/owner', component: ReservationListComponent, canActivate: [AuthGuard]  },
+  { path: 'reservation/list/customer', component: ReservationListComponent, canActivate: [AuthGuard]  },
   { path: 'callback/:authorization_role', component: CallbackComponent, canActivate: [NotAuthGuard] },
 
 ];
