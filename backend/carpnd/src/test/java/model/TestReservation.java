@@ -1,10 +1,9 @@
 package model;
 
+import org.joda.time.LocalDate;
 import org.junit.Test;
 import utils.builders.ReservationBuilder;
 
-import org.joda.time.LocalDate;
-import org.joda.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -27,7 +26,7 @@ public class TestReservation {
         reservedDays.add(LocalDate.now().plusDays(6));
 
         Publication publication = mock(Publication.class);
-        MoneyAndAmount cost = new MoneyAndAmount(10.00, CustomCurrencies.ARS);
+        MoneyAndAmountForPublication cost = new MoneyAndAmountForPublication(10.00, CustomCurrencies.ARS);
         when(publication.getCostPerHour()).thenReturn(cost);
         when(publication.getAcquireLocation()).thenReturn(acquireLocation);
         when(acquireLocation.createNew()).thenReturn(acquireLocation);
@@ -61,7 +60,7 @@ public class TestReservation {
         reservedDays.add(LocalDate.now().plusDays(6));
 
         Publication publication = mock(Publication.class);
-        MoneyAndAmount cost = new MoneyAndAmount(10.00, CustomCurrencies.ARS);
+        MoneyAndAmountForPublication cost = new MoneyAndAmountForPublication(10.00, CustomCurrencies.ARS);
         when(publication.getCostPerHour()).thenReturn(cost);
         when(publication.getAcquireLocation()).thenReturn(acquireLocation);
         when(acquireLocation.createNew()).thenReturn(acquireLocation);

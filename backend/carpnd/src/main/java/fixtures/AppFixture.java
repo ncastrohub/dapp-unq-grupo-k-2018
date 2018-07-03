@@ -50,7 +50,7 @@ public class AppFixture {
 
 
     Publication createPublication(User owner, Vehicle auto){
-        MoneyAndAmount costPublication = new MoneyAndAmountForPublication(20.00, CustomCurrencies.ARS);
+        MoneyAndAmountForPublication costPublication = new MoneyAndAmountForPublication(20.00, CustomCurrencies.ARS);
         AdressLocation acquireLocation = new AdressLocation();
         acquireLocation.adressName = "Presidente Peron";
         acquireLocation.geoLatitude = "-7000000000";

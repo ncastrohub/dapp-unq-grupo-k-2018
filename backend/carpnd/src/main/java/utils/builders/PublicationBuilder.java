@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 public class PublicationBuilder {
     private User owner;
-    private MoneyAndAmount pricePerHour;
+    private MoneyAndAmountForPublication pricePerHour;
     private Vehicle vehicle;
     private AdressLocation acquireLocation;
     private LinkedList<AdressLocation> returnLocations;
@@ -13,6 +13,7 @@ public class PublicationBuilder {
 
 
     public Publication build() {
+
         return new Publication(this.owner, this.pricePerHour, this.vehicle, this.acquireLocation, this.returnLocations, this.enabledDays);
     }
 
@@ -25,7 +26,7 @@ public class PublicationBuilder {
         return this;
     }
 
-    public PublicationBuilder withPricePerHour(MoneyAndAmount pricePerHour) {
+    public PublicationBuilder withPricePerHour(MoneyAndAmountForPublication pricePerHour) {
         this.pricePerHour = pricePerHour;
         return this;
     }

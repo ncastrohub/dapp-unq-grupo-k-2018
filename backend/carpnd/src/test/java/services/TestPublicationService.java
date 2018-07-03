@@ -58,8 +58,8 @@ public class TestPublicationService {
         assertThat(createdPublication.getDisabledDays()).isEqualTo(PublicationOnDb.getDisabledDays());
         assertThat(createdPublication.getReservedDays()).isEqualTo(PublicationOnDb.getReservedDays());
         assertThat(createdPublication.getReservedDays()).isEqualTo(PublicationOnDb.getReservedDays());
-        assertThat(createdPublication.getCostPerHour().amount).isEqualTo(PublicationOnDb.getCostPerHour().amount);
-        assertThat(createdPublication.getCostPerHour().currency).isEqualTo(PublicationOnDb.getCostPerHour().currency);
+        assertThat(createdPublication.costPerHour.amount).isEqualTo(PublicationOnDb.costPerHour.amount);
+        assertThat(createdPublication.costPerHour.currency).isEqualTo(PublicationOnDb.costPerHour.currency);
 
     }
 
@@ -76,6 +76,7 @@ public class TestPublicationService {
         daysToReserve.add(LocalDate.now().plusDays(5));
 
         this.userService.save(owner);
+        customer.availableMoney.setAmount(2000.00);
         this.userService.save(customer);
         PublicationForm publicationForm = PublicationFormBuilder.some();
         Publication createdPublication = this.publicationService.createPublicationForUser(owner.getId(), publicationForm);

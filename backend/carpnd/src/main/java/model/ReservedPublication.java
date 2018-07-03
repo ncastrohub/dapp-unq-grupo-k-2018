@@ -10,7 +10,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class ReservedPublication extends IdModel {
-    private MoneyAndAmount costPerHour;
+    private MoneyAndAmountForPublication costPerHour;
 
     @JsonIgnore
     public Publication publication;
@@ -29,12 +29,12 @@ public class ReservedPublication extends IdModel {
         this.reservedDays = reservedDays;
         this.acquireLocation = publication.getAcquireLocation().createNew();
         this.returnLocation = returnLocation;
-        this.costPerHour = publication.costPerHour.createNew();
+        this.costPerHour = publication.getCostPerHour().createNew();
         this.customer = customer;
         this.publication = publication;
     }
 
-    public MoneyAndAmount getCostPerHour() {
+    public MoneyAndAmountForPublication getCostPerHour() {
         return costPerHour;
     }
 

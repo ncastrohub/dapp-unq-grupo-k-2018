@@ -54,8 +54,8 @@ public class MoneyAndAmount extends IdModel {
         this.amount = this.amount - moneyAndAmount.amount;
     }
 
-    public MoneyAndAmount createNew() {
-        return new MoneyAndAmount(this.amount, this.currency);
+    public MoneyAndAmountForPublication createNew() {
+        return new MoneyAndAmountForPublication(this.amount, this.currency);
     }
 
     public MoneyAndAmount reduceAndGet(MoneyAndAmount moneyAndAmount) {

@@ -25,24 +25,25 @@ public class Publication extends IdModel {
     public Publication() {
     }
 
-    public Publication(User owner, MoneyAndAmount costPerHour,
+    public Publication(User owner, MoneyAndAmountForPublication costPerHour,
                        Vehicle vehicle, AdressLocation acquireLocation,
                        LinkedList<AdressLocation> returnLocations,
                        List<Integer> disabledDays) {
         this.owner = owner;
-        this.costPerHour = new MoneyAndAmountForPublication(costPerHour.amount, costPerHour.currency);
+        this.costPerHour = costPerHour;
         this.vehicle = vehicle;
         this.acquireLocation = acquireLocation;
         this.returnLocations = returnLocations;
         this.enabledDays = new PublicationsEnabledDays(disabledDays);
     }
 
-    public Publication(User owner, MoneyAndAmount pricePerHour, Vehicle vehicle, AdressLocation acquireLocation, LinkedList<AdressLocation> returnLocations, PublicationsEnabledDays enabledDays) {
+    public Publication(User owner, MoneyAndAmountForPublication pricePerHour, Vehicle vehicle, AdressLocation acquireLocation, LinkedList<AdressLocation> returnLocations, PublicationsEnabledDays enabledDays) {
         this.owner = owner;
         this.vehicle = vehicle;
         this.acquireLocation = acquireLocation;
         this.returnLocations = returnLocations;
         this.enabledDays = enabledDays;
+        this.costPerHour = pricePerHour;
     }
 
     public Reservation makeReservation(User customer, List<LocalDate> reservationDays, AdressLocation returnLocation) throws DayAlreadyReservedException, DayDisabledException, InvalidAmountOfDaysToReserveException, NotEnoughCreditException {
@@ -58,7 +59,7 @@ public class Publication extends IdModel {
     }
 
 
-    private void canPay(MoneyAndAmount availableMoney, int amountOfDays) throws NotEnoughCreditException {
+    public void canPay(MoneyAndAmount availableMoney, int amountOfDays) throws NotEnoughCreditException {
         if (this.costPerHour.plusBy((double) amountOfDays).isMayorTo(availableMoney)) {
             throw new NotEnoughCreditException("customer has not enough money");
         }
@@ -159,5 +160,9 @@ public class Publication extends IdModel {
             daysOfWeek.add(date.getDayOfWeek());
         }
         this.disabledDays(daysOfWeek);
+    }
+
+    public MoneyAndAmountForPublication getCostPerHour() {
+        return costPerHour;
     }
 }

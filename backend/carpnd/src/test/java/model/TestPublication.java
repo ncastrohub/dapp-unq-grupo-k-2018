@@ -9,7 +9,7 @@ import java.util.LinkedList;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.*;
 
 //import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,7 +20,7 @@ public class TestPublication {
     public void testPublicationCreation(){
 
         User owner = mock(User.class);
-        MoneyAndAmount pricePerHour = mock(MoneyAndAmount.class);
+        MoneyAndAmountForPublication pricePerHour = mock(MoneyAndAmountForPublication.class);
         Vehicle car = mock(Vehicle.class);
         AdressLocation acquirePlace = mock(AdressLocation.class);
 
@@ -57,7 +57,7 @@ public class TestPublication {
         User owner = mock(User.class);
         User customer = mock(User.class);
 
-        MoneyAndAmount pricePerHour = mock(MoneyAndAmount.class);
+        MoneyAndAmountForPublication pricePerHour = mock(MoneyAndAmountForPublication.class);
         Vehicle car = mock(Vehicle.class);
         AdressLocation acquirePlace = mock(AdressLocation.class);
 
@@ -97,7 +97,7 @@ public class TestPublication {
         User owner = mock(User.class);
         User customer = mock(User.class);
 
-        MoneyAndAmount pricePerHour = mock(MoneyAndAmount.class);
+        MoneyAndAmountForPublication pricePerHour = mock(MoneyAndAmountForPublication.class);
         Vehicle car = mock(Vehicle.class);
         AdressLocation acquirePlace = mock(AdressLocation.class);
 
@@ -127,13 +127,14 @@ public class TestPublication {
         reservationDays.add(dayOne);
         reservationDays.add(dayTwo);
         reservationDays.add(dayThree);
+        Publication spied = spy(publication);
 
+        doNothing().when(spied).canPay(customer.availableMoney, reservationDays.size());
         Reservation reservation = publication.makeReservation(customer, reservationDays, returnLocation);
 
         assertThat(publication.canReserve(dayOne)).isFalse();
         assertThat(publication.canReserve(dayTwo)).isFalse();
         assertThat(publication.canReserve(dayThree)).isFalse();
-
 
     }
 
@@ -143,7 +144,7 @@ public class TestPublication {
         User owner = mock(User.class);
         User customer = mock(User.class);
 
-        MoneyAndAmount pricePerHour = mock(MoneyAndAmount.class);
+        MoneyAndAmountForPublication pricePerHour = mock(MoneyAndAmountForPublication.class);
         Vehicle car = mock(Vehicle.class);
         AdressLocation acquirePlace = mock(AdressLocation.class);
 
@@ -190,7 +191,7 @@ public class TestPublication {
         User owner = mock(User.class);
         User customer = mock(User.class);
 
-        MoneyAndAmount pricePerHour = mock(MoneyAndAmount.class);
+        MoneyAndAmountForPublication pricePerHour = mock(MoneyAndAmountForPublication.class);
         Vehicle car = mock(Vehicle.class);
         AdressLocation acquirePlace = mock(AdressLocation.class);
 
@@ -238,7 +239,7 @@ public class TestPublication {
         User owner = mock(User.class);
         User customer = mock(User.class);
 
-        MoneyAndAmount pricePerHour = mock(MoneyAndAmount.class);
+        MoneyAndAmountForPublication pricePerHour = mock(MoneyAndAmountForPublication.class);
         Vehicle car = mock(Vehicle.class);
         AdressLocation acquirePlace = mock(AdressLocation.class);
 

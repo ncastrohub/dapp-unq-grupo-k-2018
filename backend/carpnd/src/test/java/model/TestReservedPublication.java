@@ -20,7 +20,7 @@ public class TestReservedPublication {
         reservedDays.add(LocalDate.now());
         AdressLocation acquireLocation = mock(AdressLocation.class);
 
-        when(publication.getCostPerHour()).thenReturn( new MoneyAndAmount(10.00, CustomCurrencies.ARS));
+        when(publication.getCostPerHour()).thenReturn( new MoneyAndAmountForPublication(10.00, CustomCurrencies.ARS));
         when(publication.getAcquireLocation()).thenReturn(acquireLocation);
         when(acquireLocation.createNew()).thenReturn(acquireLocation);
         ReservedPublication reservedPublication = new ReservedPublication(publication, reservedDays, customer, mock(AdressLocation.class));
@@ -37,20 +37,20 @@ public class TestReservedPublication {
         User customer = mock(User.class);
         AdressLocation acquireLocation = mock(AdressLocation.class);
         reservedDays.add(LocalDate.now());
-        MoneyAndAmount costPerHour = new MoneyAndAmount(12.12, CustomCurrencies.ARS);
+        MoneyAndAmountForPublication costPerHour = new MoneyAndAmountForPublication(12.12, CustomCurrencies.ARS);
 
         when(publication.getCostPerHour()).thenReturn(costPerHour);
+        when(publication.getCostPerHour().createNew()).thenReturn(costPerHour);
 
         when(publication.getAcquireLocation()).thenReturn(acquireLocation);
         when(acquireLocation.createNew()).thenReturn(acquireLocation);
 
         ReservedPublication reservedPublication = new ReservedPublication(publication, reservedDays, customer, mock(AdressLocation.class));
 
-        assertThat(reservedPublication.getCostPerHour()).isEqualTo(costPerHour);
-        MoneyAndAmount newCostPerHour = new MoneyAndAmount(24.12, CustomCurrencies.ARS);
+        assertThat(reservedPublication.getCostPerHour()).isNotEqualTo(costPerHour);
+        assertThat(reservedPublication.getCostPerHour().getClass()).isEqualTo(costPerHour.getClass());
+        MoneyAndAmountForPublication newCostPerHour = new MoneyAndAmountForPublication(24.12, CustomCurrencies.ARS);
 
-        when(publication.getCostPerHour()).thenReturn(newCostPerHour);
-        assertThat(reservedPublication.getCostPerHour()).isEqualTo(costPerHour);
         assertThat(reservedPublication.getCostPerHour()).isNotEqualTo(newCostPerHour);
     }
 
