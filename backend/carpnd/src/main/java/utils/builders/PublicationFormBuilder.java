@@ -13,7 +13,9 @@ public class PublicationFormBuilder {
         pForm.returnLocations = new LinkedList<>();
         pForm.returnLocations.add(AdressLocationFormBuilder.some());
         pForm.returnLocations.add(AdressLocationFormBuilder.some());
-        pForm.enabledDays = PublicationsEnabledDaysFormBuilder.some();
+        pForm.disabledDays = new LinkedList<>();
+        pForm.disabledDays.add(2);
+        pForm.disabledDays.add(3);
         pForm.costPerHour = MoneyAndAmountFormBuilder.some();
         return pForm;
     }

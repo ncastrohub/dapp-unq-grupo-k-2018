@@ -130,10 +130,11 @@ public class PublishService {
         return this.userService.findByEmail(email);
     }
 
+    @Transactional
     public Publication createPublicationForUser(Long userId, PublicationForm publication) throws FormValidationError {
         GenericValidator.validate(publication);
 
-        User publicationUser = this.userService.findById(userId);
+        User publicationUser = this.userService.getRepository().findById(userId);
         Vehicle selectedVehicle = null;
 
         for (Vehicle vehicle : publicationUser.getVehicles()) {
@@ -148,11 +149,14 @@ public class PublishService {
                 selectedVehicle,
                 publication.getAcquireLocationInstance(),
                 publication.getReturnLocationsList(),
-                PublicationsEnabledDaysFormBuilder.some().getModelInstance()
+                publication.disabledDays
         );
 
-        this.publicationService.save(newPublication);
-        return newPublication;
+        this.publicationService.getRepository().save(newPublication);
+        Publication publicationOnDb = this.publicationService.getRepository().findById(newPublication.getId());
+        publicationOnDb.costPerHour = publication.getCostPerDayInstance();
+        this.publicationService.getRepository().update(publicationOnDb);
+        return publicationOnDb;
     }
 
     Publication retrievePublication(Long publicationId) {

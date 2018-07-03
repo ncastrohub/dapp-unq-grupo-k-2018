@@ -3,12 +3,10 @@ package api.forms;
 import lombok.Data;
 import me.geso.tinyvalidator.constraints.NotNull;
 import me.geso.tinyvalidator.constraints.Size;
-import model.AdressLocation;
-import model.MoneyAndAmount;
-import model.PublicationsEnabledDays;
-import model.Vehicle;
+import model.*;
 
 import java.util.LinkedList;
+import java.util.List;
 
 @Data
 public class PublicationForm {
@@ -23,7 +21,13 @@ public class PublicationForm {
     @Size(min = 1)
     public LinkedList<AdressLocationForm> returnLocations;
 
-    public PublicationsEnabledDaysForm enabledDays;
+    public void setDisabledDays(List<Integer> disabledDays) {
+        this.disabledDays = disabledDays;
+    }
+
+    @NotNull
+    @Size(max = 7)
+    public List<Integer> disabledDays;
 
     @NotNull
     public MoneyAndAmountForm costPerHour;
@@ -44,11 +48,11 @@ public class PublicationForm {
         return locationList;
     }
 
-    public PublicationsEnabledDays getEnabledDaysInstance() {
-        return enabledDays.getModelInstance();
+    public List<Integer> getDisabledDays() {
+        return disabledDays;
     }
 
-    public MoneyAndAmount getCostPerDayInstance() {
-        return costPerHour.getModelInstance();
+    public MoneyAndAmountForPublication getCostPerDayInstance() {
+        return costPerHour.getModelInstancePublication();
     }
 }

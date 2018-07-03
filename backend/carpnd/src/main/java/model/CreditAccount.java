@@ -11,7 +11,7 @@ public class CreditAccount {
     private List<ReservationMoney> reservedMoney;
 
     CreditAccount(User user) {
-        this.availableCredit = new MoneyAndAmount(0.00, CustomCurrencies.ARS);
+        this.availableCredit = new MoneyAndAmount(5.00, CustomCurrencies.ARS);
         this.reservedMoney = new LinkedList<>();
         this.user = user;
     }

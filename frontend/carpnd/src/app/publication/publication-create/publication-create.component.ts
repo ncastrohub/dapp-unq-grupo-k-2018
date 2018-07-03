@@ -25,12 +25,21 @@ export class PublicationCreateComponent {
   returnLocations = [];
   capacities = [1, 2, 3, 4, 5, 6, 7];
   carTypes = ['SEDAN', 'VAN'];
-
+  daysOfWeek = [
+    { name: "Sunday", value: 1},
+    { name: "Monday", value: 2},
+    { name: "Tuesday", value: 3},
+    { name: "Wednesday", value: 4},
+    { name: "Thursday", value: 5},
+    { name: "Friday", value: 6},
+    { name: "Saturday", value: 7}
+  ]
   currencies = ['ARS']
   errorList = [];
 
   constructor(private service: PublicationService, private router: Router, public authService: AuthService) {
     this.publication = new CreatePublication();
+    this.publication.disabledDays = [];
   }
 
   addReturnLocation($event) {
@@ -55,6 +64,17 @@ export class PublicationCreateComponent {
   saveCost($event) {
     this.publication.costPerHour = $event.cost;
     this.moment = "complete";
+  }
+
+  addDisableDay($event, day_value){
+    if($event.target.checked){
+      this.publication.disabledDays.push(day_value)
+    }else{
+      let index = this.publication.disabledDays.indexOf(day_value, 0);
+      if (index > -1) {
+         this.publication.disabledDays.splice(index, 1);
+      }
+    }
   }
 
   createPublication() {

@@ -14,8 +14,6 @@
                      column="publication_owner" not-null="false" />
 
         <one-to-one name="acquireLocation" class="model.AdressLocation"/>
-
-
         <list name="returnLocations" cascade="all"  lazy="false">
             <key column="publication_id" />
             <list-index  column="publication_r_locations_index"/>
@@ -24,7 +22,7 @@
 
         <one-to-one name="enabledDays" class="model.PublicationsEnabledDays"/>
 
-        <one-to-one name="costPerHour" class="model.MoneyAndAmount"/>
+        <one-to-one name="costPerHour" class="model.MoneyAndAmountForPublication"/>
 
     </class>
 </hibernate-mapping>

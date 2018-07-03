@@ -3,7 +3,8 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping default-access="field"
                    default-cascade="save-update">
-    <class name="model.MoneyAndAmount">
+
+    <class name="model.MoneyAndAmountForPublication">
         <id column="id" name="id">
             <generator class="native" />
         </id>

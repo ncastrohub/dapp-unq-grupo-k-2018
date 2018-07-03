@@ -30,6 +30,8 @@ export class Publication {
 
 export class MoneyAndAmount {
 	currency: string;
+
+	
 	amount: number;
 }
 
@@ -38,7 +40,7 @@ export class CreatePublication {
 	vehicle: Vehicle;
 	acquireLocation: Location;
 	returnLocations: Location[];
-	enabledDays: Days;
+	disabledDays: number[];
 	costPerHour: MoneyAndAmount;
 }
 

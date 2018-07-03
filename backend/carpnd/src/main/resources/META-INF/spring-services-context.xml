@@ -43,6 +43,14 @@
         <property name="mailService" ref="services.mail" />
     </bean>
 
+    <bean id="appFixture" class="fixtures.AppFixture">
+        <constructor-arg ref="services.publish"/>
+    </bean>
+
+    <!--<bean id="bar" class="x.y.Bar"/>-->
+
+    <!--<bean id="baz" class="x.y.Baz"/>-->
+
     <!--<bean id="initMethodExampleBean"-->
           <!--class="fixtures.FixtureWirer"-->
           <!--init-method="init">-->

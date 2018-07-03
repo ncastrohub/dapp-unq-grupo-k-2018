@@ -59,6 +59,15 @@
 
     </div>
 
+      <div>
+          <div *ngFor="let day of daysOfWeek" class="custom-control custom-checkbox">
+            <input type="checkbox" (change)="addDisableDay($event, day.value)" class="custom-control-input" id="{{day.name}}">
+            <label class="custom-control-label" for="{{day.name}}">{{day.name}}</label>
+          </div>
+
+        </div>
+
+
       <div class="col-lg-8 col-8" >
         <div *ngIf="moment == 'vehicle'"  >
           

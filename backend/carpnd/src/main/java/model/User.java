@@ -27,7 +27,7 @@ public class User extends IdModel {
         this.email = email;
 //        this.rateManager = new SystemRateManager();
         this.vehicles = new LinkedList<>();
-        this.availableMoney = new MoneyAndAmount(0.00, CustomCurrencies.ARS);
+        this.availableMoney = new MoneyAndAmount(3.00, CustomCurrencies.ARS);
     }
 
     /*

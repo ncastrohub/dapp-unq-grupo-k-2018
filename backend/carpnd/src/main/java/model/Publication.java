@@ -20,7 +20,7 @@ public class Publication extends IdModel {
 
     private PublicationsEnabledDays enabledDays;
 
-    private MoneyAndAmount costPerHour;
+    public MoneyAndAmountForPublication costPerHour;
 
     public Publication() {
     }
@@ -28,9 +28,17 @@ public class Publication extends IdModel {
     public Publication(User owner, MoneyAndAmount costPerHour,
                        Vehicle vehicle, AdressLocation acquireLocation,
                        LinkedList<AdressLocation> returnLocations,
-                       PublicationsEnabledDays enabledDays) {
+                       List<Integer> disabledDays) {
         this.owner = owner;
-        this.costPerHour = costPerHour;
+        this.costPerHour = new MoneyAndAmountForPublication(costPerHour.amount, costPerHour.currency);
+        this.vehicle = vehicle;
+        this.acquireLocation = acquireLocation;
+        this.returnLocations = returnLocations;
+        this.enabledDays = new PublicationsEnabledDays(disabledDays);
+    }
+
+    public Publication(User owner, MoneyAndAmount pricePerHour, Vehicle vehicle, AdressLocation acquireLocation, LinkedList<AdressLocation> returnLocations, PublicationsEnabledDays enabledDays) {
+        this.owner = owner;
         this.vehicle = vehicle;
         this.acquireLocation = acquireLocation;
         this.returnLocations = returnLocations;
@@ -83,9 +91,9 @@ public class Publication extends IdModel {
     }
 
 
-    public MoneyAndAmount getCostPerHour() {
-        return this.costPerHour;
-    }
+//    public MoneyAndAmount getCostPerHour() {
+//        return this.costPerHour;
+//    }
 
     public User getOwner() {
         return owner;
@@ -141,9 +149,9 @@ public class Publication extends IdModel {
         this.enabledDays = enabledDays;
     }
 
-    public void setCostPerHour(MoneyAndAmount costPerHour) {
-        this.costPerHour = costPerHour;
-    }
+//    public void setCostPerHour(MoneyAndAmount costPerHour) {
+//        this.costPerHour = costPerHour;
+//    }
 
     public void disabledDays(List<LocalDate> reservationDays) {
         LinkedList<Integer> daysOfWeek = new LinkedList<>();

@@ -1,6 +1,7 @@
 package model;
 
 public class MoneyAndAmount extends IdModel {
+
     public CustomCurrencies currency;
     public Double amount;
 
@@ -31,8 +32,7 @@ public class MoneyAndAmount extends IdModel {
         return new MoneyAndAmount(this.amount * value, this.currency);
     }
 
-    @Override
-    public boolean equals(Object model){
+    public boolean equalss(Object model){
         if ( model instanceof MoneyAndAmount){
             MoneyAndAmount modelCasted = ((MoneyAndAmount) model);
             return this.currency == modelCasted.currency && this.amount.equals(modelCasted.amount);

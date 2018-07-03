@@ -29,7 +29,7 @@ public class ReservedPublication extends IdModel {
         this.reservedDays = reservedDays;
         this.acquireLocation = publication.getAcquireLocation().createNew();
         this.returnLocation = returnLocation;
-        this.costPerHour = publication.getCostPerHour().createNew();
+        this.costPerHour = publication.costPerHour.createNew();
         this.customer = customer;
         this.publication = publication;
     }

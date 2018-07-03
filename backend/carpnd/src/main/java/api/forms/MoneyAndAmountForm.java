@@ -1,10 +1,10 @@
 package api.forms;
 
 import lombok.Data;
-import me.geso.tinyvalidator.constraints.Min;
 import me.geso.tinyvalidator.constraints.NotNull;
 import model.CustomCurrencies;
 import model.MoneyAndAmount;
+import model.MoneyAndAmountForPublication;
 
 @Data
 public class MoneyAndAmountForm {
@@ -19,4 +19,7 @@ public class MoneyAndAmountForm {
         return  new MoneyAndAmount(this.amount, this.currency);
     }
 
+    public MoneyAndAmountForPublication getModelInstancePublication() {
+        return new MoneyAndAmountForPublication(this.amount, this.currency);
+    }
 }
