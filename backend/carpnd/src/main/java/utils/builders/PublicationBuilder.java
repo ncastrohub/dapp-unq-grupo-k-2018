@@ -12,6 +12,11 @@ public class PublicationBuilder {
     private PublicationsEnabledDays enabledDays;
 
 
+    public static Publication some(){
+        return new Publication();
+    }
+
+
     public Publication build() {
         return new Publication(this.owner, this.pricePerHour, this.vehicle, this.acquireLocation, this.returnLocations, this.enabledDays);
     }

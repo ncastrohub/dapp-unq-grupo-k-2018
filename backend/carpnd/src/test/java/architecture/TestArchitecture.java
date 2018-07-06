@@ -1,5 +1,6 @@
 package architecture;
 
+import model.IdModel;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
@@ -46,19 +47,26 @@ public class TestArchitecture {
 
 
             Class<?> BuilderClass = Class.forName("utils.builders." + mappedClass +"Builder");
+
             Method someClassMehthod = BuilderClass.getDeclaredMethod("some");
+
             Object intance = someClassMehthod.invoke(null, null);
+            Method getId = intance.getClass().getMethod("getId");
 
             sessionFactory.getCurrentSession().save(intance);
+            Long intaceId = ((Long) getId.invoke(intance, null));
 
-            List objectsList = sessionFactory.getCurrentSession().createCriteria(intance.getClass().getName()).list();
-            Object dbInstance = objectsList.get(0);
-
-            String nachito = "nachito";
+            Object objectsList = sessionFactory.getCurrentSession().get(intance.getClass(), intaceId);
 
             EqualsBuilder equals = new EqualsBuilder();
 
-            assert equals.reflectionEquals(intance, dbInstance, "");
+            if (! EqualsBuilder.reflectionEquals(intance, objectsList, "")){
+                String nachito = "nachito";
+                assert false;
+            }else{
+                assert true;
+            }
+
 
             q.iterate();
 

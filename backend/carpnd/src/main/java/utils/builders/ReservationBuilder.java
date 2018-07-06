@@ -38,4 +38,11 @@ public class ReservationBuilder {
         this.publication = publication;
         return this;
     }
+
+    public static Reservation some() {
+        Reservation reserv = new Reservation();
+        reserv.publication = PublicationBuilder.some();
+        
+        return reserv;
+    }
 }

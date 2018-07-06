@@ -53,7 +53,7 @@ public class VehicleBuilder {
 
     public static Vehicle some() {
         return new Vehicle(5, VehicleType.SEDAN,
-                "fiveDoors", "link", UserBuilder.someUser()
+                "fiveDoors", "link", UserBuilder.start().withLastName("Nachito").withName("Castro").withEmail("nachito@gmail.com").withCUIL("qwdqdwqwd").build()
         );
     }
 

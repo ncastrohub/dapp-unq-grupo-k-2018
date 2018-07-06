@@ -47,18 +47,6 @@
         <constructor-arg ref="services.publish"/>
     </bean>
 
-    <!--<bean id="bar" class="x.y.Bar"/>-->
-
-    <!--<bean id="baz" class="x.y.Baz"/>-->
-
-    <!--<bean id="initMethodExampleBean"-->
-          <!--class="fixtures.FixtureWirer"-->
-          <!--init-method="init">-->
-    <!--</bean>-->
-
-    <!--<bean depends-on="services.publication" id="fixture.vehicle" class="fixtures.VehicleAndUserFixture">-->
-        <!--<property name="publishService" ref="services.publish" />-->
-    <!--</bean>-->
 
     <!--<bean class="scripting.InitializeUser">-->
         <!--<property name="publishService" ref="services.publication" />-->
