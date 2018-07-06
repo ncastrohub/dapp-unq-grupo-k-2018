@@ -15,6 +15,7 @@ import { AuthService } from '../../auth/auth.service';
 
 export class CreateVehicleComponent {
 
+  loading = true;
   // @Output() public onComplete: EventEmitter<any> = new EventEmitter();
 // MODIFICADO PARA AUTENTICACION
   constructor(private service: VehicleService, private router: Router, public authService: AuthService) {
@@ -23,7 +24,6 @@ export class CreateVehicleComponent {
     this.loading = false;
   }
 
-  loading = true;
   vehicle:Vehicle;
 
   capacities = [1, 2, 3, 4, 5, 6, 7];

@@ -18,7 +18,7 @@ export class GooglemapsComponent implements OnInit {
   public longitude: number;
   public searchControl: FormControl;
   public zoom: number;
-  private selectedLocation: Location;
+  selectedLocation: Location;
 
   @Output() public onComplete: EventEmitter<any> = new EventEmitter();
 

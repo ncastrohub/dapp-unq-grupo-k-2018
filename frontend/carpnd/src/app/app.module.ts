@@ -41,6 +41,11 @@ import { CreditComponent } from './credit/credit/credit.component';
 import { CreditService } from './credit/credit.service';
 import { ReservationListComponent } from './reservation/reservation-list/reservation-list.component';
 
+// import localeEs from '@angular/common/locales/es';
+
+// import { registerLocaleData } from '@angular/common';
+// registerLocaleData(localeEs, 'es');
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,15 +87,18 @@ import { ReservationListComponent } from './reservation/reservation-list/reserva
       useClass: TokenInterceptor,
       multi: true
     },
+    { provide: LOCALE_ID, useValue: 'es' },
     CreditService,
     VehicleService,
     AuthService,
     ReservationService,
     UserServiceService,
     AppConfig,
-    PublicationService,
-    { provide: LOCALE_ID, useValue: 'en' }],
+    PublicationService],
     bootstrap: [AppComponent]
 })
+
+
+
 
 export class AppModule { }

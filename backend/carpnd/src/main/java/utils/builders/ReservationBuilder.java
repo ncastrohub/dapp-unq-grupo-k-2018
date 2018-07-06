@@ -42,7 +42,7 @@ public class ReservationBuilder {
     public static Reservation some() {
         Reservation reserv = new Reservation();
         reserv.publication = PublicationBuilder.some();
-        
+
         return reserv;
     }
 }

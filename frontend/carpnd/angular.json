@@ -48,7 +48,14 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ]
-            }
+            },
+            "es": {
+                "aot": true,
+                "outputPath": "dist/carpnd-es/",
+                "i18nFile": "src/locale/messages.es.xlf",
+                "i18nFormat": "xlf",
+                "i18nLocale": "es",
+              }
           }
         },
         "serve": {
@@ -59,6 +66,9 @@
           "configurations": {
             "production": {
               "browserTarget": "carpnd:build:production"
+            },
+            "es": {
+              "browserTarget": "carpnd:build:es"
             }
           }
         },

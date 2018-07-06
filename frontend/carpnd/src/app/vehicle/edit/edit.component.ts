@@ -14,7 +14,8 @@ import { Subscription }   from 'rxjs';
 export class EditVehicleComponent implements OnInit {
 
   constructor(private service: VehicleService, private router: Router) { }
-  
+
+  loading = true;  
   vehicle:Vehicle;
   subscription: Subscription;
 
