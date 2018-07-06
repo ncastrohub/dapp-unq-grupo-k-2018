@@ -20,7 +20,7 @@ public class TestReservedPublication {
         reservedDays.add(LocalDate.now());
         AdressLocation acquireLocation = mock(AdressLocation.class);
 
-        when(publication.getCostPerHour()).thenReturn( new MoneyAndAmount(10.00, CustomCurrencies.ARS));
+//        when(publication.getCostPerHour()).thenReturn( new MoneyAndAmount(10.00, CustomCurrencies.ARS));
         when(publication.getAcquireLocation()).thenReturn(acquireLocation);
         when(acquireLocation.createNew()).thenReturn(acquireLocation);
         ReservedPublication reservedPublication = new ReservedPublication(publication, reservedDays, customer, mock(AdressLocation.class));
@@ -39,7 +39,7 @@ public class TestReservedPublication {
         reservedDays.add(LocalDate.now());
         MoneyAndAmount costPerHour = new MoneyAndAmount(12.12, CustomCurrencies.ARS);
 
-        when(publication.getCostPerHour()).thenReturn(costPerHour);
+//        when(publication.getCostPerHour()).thenReturn(costPerHour);
 
         when(publication.getAcquireLocation()).thenReturn(acquireLocation);
         when(acquireLocation.createNew()).thenReturn(acquireLocation);
@@ -49,7 +49,7 @@ public class TestReservedPublication {
         assertThat(reservedPublication.getCostPerHour()).isEqualTo(costPerHour);
         MoneyAndAmount newCostPerHour = new MoneyAndAmount(24.12, CustomCurrencies.ARS);
 
-        when(publication.getCostPerHour()).thenReturn(newCostPerHour);
+//        when(publication.getCostPerHour()).thenReturn(newCostPerHour);
         assertThat(reservedPublication.getCostPerHour()).isEqualTo(costPerHour);
         assertThat(reservedPublication.getCostPerHour()).isNotEqualTo(newCostPerHour);
     }

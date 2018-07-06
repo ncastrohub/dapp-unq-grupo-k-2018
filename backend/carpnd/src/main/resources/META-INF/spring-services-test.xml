@@ -41,9 +41,9 @@
         <property name="reservationService" ref="services.reservation" />
     </bean>
 
-    <bean depends-on="services.publication" id="fixture.vehicle" class="fixtures.VehicleAndUserFixture">
-    <property name="publishService" ref="services.publish" />
-    </bean>
+    <!--<bean depends-on="services.publication" id="fixture.vehicle" class="fixtures.VehicleAndUserFixture">-->
+    <!--<property name="publishService" ref="services.publish" />-->
+    <!--</bean>-->
 
     <!--<bean class="scripting.InitializeUser">-->
     <!--<property name="publishService" ref="services.publication" />-->

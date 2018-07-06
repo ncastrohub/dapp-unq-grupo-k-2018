@@ -57,6 +57,7 @@ public class ReserveService {
     private ReservationService reservationService;
     private MailService mailService;
 
+    @Transactional()
     public Reservation makeReservation(Long customerId, List<LocalDate> daysToReserve, Long publicationId,
                                        Long returnLocationId) throws DayDisabledException, DayAlreadyReservedException,
             InvalidAmountOfDaysToReserveException, NoReturnLocationInPublicationException, NotEnoughCreditException {

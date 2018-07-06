@@ -28,7 +28,7 @@ public class TestReservation {
 
         Publication publication = mock(Publication.class);
         MoneyAndAmount cost = new MoneyAndAmount(10.00, CustomCurrencies.ARS);
-        when(publication.getCostPerHour()).thenReturn(cost);
+//        when(publication.getCostPerHour()).thenReturn(cost);
         when(publication.getAcquireLocation()).thenReturn(acquireLocation);
         when(acquireLocation.createNew()).thenReturn(acquireLocation);
 
@@ -62,7 +62,7 @@ public class TestReservation {
 
         Publication publication = mock(Publication.class);
         MoneyAndAmount cost = new MoneyAndAmount(10.00, CustomCurrencies.ARS);
-        when(publication.getCostPerHour()).thenReturn(cost);
+//        when(publication.getCostPerHour()).thenReturn(cost);
         when(publication.getAcquireLocation()).thenReturn(acquireLocation);
         when(acquireLocation.createNew()).thenReturn(acquireLocation);
 

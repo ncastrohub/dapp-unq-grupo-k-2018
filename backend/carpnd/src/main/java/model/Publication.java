@@ -160,4 +160,8 @@ public class Publication extends IdModel {
         }
         this.disabledDays(daysOfWeek);
     }
+
+    public MoneyAndAmountForPublication getCostPerHour() {
+        return costPerHour;
+    }
 }
