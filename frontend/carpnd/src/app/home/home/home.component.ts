@@ -12,4 +12,9 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  traducir(){
+  	window.document.locale="ES";
+  }
+
 }
