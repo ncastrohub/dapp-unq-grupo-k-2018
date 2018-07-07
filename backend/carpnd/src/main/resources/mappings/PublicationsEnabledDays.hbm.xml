@@ -20,6 +20,9 @@
             <element type="org.joda.time.LocalDate"/>
         </list>
 
+        <one-to-one name="publication" class="model.Publication" foreign-key="publication_id"/>
+
+
     </class>
 </hibernate-mapping>
 

@@ -23,6 +23,7 @@ public class Publication extends IdModel {
     public MoneyAndAmountForPublication costPerHour;
 
     public Publication() {
+        this.returnLocations = new LinkedList<>();
     }
 
     public Publication(User owner, MoneyAndAmount costPerHour,
@@ -34,7 +35,7 @@ public class Publication extends IdModel {
         this.vehicle = vehicle;
         this.acquireLocation = acquireLocation;
         this.returnLocations = returnLocations;
-        this.enabledDays = new PublicationsEnabledDays(disabledDays);
+        this.enabledDays = null;
     }
 
     public Publication(User owner, MoneyAndAmount pricePerHour, Vehicle vehicle, AdressLocation acquireLocation, LinkedList<AdressLocation> returnLocations, PublicationsEnabledDays enabledDays) {

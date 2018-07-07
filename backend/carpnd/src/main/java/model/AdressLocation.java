@@ -3,9 +3,53 @@ package model;
 public class AdressLocation extends IdModel {
 
     public String adressName;
+
+    public String getAdressName() {
+        return adressName;
+    }
+
+    public void setAdressName(String adressName) {
+        this.adressName = adressName;
+    }
+
+    public String getAdressNumber() {
+        return adressNumber;
+    }
+
+    public void setAdressNumber(String adressNumber) {
+        this.adressNumber = adressNumber;
+    }
+
+    public String getGeoLatitude() {
+        return geoLatitude;
+    }
+
+    public void setGeoLatitude(String geoLatitude) {
+        this.geoLatitude = geoLatitude;
+    }
+
+    public ReservedPublication getReservedPublication() {
+        return reservedPublication;
+    }
+
+    public void setReservedPublication(ReservedPublication reservedPublication) {
+        this.reservedPublication = reservedPublication;
+    }
+
     public String adressNumber;
     public String geoLatitude;
+
+    public String getGeoLongitude() {
+        return geoLongitude;
+    }
+
+    public void setGeoLongitude(String geoLongitude) {
+        this.geoLongitude = geoLongitude;
+    }
+
     public String geoLongitude;
+    public ReservedPublication reservedPublication;
+
 
     public AdressLocation(String adressName, String adressNumber, String geoLatitude, String geoLongitude) {
         this.adressName = adressName;

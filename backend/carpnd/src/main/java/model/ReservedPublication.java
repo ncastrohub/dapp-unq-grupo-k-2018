@@ -16,7 +16,25 @@ public class ReservedPublication extends IdModel {
     public Publication publication;
 
     public List<LocalDate> reservedDays;
+
+    public AdressLocation getAcquireLocation() {
+        return acquireLocation;
+    }
+
+    public void setAcquireLocation(AdressLocation acquireLocation) {
+        this.acquireLocation = acquireLocation;
+    }
+
     public AdressLocation acquireLocation;
+
+    public AdressLocation getReturnLocation() {
+        return returnLocation;
+    }
+
+    public void setReturnLocation(AdressLocation returnLocation) {
+        this.returnLocation = returnLocation;
+    }
+
     public AdressLocation returnLocation;
     private LocalDateTime returnTime;
 

@@ -13,5 +13,8 @@
         <property name="geoLatitude" type="string"/>
         <property name="geoLongitude" type="string"/>
 
+        <!--<many-to-one name="reservedPublication" class="model.ReservedPublication"-->
+                     <!--/>-->
+
     </class>
 </hibernate-mapping>

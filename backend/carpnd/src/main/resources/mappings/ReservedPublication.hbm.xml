@@ -18,7 +18,7 @@
         </list>
 
         <one-to-one name="acquireLocation" class="model.AdressLocation"/>
-        <one-to-one name="returnLocation" class="model.AdressLocation"/>
+        <!--<one-to-one name="returnLocation" class="model.AdressLocation"/>-->
         <!--<one-to-one name="returnTime" class="java.time.LocalDateTime"/>-->
 
         <many-to-one name="customer" class="model.User" lazy="false"

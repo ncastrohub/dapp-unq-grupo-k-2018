@@ -41,11 +41,6 @@ import { CreditComponent } from './credit/credit/credit.component';
 import { CreditService } from './credit/credit.service';
 import { ReservationListComponent } from './reservation/reservation-list/reservation-list.component';
 
-// import localeEs from '@angular/common/locales/es';
-
-// import { registerLocaleData } from '@angular/common';
-// registerLocaleData(localeEs, 'es');
-
 @NgModule({
   declarations: [
     AppComponent,
