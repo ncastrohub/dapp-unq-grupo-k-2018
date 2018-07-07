@@ -45,4 +45,11 @@ public class ReservationBuilder {
 
         return reserv;
     }
+
+    public Reservation getOne() {
+        Reservation reserv = new Reservation();
+        PublicationBuilder pBuilder = new PublicationBuilder();
+        reserv.publication = pBuilder.getOne();
+        return reserv;
+    }
 }

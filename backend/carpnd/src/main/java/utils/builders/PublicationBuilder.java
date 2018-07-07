@@ -2,6 +2,7 @@ package utils.builders;
 
 import model.*;
 import java.util.LinkedList;
+import java.util.List;
 
 public class PublicationBuilder {
     private User owner;
@@ -13,7 +14,26 @@ public class PublicationBuilder {
 
 
     public static Publication some(){
-        return new Publication();
+        Publication publication = new Publication();
+        List days = new LinkedList<>();
+        days.add(6);
+        days.add(8);
+        PublicationsEnabledDays pEnableDays = new PublicationsEnabledDays(days);
+        publication.enabledDays = pEnableDays;
+        publication.setReturnLocations(new LinkedList<>());
+        return publication;
+    }
+
+
+    public Publication getOne(){
+        Publication publication = new Publication();
+        List days = new LinkedList<>();
+        days.add(6);
+        days.add(8);
+        PublicationsEnabledDays pEnableDays = new PublicationsEnabledDays(days);
+        publication.enabledDays = pEnableDays;
+        publication.setReturnLocations(new LinkedList<>());
+        return publication;
     }
 
 

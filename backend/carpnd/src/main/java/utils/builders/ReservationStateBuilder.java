@@ -10,4 +10,10 @@ public class ReservationStateBuilder {
         state.setCurrentState(StateTypes.IN_PROCESS);
         return state;
     }
+
+    public ReservationState getOne(){
+        ReservationState state = new ReservationState();
+        state.setCurrentState(StateTypes.IN_PROCESS);
+        return state;
+    }
 }

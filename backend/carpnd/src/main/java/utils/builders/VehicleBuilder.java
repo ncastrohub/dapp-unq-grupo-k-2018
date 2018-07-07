@@ -57,6 +57,12 @@ public class VehicleBuilder {
         );
     }
 
+    public Vehicle getOne() {
+        return new Vehicle(5, VehicleType.SEDAN,
+                "fiveDoors", "link", UserBuilder.start().withLastName("Nachito").withName("Castro").withEmail("nachito@gmail.com").withCUIL("qwdqdwqwd").build()
+        );
+    }
+
     public static Vehicle onlyWithOwner(User owner) {
         return new Vehicle(5, VehicleType.SEDAN,
                 "fiveDoors", "link", owner

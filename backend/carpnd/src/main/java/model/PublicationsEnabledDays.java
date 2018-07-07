@@ -10,7 +10,6 @@ public class PublicationsEnabledDays extends IdModel {
 
     private List<Integer> disabledDays;
     private List<LocalDate> reservedDays;
-    public Publication publication;
 
     public List<LocalDate> getReservedDays() {
         return reservedDays;
@@ -23,7 +22,7 @@ public class PublicationsEnabledDays extends IdModel {
         this.reservedDays = reservedDays;
     }
 
-    PublicationsEnabledDays(List<Integer> disabledDays){
+    public PublicationsEnabledDays(List<Integer> disabledDays){
         this.disabledDays = disabledDays;
         this.reservedDays = new LinkedList<>();
     }

@@ -18,12 +18,12 @@ public class Publication extends IdModel {
 
     private List<AdressLocation> returnLocations;
 
-    private PublicationsEnabledDays enabledDays;
+    public PublicationsEnabledDays enabledDays;
 
     public MoneyAndAmountForPublication costPerHour;
 
     public Publication() {
-        this.returnLocations = new LinkedList<>();
+
     }
 
     public Publication(User owner, MoneyAndAmount costPerHour,
@@ -35,7 +35,7 @@ public class Publication extends IdModel {
         this.vehicle = vehicle;
         this.acquireLocation = acquireLocation;
         this.returnLocations = returnLocations;
-        this.enabledDays = null;
+        this.enabledDays = new PublicationsEnabledDays(disabledDays);
     }
 
     public Publication(User owner, MoneyAndAmount pricePerHour, Vehicle vehicle, AdressLocation acquireLocation, LinkedList<AdressLocation> returnLocations, PublicationsEnabledDays enabledDays) {
@@ -147,6 +147,7 @@ public class Publication extends IdModel {
     }
 
     public void setEnabledDays(PublicationsEnabledDays enabledDays) {
+
         this.enabledDays = enabledDays;
     }
 

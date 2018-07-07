@@ -13,16 +13,17 @@
         <many-to-one name="owner" class="model.User" lazy="false"
                      column="publication_owner" not-null="false" />
 
-        <one-to-one name="acquireLocation" class="model.AdressLocation"/>
+        <one-to-one name="acquireLocation" lazy="false" class="model.AdressLocation"/>
+
         <list name="returnLocations" cascade="all"  lazy="false">
             <key column="publication_id" />
             <list-index  column="publication_r_locations_index"/>
             <one-to-many  class="model.AdressLocation" />
         </list>
 
-        <one-to-one name="enabledDays" class="model.PublicationsEnabledDays"/>
+        <one-to-one  name="enabledDays" cascade="all" lazy="false" class="model.PublicationsEnabledDays"/>
 
-        <one-to-one name="costPerHour" class="model.MoneyAndAmountForPublication"/>
+        <one-to-one name="costPerHour" lazy="false" class="model.MoneyAndAmountForPublication"/>
 
     </class>
 </hibernate-mapping>

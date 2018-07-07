@@ -2,25 +2,24 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping default-access="field"
-                   default-cascade="save-update">
+                   default-cascade="all">
+
     <class name="model.PublicationsEnabledDays">
         <id column="id" name="id">
             <generator class="native" />
         </id>
 
-        <list name="disabledDays" cascade="all"  lazy="false">
-            <key column="enabled_days_id" />
+        <list name="disabledDays"  lazy="false">
+            <key column="disabled_days_id" />
             <list-index  column="disabled_days"/>
             <element type="int"/>
         </list>
 
-        <list name="reservedDays" cascade="all"  lazy="false">
-            <key column="enabled_days_id" />
+        <list name="reservedDays"  lazy="false">
+            <key column="reserved_days_id" />
             <list-index  column="reserved_days"/>
             <element type="org.joda.time.LocalDate"/>
         </list>
-
-        <one-to-one name="publication" class="model.Publication" foreign-key="publication_id"/>
 
 
     </class>

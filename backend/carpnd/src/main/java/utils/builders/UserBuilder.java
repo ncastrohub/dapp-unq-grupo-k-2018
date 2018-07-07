@@ -26,6 +26,17 @@ public class UserBuilder {
         return user;
     }
 
+    public User getOne(){
+        User user = new User();
+        user.availableMoney = new MoneyAndAmount(12.00, CustomCurrencies.ARS);
+        user.email = "nachito@gmail.com";
+        user.cuil = "121231232";
+        user.lastName = "Castro";
+        user.name = "Nazareno";
+        user.addVehicle(VehicleBuilder.start().withPhoto("asdasd").withCapacity(2).withOwner(user).withDescription("Nice Car").withType(VehicleType.COUPE).build());
+        return user;
+    }
+
     public static UserBuilder start() {
         return new UserBuilder();
     }

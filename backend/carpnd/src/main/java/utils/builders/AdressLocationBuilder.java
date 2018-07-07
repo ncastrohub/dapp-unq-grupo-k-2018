@@ -22,4 +22,13 @@ public class AdressLocationBuilder {
         aAndLocation.adressName = "2137";
         return aAndLocation;
     }
+
+    public AdressLocation getOne() {
+        AdressLocation aAndLocation = new AdressLocation();
+        aAndLocation.geoLongitude = "123123123";
+        aAndLocation.geoLatitude = "098098098";
+        aAndLocation.adressName = "Estanislao del Campo";
+        aAndLocation.adressName = "2137";
+        return aAndLocation;
+    }
 }

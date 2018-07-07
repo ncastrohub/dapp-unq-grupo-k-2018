@@ -41,4 +41,14 @@
         <property name="reservationService" ref="services.reservation" />
     </bean>
 
+
+    <bean id="services.test" class="services.ServiceForTest">
+        <property name="sessionFactory" ref="persistence.sessionFactory" />
+    </bean>
+
+    <bean id="arch.test" class="architecture.TestArchitecture">
+        <property name="serviceTest" ref="services.test" />
+    </bean>
+
+
 </beans>
