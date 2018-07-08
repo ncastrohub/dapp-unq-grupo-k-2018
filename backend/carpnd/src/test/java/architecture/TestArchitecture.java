@@ -47,14 +47,8 @@ public class TestArchitecture {
 
             String mappedClass = persister.getMappedClass().getName().replace("model.", "");
 
-            try {
 
-                checkClass(mappedClass);
-            }catch (LazyInitializationException error){
-                String nachito = "asdasd";
-            }
-
-
+            checkClass(mappedClass);
 
         }
     }
@@ -72,15 +66,13 @@ public class TestArchitecture {
         Method getId = instance.getClass().getMethod("getId");
 
         serviceTest.saveInstance(instance);
+
         Long intanceId = (Long) getId.invoke(instance, null);
+
         Object intanceDb = serviceTest.getIntance(intanceId, instance.getClass());
 
-//        EqualsBuilder equals = new EqualsBuilder();
-
         try {
-//            ReflectionComparatorMode.IGNORE_DEFAULTS
-            ReflectionAssert.assertReflectionEquals(instance, intanceDb, ReflectionComparatorMode.IGNORE_DEFAULTS);
-
+            ReflectionAssert.assertReflectionEquals(instance, intanceDb);
         }catch (AssertionFailedError e){
             String nachito = "asdasd";
         }

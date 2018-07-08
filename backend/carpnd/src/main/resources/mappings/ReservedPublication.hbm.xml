@@ -17,7 +17,17 @@
             <element type="java.time.LocalDate"/>
         </list>
 
-        <one-to-one name="acquireLocation" cascade="all" class="model.AdressLocation"/>
+        <many-to-one name="acquireLocation" class="model.AdressLocation"
+                     column="acquire_days" unique="true"
+                     cascade="all" lazy="false" />
+
+
+        <many-to-one name="returnLocation" class="model.AdressLocation"
+                     column="return_days" unique="true"
+                     cascade="all" lazy="false" />
+        <!---->
+        <!--<one-to-one name="acquireLocation" cascade="all" class="model.AdressLocation"/>-->
+        <!---->
         <!--<one-to-one name="returnLocation" cascade="all" class="model.AdressLocation"/>-->
 
         <!--<one-to-one name="returnTime" class="java.time.LocalDateTime"/>-->

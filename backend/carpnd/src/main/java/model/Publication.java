@@ -23,7 +23,7 @@ public class Publication extends IdModel {
     public MoneyAndAmountForPublication costPerHour;
 
     public Publication() {
-
+        this.returnLocations = new LinkedList<>();
     }
 
     public Publication(User owner, MoneyAndAmount costPerHour,

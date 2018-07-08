@@ -27,7 +27,7 @@ public class PublicationsEnabledDaysBuilder {
     public PublicationsEnabledDays getOne() {
         PublicationsEnabledDays days = new PublicationsEnabledDays();
         List dDays = new LinkedList();
-//        dDays.add(1);
+        dDays.add(5);
 //        dDays.add(2);
 //
         List rDays = new LinkedList();

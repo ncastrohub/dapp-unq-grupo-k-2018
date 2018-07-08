@@ -5,6 +5,7 @@
                    default-cascade="all">
 
     <class name="model.PublicationsEnabledDays">
+
         <id column="id" name="id">
             <generator class="native" />
         </id>
@@ -20,7 +21,6 @@
             <list-index  column="reserved_days"/>
             <element type="org.joda.time.LocalDate"/>
         </list>
-
 
     </class>
 </hibernate-mapping>

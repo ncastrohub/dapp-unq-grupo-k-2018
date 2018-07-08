@@ -8,12 +8,25 @@
             <generator class="native" />
         </id>
 
-        <one-to-one name="vehicle"  class="model.Vehicle"/>
+        <!--<one-to-one name="vehicle"  class="model.Vehicle"/>-->
+
+
+        <many-to-one name="vehicle" class="model.Vehicle"
+                     column="vehicle_publication" unique="true"
+                     cascade="all" lazy="false" />
 
         <many-to-one name="owner" class="model.User" lazy="false"
                      column="publication_owner" not-null="false" />
 
-        <one-to-one name="acquireLocation" lazy="false" class="model.AdressLocation"/>
+
+
+
+        <!--<one-to-one name="acquireLocation" lazy="false" class="model.AdressLocation"/>-->
+
+        <many-to-one name="acquireLocation" class="model.AdressLocation"
+                     column="acquireLocation" unique="true"
+                     cascade="all" lazy="false" />
+
 
         <list name="returnLocations" cascade="all"  lazy="false">
             <key column="publication_id" />
@@ -21,9 +34,14 @@
             <one-to-many  class="model.AdressLocation" />
         </list>
 
-        <one-to-one  name="enabledDays" cascade="all" lazy="false" class="model.PublicationsEnabledDays"/>
 
-        <one-to-one name="costPerHour" lazy="false" class="model.MoneyAndAmountForPublication"/>
+        <many-to-one name="enabledDays" class="model.PublicationsEnabledDays"
+                     column="enabled_days" unique="true"
+                     cascade="all" lazy="false" />
+        <!---->
+        <!--<one-to-one property-ref="id"  name="enabledDays" cascade="all" lazy="false" class="model.PublicationsEnabledDays"/>-->
+
+        <one-to-one  name="costPerHour" lazy="false" class="model.MoneyAndAmountForPublication"/>
 
     </class>
 </hibernate-mapping>

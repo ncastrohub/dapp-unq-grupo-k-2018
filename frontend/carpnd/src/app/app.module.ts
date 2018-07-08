@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule }     from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ListComponent } from './vehicle/list/list.component';
 import { VehicleService } from './vehicle/service/vehicle.service';
 import { AppConfig } from './config';
@@ -40,6 +40,16 @@ import { LoadingComponent } from './loading/loading/loading.component';
 import { CreditComponent } from './credit/credit/credit.component';
 import { CreditService } from './credit/credit.service';
 import { ReservationListComponent } from './reservation/reservation-list/reservation-list.component';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+
+
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+    return new TranslateHttpLoader(http);
+}
+
 
 @NgModule({
   declarations: [
@@ -70,6 +80,13 @@ import { ReservationListComponent } from './reservation/reservation-list/reserva
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
+    TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        }),
     AgmCoreModule.forRoot({
       libraries: ["places"],
       apiKey: 'AIzaSyApkqv2wRZywgM-wVDJmceHuBROKB1gvOQ'

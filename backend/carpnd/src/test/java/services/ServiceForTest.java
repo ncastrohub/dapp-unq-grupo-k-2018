@@ -22,16 +22,13 @@ public class ServiceForTest extends HibernateDaoSupport {
 
     @Transactional
     public Long saveInstance(Object obj){
-        this.sessionFactory.getCurrentSession().flush();
-        this.sessionFactory.getCurrentSession().clear();
         return (Long) this.getHibernateTemplate().save(obj);
 //        return (Long) sessionFactory.getCurrentSession().save(obj);
     }
 
     @Transactional(readOnly = true)
     public Object getIntance(Long intanceId, Class<?> aClass) {
-        this.sessionFactory.getCurrentSession().flush();
-        this.sessionFactory.getCurrentSession().clear();
+
         return sessionFactory.getCurrentSession().get(aClass, intanceId);
     }
 }
