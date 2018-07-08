@@ -4,7 +4,6 @@ import lombok.Data;
 import me.geso.tinyvalidator.constraints.NotNull;
 
 
-@Data
 public class UserUpdateForm extends UserForm {
 
     @NotNull

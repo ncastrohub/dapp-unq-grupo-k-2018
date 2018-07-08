@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
-       xsi:schemaLocation="
-       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd ">
 
     <!-- beans de spring -->
     <!--<bean id="services.general" class="services.GeneralService">-->
     <!--<property name="vehicleService" ref="services.vehicle" />-->
     <!--</bean>-->
+
+    <!-- Enable AspectJ style of Spring AOP -->
+    <aop:aspectj-autoproxy />
+
+    <bean id="myAspect" class="scripting.ApiAuditor">
+        <!-- configure properties of aspect here as normal -->
+    </bean>
+
+    <!--<context:load-time-weaver aspectj-weaving="on"/>-->
+
+    <!--<bean id="loggerAspectBean" class="scripting.ApiAuditor"/>-->
 
     <bean id="services.vehicle" class="services.VehicleService">
         <property name="repository" ref="persistence.vehiclerepository" />
@@ -32,6 +44,7 @@
         <property name="vehicleService" ref="services.vehicle" />
         <property name="publicationService" ref="services.publication" />
         <property name="reservationService" ref="services.reservation" />
+        <property name="mailService" ref="services.mail" />
     </bean>
 
     <bean id="services.reserve" class="services.ReserveService">
@@ -39,6 +52,20 @@
         <property name="vehicleService" ref="services.vehicle" />
         <property name="publicationService" ref="services.publication" />
         <property name="reservationService" ref="services.reservation" />
+        <property name="mailService" ref="services.mail" />
+    </bean>
+
+    <bean id="appFixture" class="fixtures.AppFixture">
+        <constructor-arg ref="services.publish"/>
+    </bean>
+
+
+
+    <!--<bean class="scripting.InitializeUser">-->
+    <!--<property name="publishService" ref="services.publication" />-->
+    <!--</bean>-->
+
+    <bean id="services.mail" class="services.MailService">
     </bean>
 
 
@@ -50,5 +77,11 @@
         <property name="serviceTest" ref="services.test" />
     </bean>
 
+    <bean id="aspect.test" class="aspect.CacheClass">
+        <property name="service" ref="services.publish" />
+    </bean>
 
 </beans>
+
+
+
