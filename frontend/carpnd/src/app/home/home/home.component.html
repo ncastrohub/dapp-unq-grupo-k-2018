@@ -14,8 +14,6 @@
 	    </div> 
 	  </div>
 
-
-	  <button type="button" (click)="traducir()" >trans</button>
 	  <div class="main-text hidden-xs">
                 <div class="col-md-12 text-center">
                     <h1  style="text-shadow: 1px 0 0 #fff, -2px 0 0 #fff, 0 1px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;" i18n>
@@ -28,5 +26,8 @@
                     </h3>
                 </div>
             </div>
+
+
+           <p>{{ 'demo.greeting' | translate:{'name':'Andreas'} }}</p>
 	</div>
 

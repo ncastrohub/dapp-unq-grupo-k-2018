@@ -1,0 +1,10 @@
+{
+  "demo": {
+    "greeting": "Hello {{name}}!"
+  },
+  	"router.lang": "Language",
+  	"Vehicles" : "Vehicles",
+	"Create": "Create",
+	"List":"List",
+	"Me":"Me"
+}
