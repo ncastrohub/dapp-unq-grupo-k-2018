@@ -20,12 +20,6 @@ public class ApiAuditor {
 
     private static Logger LOGGER = Logger.getLogger("api.rest.info");
 
-//    @Pointcut("execution(* api..*(..))")
-//    public void annotationPointCutDefinition(){
-//    }
-
-//    @Before("execution(* api.UserApi.currentUser(..))")
-//    @Before(value = "execution(public * *(..))")
     @Before("execution(* api..*(..))")
     public void auditRestMethod(JoinPoint jp) throws Throwable {
         String target = jp.getTarget().getClass().getName();
