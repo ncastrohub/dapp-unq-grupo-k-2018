@@ -1,10 +1,14 @@
 package architecture;
 
 import junit.framework.AssertionFailedError;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.hibernate.persister.entity.EntityPersister;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.unitils.reflectionassert.ReflectionAssert;
@@ -12,12 +16,13 @@ import services.ServiceForTest;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.net.MalformedURLException;
 import java.util.Collection;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"/META-INF/spring-persistence-context.xml", "/META-INF/spring-services-test.xml"})
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class TestArchitecture {
-
 
     public ServiceForTest getServiceTest() {
         return serviceTest;

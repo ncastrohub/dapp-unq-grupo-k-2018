@@ -9,7 +9,6 @@
             <generator class="native" />
         </id>
 
-        <!--<one-to-one name="publicationSnapshot" lazy="false" class="model.ReservedPublication"/>-->
 
         <many-to-one name="publicationSnapshot" class="model.ReservedPublication"
                      column="publicationSnapshot_Reserva" unique="true"
@@ -26,7 +25,13 @@
                      column="state_Reserva" unique="true"
                      cascade="all" lazy="false" />
 
+
+
+
         <!--<one-to-one name="state" class="model.ReservationState"/>-->
+
+        <!--<one-to-one name="publicationSnapshot" lazy="false" class="model.ReservedPublication"/>-->
+
 
     </class>
 </hibernate-mapping>

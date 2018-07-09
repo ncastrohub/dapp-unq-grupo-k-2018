@@ -12,6 +12,8 @@
     <!--<property name="vehicleService" ref="services.vehicle" />-->
     <!--</bean>-->
 
+
+
     <!-- Enable AspectJ style of Spring AOP -->
     <aop:aspectj-autoproxy />
 
@@ -59,15 +61,8 @@
         <constructor-arg ref="services.publish"/>
     </bean>
 
-
-
-    <!--<bean class="scripting.InitializeUser">-->
-    <!--<property name="publishService" ref="services.publication" />-->
-    <!--</bean>-->
-
     <bean id="services.mail" class="services.MailService">
     </bean>
-
 
     <bean id="services.test" class="services.ServiceForTest">
         <property name="sessionFactory" ref="persistence.sessionFactory" />
@@ -77,9 +72,6 @@
         <property name="serviceTest" ref="services.test" />
     </bean>
 
-    <bean id="aspect.test" class="aspect.CacheClass">
-        <property name="service" ref="services.publish" />
-    </bean>
 
 </beans>
 

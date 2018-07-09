@@ -49,6 +49,8 @@ public class ReservationBuilder {
     public Reservation getOne() {
         Reservation reserv = new Reservation();
         PublicationBuilder pBuilder = new PublicationBuilder();
+        reserv.customer = new User();
+        reserv.state = new ReservationState();
         reserv.publication = pBuilder.getOne();
         return reserv;
     }
