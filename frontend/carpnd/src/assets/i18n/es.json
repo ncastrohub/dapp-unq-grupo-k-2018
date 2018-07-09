@@ -6,6 +6,18 @@
 	"Vehicles" : "Vehiculos",
   	"Create": "Crear",
   	"List":"Lista",
-  	"Me":"Yo"
-  
+  	"Me":"Yo",
+  	"Log In": "Iniciar Session",
+	"Log Out": "Salir",
+	"Sign Up": "Registrarse",
+	"Publication": "Publicacion",
+  	"Lend your Car": "Presta tu Auto",
+  	"Profile": "Perfil",
+  	"Charge Money": "Cargar Dinero",
+  	"My Shops": "Mis Compras",
+  	"My Sells": "Mis Ventas",
+  	"Carpn: Car Lend Site": " Carpn: Sitio para prestar Autos:",
+  	"Do you have a car available some days? make money with it.": "Tienes un auto disponible algunos dias? has dinero con el.",
+  	"Do you want a car? rent one.": "Quieres un Auto? Renta uno.",
+  	"Working...": "Procesando..."
 }

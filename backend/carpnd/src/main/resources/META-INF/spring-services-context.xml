@@ -58,9 +58,7 @@
     <bean id="appFixture" class="fixtures.AppFixture">
         <constructor-arg ref="services.publish"/>
     </bean>
-
-
-
+    
     <!--<bean class="scripting.InitializeUser">-->
         <!--<property name="publishService" ref="services.publication" />-->
     <!--</bean>-->
